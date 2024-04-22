@@ -22,3 +22,4 @@ jobs:
         with:
           github_token: ${{ secrets.MKDOCS }}
           publish_dir: ./site
+          branch: gh-pages
