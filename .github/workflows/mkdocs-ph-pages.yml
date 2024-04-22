@@ -20,5 +20,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.StaryLan }}
+          github_token: ${{ secrets.MKDOCS }}
           branch: gh-pages
