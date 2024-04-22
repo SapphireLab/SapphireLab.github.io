@@ -1,4 +1,7 @@
 site_name: Sapphire Lab
+nav:
+  - TTS: TTS.md
+  - PDE: PDE.md
 plugins:
   - search
 theme:
