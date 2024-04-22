@@ -21,4 +21,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.StaryLan }}
-          publish_dir: ./site
+          branch: gh-pages
