@@ -402,11 +402,11 @@ To tackle this, various pretraining methods, such as leveraging speech emotion r
 <p>Despite these works have achieved great success in EVC, the converted audio still falls short in meeting human’s perceptual needs, which implies that these two challenges still remain to be effectively addressed.
 Remarkably, current EVC models generally operate in a cascade manner, i.e., the acoustic converter and the vocoder [1, 5, 7, 8], resulting in a mismatch between emotional prosody training and run-time conversion, ultimately leading to a degradation in audio quality, which is vital to evaluate content naturalness and impacts the perceptual experience of emotional utterance.
 However, there is no EVC model that attempt to bridge this gap, let alone models that aim to capture prosody variations at a finer granularity.
-To handle the similar issue, multiple solutions have been explored in TTS, including <a href="../2019.05_FastSpeech/2020.06_FastSpeech2.md">FastSpeech2s (2020)</a>, EATS [17], <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a> [19], etc., seeking to alleviate the mismatch between acoustic feature generation and waveform reconstruction by integrating these two stages together.</p>
-<p>In this paper, inspired by the high audio quality of <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a>, we propose <strong>Prosody-Aware VITS (PAVITS)</strong> for EVC, a novel end-to-end system with implicit prosody modeling to enhance content naturalness and emotional naturalness.
+To handle the similar issue, multiple solutions have been explored in TTS, including <a href="../2019.05_FastSpeech/2020.06_FastSpeech2.md">FastSpeech2s (2020)</a>, EATS [17], <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a> [19], etc., seeking to alleviate the mismatch between acoustic feature generation and waveform reconstruction by integrating these two stages together.</p>
+<p>In this paper, inspired by the high audio quality of <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a>, we propose <strong>Prosody-Aware VITS (PAVITS)</strong> for EVC, a novel end-to-end system with implicit prosody modeling to enhance content naturalness and emotional naturalness.
 To our best knowledge, <strong>PAVITS</strong> is the first EVC method in solving the mismatch between acoustic feature conversion and waveform reconstruction.
-Compared to <a href="../2021.06_VITS/2021.06_VITS.md">original VITS (2021)</a>, our approach involves several key innovations.
-In order to improve content naturalness with speech quality, we build upon <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a> to solve the two-stage mismatch in EVC, and apply multi-task learning since TTS can significantly reduce the mispronunciation.
+Compared to <a href="../../2021.06_VITS/2021.06_VITS/">original VITS (2021)</a>, our approach involves several key innovations.
+In order to improve content naturalness with speech quality, we build upon <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a> to solve the two-stage mismatch in EVC, and apply multi-task learning since TTS can significantly reduce the mispronunciation.
 To enhance emotional naturalness, we introduce an emotion descriptor to capture prosody differences associated with different emotional states in speech.
 By utilizing Valence-Arousal-Dominance values as condition, emotional representation at utterance-level is learned.
 Latent code is further refined by a prosody integrator, which incorporates with speaker identity and linguistic content to model finer-grained prosody variations.
@@ -416,7 +416,7 @@ Finally, we devise a prosody alignment loss to connect two modalities, aligning 
 </blockquote>
 <h2 id="2proposed-method">2.Proposed Method<a class="headerlink" href="#2proposed-method" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>As shown in Fig.01, inspired by <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a>, the proposed model is constructed based on conditional variational autoencoder (CVAE), consisting of four parts: a textual prosody prediction module, an acoustic prosody modeling module, an information alignment module, and an emotional speech synthesis module.</p>
+<p>As shown in Fig.01, inspired by <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a>, the proposed model is constructed based on conditional variational autoencoder (CVAE), consisting of four parts: a textual prosody prediction module, an acoustic prosody modeling module, an information alignment module, and an emotional speech synthesis module.</p>
 <p>The textual prosody prediction (TPP) module predicts the prior distribution $p(z_1|c_1)$ as:</p>
 </blockquote>
 <p>$$
@@ -453,7 +453,7 @@ Considering the extensive prosody variation associated with each phoneme, we emp
 $$</p>
 <blockquote>
 <p>Text Encoder: Since the training process is constrained by the volume of textual content within parallel datasets, we initially convert text or characters into a phoneme sequence as a preprocessing step to maximize the utility of the available data, resulting in improved compatibility with the acoustic prosody modeling module.
-Similar to <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a>, text encoder comprises multiple Feed-Forward Transformer (FFT) blocks with a linear projection layer for representing linguistic information.</p>
+Similar to <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a>, text encoder comprises multiple Feed-Forward Transformer (FFT) blocks with a linear projection layer for representing linguistic information.</p>
 <p>Prosody Predictor: Prosody predictor leverages phoneme-level linguistic information extracted by the text encoder to anticipate frame-level prosody variation given discrete emotion label.
 It has been observed that simply increasing the depth of stacked flow does not yield satisfactory emotional prosody variations, unlike the prosody predictor.
 Therefore, the inclusion of the prosody predictor guarantees a continuous enhancement in prosody modeling for both the TPP and APM modules.
@@ -477,7 +477,7 @@ It is constructed using multiple convolution layers, WaveNet residual blocks, an
 </blockquote>
 <h3 id="23information-alignment-module">2.3.Information Alignment Module<a class="headerlink" href="#23information-alignment-module" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>In <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a>, the existing alignment mechanism, which is called Monotonic Alignment Search (MAS), solely relies on textual and acoustic features from parallel datasets.
+<p>In <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a>, the existing alignment mechanism, which is called Monotonic Alignment Search (MAS), solely relies on textual and acoustic features from parallel datasets.
 Thus, it is insufficient in capturing emotional prosody nuances, hindering effective linkage between the TPP and APM modules.
 To overcome this limitation, we propose an additional prosody alignment loss function based on Kullback-Leibler divergence, to facilitate joint training for frame-level prosody modeling across the TPP and APM modules, with the goal of enhancing prosody information integration and synchronization within our model.</p>
 </blockquote>
@@ -532,7 +532,7 @@ The total duration of training data is around 80 minutes (16 minutes per emotion
 - CycleGAN [25] (baseline): CycleGAN-based EVC model with WORLD vocoder.
 - StarGAN [26] (baseline): StarGAN-based EVC model with WORLD vocoder.
 - Seq2seq-WA2 [15] (baseline): Seq2seq-based EVC model employing 2-stage training strategy with WaveRNN vocoder.
-- <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a> (baseline):EVC model constructed by original VITS, operating independently in both fixed-length and variable-length, take the average as the result.
+- <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a> (baseline):EVC model constructed by original VITS, operating independently in both fixed-length and variable-length, take the average as the result.
 - <strong>PAVITS-FL</strong> (proposed): the proposed model based on VITS, incorporates all the contributions outlined in the paper, but operate within a fixed-length framework.
 - <strong>PAVITS-VL</strong> (proposed): the proposed model based on VITS, incorporates all the contributions outlined in the paper, but operate within a variable-length framework leveraging ASR to obtain text from source audio.</p>
 </blockquote>

@@ -524,8 +524,8 @@
 Notably, in <em>Text-To-Speech (TTS)</em> systems, the integration of <strong>BERT</strong> for semantic token generation has underscored the importance of semantic content in producing coherent speech outputs.
 Despite this, the specific utility of <em>LLMs</em> in enhancing TTS synthesis remains considerably limited.
 This research introduces an innovative approach, ==<strong>LLaMA-VITS</strong>==, which enhances TTS synthesis by enriching the semantic content of text using LLM.
-==<strong>LLaMA-VITS</strong>== integrates semantic embeddings from <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> with the <a href="../2021.06_VITS/2021.06_VITS.md">VITS model</a>, a leading end-to-end TTS framework.
-By leveraging <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> for the primary speech synthesis process, our experiments demonstrate that ==<strong>LLaMA-VITS</strong>== matches the naturalness of the <a href="../2021.06_VITS/2021.06_VITS.md">original VITS</a> (<strong>ORI-VITS</strong>) and those incorporate <strong>BERT</strong> (<strong>BERT-VITS</strong>), on the <em>LJSpeech</em> dataset, a substantial collection of neutral, clear speech.
+==<strong>LLaMA-VITS</strong>== integrates semantic embeddings from <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> with the <a href="../../2021.06_VITS/2021.06_VITS/">VITS model</a>, a leading end-to-end TTS framework.
+By leveraging <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> for the primary speech synthesis process, our experiments demonstrate that ==<strong>LLaMA-VITS</strong>== matches the naturalness of the <a href="../../2021.06_VITS/2021.06_VITS/">original VITS</a> (<strong>ORI-VITS</strong>) and those incorporate <strong>BERT</strong> (<strong>BERT-VITS</strong>), on the <em>LJSpeech</em> dataset, a substantial collection of neutral, clear speech.
 Moreover, our method significantly enhances emotive expressiveness on the <em>EmoV_DB_bea_sem</em> dataset, a curated selection of emotionally consistent speech from the <em>EmoV_DB</em> dataset, highlighting its potential to generate emotive speech.</p>
 </blockquote>
 <h2 id="1introduction">1.Introduction<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
@@ -538,7 +538,7 @@ Nonetheless, the effectiveness and flexibility of <strong>BERT-based TTS models<
 On the other hand, <strong>Large-scale Language Models (LLMs)</strong>, such as <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a>, not only require decreasing computational re sources and achieve higher levels of text generation but also possess excellent zero-shot learning capabilities.
 Moreover, they can achieve improvements comparable to fine-tuning by adjusting only a minimal number of parameters through prompt tuning (Liu et al., 2022; Tu et al., 2022).
 However, the potential of these LLMs for TTS tasks has not been fully explored.
-In light of this context, we introduce ==<strong>LLaMA-VITS</strong>==, a model that leverages semantic representations extracted from <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> on top of a state-of-the-art TTS model, <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a>, enabling the generated speech to retain acoustic information while understanding and expressing semantics and emotions.
+In light of this context, we introduce ==<strong>LLaMA-VITS</strong>==, a model that leverages semantic representations extracted from <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> on top of a state-of-the-art TTS model, <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a>, enabling the generated speech to retain acoustic information while understanding and expressing semantics and emotions.
 Through comprehensive objective and subjective evaluations, ==<strong>LLaMA-VITS</strong>== has been verified to surpass TTS baselines without semantic input or those integrated with BERT.
 The main contributions encapsulate: 
 - We propose <strong>LLaMA-VITS model</strong> that utilizes the semantic understanding and expression capabilities of <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a>, offering equal or superior acoustic performance compared to baseline models, along with a significantly enhanced ability to understand and express semantics and emotions.
@@ -574,9 +574,9 @@ It also circumvents the error accumulation issue inherent in <strong>traditional
 Building on <a href="../2019.05_FastSpeech/2019.05_FastSpeech.md">FastSpeech (2019)</a>, <a href="../2020.06_FastPitch/2020.06_FastPitch.md">FastPitch (2020)</a> predicts pitch contours during inference, enabling the production of more expressive and high quality speech.
 <a href="../2019.05_FastSpeech/2020.06_FastSpeech2.md">FastSpeech2 (2020)</a> further incorporates explicit duration prediction and introduces pitch and energy as conditional inputs.</p>
 <p>Previous non-autoregressive approaches typically involve distinct training phases for <strong>acoustic models</strong> and <strong>vocoders</strong>.
-<a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a> introduces a more natural-sounding output compared to these two-stage systems through its one-stage parallel end-to-end architecture.
-Innovatively, <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a> incorporates variational inference combined with normalizing flows and employs an adversarial training methodology.
-Due to <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a>’s exemplary performance across multiple benchmarks, we select it as the <strong>foundational TTS model</strong> for our system.</p>
+<a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a> introduces a more natural-sounding output compared to these two-stage systems through its one-stage parallel end-to-end architecture.
+Innovatively, <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a> incorporates variational inference combined with normalizing flows and employs an adversarial training methodology.
+Due to <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a>’s exemplary performance across multiple benchmarks, we select it as the <strong>foundational TTS model</strong> for our system.</p>
 </blockquote>
 <h3 id="22-fine-tuning-bert-like-lms-for-tts">2.2. Fine-tuning BERT-like LMs for TTS<a class="headerlink" href="#22-fine-tuning-bert-like-lms-for-tts" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -617,8 +617,8 @@ Additionally, the novel architecture of <a href="../2023.02_LLaMA/2023.07_LLaMA2
 <p><img alt="" src="../2024.04_LLaMA-VITS_FIG01.png" /></p>
 <blockquote>
 <p>We propose leveraging semantic embeddings de rived from a <strong>GPT-like LM</strong> to improve TTS synthesis.
-In our work, <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> is employed as the <strong>GPT-like model</strong>, as elaborated in Sec.2.3, and <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a> is utilized as the <strong>TTS model</strong> for generating audio from phoneme embeddings, as detailed in Sec.2.1.
-In essence, we extract semantic embeddings $E_{s}$ from the final hidden layer of <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> and integrate them with the original acoustic text embeddings $E_{a}$ of <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a>, forming enhanced text embeddings $E_{as}$ for speech synthesis.
+In our work, <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> is employed as the <strong>GPT-like model</strong>, as elaborated in Sec.2.3, and <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a> is utilized as the <strong>TTS model</strong> for generating audio from phoneme embeddings, as detailed in Sec.2.1.
+In essence, we extract semantic embeddings $E_{s}$ from the final hidden layer of <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> and integrate them with the original acoustic text embeddings $E_{a}$ of <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a>, forming enhanced text embeddings $E_{as}$ for speech synthesis.
 Specifically, either a global token or a sequence of tokens is used to encapsulate the semantic attributes of an input sentence for varying objectives.
 The distinctions between these two token types are further explicated in Sec.3.1.</p>
 </blockquote>
@@ -702,8 +702,8 @@ This representation allows the TTS model to leverage the complete semantic infor
 </blockquote>
 <h3 id="32fusing-semantic-embeddings-with-acoustic-embeddings">3.2.Fusing Semantic Embeddings with Acoustic Embeddings<a class="headerlink" href="#32fusing-semantic-embeddings-with-acoustic-embeddings" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>To align the dimensions of semantic embedding extracted from <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a>, denoted as $E_{s}$, with the acoustic embeddings from <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a>, denoted as $E_{a}$, we employ a linear projection.
-The original dimension of $E_{s}$, $d_{LLaMA}$, is projected to match the dimension of <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a> acoustic embedding, $d_{VITS}$, using a linear transformation matrix $W$ of dimensions $d_{VITS}\times d_{LLaMA}$.
+<p>To align the dimensions of semantic embedding extracted from <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a>, denoted as $E_{s}$, with the acoustic embeddings from <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a>, denoted as $E_{a}$, we employ a linear projection.
+The original dimension of $E_{s}$, $d_{LLaMA}$, is projected to match the dimension of <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a> acoustic embedding, $d_{VITS}$, using a linear transformation matrix $W$ of dimensions $d_{VITS}\times d_{LLaMA}$.
 The projected semantic embedding, $E_s'$, is calculated as follows: </p>
 </blockquote>
 <p>$$
@@ -711,21 +711,21 @@ The projected semantic embedding, $E_s'$, is calculated as follows: </p>
 $$ </p>
 <h4 id="fusing-global-embedding-with-acoustic-embedding">Fusing Global Embedding with Acoustic Embedding<a class="headerlink" href="#fusing-global-embedding-with-acoustic-embedding" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p>To obtain an embedding $E_{as}$ that integrates both semantic and acoustic information, for global tokens, we simply add the dimensionally unified global embedding to <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a>’s acoustic em bedding, as shown in the equation: </p>
+<p>To obtain an embedding $E_{as}$ that integrates both semantic and acoustic information, for global tokens, we simply add the dimensionally unified global embedding to <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a>’s acoustic em bedding, as shown in the equation: </p>
 </blockquote>
 <p>$$
     E_{as} = E_{a} + E_s′\tag{10}
 $$ </p>
 <h4 id="fusing-sequential-embeddings-to-enhance-text-embeddings">Fusing Sequential Embeddings to Enhance Text Embeddings<a class="headerlink" href="#fusing-sequential-embeddings-to-enhance-text-embeddings" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p>We utilize the Scaled Dot Product Attention mechanism to merge sequential embeddings with <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a>’s original acoustic embedding to gain enhanced embedding $E_{as}$ , which can be described by the following mathematical formulas: 
+<p>We utilize the Scaled Dot Product Attention mechanism to merge sequential embeddings with <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a>’s original acoustic embedding to gain enhanced embedding $E_{as}$ , which can be described by the following mathematical formulas: 
 First, calculate the attention scores $A$:</p>
 </blockquote>
 <p>$$
     A = \dfrac{q\cdot k^{\mathsf{T}}}{\gamma} \tag{11}
 $$</p>
 <blockquote>
-<p>where $q$ is the acoustic embedding $E_{a}$ in <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a> with dimensions $[b, t, d]$; 
+<p>where $q$ is the acoustic embedding $E_{a}$ in <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a> with dimensions $[b, t, d]$; 
 $k$ and $v$ denotes the semantic embedding $E_s'$ from <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a>, also with dimensions $[b, t, d]$; 
 $b$ is the batch size,tis the sequence length, and $d$ is the embedding dimension;
 $\gamma$ is temperature for scaling.
@@ -749,9 +749,9 @@ $$ </p>
 <h2 id="4experiments">4.Experiments<a class="headerlink" href="#4experiments" title="Permanent link">&para;</a></h2>
 <h3 id="41experimental-settings">4.1.Experimental Settings<a class="headerlink" href="#41experimental-settings" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>We propose ==<strong>LLaMA-VITS</strong>== which uses semantic to kens derived from <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> to enhance acoustic embedding in <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a> for better TTS performance.
+<p>We propose ==<strong>LLaMA-VITS</strong>== which uses semantic to kens derived from <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> to enhance acoustic embedding in <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a> for better TTS performance.
 To show the effectiveness of our method, we experimented with two baseline models.
-In the <strong>ORI-VITS</strong> baseline, we use the original <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a> without external semantic information.
+In the <strong>ORI-VITS</strong> baseline, we use the original <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a> without external semantic information.
 In the <strong>BERT-VITS</strong> baseline, we extract various semantic tokens according to for mer research introduced in Section § 2.2.
 Specifically, we use the <code>[CLS]</code> token of <strong>BERT</strong> as the global token.
 To form the baseline of the sequential token in <strong>BERT</strong>, we use all the tokens in the sentence trained by text or phoneme, named <code>[BERT_TEX]</code> and <code>[BERT_PHO]</code>, respectively.
@@ -790,8 +790,8 @@ Please refer to Appendix A 12 for more dataset statistics.</p>
 </blockquote>
 <h4 id="implementation-hyper-parameters-training">Implementation, Hyper-parameters, Training<a class="headerlink" href="#implementation-hyper-parameters-training" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p>Our ==<strong>LLaMA-VITS</strong>== system was built on the <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a> framework using its original implementation, augmented with semantic embeddings de rived from <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> (Touvron et al., 2023) using its original implementation7.
-For training LJSpeech, we use the public configs in the original implementation of <a href="../2021.06_VITS/2021.06_VITS.md">VITS (2021)</a>.
+<p>Our ==<strong>LLaMA-VITS</strong>== system was built on the <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a> framework using its original implementation, augmented with semantic embeddings de rived from <a href="../2023.02_LLaMA/2023.07_LLaMA2.md">LLaMA2 (2023)</a> (Touvron et al., 2023) using its original implementation7.
+For training LJSpeech, we use the public configs in the original implementation of <a href="../../2021.06_VITS/2021.06_VITS/">VITS (2021)</a>.
 For EmoV_DB_bea_sem, we use the same config as LJSpeech but changed batch size from 64 to 16 since this dataset is much smaller.
 Besides implementing our proposed ==<strong>LLaMA-VITS</strong>==, we extracted corresponding semantic tokens <code>[CLS]</code>, <code>[BERT_TEX]</code> from <strong>BERT-uncased-base model</strong> and <code>[BERT_PHO]</code> from <strong>BERT</strong> pre-trained on phoneme for comparison.
 In comparing the experimental results, we choose 100k-step results on both full LJSpeech and 1-hour LJSpeech datasets since they are rather large.

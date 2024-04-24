@@ -487,7 +487,54 @@
 
 <p>@import "../../style.less"</p>
 <h1 id="rall-e-robust-codec-language-modeling-with-chain-of-thought-prompting-for-text-to-speech-synthesis">RALL-E: Robust Codec Language Modeling with Chain-of-Thought Prompting for Text-to-Speech Synthesis<a class="headerlink" href="#rall-e-robust-codec-language-modeling-with-chain-of-thought-prompting-for-text-to-speech-synthesis" title="Permanent link">&para;</a></h1>
-<p><a href="../../Authors/%E8%BE%9B%E5%BE%B7%E6%B3%B0_%28Detai_Xin%29/">辛德泰</a>, <a href="../../Authors/%E8%B0%AD%E6%97%AD_%28Xu_Tan%29/">谭旭</a>, <a href="../../Authors/Kai_Shen/">Kai Shen</a>, <a href="../../Authors/Zeqian_Ju/">Zeqian Ju</a>, <a href="../../Authors/Dongchao_Yang/">Dongchao Yang</a>, <a href="../../Authors/Yuancheng_Wang/">Yuancheng Wang</a>, <a href="../../Authors/Shinnosuke_Takamichi/">Shinnosuke Takamichi</a>, <a href="../../Authors/Hiroshi_Saruwatari/">Hiroshi Saruwatari</a>, <a href="../../Authors/%E5%88%98%E6%A0%91%E6%9D%B0_%28Shujie_Liu%29/">刘树杰</a>, <a href="../../Authors/Jinyu_Li/">Jinyu Li</a>, <a href="../../Authors/Sheng_Zhao/">Sheng Zhao</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">作者</th>
+<th style="text-align: center;">机构</th>
+<th style="text-align: center;">作者</th>
+<th style="text-align: center;">机构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="../../Authors/%E8%BE%9B%E5%BE%B7%E6%B3%B0_%28Detai_Xin%29/">辛德泰</a></td>
+<td style="text-align: center;"><a href="../Institutions/Microsoft.md">Microsoft</a><br><a href="../Institutions/东京大学.md">东京大学</a></td>
+<td style="text-align: center;"><a href="../../Authors/%E8%B0%AD%E6%97%AD_%28Xu_Tan%29/">谭旭</a></td>
+<td style="text-align: center;"><a href="../Institutions/Microsoft.md">Microsoft</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="../../Authors/%E6%B2%88%E9%94%B4_%28Kai_Shen%29/">沈锴</a></td>
+<td style="text-align: center;"><a href="../Institutions/Microsoft.md">Microsoft</a><br><a href="../Instittutions/浙江大学.md">浙江大学</a></td>
+<td style="text-align: center;"><a href="../../Authors/%E7%90%9A%E6%B3%BD%E8%B0%A6_%28Zeqian_Ju%29/">琚泽谦</a></td>
+<td style="text-align: center;"><a href="../Institutions/Microsoft.md">Microsoft</a><br><a href="../Institutions/中国科技大学.md">中国科学技术大学</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="../../Authors/%E6%9D%A8%E4%B8%9C%E8%B6%85_%28Dongchao_Yang%29/">杨东超</a></td>
+<td style="text-align: center;"><a href="../Institutions/香港中文大学.md">香港中文大学</a></td>
+<td style="text-align: center;"><a href="../../Authors/%E7%8E%8B%E8%BF%9C%E7%A8%8B_%28Yuancheng_Wang%29/">王远程</a></td>
+<td style="text-align: center;"><a href="../Institutions/香港中文大学.md">香港中文大学(深圳)</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="../../Authors/Shinnosuke_Takamichi/">高道 慎之介</a></td>
+<td style="text-align: center;"><a href="../Institutions/东京大学.md">东京大学</a></td>
+<td style="text-align: center;"><a href="../../Authors/Hiroshi_Saruwatari/">猿渡 洋</a></td>
+<td style="text-align: center;"><a href="../Institutions/东京大学.md">东京大学</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="../../Authors/%E5%88%98%E6%A0%91%E6%9D%B0_%28Shujie_Liu%29/">刘树杰</a></td>
+<td style="text-align: center;"><a href="../Institutions/Microsoft.md">Microsoft</a></td>
+<td style="text-align: center;"><a href="../../Authors/%E6%9D%8E%E5%8A%B2%E5%AE%87_%28Jinyu_Li%29/">李劲宇</a></td>
+<td style="text-align: center;"><a href="../Institutions/Microsoft.md">Microsoft</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="../../Authors/%E8%B5%B5%E8%83%9C_%28Sheng_Zhao%29/">赵胜</a></td>
+<td style="text-align: center;"><a href="../Institutions/Microsoft.md">Microsoft</a></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 <h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>We present ==<strong>RALL-E</strong>==, a robust language modeling method for <strong><em>text-to-speech (TTS)</em></strong> synthesis.
@@ -562,12 +609,12 @@ Besides, recent works (<a href="../2023.06_AudioPaLM/2023.06_AudioPaLM.md">Audio
 For encoder-decoder AR TTS, several previous works enforce the attention weights to be monotonic [2,9, 36] that can effectively improve the robustness.
 In addition, Shen et al.[24] proposed a non-attentive Tacotron, in which the attention module was replaced by a duration predictor to determine the alignment path before decoding.
 For decoder-only TTS, a key difference is that the attention weights are computed on text and context at the same time, hence the whole attention weights should not be monotonic.
-Song et al. proposed <a href="../2024.01_ELLA-V/2024.01_ELLA-V.md">ELLA-V (2024)</a> that interleaves the speech tokens with phonemes by inserting a phoneme token and a special <strong><em>End Of Phone(EOP)</em></strong> token at the beginning and end of the speech tokens corresponding to the phoneme, respectively.
+Song et al. proposed <a href="../../2024.01_ELLA-V/2024.01_ELLA-V/">ELLA-V (2024)</a> that interleaves the speech tokens with phonemes by inserting a phoneme token and a special <strong><em>End Of Phone(EOP)</em></strong> token at the beginning and end of the speech tokens corresponding to the phoneme, respectively.
 While the inserted phoneme and the EOP token indicate the duration of each phoneme, such an implicit way entangles the prediction of speech tokens and duration together.
 ==<strong>RALL-E</strong>== disentangles the predictions of duration and speech tokens by predicting the duration of all phonemes before the speech tokens, hence has higher controllability over the generation process.
 Du et al. proposed <a href="../2024.01_VALL-T/2024.01_VALL-T.md">VALL-T (2024)</a> that uses an unsupervised transducer loss [7] to implicitly model the duration of phonemes.
 Compared to RALL-E, although VALL-T doesn’t rely on external alignment tools during training, its training time is considerably decelerated since the transducer loss requires the model to perform a forward process for every phoneme.
-Besides, like <a href="../2024.01_ELLA-V/2024.01_ELLA-V.md">ELLA-V (2024)</a>, <a href="../2024.01_VALL-T/2024.01_VALL-T.md">VALL-T (2024)</a> also entangles the predictions of duration and speech tokens, thus has weaker controllability than RALL-E.</p>
+Besides, like <a href="../../2024.01_ELLA-V/2024.01_ELLA-V/">ELLA-V (2024)</a>, <a href="../2024.01_VALL-T/2024.01_VALL-T.md">VALL-T (2024)</a> also entangles the predictions of duration and speech tokens, thus has weaker controllability than RALL-E.</p>
 </blockquote>
 <p>自回归语音合成的健壮性是一个热门话题.
 对于编码器-解码器自回归语音合成, 之前的工作已经提出了强化注意力权重为单调的策略 [2,9, 36], 能够有效提升语音合成的健壮性.
@@ -578,7 +625,7 @@ Song 等人提出 <a href="2024.01_ELLA-V.md">ELLA-V (2024)</a>, 其中插入了
 ==<strong>RALL-E</strong>== 通过预测所有音素的时长, 解耦了时长和语音标记的预测, 因此可以更好地控制生成过程.
 Du 等人提出 <a href="2024.01_VALL-T.md">VALL-T (2024)</a>, 使用无监督的转换器损失 [7] 模型音素的时长.
 与 ==<strong>RALL-E</strong>== 相比, VALL-T 虽然在训练过程中不依赖外部对齐工具, 但训练时间显著减少, 因为转换器损失需要模型对每个音素进行一次前向计算.
-此外, 与 <a href="../2024.01_ELLA-V/2024.01_ELLA-V.md">ELLA-V (2024)</a> 一样, <a href="../2024.01_VALL-T/2024.01_VALL-T.md">VALL-T (2024)</a> 也将时长和语音标记联系在一起, 因此控制力较弱.</p>
+此外, 与 <a href="../../2024.01_ELLA-V/2024.01_ELLA-V/">ELLA-V (2024)</a> 一样, <a href="../2024.01_VALL-T/2024.01_VALL-T.md">VALL-T (2024)</a> 也将时长和语音标记联系在一起, 因此控制力较弱.</p>
 <h2 id="3rall-e">3.RALL-E<a class="headerlink" href="#3rall-e" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>The overview of ==<strong>RALL-E</strong>== is illustrated in Fig.01.</p>
