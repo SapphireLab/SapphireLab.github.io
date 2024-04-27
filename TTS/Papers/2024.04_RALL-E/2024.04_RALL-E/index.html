@@ -612,9 +612,9 @@ For decoder-only TTS, a key difference is that the attention weights are compute
 Song et al. proposed <a href="../../2024.01_ELLA-V/2024.01_ELLA-V/">ELLA-V (2024)</a> that interleaves the speech tokens with phonemes by inserting a phoneme token and a special <strong><em>End Of Phone(EOP)</em></strong> token at the beginning and end of the speech tokens corresponding to the phoneme, respectively.
 While the inserted phoneme and the EOP token indicate the duration of each phoneme, such an implicit way entangles the prediction of speech tokens and duration together.
 ==<strong>RALL-E</strong>== disentangles the predictions of duration and speech tokens by predicting the duration of all phonemes before the speech tokens, hence has higher controllability over the generation process.
-Du et al. proposed <a href="../2024.01_VALL-T/2024.01_VALL-T.md">VALL-T (2024)</a> that uses an unsupervised transducer loss [7] to implicitly model the duration of phonemes.
+Du et al. proposed <a href="../../2024.01_VALL-T/2024.01_VALL-T/">VALL-T (2024)</a> that uses an unsupervised transducer loss [7] to implicitly model the duration of phonemes.
 Compared to RALL-E, although VALL-T doesn’t rely on external alignment tools during training, its training time is considerably decelerated since the transducer loss requires the model to perform a forward process for every phoneme.
-Besides, like <a href="../../2024.01_ELLA-V/2024.01_ELLA-V/">ELLA-V (2024)</a>, <a href="../2024.01_VALL-T/2024.01_VALL-T.md">VALL-T (2024)</a> also entangles the predictions of duration and speech tokens, thus has weaker controllability than RALL-E.</p>
+Besides, like <a href="../../2024.01_ELLA-V/2024.01_ELLA-V/">ELLA-V (2024)</a>, <a href="../../2024.01_VALL-T/2024.01_VALL-T/">VALL-T (2024)</a> also entangles the predictions of duration and speech tokens, thus has weaker controllability than RALL-E.</p>
 </blockquote>
 <p>自回归语音合成的健壮性是一个热门话题.
 对于编码器-解码器自回归语音合成, 之前的工作已经提出了强化注意力权重为单调的策略 [2,9, 36], 能够有效提升语音合成的健壮性.
@@ -625,7 +625,7 @@ Song 等人提出 <a href="2024.01_ELLA-V.md">ELLA-V (2024)</a>, 其中插入了
 ==<strong>RALL-E</strong>== 通过预测所有音素的时长, 解耦了时长和语音标记的预测, 因此可以更好地控制生成过程.
 Du 等人提出 <a href="2024.01_VALL-T.md">VALL-T (2024)</a>, 使用无监督的转换器损失 [7] 模型音素的时长.
 与 ==<strong>RALL-E</strong>== 相比, VALL-T 虽然在训练过程中不依赖外部对齐工具, 但训练时间显著减少, 因为转换器损失需要模型对每个音素进行一次前向计算.
-此外, 与 <a href="../../2024.01_ELLA-V/2024.01_ELLA-V/">ELLA-V (2024)</a> 一样, <a href="../2024.01_VALL-T/2024.01_VALL-T.md">VALL-T (2024)</a> 也将时长和语音标记联系在一起, 因此控制力较弱.</p>
+此外, 与 <a href="../../2024.01_ELLA-V/2024.01_ELLA-V/">ELLA-V (2024)</a> 一样, <a href="../../2024.01_VALL-T/2024.01_VALL-T/">VALL-T (2024)</a> 也将时长和语音标记联系在一起, 因此控制力较弱.</p>
 <h2 id="3rall-e">3.RALL-E<a class="headerlink" href="#3rall-e" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>The overview of ==<strong>RALL-E</strong>== is illustrated in Fig.01.</p>
