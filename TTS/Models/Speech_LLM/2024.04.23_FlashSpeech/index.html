@@ -575,20 +575,60 @@
 
 <h1 id="flashspeech-efficient-zero-shot-speech-synthesis">FlashSpeech: Efficient Zero-Shot Speech Synthesis<a class="headerlink" href="#flashspeech-efficient-zero-shot-speech-synthesis" title="Permanent link">&para;</a></h1>
 <p>@import "../../style.less"</p>
+<details>
+<summary>基本信息</summary>
+
+- 标题: "FlashSpeech: Efficient Zero-Shot Speech Synthesis"
+- 作者:
+  - [Zhen Ye](../../Authors/Zhen_Ye.md)
+  - [琚泽谦](../../Authors/琚泽谦_(Zeqian_Ju).md)
+  - [Haohe Liu](../../Authors/Haohe_Liu.md)
+  - [谭旭](../../Authors/谭旭_(Xu_Tan).md)
+  - [Jianyi Chen](../../Authors/Jianyi_Chen.md)
+  - [Yiwen Lu](../../Authors/Yiwen_Lu.md)
+  - [Peiwen Sun](../../Authors/Peiwen_Sun.md)
+  - [Jiahao Pan](../../Authors/Jiahao_Pan.md)
+  - [Weizhen Bian](../../Authors/Weizhen_Bian.md)
+  - [Shulin He](../../Authors/Shulin_He.md)
+  - [柳崎峰](../../Authors/柳崎峰_(Qifeng_Liu).md)
+  - [郭毅可](../../Authors/郭毅可_(Yike_Guo).md)
+  - [雪巍](../../Authors/雪巍_(Wei_Xue).md)
+- 机构:
+  - [香港科技大学](../../Institutions/HKUST.md)
+  - [微软](../../Institutions/Microsoft.md)
+  - [萨里大学](../../Institutions/University_of_Surrey.md)
+  - [内蒙古大学](../../Institutions/Inner_Mongolia_University.md)
+  - [新加坡国立大学](../../Institutions/National_University_of_Singapore.md)
+- 时间:
+  - 2024.04.23 v1
+  - 2024.04.25 v3
+- 链接:
+  - [ArXiv](https://arxiv.org/abs/2404.14700)
+  - [Demo](https://flashspeech.github.io/)
+- 标签:
+  - 语音合成
+  - 零样本
+
+</details>
+
 <h2 id="abstract">Abstract·摘要<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Recent progress in large-scale zero-shot speech synthesis has been significantly advanced by language models and diffusion models.
-However, the generation process of both methods is slow and computationally intensive.
-Efficient speech synthesis using a lower computing budget to achieve quality on par with previous work remains a significant challenge.
-In this paper, we present <MainAlgo>FlashSpeech</MainAlgo>, a large-scale zero-shot speech synthesis system with approximately 5\% of the inference time compared with previous work.
-<MainAlgo>FlashSpeech</MainAlgo> is built on the latent consistency model and applies a novel adversarial consistency training approach that can train from scratch without the need for a pre-trained diffusion model as the teacher.
-Furthermore, a new prosody generator module enhances the diversity of prosody, making the rhythm of the speech sound more natural.
-The generation processes of <MainAlgo>FlashSpeech</MainAlgo> can be achieved efficiently with one or two sampling steps while maintaining high audio quality and high similarity to the audio prompt for zero-shot speech generation.
-Our experimental results demonstrate the superior performance of <MainAlgo>FlashSpeech</MainAlgo>.
-Notably, <MainAlgo>FlashSpeech</MainAlgo> can be about 20 times faster than other zero-shot speech synthesis systems while maintaining comparable performance in terms of voice quality and similarity.
-Furthermore, <MainAlgo>FlashSpeech</MainAlgo> demonstrates its versatility by efficiently performing tasks like voice conversion, speech editing, and diverse speech sampling.
-Audio samples can be found in <a href="https://flashspeech.github.io/">this https URL</a>.</p>
-</blockquote>
+<details>
+<summary>原文</summary>
+
+> Recent progress in large-scale zero-shot speech synthesis has been significantly advanced by language models and diffusion models.
+> However, the generation process of both methods is slow and computationally intensive.
+> Efficient speech synthesis using a lower computing budget to achieve quality on par with previous work remains a significant challenge.
+> In this paper, we present <MainAlgo>FlashSpeech</MainAlgo>, a large-scale zero-shot speech synthesis system with approximately 5\% of the inference time compared with previous work.
+> <MainAlgo>FlashSpeech</MainAlgo> is built on the latent consistency model and applies a novel adversarial consistency training approach that can train from scratch without the need for a pre-trained diffusion model as the teacher.
+> Furthermore, a new prosody generator module enhances the diversity of prosody, making the rhythm of the speech sound more natural.
+> The generation processes of <MainAlgo>FlashSpeech</MainAlgo> can be achieved efficiently with one or two sampling steps while maintaining high audio quality and high similarity to the audio prompt for zero-shot speech generation.
+> Our experimental results demonstrate the superior performance of <MainAlgo>FlashSpeech</MainAlgo>.
+> Notably, <MainAlgo>FlashSpeech</MainAlgo> can be about 20 times faster than other zero-shot speech synthesis systems while maintaining comparable performance in terms of voice quality and similarity.
+> Furthermore, <MainAlgo>FlashSpeech</MainAlgo> demonstrates its versatility by efficiently performing tasks like voice conversion, speech editing, and diverse speech sampling.
+> Audio samples can be found in [this https URL](https://flashspeech.github.io/).
+
+</details>
+
 <p>近期, 大型零样本语音合成在语言模型和扩散模型的推动下取得显著进展.
 然而, 这两种方法的生成过程缓慢且计算密集.
 在较低的计算预算下实现和之前工作相媲美的语音合成质量仍然是一个重大挑战.
@@ -605,7 +645,7 @@ Audio samples can be found in <a href="https://flashspeech.github.io/">this htt
 <p>In recent years, the landscape of speech synthesis has been transformed by the advent of large-scale generative models.
 Consequently, the latest research efforts have achieved notable advancements in zero-shot speech synthesis systems by significantly increasing the size of both datasets and models.
 Zero-shot speech synthesis, such as <term>Text-to-Speech (TTS)</term>, <term>Voice Conversion (VC)</term> and Editing, aims to generate speech that incorporates unseen speaker characteristics from a reference audio segment during inference, without the need for additional training.
-Current advanced zero-shot speech synthesis systems typically leverage <term>Language Models (LMs)</term> (<a href="2023.01.05_VALL-E.md">VALL-E (2023)</a>; <a href="">UniAudio (2023)</a>; <a href="2023.03.07_VALL-E_X.md">VALL-E X (2023)</a>; <a href="2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>; <a href="2023_LM-VC.md">LM-VC (2023)</a>; <a href="2024.03.25_VoiceCraft.md">VoiceCraft (2024)</a>; <a href="2023.04.18_NaturalSpeech2.md">ClaM../_tmp/2024.03.25_VoiceCraft.mdCLaM-TTS.md)) and dif../_tmp/2024.04.03_CLaM-TTS.mdNaturalSpeech2 (2023)</a>; [../_tmp/2023.04.18_NaturalSpeech2.mdd); <a href="2023.06.23_VoiceBox.md">Voicebox (2023)</a>; [FluentSpeech (../_tmp/2023.06.23_VoiceBox.md) for in-context speech generation on the large-scale dataset.</p>
+Current advanced zero-shot speech synthesis systems typically leverage <term>Language Models (LMs)</term> for in-context speech generation on the large-scale dataset.</p>
 </blockquote>
 <p>近年来, 随着大型生成模型的出现, 语音合成领域发生了巨大转变.
 因此, 最新的研究工作通过显著增加数据集和模型大小, 在零样本语音合成系统方面取得了显著进展.
@@ -643,7 +683,7 @@ Hence, the primary objective of this work is to accelerate inference speed and r
 <p>In this paper, we propose <MainAlgo>FlashSpeech</MainAlgo> as the next step towards efficient zero-shot speech synthesis.
 To address the challenge of slow generation speed, we leverage the <algo><a href="">Latent Consistency Model (LCM) (2023)</a></algo>, a recent advancement in generative models.
 Building upon the previous non-autoregressive TTS system (<a href="../_tmp/2023.04.18_NaturalSpeech2.md">NaturalSpeech2 (2023)</a>), we adopt the encoder of a neural audio codec to convert speech waveforms into latent vectors as the training target for our LCM.
-To train this model, we propose a novel technique called adversarial consistency training, which utilizes the capabilities of pre-trained speech language models (<a href="">WavLM</a>; <a href="../Speech_Representaion_Models/2021.06.14_HuBERT.md">HuBERT (2021)</a>; <a href="../Speech_Representaion/2020.06_Wav2Vec2.0.md">Wav2Vec2.0 (2020)</a>) as discriminators.
+To train this model, we propose a novel technique called adversarial consistency training, which utilizes the capabilities of pre-trained speech language models (<a href="">WavLM</a>; <a href="../Speech_Representaion/2021.06.14_HuBERT.md">HuBERT (2021)</a>; <a href="../Speech_Representaion/2020.06_Wav2Vec2.0.md">Wav2Vec2.0 (2020)</a>) as discriminators.
 This facilitates the transfer of knowledge from large pre-trained speech language models to speech generation tasks, efficiently integrating adversarial and consistency training to improve performance.
 The LCM is conditioned on prior vectors obtained from a phoneme encoder, a prompt encoder, and a prosody generator.
 Furthermore, we demonstrate that our proposed prosody generator leads to more diverse expressions and prosody while preserving stability.</p>
@@ -672,7 +712,7 @@ Remarkably, it achieves this at a speed approximately 20 times faster than compa
 <p>Motivated by the success of the large language model, the speech research community has recently shown increasing interest in scaling the sizes of model and training data to bolster generalization capabilities, producing natural speech with diverse speaker identities and prosody under zero-shot settings.
 The pioneering work is <a href="2023.01.05_VALL-E.md">VALL-E (2023)</a>, which adopts the <a href="../../Speech_Neural_Codec/2022.10.24_EnCodec/">EnCodec (2022)</a> to discretize the audio waveform into tokens.
 Therefore, a language model can be trained via in-context learning that can generate the target utterance where the style is consistent with prompt utterance.
-However, generating audio in such an autoregressive manner (<a href="2023_LM-VC.md">LM-VC (2023)</a>; <a href="../_tmp/2024.03.25_VoiceCraft.md">VoiceCraft (2024)</a> ead to unstable prosody, word skipping, and repeating issues (<a href="../TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a>; Tan et al.(2021); <a href="../_tmp/2023.04.18_NaturalSpeech2.md">NaturalSpeech2 (2023)</a>
+However, generating audio in such an autoregressive manner (<a href="2023_LM-VC.md">LM-VC (2023)</a>; <a href="../_tmp/2024.03.25_VoiceCraft.md">VoiceCraft (2024)</a> lead to unstable prosody, word skipping, and repeating issues (<a href="../TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a>; Tan et al.(2021); <a href="../_tmp/2023.04.18_NaturalSpeech2.md">NaturalSpeech2 (2023)</a>
 To ensure the robustness of the system, non-autoregressive methods such as <a href="../_tmp/2023.04.18_NaturalSpeech2.md">NaturalSpeech2 (2023)</a> and <a href="../_tmp/2023.06.23_VoiceBox.md">Voicebox (2023)</a> utilize diffusion-style model (VP-diffusion Song et al.(2020) or <a href="../_Basis/2022.10.06_Flow_Matching.md">Flow-Matching (2022)</a>) to learn the distribution of a continuous intermediate vector such as mel-spectrogram or latent vector of codec.
 Both LM-based methods Zhao et al.(2023) and diffusion-based methods show superior performance in speech generation tasks.
 However, their generation is slow due to the iterative computation.
