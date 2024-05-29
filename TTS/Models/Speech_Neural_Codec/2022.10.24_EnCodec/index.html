@@ -744,13 +744,13 @@ With the internet traffic expected to grow, audio compression is an increasingly
 In lossy signal compression we aim at minimizing the bitrate of a sample while also minimizing the amount of distortion according to a given metric, ideally correlated with human perception.
 Audio codecs typically employ a carefully engineered pipeline combining an encoder and a decoder to remove redundancies in the audio content and yield a compact bitstream.
 Traditionally, this is achieved by decomposing the input with a signal processing transform and trading off the quality of the components that are less likely to influence perception.
-Leveraging neural networks as trained transforms via an encoder-decoder mechanism has been explored by Morishima et al.(1990); Rippel et al.(2019); <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>.
+Leveraging neural networks as trained transforms via an encoder-decoder mechanism has been explored by Morishima et al.(1990); Rippel et al.(2019); <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>.
 Our research work is in the continuity of this line of work, with a focus on audio signals.</p>
 <p>The problems arising in lossy neural compression models are twofold: first, the model has to represent a wide range of signals, such as not to overfit the training set or produce artifact laden audio outside its comfort zone.
 We solve this by having a large and diverse training set (described in Section 4.1), as well as discriminator networks (see Section 3.4) that serve as perceptual losses, which we study extensively in Section 4.5.1, Tab.02.
 The other problem is that of compressing efficiently, both in compute time and in size.
 For the former, we limit ourselves to models that run in real-time on a single CPU core.
-For the latter, we use residual vector quantization of the neural encoder floating-point output, for which various approaches have been proposed (Van Den Oord et al., 2017; <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>).</p>
+For the latter, we use residual vector quantization of the neural encoder floating-point output, for which various approaches have been proposed (Van Den Oord et al., 2017; <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>).</p>
 <p>Accompanying those technical contributions, we posit that designing end-to-end neural compression models is a set of intertwined choices, among which at least the encoder-decoder architecture, the quantization method, and the perceptual loss play key parts.
 Objective evaluations exist and we report scores on them in our ablations (Section 4.5.1).
 But the evaluation of lossy audio codecs necessarily relies on human perception, so we ran extensive human evaluation for multiple points in this design space, both for speech and music.
@@ -782,11 +782,11 @@ These methods produce high coding efficiency for general audio while supporting 
 当前最佳的传统音频编解码器是 Opus (2012) 和 EVS (2015).
 这些方法能够为一般音频提供高效率的编码, 同时支持各种码率, 采样率, 以及实时压缩.</p>
 <blockquote>
-<p>Neural based audio codecs have been recently proposed and demonstrated promising results (Kleijn et al., 2018; Valin &amp; Skoglund, 2019b; Lim et al., 2020; Kleijn et al., 2021; <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>; Omran et al., 2022; Lin et al., 2022; Jayashankar et al., 2022; Li et al.; Jiang et al., 2022), where most methods are based on quantizing the latent space before feeding it to the decoder.
+<p>Neural based audio codecs have been recently proposed and demonstrated promising results (Kleijn et al., 2018; Valin &amp; Skoglund, 2019b; Lim et al., 2020; Kleijn et al., 2021; <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>; Omran et al., 2022; Lin et al., 2022; Jayashankar et al., 2022; Li et al.; Jiang et al., 2022), where most methods are based on quantizing the latent space before feeding it to the decoder.
 In Valin &amp; Skoglund (2019b), an LPCNet (Valin &amp; Skoglund, 2019a) vocoder was conditioned on hand-crafted features and a uniform quantizer.
 Gârbacea et al. (2019) conditioned a WaveNet based model on discrete units obtained from a VQ-VAE (Van Den Oord et al., 2017; Razavi et al., 2019) model, while Skoglund &amp; Valin (2019) tried feeding the Opus codec (Valin et al., 2012) to a WaveNet to further improve its perceptual quality.
 Jayashankar et al. (2022); Jiang et al. (2022) propose an auto-encoder with a vector quantization layer applied over the latent representation and minimizing the reconstruction loss, while Li et al. suggested using Gumbel-Softmax (GS) (Jang et al., 2017) for representation quantization.
-The most relevant related work to ours is the <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a> model, in which the authors propose a fully convolutional encoder decoder architecture with a Residual Vector Quantization (RVQ) (Gray, 1984; Vasuki &amp; Vanathi, 2006) layers.
+The most relevant related work to ours is the <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a> model, in which the authors propose a fully convolutional encoder decoder architecture with a Residual Vector Quantization (RVQ) (Gray, 1984; Vasuki &amp; Vanathi, 2006) layers.
 The model was optimized using both reconstruction loss and adversarial perceptual losses.</p>
 </blockquote>
 <p>近期提出的基于神经网络的编解码器已经展示了不错的结果, 其中大多数方法都基于量化隐空间, 然后将其输入到解码器中.
@@ -795,7 +795,7 @@ The model was optimized using both reconstruction loss and adversarial perceptua
 - Skoglund 等人尝试将 Opus 编解码器输入到 WaveNet 中以进一步提升其感知质量;
 - Jayashankar 等人提出了一个在隐表示上使用矢量量化层的自编码器, 并最小化重构损失;
 - Li 等人提出用 Gumbel-Softmax 以表示量化.</p>
-<p>与本文最相关的工作是 <a href="2021.07.07_SoundStream.md">SoundStream (2021)</a>, 它提出了一个带有残差矢量量化 (Residual Vector Quantization, RVQ) 层的全卷积编码器-解码器架构. 该模型通过重构损失和对抗感知损失进行优化.</p>
+<p>与本文最相关的工作是 <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>, 它提出了一个带有残差矢量量化 (Residual Vector Quantization, RVQ) 层的全卷积编码器-解码器架构. 该模型通过重构损失和对抗感知损失进行优化.</p>
 <h3 id="audio-discretization">Audio Discretization·音频离散化<a class="headerlink" href="#audio-discretization" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>Representing audio and speech using discrete values was proposed to various tasks recently.
@@ -830,7 +830,7 @@ The <strong>EnCodec</strong> model is composed of three main components:
 <h3 id="31encoder-decoder-architecture">3.1.Encoder &amp; Decoder Architecture·编码器与解码器架构<a class="headerlink" href="#31encoder-decoder-architecture" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>The <strong>EnCodec</strong> model is a simple streaming, convolutional-based encoder-decoder architecture with sequential modeling component applied over the latent representation, both on the encoder and on the decoder side.
-Such modeling framework was shown to provide great results in various audio-related tasks, e.g., source separation and enhancement (Défossez et al., 2019; Defossez et al., 2020), neural vocoders (<a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a>; <a href="../TTS3_Vocoder/2020.10.12_HiFi-GAN.md">HiFi-GAN (2020)</a>), audio codec (<a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>), and artificial bandwidth extension (<a href="../_Basis/2020.09.04_SEANet.md">SEANet (2020)</a>; Li et al., 2021).
+Such modeling framework was shown to provide great results in various audio-related tasks, e.g., source separation and enhancement (Défossez et al., 2019; Defossez et al., 2020), neural vocoders (<a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a>; <a href="../TTS3_Vocoder/2020.10.12_HiFi-GAN.md">HiFi-GAN (2020)</a>), audio codec (<a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>), and artificial bandwidth extension (<a href="../_Basis/2020.09.04_SEANet.md">SEANet (2020)</a>; Li et al., 2021).
 We use the same architecture for 24 kHz and 48 kHz audio.</p>
 </blockquote>
 <p><strong>EnCodec</strong> 模型是一个简单的流式, 基于卷积的编码器-解码器架构, 其中在隐表示上应用序列建模组件, 编码器和解码器两侧都有.
@@ -843,7 +843,7 @@ Each convolution block is composed of a single residual unit followed by a down-
 The residual unit contains two convolutions with kernel size 3 and a skip-connection.
 The number of channels is doubled whenever down-sampling occurred.
 The convolution blocks are followed by a two-layer LSTM for sequence modeling and a final 1D convolution layer with a kernel size of 7 and $D$ output channels.
-Following <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>; Li et al. (2021), we use $C= 32$, $B=4$ and $(2, 4, 5, 8)$ as strides.
+Following <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>; Li et al. (2021), we use $C= 32$, $B=4$ and $(2, 4, 5, 8)$ as strides.
 We use ELU as a non-linear activation function (Clevert et al., 2015) either layer normalization (Ba et al., 2016) or weight normalization (Salimans &amp; Kingma, 2016).
 We use two variants of the model, depending on whether we target the low-latency streamable setup, or a high fidelity non-streamable usage.
 With this setup, the encoder outputs 75 latent steps per second of audio at 24 kHz, and 150 at 48 kHz.
@@ -854,7 +854,7 @@ The decoder mirrors the encoder, using transposed convolutions instead of stride
 残差单元由两个卷积核大小为 3 的卷积和一个跳跃连接组成.
 通道数每当下采样发生时进行翻倍.
 卷积块后面是一个两层 LSTM 用于序列建模, 最后一个 1D 卷积层具有卷积核大小为 7 和 $D$ 个输出通道.</p>
-<p>遵循 <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a> 的设置, 我们使用 $C=32$, $B=4$, $(2, 4, 5, 8)$ 作为步长.
+<p>遵循 <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a> 的设置, 我们使用 $C=32$, $B=4$, $(2, 4, 5, 8)$ 作为步长.
 我们使用 ELU 作为非线性激活函数, 层归一化或权重归一化.
 我们使用两个变体模型, 取决于我们的目标是低延迟流式, 或高精度非流式.
 在这一设置下, 编码器 24 kHz 时输出 75 隐步长每秒的音频, 48 kHz 时为 150 个.</p>
@@ -883,7 +883,7 @@ We notice a small gain over the objective metrics by keeping a form of normaliza
 我们注意到在保持某种形式的归一化的情况下, 目标指标的性能有所提升, 如表 A.3 所示.</p>
 <h3 id="32residual-vector-quantization">3.2.Residual Vector Quantization·残差矢量量化<a class="headerlink" href="#32residual-vector-quantization" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>We use Residual Vector Quantization (RVQ) to quantize the output of the encoder as introduced by <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>.
+<p>We use Residual Vector Quantization (RVQ) to quantize the output of the encoder as introduced by <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>.
 Vector quantization consists in projecting an input vector onto the closest entry in a codebook of a given size.
 RVQ refines this process by computing the residual after quantization, and further quantizing it using a second codebook, and so forth.</p>
 </blockquote>
@@ -891,7 +891,7 @@ RVQ refines this process by computing the residual after quantization, and furth
 矢量量化是将输入向量投影到给定大小的码本中最近的元素.
 RVQ 通过在量化后计算残差改进这一过程, 并使用第二个码本进一步量化, 依此类推.</p>
 <blockquote>
-<p>We follow the same training procedure as described by Dhariwal et al. (2020) and <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>.
+<p>We follow the same training procedure as described by Dhariwal et al. (2020) and <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>.
 The codebook entry selected for each input is updated using an exponential moving average with a decay of 0.99, and entries that are not used are replaced with a candidate sampled from the current batch.
 We use a straight-through-estimator (Bengio et al., 2013) to compute the gradient of the encoder, e.g. as if the quantization step was the identity function during the backward phase.
 Finally, a commitment loss, consisting of the MSE between the input of the quantizer and its output, with gradient only computed with respect to its input, is added to the overall training loss.</p>
@@ -901,7 +901,7 @@ Finally, a commitment loss, consisting of the MSE between the input of the quant
 我们使用直通估计器用于计算编码器的梯度, 例如, 假设量化步骤在反向阶段是恒等函数.
 最后, 一个提交损失, 由量化器的输入与其输出之间的 MSE 组成, 只计算其输入的梯度, 被添加到整体训练损失中.</p>
 <blockquote>
-<p>By selecting a variable number of residual steps at train time, a single model can be used to support multiple bandwidth target (<a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>).
+<p>By selecting a variable number of residual steps at train time, a single model can be used to support multiple bandwidth target (<a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>).
 For all of our models, we use at most 32 codebooks (16 for the 48 kHz models) with 1024 entries each, e.g. 10 bits per codebook.
 When doing variable bandwidth training, we select randomly a number of codebooks as a multiple of 4, i.e. corresponding to a bandwidth 1.5, 3, 6, 12 or 24 kbps at 24 kHz.
 Given a continuous latent represention with shape [B, D, T] that comes out of the encoder, this procedure turns it into a discrete set of indexes [B, Nq, T] with Nq the number of codebooks selected.
@@ -1136,7 +1136,7 @@ It is the successor of AMR-WB (Bhagat et al., 2012).We use both codecs to serve 
 We also utilize MP3 compression at 64 kbps as an additional baseline for the stereophonic signal compression case.
 MP3 uses lossy data compression by approximating the accuracy of certain components of sound that are considered to be beyond hearing capabilities of most humans.
 Finally, we compare <strong>EnCodec</strong> to the SoundStream model from the official implementation available in Lyra 21at 3.2 kbps and 6 kbps on audio upsampled to 32 kHz.
-We also reproduced a version of <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a> with minor improvements.
+We also reproduced a version of <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a> with minor improvements.
 Namely, we use the relative feature loss introduce in Section 3.4, and layer normalization (applied separately for each time step) in the discriminators, except for the first and last layer, which improved the audio quality during our preliminary studies.
 Results a reported in Tab.A.2 in the Appendix A.3.</p>
 </blockquote>
@@ -1175,11 +1175,11 @@ We provide more detailed ablation studies in the Appendix, Section A.3.</p>
 <h5 id="the-effect-of-discriminators-setup">The effect of discriminators setup<a class="headerlink" href="#the-effect-of-discriminators-setup" title="Permanent link">&para;</a></h5>
 <blockquote>
 <p>Various discriminators were proposed in prior work to improve the perceptual quality of the generated audio.
-The Multi-Scale Discriminator (MSD) model proposed by <a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a> and adopted in (<a href="../TTS3_Vocoder/2020.10.12_HiFi-GAN.md">HiFi-GAN (2020)</a>; <a href="../TTS3_Vocoder/2022.03.24_HiFipp.md">HiFi++ (2022)</a>; <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>), operates on the raw waveform at different resolutions.
-We adopt the same MSD configuration as described in <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>.
+The Multi-Scale Discriminator (MSD) model proposed by <a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a> and adopted in (<a href="../TTS3_Vocoder/2020.10.12_HiFi-GAN.md">HiFi-GAN (2020)</a>; <a href="../TTS3_Vocoder/2022.03.24_HiFipp.md">HiFi++ (2022)</a>; <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>), operates on the raw waveform at different resolutions.
+We adopt the same MSD configuration as described in <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>.
 Kong et al. (2020) additionally propose the Multi-Period Discriminator (MPD) model, which reshapes the waveform to a 2D input with multiple periods.
-Next, the STFT Discriminator (Mono-STFTD) model was introduced in <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>, where a single network operates over the complex-valued STFT.
-We evaluate our MS-STFTD discriminator against three other discriminator configurations: (i) MSD+Mono STFTD (as in <a href="../Speech_Neural_Codec/2021.07.07_SoundStream.md">SoundStream (2021)</a>); (ii) MPD only; (iii) MS-STFTD only; (vi) MS-STFTD+MPD.
+Next, the STFT Discriminator (Mono-STFTD) model was introduced in <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>, where a single network operates over the complex-valued STFT.
+We evaluate our MS-STFTD discriminator against three other discriminator configurations: (i) MSD+Mono STFTD (as in <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>); (ii) MPD only; (iii) MS-STFTD only; (vi) MS-STFTD+MPD.
 Results are reported in Tab.02.
 Results suggest that using only a multi-scale STFT-based discriminator such as MS STFTD, is enough to generate high quality audio.
 Additionally, it simplifies the model training and reduces training time.
