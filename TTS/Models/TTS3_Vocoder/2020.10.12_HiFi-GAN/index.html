@@ -558,7 +558,7 @@
 它接收梅尔频谱作为输入, 通过转置卷积上采样直到输出序列的长度与原始波形的时间分辨率相匹配.
 每个转置卷积后跟随一个<strong>多感受野融合 (Multi-Receptive Field Fusion, MRF) 模块</strong>, 将在下一段中进行介绍.
 图 01 展示了生成器的架构.</p>
-<p><img alt="" src="Images/2020.10.12.HiFiGAN.Fig.01.png" /></p>
+<p><img alt="" src="../Images/2020.10.12.HiFiGAN.Fig.01.png" /></p>
 <ul>
 <li>第一个子图: 生成器对梅尔频谱上采样 $|k_u|$ 次以匹配原始波形的时间分辨率.</li>
 <li>第二个子图: MRF 模块将来自具有不同卷积核大小和膨胀率的 $|k_r|$ 个残差块的输出特征相加.</li>
@@ -1012,12 +1012,14 @@ $$</p>
 $$</p>
 <p>其中 $\lambda_{fm}= 2$ 和 $\lambda_{mel}= 45$.</p>
 <p>由于判别器是 MPD 和 MSD 的子判别器集合, 这两个式子可以分别转换为关于子判别器的形式:</p>
-<p>$$
-  \mathcal{L}<em>G = \sum</em>{k=1}^K [\mathcal{L}<em>{Adv}(G;D_k)+\lambda</em>{fm} \mathcal{L}<em>{FM}(G;D_k)] + \lambda</em>{mel}\mathcal{L}_{Mel}(G)
-$$</p>
-<p>$$
-  \mathcal{L}<em>D = \sum</em>{k=1}^K [\mathcal{L}_{Adv}(D_k;G)]
-$$</p>
+<pre><code>$$
+  \mathcal{L}_{G} = \sum_{k=1}^K [\mathcal{L}_{Adv}(G;D_k)+\lambda_{fm} \mathcal{L}_{FM}(G;D_k)] + \lambda_{mel}\mathcal{L}_{Mel}(G)
+$$
+</code></pre>
+<pre><code>$$
+  \mathcal{L}_{D} = \sum_{k=1}^K [\mathcal{L}_{Adv}(D_k;G)]
+$$
+</code></pre>
 <p>其中 $D_{k}$ 表示 MPD 和 MSD 中的第 $k$ 个子判别器.</p>
 <h2 id="3experiments">3·Experiments·实验<a class="headerlink" href="#3experiments" title="Permanent link">&para;</a></h2>
 <details>
