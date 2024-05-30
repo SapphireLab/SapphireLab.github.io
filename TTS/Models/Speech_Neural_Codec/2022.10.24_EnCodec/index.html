@@ -763,7 +763,7 @@ Finally, our best model, <strong>EnCodec</strong> , reaches state-of-the-art sco
 <blockquote>
 <p>Recent advancements in neural audio generation enabled computers to efficiently generate natural sounding audio.
 The first convincing results were achieved by autoregressive models such as <a href="../TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet (2016)</a>, at the cost of slow inference.
-While many other approaches were explored (<a href="../TTS3_Vocoder/2019.10_Parallel_WaveGAN.md">Parallel WaveGAN (2019)</a>; Kalchbrenner et al., 2018; Goel et al., 2022), the most relevant ones here are those based on <a href="../_Basis/2014.06.10_GAN.md">Generative Adversarial Networks (GAN)</a> (<a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a>; <a href="../TTS3_Vocoder/2019.10_Parallel_WaveGAN.md">Parallel WaveGAN (2019)</a>; <a href="../TTS3_Vocoder/2020.10.12_HiFi-GAN.md">HiFi-GAN (2020)</a>; <a href="../TTS3_Vocoder/2022.03.24_HiFipp.md">HiFi++ (2022)</a>) were able to match the quality of autoregressive by combining various adversarial networks operate at different multi-scale and multi-period resolutions.
+While many other approaches were explored (<a href="../TTS3_Vocoder/2019.10_Parallel_WaveGAN.md">Parallel WaveGAN (2019)</a>; Kalchbrenner et al., 2018; Goel et al., 2022), the most relevant ones here are those based on <a href="../_Basis/2014.06.10_GAN.md">Generative Adversarial Networks (GAN)</a> (<a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a>; <a href="../TTS3_Vocoder/2019.10_Parallel_WaveGAN.md">Parallel WaveGAN (2019)</a>; <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN (2020)</a>; <a href="../TTS3_Vocoder/2022.03.24_HiFipp.md">HiFi++ (2022)</a>) were able to match the quality of autoregressive by combining various adversarial networks operate at different multi-scale and multi-period resolutions.
 Our work uses and extends similar adversarial losses to limit artifacts during audio generation.</p>
 </blockquote>
 <p>近期在神经音频生成的进展使得计算机能够高效地生成听起来很自然的音频.
@@ -830,7 +830,7 @@ The <strong>EnCodec</strong> model is composed of three main components:
 <h3 id="31encoder-decoder-architecture">3.1.Encoder &amp; Decoder Architecture·编码器与解码器架构<a class="headerlink" href="#31encoder-decoder-architecture" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>The <strong>EnCodec</strong> model is a simple streaming, convolutional-based encoder-decoder architecture with sequential modeling component applied over the latent representation, both on the encoder and on the decoder side.
-Such modeling framework was shown to provide great results in various audio-related tasks, e.g., source separation and enhancement (Défossez et al., 2019; Defossez et al., 2020), neural vocoders (<a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a>; <a href="../TTS3_Vocoder/2020.10.12_HiFi-GAN.md">HiFi-GAN (2020)</a>), audio codec (<a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>), and artificial bandwidth extension (<a href="../_Basis/2020.09.04_SEANet.md">SEANet (2020)</a>; Li et al., 2021).
+Such modeling framework was shown to provide great results in various audio-related tasks, e.g., source separation and enhancement (Défossez et al., 2019; Defossez et al., 2020), neural vocoders (<a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a>; <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN (2020)</a>), audio codec (<a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>), and artificial bandwidth extension (<a href="../_Basis/2020.09.04_SEANet.md">SEANet (2020)</a>; Li et al., 2021).
 We use the same architecture for 24 kHz and 48 kHz audio.</p>
 </blockquote>
 <p><strong>EnCodec</strong> 模型是一个简单的流式, 基于卷积的编码器-解码器架构, 其中在隐表示上应用序列建模组件, 编码器和解码器两侧都有.
@@ -1073,7 +1073,7 @@ Unlike Gritsenko et al. (2020), we take αi= 1.</p>
 <h4 id="discriminative-loss">Discriminative Loss·判别损失<a class="headerlink" href="#discriminative-loss" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>To further improve the quality of the generated samples, we introduce a perceptual loss term based on a multi-scale STFT-based (MS-STFT) discriminator, illustrated in Fig.02.
-Multi scale discriminators are popular for capturing different structures in audio signals (<a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a>; <a href="../TTS3_Vocoder/2020.10.12_HiFi-GAN.md">HiFi-GAN (2020)</a>; <a href="../TTS3_Vocoder/2021.03.09_GAN_Vocoder.md">GAN Vocoder (2021)</a>).
+Multi scale discriminators are popular for capturing different structures in audio signals (<a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a>; <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN (2020)</a>; <a href="../TTS3_Vocoder/2021.03.09_GAN_Vocoder.md">GAN Vocoder (2021)</a>).
 The MS-STFT discriminator consists in identically structured networks operating on multi-scaled complex-valued STFT with the real and imaginary parts concatenated.
 Each sub-network is composed of a 2D convolutional layer (using kernel size 3 x 8 with 32 channels), followed by 2D convolutions with increasing dilation rates in the time dimension of 1, 2 and 4, and a stride of 2 over the frequency axis.
 A final 2D convolution with kernel size 3 x 3 and stride (1, 1) provide the final prediction.
@@ -1082,7 +1082,7 @@ For 48 kHz audio, we double the size of each STFT window and train the discrimin
 We use LeakyReLU as a no weight normalization (Salimans &amp; Kingma, 2016) to our discriminator network.
 The MS-STFT discriminator model architecture is visually depicted in Fig.02.
 The adversarial loss for the generator is constructed as follows,‘g(ˆx) =1 KPkmax(0,1−Dk(ˆx))), whereKis the number of discriminators.
-Similarly to previous work on neural vocoders (<a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a>; <a href="../TTS3_Vocoder/2020.10.12_HiFi-GAN.md">HiFi-GAN (2020)</a>; <a href="../TTS3_Vocoder/2021.03.09_GAN_Vocoder.md">GAN Vocoder (2021)</a>), we additionally include a relative feature matching loss for the generator.
+Similarly to previous work on neural vocoders (<a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a>; <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN (2020)</a>; <a href="../TTS3_Vocoder/2021.03.09_GAN_Vocoder.md">GAN Vocoder (2021)</a>), we additionally include a relative feature matching loss for the generator.
 Formally, ‘feat(x, ˆx) =1 KL K X k=1 L X l=1 kDlk(x) − Dlk(ˆx)k1 mean�kDlk(x)k1� ,(2) where themeanis computed over all dimensions, (Dk) are the discriminators, andLis the number of layers in discriminators.
 The discriminators are trained to minimize the following hinge-loss adversarial loss function: Ld(x, ˆx) =1 KPKk=1max(0,1− Dk(x)) +max(0,1 +Dk(ˆx)), whereKis the number of discriminators.
 Given that the discriminator tend to overpower easily the decoder, we update its weight with a probability of 2/3 at 24 kHz, and 0.5 at 48 kHz.</p>
@@ -1175,7 +1175,7 @@ We provide more detailed ablation studies in the Appendix, Section A.3.</p>
 <h5 id="the-effect-of-discriminators-setup">The effect of discriminators setup<a class="headerlink" href="#the-effect-of-discriminators-setup" title="Permanent link">&para;</a></h5>
 <blockquote>
 <p>Various discriminators were proposed in prior work to improve the perceptual quality of the generated audio.
-The Multi-Scale Discriminator (MSD) model proposed by <a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a> and adopted in (<a href="../TTS3_Vocoder/2020.10.12_HiFi-GAN.md">HiFi-GAN (2020)</a>; <a href="../TTS3_Vocoder/2022.03.24_HiFipp.md">HiFi++ (2022)</a>; <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>), operates on the raw waveform at different resolutions.
+The Multi-Scale Discriminator (MSD) model proposed by <a href="../TTS3_Vocoder/2019.10.08_MelGAN.md">MelGAN (2019)</a> and adopted in (<a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN (2020)</a>; <a href="../TTS3_Vocoder/2022.03.24_HiFipp.md">HiFi++ (2022)</a>; <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>), operates on the raw waveform at different resolutions.
 We adopt the same MSD configuration as described in <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>.
 Kong et al. (2020) additionally propose the Multi-Period Discriminator (MPD) model, which reshapes the waveform to a 2D input with multiple periods.
 Next, the STFT Discriminator (Mono-STFTD) model was introduced in <a href="../2021.07.07_SoundStream/">SoundStream (2021)</a>, where a single network operates over the complex-valued STFT.
