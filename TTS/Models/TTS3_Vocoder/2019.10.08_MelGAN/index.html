@@ -1,0 +1,826 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>2019.10.08 MelGAN - Sapphire Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#melgan-generative-adversarial-networks-for-conditional-waveform-synthesis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Sapphire Lab" class="md-header__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sapphire Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2019.10.08 MelGAN
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Sapphire Lab" class="md-nav__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sapphire Lab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0abstract" class="md-nav__link">
+    0·Abstract·摘要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1introduction" class="md-nav__link">
+    1·Introduction·引言
+  </a>
+  
+    <nav class="md-nav" aria-label="1·Introduction·引言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pure-signal-processing-approaches" class="md-nav__link">
+    Pure Signal Processing Approaches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoregressive-neural-networks-based-models" class="md-nav__link">
+    Autoregressive neural-networks-based models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-autoregressive-models" class="md-nav__link">
+    Non autoregressive models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gans-for-audio" class="md-nav__link">
+    GANs for audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-contributions" class="md-nav__link">
+    Main Contributions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2methodology" class="md-nav__link">
+    2·Methodology·方法论
+  </a>
+  
+    <nav class="md-nav" aria-label="2·Methodology·方法论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21generator" class="md-nav__link">
+    2.1·Generator
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1·Generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#induced-receptive-field" class="md-nav__link">
+    Induced receptive field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkerboard-artifacts" class="md-nav__link">
+    Checkerboard artifacts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization-technique" class="md-nav__link">
+    Normalization Technique
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22discriminator" class="md-nav__link">
+    2.2·Discriminator
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2·Discriminator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-scale-architecture" class="md-nav__link">
+    Multi-Scale Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-based-objective" class="md-nav__link">
+    Window-Based Objective
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23training-objective" class="md-nav__link">
+    2.3·Training Objective
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3·Training Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature-matching" class="md-nav__link">
+    Feature Matching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24number-of-parameters-and-inference-speed" class="md-nav__link">
+    2.4·Number of parameters and inference speed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3results" class="md-nav__link">
+    3·Results
+  </a>
+  
+    <nav class="md-nav" aria-label="3·Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31ground-truth-mel-spectrogram-inversion" class="md-nav__link">
+    3.1·Ground truth mel-spectrogram inversion
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1·Ground truth mel-spectrogram inversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ablation-study" class="md-nav__link">
+    Ablation Study
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmarking-competing-models" class="md-nav__link">
+    Benchmarking Competing Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generalization-to-unseen-speakers" class="md-nav__link">
+    Generalization to unseen speakers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32end-to-end-speech-synthesis" class="md-nav__link">
+    3.2·End-to-end speech synthesis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33non-autoregressive-decoder-for-music-translation" class="md-nav__link">
+    3.3·Non autoregressive decoder for music translation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34non-autoregressive-decoder-for-vq-vae" class="md-nav__link">
+    3.4·Non-autoregressive decoder for VQ-VAE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4conclusion-and-future-work" class="md-nav__link">
+    4·Conclusion and future work
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p>@import "../../style.less"</p>
+<h1 id="melgan-generative-adversarial-networks-for-conditional-waveform-synthesis">MelGAN: Generative Adversarial Networks for Conditional Waveform Synthesis<a class="headerlink" href="#melgan-generative-adversarial-networks-for-conditional-waveform-synthesis" title="Permanent link">&para;</a></h1>
+<details>
+<summary>基本信息</summary>
+
+- 标题: MelGAN: Generative Adversarial Networks for Conditional Waveform Synthesis
+- 作者:
+  - Kundan Kumar
+  - Rithesh Kumar
+  - Thibault de Boissiere
+  - Lucas Gestin
+  - Wei Zhen Teoh
+  - Jose Sotelo
+  - Alexandre de Brebisson
+  - Yoshua Bengio
+  - Aaron Courville
+- 机构:
+  - Lyrebird AI
+  - University of Montreal
+- 时间:
+  - 2019.10.08 ArXiv v1
+  - 2019.10.28 ArXiv v2
+  - 2019.12.09 ArXiv v3
+  - NeurIPS2019
+- 链接:
+  - [ArXiv](https://arxiv.org/abs/1910.06711)
+  - [NeurIPS](https://proceedings.neurips.cc/paper/2019/hash/6804c9bca0a615bdb9374d00a9fcba59-Abstract.html)
+  - [Github](https://github.com/descriptinc/melgan-neurips)
+  - [Demo](https://melgan-neurips.github.io)
+- 标签:
+  - Vocoder (声码器)
+  - GAN (生成对抗网络)
+  - Adversarial Learning (对抗学习)
+  - OpenSource (开源)
+- 页数: 12
+- 引用: 
+- 被引: 954
+
+</details>
+
+<h2 id="0abstract">0·Abstract·摘要<a class="headerlink" href="#0abstract" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Previous works (<a href="../_Full/2018.02.12.Adversarial_Audio_Synthesis.md">"Adversarial Audio Synthesis" (2018)</a>; <a href="../TTS3_Vocoder/2019.02.23_GANSynth.md">GANSynth (2019)</a>) have found that generating coherent raw audio waveforms with GANs is challenging.
+In this paper, we show that it is possible to train GANs reliably to generate high quality coherent waveforms by introducing a set of architectural changes and simple training techniques.
+Subjective evaluation metric (<a href="../../Evaluations/MOS.md">Mean Opinion Score, or MOS</a>) shows the effectiveness of the proposed approach for high quality mel-spectrogram inversion.
+To establish the generality of the proposed techniques, we show qualitative results of our model in speech synthesis, music domain translation and unconditional music synthesis.
+We evaluate the various components of the model through ablation studies and suggest a set of guidelines to design general purpose discriminators and generators for conditional sequence synthesis tasks.
+Our model is non-autoregressive, fully convolutional, with significantly fewer parameters than competing models and generalizes to unseen speakers for mel-spectrogram inversion.
+Our pytorch implementation runs at more than 100x faster than realtime on GTX 1080Ti GPU and more than 2x faster than real-time on CPU, without any hardware specific optimization tricks.</p>
+</blockquote>
+<h2 id="1introduction">1·Introduction·引言<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Modelling raw audio is a particularly challenging problem because of the high temporal resolution of the data (usually at least 16,000 samples per second) and the presence of structure at different timescales with short and long-term dependencies.
+Thus, instead of modelling the raw temporal audio directly, most approaches simplify the problem by modelling a lower-resolution representation that can be efficiently computed from the raw temporal signal.
+Such a representation is typically chosen to be easier to model than raw audio while preserving enough information to allow faithful inversion back to audio.
+In the case of speech, aligned linguistic features (<a href="../TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet (2016)</a>) and mel-spectrograms (<a href="../TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2 (2017)</a>; <a href="">DeepVoice2 (2017)</a>) are two commonly used intermediate representations.
+Audio modelling is thus typically decomposed into two stages.
+The first models the intermediate representation given text as input.
+The second transforms the intermediate representation back to audio.
+In this work, we focus on the latter stage, and choose mel-spectrogram as the intermediate representation. (Our methods can likely be used with other representations but this is beyond the scope of this paper.)
+Current approaches to mel-spectrogram inversion can be categorized into three distinct families: pure signal processing techniques, autoregressive and non-autoregressive neural networks.
+We describe these three main lines of research in the following paragraphs.</p>
+<h3 id="pure-signal-processing-approaches">Pure Signal Processing Approaches<a class="headerlink" href="#pure-signal-processing-approaches" title="Permanent link">&para;</a></h3>
+<p>Different signal processing approaches have been explored to find some convenient low-resolution audio representations that can both be easily modelled and efficiently converted back to temporal audio.
+For example, the Griffin-Lim (Griffin &amp; Lim, 1984) algorithm allows one to efficiently decode an STFT sequence back to the temporal signal at the cost of introducing strong, robotic artifacts as noted in <a href="../TTS2_Acoustic/2017.03.29_Tacotron.md">Tacotron (2017)</a>.
+More sophisticated representations and signal processing techniques have been investigated.
+For instance, the <a href="../TTS3_Vocoder/2016.07.01_WORLD.md">WORLD vocoder (2016)</a> introduces an intermediate representation tailored to speech modelling based on mel-spectrogram-like features.
+The WORLD vocoder is paired with a dedicated signal processing algorithm to map the intermediate representation back to the original audio.
+It has been successfully used to carry out text-to-speech synthesis, for example in Char2Wav, where WORLD vocoder features are modelled with an attention-based recurrent neural network (Sotelo et al., 2017; <a href="../TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2 (2017)</a>; <a href="">DeepVoice3 (2017)</a>).
+The main issue with these pure signal processing methods is that the mapping from intermediate features to audio usually introduces noticeable artifacts.</p>
+<h3 id="autoregressive-neural-networks-based-models">Autoregressive neural-networks-based models<a class="headerlink" href="#autoregressive-neural-networks-based-models" title="Permanent link">&para;</a></h3>
+<p><a href="../TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet (2016)</a> is a fully convolutional autoregressive sequence model that produces highly realistic speech samples conditioned on linguistic features that are temporally aligned with the raw audio.
+It is also capable of generating high quality unconditional speech and music samples.
+SampleRNN (Mehri et al., 2016) is an alternative architecture to perform unconditional waveform generation which explicitly models raw audio at different temporal resolutions using multi-scale recurrent neural networks.
+WaveRNN (Kalchbrenner et al., 2018) is a faster auto-regressive model based on a simple, single-layer recurrent neural network.
+WaveRNN introduces various techniques, such as sparsification and subscale generations to further increase synthesis speed.
+These methods have produced state-of-the-art results in text-to-speech synthesis (Sotelo et al., 2017; <a href="../TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2 (2017)</a>; <a href="">DeepVoice3 (2017)</a>) and other audio generation tasks (Engel et al., 2017).
+Unfortunately, inference with these models is inherently slow and inefficient because audio samples must be generated sequentially.
+Thus auto-regressive models are usually not suited for real-time applications.</p>
+<h3 id="non-autoregressive-models">Non autoregressive models<a class="headerlink" href="#non-autoregressive-models" title="Permanent link">&para;</a></h3>
+<p>Recently, significant efforts have been dedicated to the development of non-autoregressive models to invert low-resolution audio representations.
+These models are orders of magnitudes faster than their auto-regressive counterparts because they are highly parallelizable and can fully exploit modern deep learning hardware (such as GPUs and TPUs).
+Two distinct methods have emerged to train such models. 
+1. <a href="../TTS3_Vocoder/2017.11.28_Parallel_WaveNet.md">Parallel WaveNet (2017)</a> and <a href="../E2E/2018.07.19_ClariNet.md">Clarinet (2018)</a> distill a trained auto-regressive decoder into a flow-based convolutional student model.
+The student is trained using a probability distillation objective based on the Kulback-Leibler divergence: KL[Pstudent||Pteacher], along with an additional perceptual loss terms. 
+2. <a href="2018.10.31_WaveGlow.md">WaveGlow (2018)</a> is a flow-based generative model based on <a href="">Glow (2018)</a>.
+WaveGlow is a very high capacity generative flow consisting of 12 coupling and 12 invertible 1x1 convolutions, with each coupling layer consisting of a stack of 8 layers of dilated convolutions.
+The authors note that it requires a week of training on 8 GPUs to get good quality results for a single speaker model.
+While inference is fast on the GPU, the large size of the model makes it impractical for applications with a constrained memory budget.</p>
+<h3 id="gans-for-audio">GANs for audio<a class="headerlink" href="#gans-for-audio" title="Permanent link">&para;</a></h3>
+<p>One family of methods that has so far been little explored for audio modelling are <a href="../_Basis/2014.06.10_GAN.md">Generative Adversarial Networks (GANs) (2014)</a>.
+GANs have made steady progress in unconditional image generation (Gulrajani et al., 2017; Karras et al., 2017, 2018), image-to-image translation (Isola et al., 2017; Zhu et al., 2017; Wang et al., 2018b) and video-to-video synthesis (Chan et al., 2018; Wang et al., 2018a).
+Despite their huge success in computer vision, we have not seen as much progress in using GANs for audio modelling.
+<a href="../TTS3_Vocoder/2019.02.23_GANSynth.md">GANSynth (2019)</a> use GANs to generate musical timbre by modelling STFT magnitudes and phase angles instead of modelling raw waveform directly.
+Neekhara et al. (2019) propose using GANs to learn mappings from mel-spectrogram to simple magnitude spectrogram, which is to be combined with phase estimations to recover raw audio waveform.
+Yamamoto et al. (2019) use GANs to distill an autoregressive model that generates raw speech audio, however their results show that adversarial loss alone is not sufficient for high quality waveform generation; it requires a KL-divergence based distillation objective as a critical component.
+To this date, making them work well in this domain has been challenging (<a href="../_Full/2018.02.12.Adversarial_Audio_Synthesis.md">"Adversarial Audio Synthesis" (2018)</a>).</p>
+</blockquote>
+<h3 id="main-contributions">Main Contributions<a class="headerlink" href="#main-contributions" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li>We introduce <strong><em>MelGAN</em></strong>, a non-autoregressive feed-forward convolutional architecture to perform audio waveform generation in a GAN setup.
+To the best of our knowledge, this is the first work that successfully trains GANs for raw audio generation without additional distillation or perceptual loss functions while still yielding a high quality text-to-speech synthesis model.</li>
+<li>We show that autoregressive models can be readily replaced with a fast and parallel <strong><em>MelGAN</em></strong> decoder for raw waveform generation through experiments in universal music translation, text-to-speech generation and unconditional music synthesis albeit with slight quality degradation.</li>
+<li>We also show that <strong><em>MelGAN</em></strong> is substantially faster than other mel-spectrogram inversion alternatives.
+In particular, it is 10 times faster than the fastest available model to date (<a href="2018.10.31_WaveGlow.md">WaveGlow (2018)</a>) without considerable degradation in audio quality.</li>
+</ul>
+</blockquote>
+<h2 id="2methodology">2·Methodology·方法论<a class="headerlink" href="#2methodology" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this section, we describe our generator and discriminator architectures for mel-spectrogram inversion.
+We describe the core components of the model and discuss modifications to perform unconditional audio synthesis.
+We compare the proposed model with competing approaches in terms of number of parameters and inference speed on both CPU and GPU.
+Fig.01 shows the overall architecture.</p>
+</blockquote>
+<p><img alt="" src="../Images/2019.10.08.MelGAN.Fig.01.png" /></p>
+<h3 id="21generator">2.1·Generator<a class="headerlink" href="#21generator" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h4 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h4>
+<p>Our generator is a fully convolutional feed-forward network with mel-spectrogram s as input and raw waveform x as output.
+Since the mel-spectrogram (used for all experiments) is at a 256× lower temporal resolution, we use a stack of transposed convolutional layers to upsample the input sequence.
+Each transposed convolutional layer is followed by a stack of residual blocks with dilated convolutions.
+Unlike traditional GANs, our generator does not use a global noise vector as input.
+We noticed in our experiments that there is little perceptual difference in the generated waveforms when additional noise is fed to the generator.
+This is a counter-intuitive result because the inversion of s → x involves a one-to-many mapping since s is a lossy-compression of x.
+However, this finding is consistent with Mathieu et al. (2015) and Isola et al. (2017), which show that noise input is not important if the conditioning information is very strong.</p>
+<h4 id="induced-receptive-field">Induced receptive field<a class="headerlink" href="#induced-receptive-field" title="Permanent link">&para;</a></h4>
+<p>In convolutional neural network based generators for images, there is an inductive bias that pixels which are spatially close-by are correlated because of high overlap among their induced receptive fields.
+We design our generator architecture to put an inductive bias that there is long range correlation among the audio timesteps.
+We added residual blocks with dilations after each upsampling layer, so that temporally far output activations of each subsequent layer has significant overlapping inputs.
+Receptive field of a stack of dilated convolution layers increases exponentially with the number of layers.
+Similar to <a href="../TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet (2016)</a>, incorporating these in our generator allows us to efficiently increase the induced receptive fields of each output time-step.
+This effectively implies larger overlap in the induced receptive field of far apart time-steps, leading to better long range correlation.</p>
+<h4 id="checkerboard-artifacts">Checkerboard artifacts<a class="headerlink" href="#checkerboard-artifacts" title="Permanent link">&para;</a></h4>
+<p>As noticed in Odena et al. (2016), deconvolutional generators are susceptible to generating "checkerboard" patterns if the kernel-size and stride of the transposed convolutional layers are not carefully chosen.
+<a href="../_Full/2018.02.12.Adversarial_Audio_Synthesis.md">"Adversarial Audio Synthesis" (2018)</a> examines this for raw waveform generation and finds that such repeated patterns lead to audible high frequency hissing noise.
+We solve this problem by carefully choosing the kernel-size and stride for our deconvolutional layers as a simpler alternative to PhaseShuffle layer introduced in <a href="../_Full/2018.02.12.Adversarial_Audio_Synthesis.md">"Adversarial Audio Synthesis" (2018)</a>.
+Following Odena et al. (2016), we use kernel-size as a multiple of stride.
+Another source of such repeated patterns, can be the dilated convolution stack if dilation and kernel size are not chosen correctly.
+We make sure that the dilation grows as a power of the kernel-size such that the receptive field of the stack looks like a fully balanced (seeing input uniformly) and symmetric tree with kernel-size as the branching factor.</p>
+<h4 id="normalization-technique">Normalization Technique<a class="headerlink" href="#normalization-technique" title="Permanent link">&para;</a></h4>
+<p>We noticed that the choice of normalization technique for the generator was extremely crucial for sample quality.
+Popular conditional GAN architectures for image generation (Isola et al., 2017; Wang et al., 2018b) use instance normalization (Ulyanov et al., 2016) in all the layers of the generator.
+However, in the case of audio generation we found that instance normalization washes away important important pitch information, making the audio sound metallic.
+We also obtained poor results when applying spectral normalization (Miyato et al., 2018) on the generator as suggested in Zhang et al. (2018); Park et al. (2019).
+We believe that the strong Lipshitz constraint on the discriminator impacts the feature matching objective (explained in Section 3.2) used to train the generator.
+Weight normalization (Salimans &amp; Kingma, 2016) worked best out of all the available normalization techniques since it does not limit the capacity of the discriminator or normalize the activations.
+It simply reparameterizes the weight matrices by decoupling the scale of the weight vector from the direction, to have better training dynamics.
+We therefore use weight normalization in all layers of the generator.</p>
+</blockquote>
+<h3 id="22discriminator">2.2·Discriminator<a class="headerlink" href="#22discriminator" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h4 id="multi-scale-architecture">Multi-Scale Architecture<a class="headerlink" href="#multi-scale-architecture" title="Permanent link">&para;</a></h4>
+<p>Following Wang et al. (2018b), we adopt a multi-scale architecture with 3 discriminators (D1, D2, D3) that have identical network structure but operate on different audio scales.
+D1 operates on the scale of raw audio, whereas D2, D3 operate on raw audio downsampled by a factor of 2 and 4 respectively.
+The downsampling is performed using strided average pooling with kernel size 4.
+Multiple discriminators at different scales are motivated from the fact that audio has structure at different levels.
+This structure has an inductive bias that each discriminator learns features for different frequency range of the audio.
+For example, the discriminator operating on downsampled audio, does not have access to high frequency component, hence, it is biased to learn discriminative features based on low frequency components only.</p>
+<h4 id="window-based-objective">Window-Based Objective<a class="headerlink" href="#window-based-objective" title="Permanent link">&para;</a></h4>
+<p>Each individual discriminator is a Markovian window-based discriminator (analogues to image patches, Isola et al. (2017)) consisting of a sequence of strided convolutional layers with large kernel size.
+We utilize grouped convolutions to allow the use of larger kernel sizes while keeping number of parameters small.
+While a standard GAN discriminator learns to classify between distributions of entire audio sequences, window-based discriminator learns to classify between distribution of small audio chunks.
+Since the discriminator loss is computed over the overlapping windows where each window is very large (equal to the receptive field of the discriminator), the <strong><em>MelGAN</em></strong> model learns to maintain coherence across patches.
+We chose window-based discriminators since they have been shown to capture essential high frequency structure, require fewer parameters, run faster and can be applied to variable length audio sequences.
+Similar to the generator, we use weight normalization in all layers of the discriminator.</p>
+</blockquote>
+<h3 id="23training-objective">2.3·Training Objective<a class="headerlink" href="#23training-objective" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>To train the GAN, we use the hinge loss version of the GAN objective (Lim &amp; Ye, 2017; Miyato et al., 2018).
+We also experimented with the least-squares (LSGAN) formulation (Mao et al., 2017) and noticed slight improvements with the hinge version.</p>
+<p>where x represents the raw waveform, s represents the conditioning information (eg.
+mel-spectrogram) and z represents the gaussian noise vector.</p>
+<h4 id="feature-matching">Feature Matching<a class="headerlink" href="#feature-matching" title="Permanent link">&para;</a></h4>
+<p>In addition to the discriminator’s signal, we use a feature matching objective (Larsen et al., 2015) to train the generator.
+This objective minimizes the L1 distance between the discriminator feature maps of real and synthetic audio.
+Intuitively, this can be seen as a learned similarity metric, where a discriminator learns a feature space that discriminates the fake data from real data.
+It is worth noting that we do not use any loss in the raw audio space.
+This is counter to other conditional GANs (Isola et al., 2017) where L1 loss is used to match conditionally generated images and their corresponding ground-truths, to enforce global coherence.
+In fact, in our case adding L1 loss in audio space introduces audible noise that hurts audio quality.</p>
+<p>For simplicity of notation, D(i) k represents the ith layer feature map output of the kth discriminator block, Ni denotes the number of units in each layer.
+Feature matching is similar to the perceptual loss (Dosovitskiy &amp; Brox, 2016; Gatys et al., 2016; Johnson et al., 2016).
+In our work, we use feature matching at each intermediate layer of all discriminator blocks.</p>
+<p>We use the following final objective to train the generator, with λ = 10 as in (Wang et al., 2018b):</p>
+</blockquote>
+<h3 id="24number-of-parameters-and-inference-speed">2.4·Number of parameters and inference speed<a class="headerlink" href="#24number-of-parameters-and-inference-speed" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>The inductive biases incorporated in our architecture make the overall model significantly smaller than competing models in terms of number of parameters.
+Being non-autoregressive and fully convolutional, our model is very fast at inference time, capable of running at a frequency of 2500kHz on GTX1080 Ti GPU in full precision (more than 10× faster than the fastest competing model), and 50kHz on CPU (more than 25× faster than the fastest competing model).
+We believe that our model is also well-suited for hardware specific inference optimization (such as half precision on Tesla V100 (Jia et al., 2018; Dosovitskiy &amp; Brox, 2016) and quantization (as done in Arik et al. (2017)) which will further boost inference speed.
+Table 1 shows the detailed comparison.</p>
+</blockquote>
+<h2 id="3results">3·Results<a class="headerlink" href="#3results" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>To encourage reproduciblity, we attach the code4 accompanying the paper.</p>
+</blockquote>
+<h3 id="31ground-truth-mel-spectrogram-inversion">3.1·Ground truth mel-spectrogram inversion<a class="headerlink" href="#31ground-truth-mel-spectrogram-inversion" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h4 id="ablation-study">Ablation Study<a class="headerlink" href="#ablation-study" title="Permanent link">&para;</a></h4>
+<p>First, in order to understand the importance of various components of our proposed model, we perform qualitative and quantitative analysis of the reconstructed audio for the melspectrogram inversion task.
+We remove certain key architectural decisions and evaluate the audio quality using the test set.
+Table 2 shows the mean opinion score of audio quality as assessed via human listening tests.
+Each model is trained for 400k iterations on the LJ Speech dataset (Ito, 2017).
+Our analysis leads to the following conclusions: Absence of dilated convolutional stacks in the generator or removing weight normalization lead to high frequency artifacts.
+Using a single discriminator (instead of multi-scale discriminator) produces metallic audio, especially while the speaker is breathing.
+Moreover, on our internal 6 clean speakers dataset, we notice that this version of the model skips certain voiced portions, completely missing some words.
+Using spectral normalization or removing the window-based discriminator loss makes it harder to learn sharp high frequency patterns, causing samples to sound significantly noisy.
+Adding an extra L1 penalty between real and generated raw waveform makes samples sound metallic with additional high frequency artifacts.</p>
+<h4 id="benchmarking-competing-models">Benchmarking Competing Models<a class="headerlink" href="#benchmarking-competing-models" title="Permanent link">&para;</a></h4>
+<p>Next, in order to compare the performance of <strong><em>MelGAN</em></strong> for inverting ground truth mel-spectrograms to raw audio against existing methods such as WaveNet vocoder, WaveGlow, Griffin-Lim and Ground Truth audio, we run an independent MOS test where the <strong><em>MelGAN</em></strong> model is trained until convergence (around 2.5M iterations).
+Similar to the ablation study, these comparisons are made on models trained on the LJ Speech Datset.
+The results of this comparison are shown in Table 3.</p>
+<p>This experiment result indicates that <strong><em>MelGAN</em></strong> is comparable in quality to state-of-the-art high capacity WaveNet-based models such as WaveNet and WaveGlow.
+We believe that the performance gap can be quickly bridged in the future by further exploring this direction of using GANs for audio synthesis.</p>
+<h4 id="generalization-to-unseen-speakers">Generalization to unseen speakers<a class="headerlink" href="#generalization-to-unseen-speakers" title="Permanent link">&para;</a></h4>
+<p>Interestingly, we noticed that when we train <strong><em>MelGAN</em></strong> on a dataset containing multiple speakers (internal 6 speaker dataset consisting of 3 male and 3 female speakers with roughly 10 hours per speaker), the resulting model is able to generalize to completely new (unseen) speakers outside the train set.
+This experiment verifies that <strong><em>MelGAN</em></strong> is able to learn a speakerinvariant mapping of mel spectrograms to raw waveforms.</p>
+<p>In an attempt to provide an easily comparable metric to systematically evaluate this generalization (for current and future work), we run an MOS hearing test for ground-truth mel-spectrogram inversion on the public available VCTK dataset (Veaux et al., 2017).
+The results of this test are shown in Table 4.</p>
+</blockquote>
+<h3 id="32end-to-end-speech-synthesis">3.2·End-to-end speech synthesis<a class="headerlink" href="#32end-to-end-speech-synthesis" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>We perform quantitative and qualitative comparisons between our proposed <strong><em>MelGAN</em></strong> vs competing models on mel-spectrogram inversion for end-to-end speech synthesis.
+We plug the <strong><em>MelGAN</em></strong> model in an end-to-end speech synthesis pipeline (Figure 2) and evaluate the text-to-speech sample quality with competing models.</p>
+<p>Specifically, we compare the sample quality when using <strong><em>MelGAN</em></strong> for spectrogram inversion vs WaveGlow using Text2mel - an improved version of the open-source char2wav model (Sotelo et al., 2017).
+Text2mel generates mel-spectrograms instead of vocoder frames, uses phonemes as the input representation and can be coupled with WaveGlow or <strong><em>MelGAN</em></strong> to invert the generated mel-spectrograms.
+We use this model since its sampler, trains faster and does not perform any mel-frequency clipping like Tacotron2.
+Additionally, we also include the state-of-the-art <a href="../TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2 model</a> coupled with WaveGlow for baseline comparison.
+We use the open source implementations of Tacotron2 and WaveGlow provided by NVIDIA in the Pytorch Hub repository to generate the samples.
+When using WaveGlow, we use the Denoiser with strength 0.01 provided in the official repository to remove high frequency artifacts.
+The results of the MOS tests are shown in the table 5.</p>
+<p>For all experiments, <strong><em>MelGAN</em></strong> was trained with batch size 16 on a single NVIDIA RTX2080Ti GPU.
+We use Adam as the optimizer with learning rate of 1e-4 with β1 = 0.5 and β2 = 0.9 for the generator and the discriminators.
+Samples for qualitative analysis can be found on the accompanied web-page 5.
+You can try the speech correction application here 6 created based on the end-to-end speech synthesis pipeline described above.</p>
+<p>The results indicate that <strong><em>MelGAN</em></strong> is comparable to some of the best performing models to date as a vocoder component of TTS pipeline.
+To the best of our ability we also created a TTS model with Text2mel + WaveNet vocoder to add to our comparison.
+We use the pretrained WaveNet vocoder model provided by Yamamoto (2019) and train the Text2mel model with the required data preprocessing performed.
+However the model only obtained an MOS score of 3.40 ± 0.04.
+We suspect that</p>
+</blockquote>
+<h3 id="33non-autoregressive-decoder-for-music-translation">3.3·Non autoregressive decoder for music translation<a class="headerlink" href="#33non-autoregressive-decoder-for-music-translation" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>To show that <strong><em>MelGAN</em></strong> is robust and can be plugged into any setup that currently operates using an autoregressive model to perform waveform synthesis, we replace the WaveNet-type autoregressive decoder in the Universal Music Translation Network (Mor et al., 2019) with a <strong><em>MelGAN</em></strong> generator.</p>
+<p>In this experiment, we use the pre-trained universal music encoder provided by the authors to transform 16kHz raw audio into a latent code sequence of 64 channels, with a downsampling factor of 800 in the time dimension.
+This implies a 12.5× information compression rate in this domain independent latent representation.
+Using only the data from a target musical domain, our <strong><em>MelGAN</em></strong> decoder is trained to reconstruct raw waveform from latent code sequence in the GAN setup we described earlier.
+We adjust the model hyperparameters to obtain upsampling factors of 10, 10, 2, 2, 2 to reach the input resolution.
+For each selected domain on MusicNet (Thickstun et al., 2018), a decoder is trained for 4 days on an RTX2080 Ti GPU on the available data.</p>
+<p>The music translation network augmented with <strong><em>MelGAN</em></strong> decoder is able to perform music translation from any musical domain to the target domain it is trained on with decent quality.
+We compare qualitative samples from our model against the original model here 5.
+The augmented model requires only around 160 milliseconds to translate 1 second of input music audio on an RTX2080 Ti GPU, about 2500 times faster than the original model on the same hardware.</p>
+</blockquote>
+<h3 id="34non-autoregressive-decoder-for-vq-vae">3.4·Non-autoregressive decoder for VQ-VAE<a class="headerlink" href="#34non-autoregressive-decoder-for-vq-vae" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Further establishing the generality of our approach, we substitute the decoder in Vector-Quantized VAEs (van den Oord et al., 2017) with our proposed adversarially learned decoder.
+VQ-VAE is a variational autoencoder which produces a downsampled discrete latent encoding of the input.
+VQ-VAE uses a high-capacity autoregressive WaveNet decoder to learn the data conditional p(x|zq).</p>
+<p>Figure 3 shows an adapted version of VQ-VAE for the task of music generation.
+In our variant, we use two encoders.
+The local encoder encodes the audio sequence into a 64× downsampled time series ze.
+Each vector in this sequence is then mapped to 1 of 512 quantized vectors using a codebook.
+This follows the same structure as proposed in (van den Oord et al., 2017).
+The second encoder outputs a global continuous-valued latent vector y.</p>
+<p>We show qualitative samples of unconditional piano music generation following (Dieleman et al., 2018), where we learn a single tier VQ-VAE on a raw audio scale, and use a vanilla autoregressive model (4-layer LSTM with 1024 units) to learn the prior over the sequence of discrete latents.
+We sample zq unconditionally using the trained recurrent prior model, and y from a unit gaussian distribution.
+Qualitatively, conditioned on the same sequence of discrete latents, sampling from the global latent’s prior distribution results in low level waveform variations such as phase shifts, but perceptually the outputs sound very similar.
+We find that the global latent is essential to improve reconstruction quality since it better captures stochasticity in the data conditional p(x|zq, y), as the discrete latent information learned via the local encoder (zq) is highly compressed.
+We use latent vector of size 256 and use the same hyper-parameters for training as mel-spectrogram inversion experiment.
+We used upsampling layers with 4x, 4x, 2x and 2x ratios to achieve 64x upsampling.</p>
+</blockquote>
+<h2 id="4conclusion-and-future-work">4·Conclusion and future work<a class="headerlink" href="#4conclusion-and-future-work" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>We have introduced a GAN architecture tailored for conditional audio synthesis and we demonstrated qualitative and quantitative results establishing the effectiveness and generality of the proposed methods.
+Our model has the following assets: it is very lightweight, can be trained quickly on a single desktop GPU, and it is very fast at inference time.
+We hope that our generator can be a plug-and-play replacement to compute-heavy alternatives in any higher-level audio related tasks.</p>
+<p>While the proposed model is well-suited to the task of training and generating sequences of varying length, it is limited by the requirement of time-aligned conditioning information.
+Indeed it has been designed to operate in the case where the output sequence length is a factor of the input sequence length, which is not always the case in practice.
+Likewise, feature matching with paired ground truth data is limiting because it is infeasible in some scenarios.
+For unconditional synthesis, the proposed model needs to defer learning a sequence of conditioning variables to other, better-suited methods such as VQ-VAE.
+Learning high quality unconditional GAN for audio is a very interesting direction for future work, which we believe will benefit from incorporating the specific architectural choices introduced in this work.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

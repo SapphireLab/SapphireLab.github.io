@@ -1,0 +1,924 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>ControlSpeech - Sapphire Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#controlspeech" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Sapphire Lab" class="md-header__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sapphire Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ControlSpeech
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Sapphire Lab" class="md-nav__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sapphire Lab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1introduction" class="md-nav__link">
+    1.Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2related-works" class="md-nav__link">
+    2.Related Works
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Related Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1discrete-codec-model" class="md-nav__link">
+    A.1.Discrete Codec Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2zero-shot-tts" class="md-nav__link">
+    A.2.Zero-shot TTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3text-prompt-based-controllable-tts" class="md-nav__link">
+    A.3.Text prompt based controllable TTS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3controlspeech" class="md-nav__link">
+    3.ControlSpeech
+  </a>
+  
+    <nav class="md-nav" aria-label="3.ControlSpeech">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31overall" class="md-nav__link">
+    3.1.Overall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32decoupling-and-generation-of-codec" class="md-nav__link">
+    3.2.Decoupling and generation of Codec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33style-mixture-semantic-density-modules" class="md-nav__link">
+    3.3.Style Mixture Semantic Density Modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34training-and-inference" class="md-nav__link">
+    3.4.Training and Inference
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4experiment" class="md-nav__link">
+    4.Experiment
+  </a>
+  
+    <nav class="md-nav" aria-label="4.Experiment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41controltoolkit" class="md-nav__link">
+    4.1.ControlToolkit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42evaluation-on-style-controllability" class="md-nav__link">
+    4.2.Evaluation on style controllability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43evaluation-on-the-timbre-cloning-task" class="md-nav__link">
+    4.3.Evaluation on the timbre cloning task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44evaluation-on-the-out-of-domain-style-control-task" class="md-nav__link">
+    4.4.Evaluation on the out-of-domain style control task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45evaluation-on-style-controlled-many-to-many-problems" class="md-nav__link">
+    4.5.Evaluation on style controlled many-to-many problems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46ablation-experiment" class="md-nav__link">
+    4.6.Ablation experiment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5conclusion" class="md-nav__link">
+    5.Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fablation-experiments-about-mixed-distributions" class="md-nav__link">
+    F.Ablation experiments about mixed distributions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="controlspeech">ControlSpeech<a class="headerlink" href="#controlspeech" title="Permanent link">&para;</a></h1>
+<details>
+<summary>基本信息</summary>
+标题: ControlSpeech: Towards Simultaneous Zero-shot Speaker Cloning and Zero-shot Language Style Control With Decoupled Codec
+作者:
+  - [Shengpeng Ji](../../Authors/Shengpeng_Ji.md)
+  - [Jialong Zuo](../../Authors/Jialong_Zuo.md) 
+  - [Minghui Fang](../../Authors/Minghui_Fang.md) 
+  - [Siqi Zheng](../../Authors/Siqi_Zheng.md)
+  - [Qian Chen](../../Authors/Qian_Chen.md)
+  - [Wen Wang](../../Authors/Wen_Wang.md)
+  - [Ziyue Jiang](../../Authors/Ziyue_Jiang.md)
+  - [Hai Huang](../../Authors/Hai_Huang.md)
+  - [Xize Cheng](../../Authors/Xize_Cheng_(成曦泽).md)
+  - [Rongjie Huang](../../Authors/Rongjie_Huang_(黄融杰).md) 
+  - [Zhou Zhao](../../Authors/Zhou_Zhao_(赵洲).md)
+- 机构:
+  - 浙江大学
+- 时间:
+  - 2024.06.03 ArXiv v1
+- 链接:
+  - [ArXiv]()
+  - [DOI]()
+  - [Github](https://github.com/jishengpeng/ControlSpeech)
+  - [Demo]()
+- 标签:
+  - ?
+- 页数: 16
+- 引用: 54
+- 被引: 0
+
+</details>
+
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<details>
+<summary>原文</summary>
+
+> In this paper, we present ***ControlSpeech***, a text-to-speech (TTS) system capable of fully cloning the speaker’s voice and enabling arbitrary control and adjustment of speaking style, merely based on a few seconds of audio prompt and a simple textual style description prompt.
+> Prior zero-shot TTS models and controllable TTS models either could only mimic the speaker’s voice without further control and adjustment capabilities or were unrelated to speaker-specific voice generation.
+> Therefore, ***ControlSpeech*** focuses on a more challenging new task—a TTS system with controllable timbre, content, and style at the same time.
+> ***ControlSpeech*** takes speech prompts, content prompts, and style prompts as inputs and utilizes bidirectional attention and mask-based parallel decoding to capture corresponding codec representations in a discrete decoupling codec space.
+> Moreover, we discovered the issue of text style controllability in a many-to-many mapping fashion and proposed the ***Style Mixture Semantic Density (SMSD)*** model to resolve this problem.
+> ***SMSD*** module which is based on Gaussian mixture density networks, is designed to enhance the fine-grained partitioning and sampling capabilities of style semantic information and generate speech with more diverse styles.
+> In terms of experiments, we make available a controllable model toolkit called ***ControlToolkit*** with a new style controllable dataset, some replicated baseline models and propose new metrics to evaluate both the control capability and the quality of generated audio in ***ControlSpeech***.
+> The relevant ablation studies validate the necessity of each component in ***ControlSpeech*** is necessary.
+> We hope that ***ControlSpeech*** can establish the next foundation paradigm of controllable speech synthesis.
+> The relevant code and demo are available at https://github.com/jishengpeng/ControlSpeech.
+
+</details>
+<p><br></p>
+<p>本项工作展示了 <strong><em>ControlSpeech</em></strong>, 一个能够仅基于数秒的音频提示和简单的文本风格描述提示从而完整克隆说话人声音且能任意控制和调节说话风格的文本转语音系统.
+之前的零样本文本转语音模型和可控制文本转语音模型要么只能模仿说话人声音而没有进一步控制和调节的能力, 要么和具体说话人的声音生成无关.
+因此, <strong><em>ControlSpeech</em></strong> 聚焦于更具挑战性的新任务: 音色, 内容, 风格能同时可控的文本转语音系统.
+<strong><em>ControlSpeech</em></strong> 接受音频提示, 内容提示, 风格提示作为输入, 并采用双向注意力和基于掩码的并行解码器来捕捉离散解耦编解码空间内的相应编解码表示.
+此外, 我们发现在多到多映射范式下文本风格可控性问题, 并提出 <strong><em>风格混合语音密度模型 (Style Mixture Semantic Density, SMSD)</em></strong> 模块来解决此问题.
+<strong><em>SMSD</em></strong> 模块基于高斯混合密度网络, 被设计用于增强风格语义信息的细粒度划分和采样能力, 并用更多样性的风格生成语音.
+在实验方面, 我们提供了一个名为 <strong><em>ControlToolkit</em></strong> 的可控模型工具箱, 以及一个新的风格可控数据集, 一些复现的基线模型, 并提出新的指标来评估 <strong><em>ControlSpeech</em></strong> 的控制能力和生成音频质量.
+相关的消融实验验证了 <strong><em>ControlSpeech</em></strong> 中各个组件的必要性.
+我们希望 <strong><em>ControlSpeech</em></strong> 能够成为可控语音合成的下一代基础范式.
+相关代码和示例可在 https://github.com/jishengpeng/ControlSpeech 获得.</p>
+<h2 id="1introduction">1.Introduction<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
+<details>
+<summary>原文</summary>
+
+> Over the past decade, the field of speech synthesis has seen remarkable advancements ([FastSpeech2](../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md), [VITS](../../Models/E2E/2021.06.11_VITS.md), [FastDiff](../../Models/Diffusion/2022.04.21_FastDiff.md), [FastSpeech](../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md)), achieving synthesized speech that rivals real human speech in terms of expressiveness and naturalness ([NaturalSpeech](../../Models/E2E/2022.05.09_NaturalSpeech.md)).
+> Recently, with the development of large language models (GPT-3, GPT-4, LLaMA) and generative models (DDPM, [HiFi-GAN](../../Models/TTS3_Vocoder/2020.10.12_HiFi-GAN.md), [Glow-TTS](../../Models/TTS2_Acoustic/2020.05.22_Glow-TTS.md), [BVAE-TTS](../../Models/_tmp/BVAE-TTS.md)) in other domains, the tasks of zero-shot TTS ([VALL-E](../../Models/Speech_LLM/2023.01.05_VALL-E.md), [NaturalSpeech 2](../../Models/Diffusion/2023.04.18_NaturalSpeech2.md), [VoiceBox](../../Models/_tmp/2023.06.23_VoiceBox.md), [Mega-TTS](../../Models/_tmp/2023.06.06_Mega-TTS.md), [SoundStorm](../../Models/Speech_LLM/2023.05.16_SoundStorm.md)) and style-controllable speech synthesis ([PromptTTS](../../Models/_tmp/2022.11.22_PromptTTS.md), [PromptStyle](../../Models/E2E/2023.05.31_PromptStyle.md), [InstructTTS](../../Models/_tmp/2023.01.31_InstructTTS.md), [SALL-E](../../Datasets/2023.08.28_TextrolSpeech.md)) have garnered significant attention in the speech domain due to their powerful zero-shot generation and controllability capabilities.
+> Zero-shot TTS ([VALL-E](../../Models/Speech_LLM/2023.01.05_VALL-E.md), [NaturalSpeech 2](../../Models/Diffusion/2023.04.18_NaturalSpeech2.md), [SPEAR-TTS](../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md)) refers to the ability to perfectly clone an unseen speaker’s voice using only a few seconds of a speech prompt by significantly scaling up both the corpus and model sizes.
+> Style-controllable TTS ([PromptTTS](../../Models/_tmp/2022.11.22_PromptTTS.md), [InstructTTS](../../Models/_tmp/2023.01.31_InstructTTS.md)), on the other hand, allows for the control of a speaker’s style (prosody, accent, emotion, etc.) through textual descriptions.
+
+</details>
+<p><br></p>
+<p>在过去的十年中, 语音合成领域取得了显著的进步, 例如 <a href="../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a>, <a href="../../E2E/2021.06.11_VITS/">VITS</a>, <a href="../../Models/Diffusion/2022.04.21_FastDiff.md">FastDiff</a>, <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>, 实现了在表达性和自然度上能与真人语音相媲美的合成语音.
+近期, 随着大语言模型 (GPT-3, GPT-4, LLaMA) 和在其他领域的生成模型 (DDPM, <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN</a>, <a href="../../Models/TTS2_Acoustic/2020.05.22_Glow-TTS.md">Glow-TTS</a>, <a href="../../Models/_tmp/BVAE-TTS.md">BVAE-TTS</a>) 的发展, 零样本文本转语音任务 (<a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E</a>, <a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech 2</a>, <a href="../../Models/_tmp/2023.06.23_VoiceBox.md">VoiceBox</a>, <a href="../../Models/_tmp/2023.06.06_Mega-TTS.md">Mega-TTS</a>, <a href="../../Models/Speech_LLM/2023.05.16_SoundStorm.md">SoundStorm</a>) 和风格可控语音合成 (<a href="../../Models/_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../../Models/E2E/2023.05.31_PromptStyle.md">PromptStyle</a>, <a href="../../Models/_tmp/2023.01.31_InstructTTS.md">InstructTTS</a>, <a href="../../Datasets/2023.08.28_TextrolSpeech.md">SALL-E</a>) 在语音领域受到了极大的关注, 这得益于它们强大的零样本生成和可控性能力.</p>
+<ul>
+<li>零样本文本转语音 (<a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E</a>, <a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech 2</a>, <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS</a>) 指的是通过显著扩撒语料库和模型规模, 仅使用几秒钟的语音提示就能完美克隆一个未见过的说话人的声音.</li>
+<li>风格可控文本转语音 (<a href="../../Models/_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../../Models/_tmp/2023.01.31_InstructTTS.md">InstructTTS</a>) 允许通过文本描述来控制说话人的风格 (语调, 口音, 情绪等).</li>
+</ul>
+<details>
+<summary>原文</summary>
+
+> However, these two types of models have their own limitations.
+> As illustrated in the right panel of Figure 1, zero-shot TTS can clone the voice of any speaker, but the style is fixed and cannot be further controlled or adjusted.
+> Conversely, style-controllable TTS can synthesize speech in any desired style, but it cannot specify the timbre of the synthesized voice.
+> Although some efforts ([InstructTTS](../../Models/_tmp/2023.01.31_InstructTTS.md), [PromptStyle](../../Models/E2E/2023.05.31_PromptStyle.md)) have been made to use speaker IDs for control, these approaches are limited to testing on constrained in-domain datasets.
+> Therefore, we propose a novel model ***ControlSpeech***, which simultaneously controls timbre, content, and style, demonstrating powerful zero-shot cloning and control capabilities at the same time.
+
+</details>
+<p><br></p>
+<p>但是, 这两种类型的模型有着它们的局限性.
+如图 01 的右侧, 零样本文本转语音能够克隆任意说话人的声音, 但风格是固定的, 且无法控制或调整.
+而风格可控文本转语音则相反, 能够合成任何想要的风格的语音, 但无法指定合成声音的音素.
+尽管有一些工作 (<a href="../../Models/_tmp/2023.01.31_InstructTTS.md">InstructTTS</a>, <a href="../../Models/E2E/2023.05.31_PromptStyle.md">PromptStyle</a>) 试图使用说话人 ID 来控制, 但这些方法仅限于在受限的数据集上进行测试.
+因此, 我们提出了一种新的模型 <strong><em>ControlSpeech</em></strong>, 它能同时控制音色, 内容, 风格, 展示了强大的零样本克隆和控制能力.</p>
+<details>
+<summary>原文</summary>
+
+> For this novel task, simply adding a style prompt control module or a speech prompt control module to previous model frameworks is evidently insufficient.
+> The information from the two types of prompts can become entangled and interfere with each other.
+> For instance, the speech prompt might contain a style different from that described by the text.
+> Inspired by this observation, we attempted to incorporate the concept of an information bottleneck in ***ControlSpeech*** to achieve independent disentanglement of timbre, content, and style.
+> Additionally, to attain robust zero-shot speaker cloning capabilities, a large-scale, multi-speaker training dataset ([MLS](../../Datasets/2020.12.07_MLS.md), [Libri-Light](../../Datasets/LibriLight.md)) is essential.
+> Leveraging recent breakthroughs in the codec domain, we used [FACodec](../Diffusion/2024.03.05_NaturalSpeech3.md) which is pre-trained on 60,000 hours ([Libri-Light](../../Datasets/LibriLight.md)) speech as the speech tokenizer for ***ControlSpeech***.
+> During the speech synthesis process, we adopted [FastSpeech2](../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md) as the base synthesis framework and employed an advanced non-autoregressive confidence-based codec generator [5, 2, [Phenaki](../../Models/_Basis_CV/2022.10.05_Phenaki.md)] as our decoder.
+
+</details>
+<p><br></p>
+<p>对于这一新任务, 仅仅在之前的模型框架上简单地添加风格提示控制模块或语音提示控制模块是不够的.
+这两类提示包含的信息可能会互相纠缠相互干扰.
+例如, 语音提示可能包含于文本描述不同的风格.
+受此观察启发, 我们尝试在 <strong><em>ControlSpeech</em></strong> 中引入信息瓶颈的概念, 以实现音色, 内容和风格的独立解耦.
+此外, 为了获得强大的零样本说话人克隆能力, 一个大规模的多说话人训练数据集 (<a href="../../Datasets/2020.12.07_MLS.md">MLS</a>, <a href="../../Datasets/LibriLight.md">Libri-Light</a>) 是必要的.
+结合近期在编解码器领域的突破, 我们使用在 60,000 小时的 <a href="../../Datasets/LibriLight.md">Libri-Light</a> 语音上预训练的 <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a> 作为 <strong><em>ControlSpeech</em></strong> 的语音分词器.
+在语音合成过程中, 我们采用 <a href="../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a> 作为基础合成框架, 并采用先进的非自回归置信度编解码器生成器 (MaskGIT, <a href="../../Models/Speech_LLM/2023.05.16_SoundStorm.md">SoundStorm</a>, <a href="../../Models/_Basis_CV/2022.10.05_Phenaki.md">Phenaki</a>) 作为解码器.</p>
+<details>
+<summary>原文</summary>
+
+> Moreover, during our experiments, we identified a many-to-many problem in style control: different style descriptions might correspond to the same audio, and a single style description might correspond to varying degrees of one style for the same speaker.
+> Therefore, we designed a novel ***Style Mixture Semantic Density Sampling (SMSD)*** module to address the many-to-many issue in style control. 
+> We incorporate the global semantic information of the style control and exploit sampling from a mixed distribution [53, 18] of style descriptions to achieve hierarchical control.
+> Additionally, we also design a noise disturbance module in ***SMSD*** to further enhance the diversity of styles.
+
+</details>
+<p><br></p>
+<p>此外, 在我们的实验中, 我们发现风格控制中的多对多问题: 不同风格描述可能对应同一个音频, 单个风格描述可能对应同一个说话人单个风格的不同程度.
+因此, 我们设计了一个新的 <strong><em>风格混合语义密度采样 (Style Mixture Semantic Density Sampling, SMSD)</em></strong> 模块来处理这一风格控制中的多对多问题.
+我们合并了风格控制的全局语语义信息并利用从风格描述的混合分布中采样来达到层次控制的效果.
+此外, 我们在 <strong><em>SMSD</em></strong> 中还设计了一个噪声扰动模块, 以进一步增强风格的多样性.</p>
+<details>
+<summary>原文</summary>
+
+> To comprehensively evaluate ***ControlSpeech***’s controllability, timbre similarity, audio quality, diversity, and generalization, we created a new dataset called ***VccmDataset*** and established new metrics based on [TextrolSpeech](../../Datasets/2023.08.28_TextrolSpeech.md).
+> Considering the lack of open-source text style-controllable TTS models, we have consolidated the re-implemented baselines, ***VccmDataset*** and some evaluation scripts into a toolkit named ***ControlToolkit*** to foster further advancements in the controllable TTS field.
+
+</details>
+<p><br></p>
+<p>为了全面评估 <strong><em>ControlSpeech</em></strong> 的可控性, 音色相似性, 音频质量, 多样性, 泛化能力, 我们创建了一个新的数据集 <strong><em>VccmDataset</em></strong>, 并基于 <a href="../../Datasets/2023.08.28_TextrolSpeech.md">TextrolSpeech</a> 建立了新的评价指标.
+考虑到缺乏开源的文本风格可控 TTS 模型, 我们将重新实现的基线, <strong><em>VccmDataset</em></strong> 以及一些评价脚本整合到名为 <strong><em>ControlToolkit</em></strong> 的工具箱中, 以促进可控 TTS 领域的进一步发展.</p>
+<details>
+<summary>原文</summary>
+
+> In summary, our contributions are as follows:
+> - We broadened the scope of controllable speech generation tasks by proposing the ***ControlSpeech***.
+> To the best of our knowledge, ***ControlSpeech*** is the first TTS model capable of zero-shot control over both timbre and style simultaneously.
+> - We designed a TTS technology pathway based on disentangled codec representations and validated the necessity of this disentanglement approach.
+> Additionally, within ***ControlSpeech***, we introduced the novel ***Style Mixture Semantic Density (SMSD)*** module to address the many-to-many problem in style control.
+> - Given the lack of baselines and datasets in the style-controllable TTS field, we compiled a new dataset called ***VccmDataset*** and established relevant new metrics.
+> We also reproduced related baselines and open-sourced them along with ***VccmDataset*** in the ***ControlToolkit***.
+> - We conducted comprehensive experiments, demonstrating that ***ControlSpeech*** exhibits comparable or SOTA performance in terms of controllability, timbre similarity, audio quality, robustness, and generalization.
+
+</details>
+<p><br></p>
+<p>综上所述, 我们的贡献如下:
+- 我们提出了 <strong><em>ControlSpeech</em></strong>, 拓宽了可控语音合成任务的范围;
+  据我们所知, <strong><em>ControlSpeech</em></strong> 是第一个能够同时对音色和风格进行零样本控制的 TTS 模型.
+- 我们设计了一套基于分离的编解码器表示的 TTS 技术路线, 并验证了这种分离方法的必要性.
+  此外, 在 <strong><em>ControlSpeech</em></strong> 中, 我们引入了新的 <strong><em>风格混合语义密度 (Style Mixture Semantic Density, SMSD)</em></strong> 模块来解决风格控制中的多对多问题.
+- 由于风格可控 TTS 领域缺乏基线和数据集, 我们编译了一份名为 <strong><em>VccmDataset</em></strong> 的新数据集, 并建立了相关的新评价指标.
+  我们还在 <strong><em>ControlToolkit</em></strong> 中复现了相关的基线并开源了 <strong><em>VccmDataset</em></strong>.
+- 我们进行了全面的实验, 证明了 <strong><em>ControlSpeech</em></strong> 在可控性, 音色相似性, 音频质量, 健壮性, 泛化能力方面都具有与 SOTA 相当或更好的性能.</p>
+<h2 id="2related-works">2.Related Works<a class="headerlink" href="#2related-works" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this section, we will introduce zero-shot TTS, text prompt-based controllable TTS, and discrete codec tasks related to <strong><em>ControlSpeech</em></strong>.
+Due to space constraints, the detailed discussion of related work is provided in appendix A.
+However, we encourage reviewers to closely examine the connections and distinctions between <strong><em>ControlSpeech</em></strong> and prior related work.</p>
+</blockquote>
+<p>注: 由附录 A 移动至此.</p>
+<h3 id="a1discrete-codec-model">A.1.Discrete Codec Model<a class="headerlink" href="#a1discrete-codec-model" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>In recent times, neural acoustic codecs (<a href="../../Speech_Neural_Codec/2021.07.07_SoundStream/">SoundStream</a>, <a href="../../Speech_Neural_Codec/2022.10.24_EnCodec/">EnCodec</a>, <a href="../../Models/Speech_Neural_Codec/2023.05.04_HiFi-Codec.md">HiFi-Codec</a>, <a href="../../TTS3_Vocoder/2023.03.01_Vocos/">Vocos</a>, <a href="../../Models/Speech_Neural_Codec/2023.08.31_SpeechTokenizer.md">SpeechTokenizer</a>, <a href="../../Models/Speech_Neural_Codec/2023.09.14_FunCodec.md">FunCodec</a>) have demonstrated remarkable capabilities in reconstructing high-quality audio at extremely low bitrates.
+To elaborate, <a href="../../Speech_Neural_Codec/2021.07.07_SoundStream/">SoundStream</a> utilizes a model architecture comprising a fully convolutional encoder/decoder network and a residual vector quantizer (RVQ) to effectively compress speech.
+<a href="../../Speech_Neural_Codec/2022.10.24_EnCodec/">EnCodec</a> employs a streaming encoder-decoder architecture with a quantized latent space, trained in an end-to-end fashion.
+<a href="../../Models/Speech_Neural_Codec/2023.05.04_HiFi-Codec.md">HiFi-Codec</a> introduces a group-residual vector quantization (GRVQ) technique to reduce the number of quantizers.
+<a href="../../TTS3_Vocoder/2023.03.01_Vocos/">Vocos</a> aims to bridge the gap between time-domain and Fourier-based neural vocoders for high-quality audio synthesis.
+In order to narrow the gaps between text and acoustic codec tokens, <a href="../../Models/Speech_Neural_Codec/2023.08.31_SpeechTokenizer.md">SpeechTokenizer</a> and <a href="../../Models/Speech_Neural_Codec/2023.09.14_FunCodec.md">FunCodec</a> introduces the concept of using semantic tokens in the first channel of discrete codecs.
+This transition helps mitigate the disparity between text and acoustic tokens.
+<a href="../../Models/Speech_Neural_Codec/2024.02.19_Language-Codec.md">Language-Codec</a> employs the MCRVQ mechanism to evenly distribute information from the first three channels, thereby reducing the gap between text and acoustic tokens.
+<a href="../../Models/Speech_Neural_Codec/2023.06.11_Descript-Audio-Codec.md">DAC</a> greatly improves the quality of codec reconstruction by introducing multi-scale discriminators loss.
+<a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a> pioneered the concept of a disentangled codec, decomposing speech into timbre, content, prosody, and acoustic details within its discrete space, and demonstrated a certain degree of voice conversion capability.
+In an endeavor to enhance the disentangled codec, we explored modifying the parallel vector quantization structure to a residual vector quantization form and incorporating additional stylistic supervisory signals.
+However, our efforts did not yield substantial improvements compared to <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a>.
+Therefore, we utilize the pre-trained <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a> to extract the corresponding codec representations in <strong><em>ControlSpeech</em></strong>.</p>
+</blockquote>
+<h3 id="a2zero-shot-tts">A.2.Zero-shot TTS<a class="headerlink" href="#a2zero-shot-tts" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Zero-shot speech synthesis refers to the ability to synthesize the voice of an unseen speaker based solely on a few seconds of audio prompt, also known as voice cloning.
+In recent months, with the advancement of generative large-scale models, a plethora of outstanding works have emerged.
+<a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E</a> leverages discrete codec representations and combines autoregressive and non-autoregressive models in a cascaded manner, preserving the powerful contextual capabilities of language models.
+<a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech 2</a> employs continuous vectors instead of discrete neural codec tokens and introduces in-context learning to a latent diffusion model.
+<a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS</a> and <a href="../../Models/_tmp/2023.05.30_Make-A-Voice.md">Make-A-Voice</a> utilize semantic tokens to reduce the gap between text and acoustic features.
+<a href="../../Models/_tmp/2023.06.23_VoiceBox.md">VoiceBox</a> is a nonautoregressive flow-matching model trained to infill speech, given audio context and text.
+<a href="../../Models/_tmp/2023.06.06_Mega-TTS.md">Mega-TTS</a>, <a href="../../Models/_tmp/2023.07.14_Mega-TTS2.md">Mega-TTS2</a>, on the other hand, utilizes traditional mel-spectrograms, decoupling timbre and prosody and further modeling the prosody using an autoregressive approach.
+<a href="../../Models/_tmp/2023.06.23_VoiceBox.md">VoiceBox</a> and <a href="../../Models/_tmp/P-Flow.md">P-Flow</a> employ flowing models as generators, demonstrating robust generative performance.
+<a href="../../Models/Speech_LLM/2023.05.16_SoundStorm.md">SoundStorm</a> and <a href="../../Models/_tmp/2024.02.14_MobileSpeech.md">MobileSpeech</a> utilize a non-autoregressive and mask-based iterative generation method, achieving an excellent balance between inference speed and generation quality.
+Most relevant to our work is <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">NaturalSpeech 3</a>, which also leverages the latest disentangled codec but primarily aims to enhance zero-shot model performance.
+In contrast, we argue that a disentangled codec is inherently more suitable as the speech representation for controllable generative models.
+It is noteworthy that current zero-shot TTS models are unable to achieve arbitrary language style control.
+<strong><em>ControlSpeech</em></strong> is the first TTS model capable of simultaneously performing zero-shot timbre cloning and style control.</p>
+</blockquote>
+<h3 id="a3text-prompt-based-controllable-tts">A.3.Text prompt based controllable TTS<a class="headerlink" href="#a3text-prompt-based-controllable-tts" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Some recent studies propose to control speech style through natural language prompts, providing a more interpretable and user-friendly approach of control.
+<a href="../../Models/_tmp/2022.11.22_PromptTTS.md">PromptTTS</a> employs manually annotated text prompts to describe four to five attributes of speech (gender, pitch, speaking speed, energy, and emotion) and trains model on two synthesized speaker datasets and LibriTTS.
+<a href="../../Models/_tmp/2023.01.31_InstructTTS.md">InstructTTS</a> is a three-stage training approach to capture semantic information from natural language style prompts as conditioning to the TTS system.
+<a href="../../Datasets/2023.08.28_TextrolSpeech.md">Textrolspeech</a> introduces an efficient architecture which treats text controllable TTS as a language model task.
+<a href="../../Models/E2E/2023.05.31_PromptStyle.md">PromptStyle</a> proposes a two-stage TTS approach for cross-speaker style transfer with natural language descriptions based on <a href="../../E2E/2021.06.11_VITS/">VITS</a>.
+<a href="../../Models/_tmp/2023.09.05_PromptTTS2.md">PromptTTS 2</a> proposes an automatic description creation pipeline leveraging LLM [4] and adopts a diffusion model to capture the one-to-many relationship.
+It is noteworthy that existing stylecontrollable TTS models are either speaker-independent or can only control timbre using speaker IDs, without the capability for timbre cloning.
+The introduction of <strong><em>ControlSpeech</em></strong> significantly expands the boundaries of the controllable TTS task.</p>
+</blockquote>
+<h2 id="3controlspeech">3.<strong><em>ControlSpeech</em></strong><a class="headerlink" href="#3controlspeech" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this section, we will first introduce the motivation and overall design of <strong><em>ControlSpeech</em></strong>.
+Next, we will provide a detailed explanation of the disentanglement and generation process of the codec, followed by the <strong><em>Style Mixture Semantic Density (SMSD)</em></strong> module.
+Finally, we will discuss the training loss and inference process of <strong><em>ControlSpeech</em></strong>.</p>
+</blockquote>
+<h3 id="31overall">3.1.Overall<a class="headerlink" href="#31overall" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>To achieve simultaneous zero-shot timbre cloning and style cloning, one viable approach is to leverage a large-scale pre-trained disentangled codec space.
+On one hand, extensive pre-training on a diverse speaker dataset ensures fundamental zero-shot capabilities.
+On the other hand, disentangled codec representations effectively reduce the entanglement between timbre and style.
+As illustrated in Figure 2, <strong><em>ControlSpeech</em></strong> is fundamentally an encoder-decoder model based on <a href="../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a> for codec generation.
+The dashed box represents frame-level features, while the solid box represents global features.
+The <strong><em>Style Mixture Semantic Density (SMSD)</em></strong> module samples style text to generate corresponding global style representations, which are then combined with text representations from the text encoder via a cross-attention module.
+These combined representations are fed into the duration prediction model and subsequently into the codec generator, which is a non-autoregressive <a href="../../Models/ASR/2020.05.16_Conformer.md">Conformer</a> based on mask iteration and parallel generation.
+The timbre extractor is a Transformer encoder that converts the output of the speech encoder into a global vector, representing the timbre attributes.
+By inputting a style description Xs, a content text Xc, and a speech prompt Xt, <strong><em>ControlSpeech</em></strong> aims to sequentially generate the corresponding style codec Ys, content codec Yc, and timbre embedding Yt.
+These representations are then concatenated and upsampled into speech through the <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">pre-trained codec decoder</a>.</p>
+</blockquote>
+<h3 id="32decoupling-and-generation-of-codec">3.2.Decoupling and generation of Codec<a class="headerlink" href="#32decoupling-and-generation-of-codec" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>We utilize <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a> as our codec disentangler.
+During the training of <strong><em>ControlSpeech</em></strong>, we freeze the corresponding codec encoder to obtain downsampled compressed audio frames h from the speech Y .
+The frames h are processed through the disentangling quantizer module and the timbre extractor module to derive the original content codec Yc, prosody codec Yp, acoustic codec Ya, and timbre information Yt.
+We exclude the content Yc and timbre information Yt of the representation collectively referred to as style Ys.
+In practice, we concatenate the prosody codec Yp and the acoustic codec Ya along the channel dimension to obtain the corresponding style codec Ys, as represented below:</p>
+<p>The codec generation process comprises two stages.
+In the first stage, based on paired text-speech data {X, Ycodec}, where X = {x1, x2, x3, · · · , xT } represents the fusion of global style and aligned text and Ycodec denotes the representation of speech through vector quantization, formula as:</p>
+<p>we consider T as the downsampled utterance length, which is equal to the length of the text.
+N represents the number of channels for every frame.
+The row vector of each acoustic code matrix Ct,: represents the six codes for frame t, and the column vector of each acoustic code matrix C:,i represents the code sequence from the j-th codebook, where i ∈ {1, 2, · · · , N }.</p>
+<p>Follow <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E</a>, in the training process of <strong><em>ControlSpeech</em></strong>, we randomly select a certain channel of C1:T,1:N for training.
+For the generation of the i channel P (C1:T,i | X1:T ; θ), we employ a mask-based generative model as our parallel decoder.
+We sample the mask Mi ∈ {0, 1}T according to a cosine schedule [5] for codec level i, specifically sampling the masking ratio p = cos(u ) where (cid:3). and the mask Mi ∼ Bernoulli(p).
+Here, Mi represents the portion to be masked in ′ u the i-th level, while ¯Mi denotes the unmasked portion in the i-th level.
+As shown in Figure 2 (c), the prediction of this portion is refined based on the prompt j(j &lt; i) channels and the concatenation of target text and the unmasked portion of the i channel.
+Therefore, the prediction for this part can be specified as follows:</p>
+<p>In the second stage, following <a href="../../Models/_tmp/2021.03.01_AdaSpeech.md">AdaSpeech</a>, we utilize a conditional normalization layer to fuse the previously obtained Ycodec and Yt, producing the input for the codec decoder.
+This input is then processed by the pre-trained decoder to generate the final speech output Y .
+Specifically, we first use two simple linear layers Wγ and Wβ, which take the speaker embedding Ys as input and output the scale vectors γ and bias vectors β respectively.
+These lightweight, learnable scale vectors γ and bias vectors β are then fused with Ycodec.
+This process can be described by the following formula:
+are the mean and variance of the hidden representation of Ycodec.</p>
+</blockquote>
+<h3 id="33style-mixture-semantic-density-modules">3.3.Style Mixture Semantic Density Modules<a class="headerlink" href="#33style-mixture-semantic-density-modules" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>During our experiments, we identified a many-to-many problem in the text style control module.
+Specifically, different style texts can describe the same style of speech.
+Similar to previous approaches [<a href="../../Models/_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../../Models/E2E/2023.05.31_PromptStyle.md">PromptStyle</a>], we utilize a pre-trained BERT model to extract the semantic information of style descriptions, thereby enhancing the generalization of out-of-domain style descriptions.
+Moreover, it has been largely overlooked that a single style text can correspond to multiple speech instances from the same speaker.
+For example, when using a text describing a happy tone to control audio, various degrees of happiness can be attributed to that description.
+<a href="../../Models/_tmp/2023.09.05_PromptTTS2.md">PromptTTS 2</a> recognized this issue and introduced a speech prompt to compensate for the details of the text description style, alleviating the one-to-many problem by incorporating additional information.
+However, in the task of simultaneously zero-shot cloning timbre and zero-shot controlling style in speech synthesis, this approach can cause interference between the speech prompt and the style prompt.
+Therefore, in <strong><em>ControlSpeech</em></strong>, we designed a novel <strong><em>Style Mixture Semantic Density (SMSD)</em></strong> module to address the one-to-many problem of style representation.
+We hypothesize that the semantic representation of style Xs is a global mixture of Gaussian distributions, where different Gaussian distributions represent varying degrees of a particular style.
+During inference, we sample from the mixture of style semantic distributions to obtain an independent Gaussian distribution, with each sampled distribution reflecting different degrees of the same style.
+Additionally, to further enhance the diversity of style control, we incorporated a noise perturbation module within the MDN network of the <strong><em>SMSD</em></strong> in the <strong><em>ControlSpeech</em></strong> model. <strong>This module controls the isotropy of perturbations across different dimensions</strong>.</p>
+<p>Specifically, the raw style prompt sequence Xs = [X1, X2, X3, · · · , XL] is prepended with a [CLS] token, converted into a word embedding, and fed into the BERT model, where L refers to the length of style prompt.
+The hidden vector corresponding to the [CLS] token is regarded as the global style semantic representation Xs to guide the generation and sampling of subsequent models.</p>
+<p>Based on MDN network [53, 18, 10, 12], suppose we want to regress response target style represen∈ Rn.
+We model the ∈ Rd by using covariates style semantic input representation Xs tation Ys conditional distribution as a mixture of Gaussian distribution, The formula is as follows:</p>
+<p>where K is a hyperparameter about the number of independent Gaussian distribution and other mixture distribution parameters πk, µk, σ2(k) are output by a neural MDN network fθ dependent on input style semantic representation Xs</p>
+<p>It should be noted that the sum of the mixture weights is constrained to 1 during the training phase, which can be achieved by applying a softmax function on the corresponding neural network output αk, formalized as:</p>
+<p>To further enhance the diversity of style control, we designed a specialized noise perturbation module within the <strong><em>SMSD</em></strong> module to constrain the noise model.
+As illustrated by the circles of <strong><em>SMSD</em></strong> module in Figure 2 (b), this noise perturbation module regulates the isotropy of perturbations ε across different dimensions in variance σ2(k).
+The four types of perturbations from left to right in Figure 2 (b) are as follows:</p>
+<ul>
+<li>Fully factored, let σ2(k) = fθ(Xs+ where the noise level for each dimension is predicted separately.</li>
+<li>Isotropic, let σ2(k) = fθ(Xs for each dimension over d .) + fθ(ε) = σ2(k)I ∈ R+ which assumes the same noise level</li>
+<li>Isotropic across clusters, let σ2(k) = fθ(Xs) + fθ(ε) = σ2I ∈ R+ which assumes the same noise level for each dimension over d and cluster.</li>
+<li>Fixed isotropic, same as above but do not learn σ2.</li>
+</ul>
+<p>Through the experimental analysis in the appendix G, isotropic across clusters is used as the mode of noise perturbation.
+Following the noise perturbation model, we obtain more robust mean, variance, and weight parameters for the mixture of Gaussian distributions.
+The criterion for training the <strong><em>SMSD</em></strong> module is the negative log-likelihood of the observation Ys given its input Xs.
+The loss function can be formulated as follows, the objective is clearly non-convex.
+Details about LSM SD are derived in the appendix B.</p>
+</blockquote>
+<h3 id="34training-and-inference">3.4.Training and Inference<a class="headerlink" href="#34training-and-inference" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>During the training process, the Duration Predictor is optimized using the mean square error loss, with the extracted duration serving as the training target.
+We employ the Montreal Forced Alignment (MFA) tool [39] to extract phoneme durations, and we denote the loss for the Duration Predictor as Ldur.
+The codec generator module is optimized using the cross-entropy loss function.
+We randomly select a channel for optimization and denote this loss as Lcodec.
+In the <strong><em>SMSD</em></strong> module, the target style is the global style representation obtained by passing style codec Ys through the representation Ys style extractor.
+During training, we feed the ground truth style representation Ys and ground truth duration into the codec generator and duration predictor, respectively.
+Therefore, the overall loss L for <strong><em>ControlSpeech</em></strong> can be expressed as follows:</p>
+<p>During the inference stage, we initiate the process by inputting the original stylistic descriptor Xs into the BERT module to obtain the stylized semantic representation Xs into the ′ <strong><em>SMSD</em></strong> subsequent module to obtain the corresponding π, µ and σ2.
+By directly sampling Xs , we can derive the predicted style distribution.
+Subsequently, we iteratively generate discrete acoustic tokens by incorporating the predicted style into the text state and employing the confidence based sampling scheme proposed by [5, 2].
+Specifically, we perform multiple forward passes, and at each iteration j, we sample candidates for the masked positions.
+We then retain Pj candidates based on their confidence scores, where Pj follows a cosine schedule.
+Finally, by integrating the timbre prompt through the condition normalization layer and feeding it into the codec decoder, we generate the final speech output.</p>
+</blockquote>
+<h2 id="4experiment">4.Experiment<a class="headerlink" href="#4experiment" title="Permanent link">&para;</a></h2>
+<h3 id="41controltoolkit">4.1.<strong><em>ControlToolkit</em></strong><a class="headerlink" href="#41controltoolkit" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>In this section, we will introduce the <strong><em>VccmDataset</em></strong>, related baselines, and evaluation metrics in <strong><em>ControlToolkit</em></strong>.
+Detailed experimental settings for training and inference as well as model architecture specifics, are provided in appendix C and appendix D respectively.</p>
+<p><strong><em>VccmDataset</em></strong> To the best of our knowledge, there is no large-scale dataset that includes both text style prompts and speaker prompts.
+Building upon the existing <a href="../../Datasets/2023.08.28_TextrolSpeech.md">TextrolSpeech dataset</a>, we have developed the <strong><em>VccmDataset</em></strong>.
+<a href="../../Datasets/2023.08.28_TextrolSpeech.md">TextrolSpeech</a> is currently the only open-source dataset in the field of text style control, containing a total of 330 hours of speech data along with 236203 style description texts.
+Based on <a href="../../Datasets/2023.08.28_TextrolSpeech.md">TextrolSpeech</a>, we have optimized the pitch distribution, label boundaries, and the training and dataset splits.
+Specifically, we use the LibriTTS and emotional data from <a href="../../Datasets/2023.08.28_TextrolSpeech.md">TextrolSpeech</a> as the base databases, annotating each speech sample with five attribute labels: gender, volume, speed, pitch, and emotion.
+Considering the close proximity of data values between adjacent categories, we exclude the 5% of data at the boundaries of each interval for each attribute.
+This ensures greater distinctiveness for each label.
+Particularly, due to the significant difference in pitch distribution between male and female voices, we use gender-dependent thresholds to bin the pitch into three different levels.
+We randomly selected 1,500 audio samples as the <strong><em>ControlSpeech</em></strong> test set and matched the corresponding prompt voice based on speaker IDs.
+Additionally, to evaluate <strong><em>ControlSpeech</em></strong>’s performance on out-of-domain voices and styles, we further filtered an appropriate test set and enlisted language experts to compose style descriptions distinct from those in <a href="../../Datasets/2023.08.28_TextrolSpeech.md">TextrolSpeech</a>.
+Further details on the creation of <strong><em>VccmDataset</em></strong> can be found in appendix E.</p>
+<p>Baselines We have reproduced several state-of-the-art style-controllable models, including <a href="../../Models/_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../../Models/E2E/2023.05.31_PromptStyle.md">PromptStyle</a>, <a href="../../Datasets/2023.08.28_TextrolSpeech.md">SALL-E</a> and <a href="../../Models/_tmp/2023.01.31_InstructTTS.md">InstructTTS</a>, to serve as primary comparative models for evaluating the controllability of <strong><em>ControlSpeech</em></strong>.
+For the comparison of voice cloning effectiveness, we have reproduced the <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E</a> model and the <a href="../../Models/_tmp/2024.02.14_MobileSpeech.md">MobileSpeech</a> model, representing the autoregressive paradigm and the parallel generation paradigm.
+The relevant baseline reproduction code has been integrated into the <strong><em>ControlToolkit</em></strong>.</p>
+<p>Evaluation metrics We have aligned our objective experiments with [<a href="../../Models/_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../../Datasets/2023.08.28_TextrolSpeech.md">SALL-E</a>, <a href="../../Models/_tmp/2023.09.05_PromptTTS2.md">PromptTTS 2</a>].
+To evaluate the model’s style controllability, we use accuracy to represent the evaluation metric, which measures the correspondence between the style factors in the output speech and those in the prompts.
+The accuracy of pitch, speaking speed, and volume is calculated using signal processing tools, while emotion classification accuracy is computed using a fine-tuned emotion classification model.
+We employ the official version of the <a href="../../Models/Speech_Representaion/2023.12.23_Emotion2Vec.md">Emotion2Vec</a> model for the speech emotion recognition task, which is fine-tuned on the emotional dataset of <strong><em>VccmDataset</em></strong>.
+To evaluate timbre similarity (Spk-sv) between the original prompt and synthesized speech, we utilize the base-plus-sv version of <a href="../../Models/_tmp/WavLM.md">WavLM</a>.
+Additionally, we conduct Automatic Speech Recognition (ASR) using the Whisper3 [41] model on the generated audio and calculate the word error rate (Wer) compared to the original transcriptions.
+For subjective testing, we conduct mean opinion score (MOS) evaluations on the test set to measure audio naturalness via crowdsourcing.
+We randomly select 30 samples from the test set of each dataset for subjective evaluation, and each audio sample is listened to by at least 10 testers.
+We analyze the MOS in two aspects: MOS-Q (Quality, assessing clarity and naturalness of duration and pitch) and MOS-S (Speaker similarity).
+Furthermore, for the evaluation of style-controllable many-to-many scenarios, we design specific metrics: MOS-TS (Timbre Similarity), MOS-SD (Style Diversity), and MOS-SA (Style Accuracy).
+We provide a detailed explanation of these metrics and their use cases in the many-to-many experiment section.</p>
+</blockquote>
+<h3 id="42evaluation-on-style-controllability">4.2.Evaluation on style controllability<a class="headerlink" href="#42evaluation-on-style-controllability" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>We first compared the performance of <strong><em>ControlSpeech</em></strong> with various models on the style controllability task.
+The evaluation was conducted on the 1,500-sample controllable test set from the <strong><em>VccmDataset</em></strong>.
+To eliminate the influence of timbre variations on the controllability results of <strong><em>ControlSpeech</em></strong>, we used the ground truth (GT) timbre as the prompt.
+We compared the controllability of the models using pitch accuracy, speed accuracy, energy accuracy, and emotion accuracy.
+Additionally, we measured the audio quality generated by the models using word error rate (Wer), timbre similarity (Spk-sv), and MOS-Q (Mean Opinion Score for Quality).
+The experimental results are shown in Table 1, and we drew the following conclusions:
+1) The GTcodec version exhibits high reconstruction quality.
+However, it shows limitations in Wer, emotion classification accuracy, and speech speed classification accuracy.
+We believe this may be due to accumulated errors introduced by the test model.
+Additionally, the emotion classification experiment did not include neutral emotion classification results, which better highlights the model’s emotion control capabilities and presents a more challenging task for all models. 2) Comparing <strong><em>ControlSpeech</em></strong> with other baseline models on controllability metrics, we found that, except for pitch
+accuracy, <strong><em>ControlSpeech</em></strong> achieved state-of-the-art results in energy, speed, and emotion classification accuracy.
+Upon analyzing the synthesized audio of <strong><em>ControlSpeech</em></strong>, we noticed some instances of unnatural pitch.
+We attribute this to possible conflicts arising from simultaneously controlling different timbres and styles. 3) In terms of Spk-sv, Wer, and MOS-Q metrics, the audio generated by <strong><em>ControlSpeech</em></strong> demonstrates good timbre similarity and audio quality.
+However, it falls slightly behind PromptStyle and <a href="../../Models/_tmp/2023.01.31_InstructTTS.md">InstructTTS</a> in Wer.
+We believe this is due to the limitations imposed by the <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a> approach, which constrains the upper bound of <strong><em>ControlSpeech</em></strong>’s performance. 4) We further attempted to replace the GT timbre in the test set with the timbre from the prompt test set.
+We found that while the audio quality-related metrics remained unchanged, the controllability-related metrics, except for speech speed accuracy, generally decreased by 5%-10%.</p>
+</blockquote>
+<h3 id="43evaluation-on-the-timbre-cloning-task">4.3.Evaluation on the timbre cloning task<a class="headerlink" href="#43evaluation-on-the-timbre-cloning-task" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>To evaluate the timbre cloning capability of <strong><em>ControlSpeech</em></strong> in an out-of-domain speaker scenario, we compared the performance of <strong><em>ControlSpeech</em></strong> with models such as <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E</a> and MobileSpeech on the out-of-domain speaker test set from the <strong><em>VccmDataset</em></strong>.
+The out-of-domain speaker test set consists of 1,086 test utterances, ensuring that none of the speakers were present in the training set.
+<a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E</a> and MobileSpeech used Encodec for feature extraction during training.
+The experimental results are shown in Table 2.
+We observed that in terms of robustness metrics, the zero-shot TTS systems trained on small datasets performed even lower than <strong><em>ControlSpeech</em></strong>.
+We attribute this to the performance gains from the pre-trained speaker prompt component in <strong><em>ControlSpeech</em></strong>, which was trained on 60,000 hours of speaker data.
+Additionally, in the MOS metric, we found that although <strong><em>ControlSpeech</em></strong> can further control styles, it still maintains performance comparable to zero-shot TTS systems in terms of timbre cloning.</p>
+</blockquote>
+<h3 id="44evaluation-on-the-out-of-domain-style-control-task">4.4.Evaluation on the out-of-domain style control task<a class="headerlink" href="#44evaluation-on-the-out-of-domain-style-control-task" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>We further tested the controllability of style-controllable models under out-of-domain style descriptions.
+We compared the performance of <strong><em>ControlSpeech</em></strong> with controllable baseline models on the out-of-domain style test set from the <strong><em>VccmDataset</em></strong>.
+The out-of-domain style test set comprises 100 test utterances, with style prompts rewritten by experts.
+The experimental results are shown in Table 3.
+We found that the generalization performance of <strong><em>ControlSpeech</em></strong> is significantly better than that of the baseline models.
+The accuracy of speech speed and energy is markedly higher for <strong><em>ControlSpeech</em></strong>, especially in terms of energy accuracy, where there is no significant difference between the main test set and the out-of-domain style test set.
+<strong><em>ControlSpeech</em></strong> exhibits a slightly higher wer, which may be due to the limitations imposed by the decoupled codec approach.
+Similar to the results of Table 1, the pitch accuracy of <strong><em>ControlSpeech</em></strong> is slightly lower.
+We believe this is due to pitch inconsistencies arising from the simultaneous control of style and timbre cloning.</p>
+</blockquote>
+<h3 id="45evaluation-on-style-controlled-many-to-many-problems">4.5.Evaluation on style controlled many-to-many problems<a class="headerlink" href="#45evaluation-on-style-controlled-many-to-many-problems" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>To better evaluate the performance of style-controllable models on many-to-many tasks, we compared the results of <strong><em>ControlSpeech</em></strong> with controllable baseline models on the many-to-many test set from the <strong><em>VccmDataset</em></strong>.
+Specifically, the MOS-TS metric was used to assess whether the timbre remains stable across 60 different style descriptions for four speakers.
+Additionally, we selected three pairs of six different style descriptions under 50 different timbre prompts, with pitch, speed, and energy labels set to normal, fast, normal; normal, slow, normal; high, normal, normal; low, normal, normal; normal, normal, high; and normal, normal, low, respectively.
+The MOS-SA and MOS-SD metrics represent the accuracy and diversity of style control for each pair respectively.
+The experimental results are shown in Table 4.
+We found that <strong><em>ControlSpeech</em></strong> significantly outperforms PromptStyle and <a href="../../Models/_tmp/2023.01.31_InstructTTS.md">InstructTTS</a> in both the MOS-SA and MOS-SD metrics.
+This indicates that the unique <strong><em>SMSD</em></strong> module design in <strong><em>ControlSpeech</em></strong> enables it to synthesize speech that is both accurate and diverse.</p>
+</blockquote>
+<h3 id="46ablation-experiment">4.6.Ablation experiment<a class="headerlink" href="#46ablation-experiment" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>In this section, we validated the necessity of the decoupling scheme and the <strong><em>SMSD</em></strong> module.
+Additionally, in appendix F and appendix G, we examined the impact of hyperparameters for mixed distributions and various noise models.</p>
+<p>Decouple codec For the decouple codec experiment, we maintained the main framework of <strong><em>ControlSpeech</em></strong> but used a non-decoupled Encodec to represent discrete audio in the TTS model.
+Furthermore, during training, we input the speech prompt into the codec generator, allowing the model to learn corresponding timbre, content, and style representations from the speech prompt, content prompt, and style prompt, respectively.
+We refer to this experimental model as <strong><em>ControlSpeech</em></strong> w/o decoupling and evaluated it using the prompt version of the main test set from the <strong><em>VccmDataset</em></strong>.
+As shown in Table 1, <strong><em>ControlSpeech</em></strong> w/o decoupling performed significantly worse in controllability compared to <strong><em>ControlSpeech</em></strong>.
+This suggests that the speech prompt and style prompt may interfere with each other, making it difficult to simultaneously clone timbre and control style with this approach.</p>
+<p><strong><em>SMSD</em></strong> module Regarding the <strong><em>SMSD</em></strong> module, we evaluated its effectiveness in addressing the many-to-many style control problem.
+Specifically, we replaced the <strong><em>SMSD</em></strong> module with a style encoder and referred to this experimental model as <strong><em>ControlSpeech</em></strong> w/o <strong><em>SMSD</em></strong>.
+As shown in Table 4, <strong><em>ControlSpeech</em></strong> w/o <strong><em>SMSD</em></strong> performed significantly worse in the MOS-SA and MOS-SD metrics compared to <strong><em>ControlSpeech</em></strong>, thus strongly validating that the <strong><em>SMSD</em></strong> module enables more fine-grained control of the model’s style and increases style diversity through style sampling.</p>
+</blockquote>
+<h2 id="5conclusion">5.Conclusion<a class="headerlink" href="#5conclusion" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this paper, we present <strong><em>ControlSpeech</em></strong>, the first TTS system capable of simultaneously performing zero-shot timbre cloning and zero-shot style control.
+Leveraging large-scale pre-trained discrete codec representations, we disentangle style, content, and timbre, and generate the corresponding codec representations through a non-autoregressive, mask-based iterative codec generator.
+Additionally, we identified a many-to-many problem in style control and designed a unique <strong><em>Style Mixed Semantic Density (SMSD)</em></strong> module to mitigate this issue.
+We constructed a new dataset called <strong><em>VccmDataset</em></strong>, and established relevant evaluation metrics and baselines for the new task, all of which are open-sourced in the <strong><em>ControlToolkit</em></strong>.
+The limitations of <strong><em>ControlSpeech</em></strong> and directions for future work are discussed in the appendix H.</p>
+</blockquote>
+<p>B <strong><em>SMSD</em></strong> Loss
+The loss function for the <strong><em>SMSD</em></strong> module represents the conditional probability of the input style ′ representation Xs .</p>
+<blockquote>
+<p>We further refine this into a maximum likelihood loss involving the style distribution parameters πk, µ(k), σ2(k) derived through the MDN network and noise perturbation module.
+The detailed derivation of the loss function is as follows.
+C Training and inference settings
+<strong><em>ControlSpeech</em></strong> was trained on <strong><em>VccmDataset</em></strong> using 8 NVIDIA A100 40G GPUs with each batch accommodating 3500 frames of the discrete codec.
+We optimized the models using the AdamW optimizer with parameters β1 = 0.9 and β2 = 0.95.
+The learning rate was warmed up for the first 5k updates, reaching a peak of 5 × 10−4, and then linearly decayed.
+We utilized the open-source <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a>’s voice conversion version as the codec encoder and decoder for <strong><em>ControlSpeech</em></strong>.
+The style-controllable baseline models were trained on the same sets <strong><em>VccmDataset</em></strong> to eliminate potential biases.
+We utilize a pre-trained <a href="../../Models/_Basis/2018.10.11_BERT.md">BERT</a> model consisting of 12 hidden layers with 110M parameters.
+For the implementation of the basic MDN network model, we largely followed the approach described in [12].
+D Model architecture in the <strong><em>ControlSpeech</em></strong>
+Follow <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">NaturalSpeech 3</a>, the basic architecture of codec encoder and codec decoder follows <a href="../../Models/Speech_Neural_Codec/2023.06.11_Descript-Audio-Codec.md">DAC</a> and employs the SnakeBeta activation function (<a href="../../Models/TTS3_Vocoder/2022.06.09_BigVGAN.md">BigVGAN</a>).
+The timbre extractor consists of several <a href="../../Models/ASR/2020.05.16_Conformer.md">Conformer</a> blocks.
+We use Nqc = 2, Nqp = 1, Nqd = 3 as the number of quantizers for each of the three FVQ Qc, Qp, Qd, the codebook size for all the quantizers is 1024.
+Text encoder and variance adaptor share the similar architecture which is comprised of several FFT blocks or attention layers as used by <a href="../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a>.
+The codec generator is a decoder primarily based on <a href="../../Models/ASR/2020.05.16_Conformer.md">Conformer</a> blocks, similar to <a href="../../Models/_tmp/2024.02.14_MobileSpeech.md">MobileSpeech</a>.
+However, we opted for fewer encoder layers and a smaller parameter count in the codec generator.
+E <strong><em>VccmDataset</em></strong> details
+We use the gender labels available in the online metadata.
+For the remaining style factors, such as pitch, speaking speed, and volume, we initially utilize the Montreal forced alignment (MFA) [39] tool to extract phoneme durations and silence segments.
+Subsequently, we calculate the average duration of each phoneme pronunciation within voiced segments for speaking speed.
+Regarding energy, we compute the L2-norm of the ampli tude of each short-time Fourier transform (STFT) frame.
+Then the Parselmouth 3 tool is employed to extract fundamental frequency (f0) and calculate the geometric mean across all voiced regions as pitch values.
+After obtaining the three style factors’ values, we divide speech into 3 categories (high/normal/low) according to the proportion.
+To further validate <strong><em>ControlSpeech</em></strong>’s ability to simultaneously control style and clone speaker timbre, the <strong><em>VccmDataset</em></strong> includes four types of test sets: the main test set, the out-of-domain speaker test set, the out-ofdomain style test set, and the special case test set.
+Each test set corresponds to different experiments: style controllability experiments, out-of-domain speaker cloning experiments, out-of-domain style controllability experiments, and many-to-many style control experiments, respectively.</p>
+</blockquote>
+<h2 id="fablation-experiments-about-mixed-distributions">F.Ablation experiments about mixed distributions<a class="headerlink" href="#fablation-experiments-about-mixed-distributions" title="Permanent link">&para;</a></h2>
+<p>In this section, we investigate the impact of the number of mixtures in the <strong><em>SMSD</em></strong> module on model performance.</p>
+<blockquote>
+<p>We conducted ablation studies under the isotropic across clusters noise perturbation mode, examining the effects of using 3, 5, and 7 mixtures.
+As shown in Table 5, the differences in the MOS-SD metric were negligible.
+However, an increase in the number of mixtures led to a decline in the MOS-SA metric, indicating that an excessive number of mixtures may reduce the model’s control accuracy.
+G Ablation experiments about various noise modes
+We analyzed the impact of different noise perturbation modes on the many-to-many style control problem, with the number of mixture distributions fixed at 5.
+As shown in Table 6, we found that the noise perturbation mode maintaining isotropy at the cluster centers achieved a balance between the MOS-SA and MOS-SD metrics.
+H Future work and limitations
+In this work, we introduced <strong><em>ControlSpeech</em></strong>, the first TTS system capable of simultaneously cloning timbre and controlling style.
+While <strong><em>ControlSpeech</em></strong> has demonstrated notable controllability and cloning capabilities, there remains considerable scope for further research and improvement based on the current framework.
+- Decoupled Codec Optimization There is substantial room for performance enhancement within the existing decoupled codec model.
+Although we attempted further optimization based on <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a>, no significant improvements were observed.
+However, the decoupling method of <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a> and the timbre conversion performance based on decoupled codecs still have potential for improvement, which might enhance the naturalness of synthesized speech pitch.
+Future work could explore more efficient forms of vector quantization and decoupled codec representations.
+Additionally, experimenting with a broader range of supervision signals and different methods of information fusion could provide further advancements.
+- Larger Training Datasets The field of style-controllable TTS urgently needs larger training datasets.
+Although <a href="../../Datasets/2023.08.28_TextrolSpeech.md">TextrolSpeech</a> and the <strong><em>VccmDataset</em></strong> have established a foundation, achieving more advanced speech controllability will require datasets comprising tens of thousands of hours of style descriptions.
+- Diversity in Style Descriptions Current style description texts predominantly include labels such as emotion, speed, intonation, energy, and gender.
+There is still a gap between these descriptions and the diversity of human-level style descriptions.
+- Exploration of Generative Models We experimented with decoupled codecs and non-autoregressive parallel generative models.
+Future research could explore a broader range of generative model architectures and additional audio representations.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

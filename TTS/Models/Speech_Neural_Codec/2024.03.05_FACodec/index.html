@@ -16,7 +16,7 @@
     
     
       
-        <title>神经编解码器概述 - Sapphire Lab</title>
+        <title>FACodec - Sapphire Lab</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#facodec" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              神经编解码器概述
+              FACodec
             
           </span>
         </div>
@@ -238,56 +238,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#20210707-soundstream-google-research" class="md-nav__link">
-    2021.07.07 SoundStream - Google Research
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#20221024-encodec-meta-ai-fair" class="md-nav__link">
-    2022.10.24 EnCodec - Meta AI FAIR
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#20230504-hifi-codec-tecent-ai-lab" class="md-nav__link">
-    2023.05.04 HiFi-Codec - Tecent AI Lab
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#20230831-speechtokenizer-" class="md-nav__link">
-    2023.08.31 SpeechTokenizer - 复旦大学
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#20230914-funcodec-" class="md-nav__link">
-    2023.09.14 FunCodec - 阿里巴巴达摩院语音实验室
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#20240219-language-codec-" class="md-nav__link">
-    2024.02.19 Language-Codec - 浙江大学+阿里巴巴达摩语音实验室
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -301,32 +251,8 @@
                   
 
 
-<h1 id="_1">神经编解码器概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="20210707-soundstream-google-research">2021.07.07 SoundStream - Google Research<a class="headerlink" href="#20210707-soundstream-google-research" title="Permanent link">&para;</a></h2>
-<p><img alt="SoundStream 架构" src="../Images/2021.07.07_SoundStream_Fig.02.png" /></p>
-<p>SoundStream 架构图:
-- 卷积编码器为输入音频样本产生隐表示
-- 残差向量量化器使用可变的 $n_q$ 将隐表示量化.
-- 训练时, 模型参数使用重构损失+对抗损失进行优化.
-- 可选的条件输入可用于表明何时背景噪声需要被去除.
-- 部署模型时, 发送端的编码器和量化器将压缩比特流发送到接收端, 然后解码音频信号.</p>
-<p><img alt="编码器和解码器架构" src="../Images/2021.07.07_SoundStream_Fig.03.png" /></p>
-<hr />
-<h2 id="20221024-encodec-meta-ai-fair">2022.10.24 EnCodec - Meta AI FAIR<a class="headerlink" href="#20221024-encodec-meta-ai-fair" title="Permanent link">&para;</a></h2>
-<p><img alt="EnCodec 架构" src="../Images/2022.10.24_Encodec_Fig.01.png" /></p>
-<hr />
-<h2 id="20230504-hifi-codec-tecent-ai-lab">2023.05.04 HiFi-Codec - Tecent AI Lab<a class="headerlink" href="#20230504-hifi-codec-tecent-ai-lab" title="Permanent link">&para;</a></h2>
-<p><img alt="HiFi-Codec 架构" src="../Images/2023.05.04_HiFi-Codec_Fig.01.png" /></p>
-<hr />
-<h2 id="20230831-speechtokenizer-">2023.08.31 SpeechTokenizer - 复旦大学<a class="headerlink" href="#20230831-speechtokenizer-" title="Permanent link">&para;</a></h2>
-<p><img alt="SpeechTokenizer 架构" src="../Images/2023.08.31_SpeechTokenizer_Fig.02.png" /></p>
-<hr />
-<h2 id="20230914-funcodec-">2023.09.14 FunCodec - 阿里巴巴达摩院语音实验室<a class="headerlink" href="#20230914-funcodec-" title="Permanent link">&para;</a></h2>
-<p><img alt="FunCodec 架构" src="../Images/2023.09.14_FunCodec_Fig.02.png" /></p>
-<hr />
-<h2 id="20240219-language-codec-">2024.02.19 Language-Codec - 浙江大学+阿里巴巴达摩语音实验室<a class="headerlink" href="#20240219-language-codec-" title="Permanent link">&para;</a></h2>
-<p><img alt="Language-Codec" src="../Images/2024.02.19_Language-Codec_Fig.01.png" /></p>
-<hr />
+<h1 id="facodec">FACodec<a class="headerlink" href="#facodec" title="Permanent link">&para;</a></h1>
+<p><a href="../Diffusion/2024.03.05_NaturalSpeech3.md">NaturalSpeech3</a></p>
 
 
 
