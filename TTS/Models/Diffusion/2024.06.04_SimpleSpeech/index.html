@@ -1,0 +1,596 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>SimpleSpeech - Sapphire Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#simplespeech" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Sapphire Lab" class="md-header__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sapphire Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SimpleSpeech
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Sapphire Lab" class="md-nav__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sapphire Lab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract·摘要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1introduction" class="md-nav__link">
+    1.Introduction·引言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2related-works" class="md-nav__link">
+    2.Related Works·相关工作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3methodology" class="md-nav__link">
+    3.Methodology·方法论
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Methodology·方法论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31text-encoder-speaker-encoder" class="md-nav__link">
+    3.1.Text Encoder &amp; Speaker Encoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32sentence-duration" class="md-nav__link">
+    3.2.Sentence Duration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33sq-codec" class="md-nav__link">
+    3.3.SQ-Codec
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3.SQ-Codec">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encoder-and-decoder" class="md-nav__link">
+    Encoder and Decoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discriminator-and-training-loss" class="md-nav__link">
+    Discriminator and Training Loss
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34scalar-latent-transformer-diffusion-models" class="md-nav__link">
+    3.4.Scalar Latent Transformer Diffusion Models
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.Scalar Latent Transformer Diffusion Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transformer-based-diffusion-backbone" class="md-nav__link">
+    Transformer-Based Diffusion Backbone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-context-conditioning" class="md-nav__link">
+    In-Context Conditioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalar-latent-diffusion" class="md-nav__link">
+    Scalar Latent Diffusion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4experiments" class="md-nav__link">
+    4.Experiments·实验
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5conclusion" class="md-nav__link">
+    5.Conclusion·结论
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="simplespeech">SimpleSpeech<a class="headerlink" href="#simplespeech" title="Permanent link">&para;</a></h1>
+<details>
+<summary>基本信息</summary>
+
+- 标题: SimpleSpeech: Towards Simple and Efficient Text-to-Speech with Scalar Latent Transformer Diffusion Models
+- 作者:
+  - [Dongchao Yang](../../Authors/Dongchao_Yang_(杨东超).md)
+  - [Dongdong Wang](../../Authors/Dingdong_Wang.md)
+  - [Haohan Guo](../../Authors/Haohan_Guo.md)
+  - [Xueyuan Chen](../../Authors/Xueyuan_Chen.md)
+  - [Xixin Wu](../../Authors/Xixin_Wu.md)
+  - [Helen Meng](../../Authors/Helen_Meng_(蒙美玲).md)
+- 机构:
+  - [香港中文大学](../../Institutions/CUHK.md)
+- 时间:
+  - 预印时间: 2024.06.04 ArXiv v1
+  - 更新笔记: 2024.06.06
+- 发表:
+  - [InterSpeech 2024](../../Publications/InterSpeech.md)
+- 链接:
+  - [ArXiv](https://arxiv.org/abs/2406.02328)
+  - [Demo](https://simplespeech.github.io/simplespeechDemo/)
+- 标签:
+  - [语音合成](../../Tags/SpeechSynthesis.md)
+  - [扩散模型](../../Tags/Model_Diffusion.md)
+  - [编解码器](../../Tags/Codec.md)
+- 页数: 6
+- 引用: 36
+- 被引: ?
+
+</details>
+
+<h2 id="abstract">Abstract·摘要<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this study,we propose a simple and efficient <strong>Non-AutoRegressive (NAR)</strong> <strong>Text-To-Speech (TTS)</strong> system based on diffusion, named <strong><em>SimpleSpeech</em></strong>. 
+Its simpleness shows in three aspects: </p>
+<ol>
+<li>It can be trained on the speech-only dataset, without any alignment information; </li>
+<li>It directly takes plain text as input and generates speech through an NAR way; </li>
+<li>It tries to model speech in a finite and compact latent space, which alleviates the modeling difficulty of diffusion. </li>
+</ol>
+<p>More specifically, we propose a novel speech codec model (<strong><em>SQ-Codec</em></strong>) with scalar quantization, <strong><em>SQ-Codec</em></strong> effectively maps the complex speech signal into a finite and compact latent space, named scalar latent space. 
+Benefits from <strong><em>SQ-Codec</em></strong>, we apply a novel Transformer diffusion model in the scalar latent space of <strong><em>SQ-Codec</em></strong>. 
+We train <strong><em>SimpleSpeech</em></strong> on 4k hours of a speech-only dataset, it shows natural prosody and voice cloning ability. 
+Compared with previous large-scale TTS models, it presents significant speech quality and generation speed improvement. 
+Demos are released at this <a href="https://simplespeech.github.io/simplespeechDemo/">URL</a>.</p>
+</blockquote>
+<h2 id="1introduction">1.Introduction·引言<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Text-to-speech synthesis (TTS) aims to synthesize intelligible and natural speech given text, which has made great progress in the past years [1, 2].
+Most previous TTS systems trained on small-scale high-quality labeled speech datasets.
+In terms of model training, they rely on a relatively complicated pipeline (e.g.prosody prediction, G2P conversion), and fine-grained alignment information (e.g. phone-level duration) is needed.
+However, the recently proposed approaches based on large-scale speech data significantly simplify the TTS system (<a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM</a>, <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E</a>, <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS</a>, <a href="../../Models/Speech_LLM/2023.10.01_UniAudio.md">UniAudio</a>, <a href="../../Models/_tmp/2023.05.30_Make-A-Voice.md">Make-A_Voice</a>).
+For instance, language model (LM) based TTS, e.g. <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E</a> uses a pre-trained audio codec model e.g. <a href="../../Speech_Neural_Codec/2022.10.24_EnCodec/">EnCodec</a> to map the speech signal into a sequence of discrete tokens, then an auto-regressive language model is trained to translate the phoneme into speech tokens.
+It can generate more expressive speech, but also is troubled by the slow and unstable inference.
+To address these issues, Non-autoregressive (NAR) models, e.g. <a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech 2</a>, <a href="../../Models/Speech_LLM/2023.05.16_SoundStorm.md">SoundStorm</a>, and <a href="../../Models/_tmp/2023.06.23_VoiceBox.md">VoiceBox</a>, are proposed.
+They have higher inference speed and better stability, but with the cost of (1) relying on phoneme-acoustic alignment information, and (2) a more complicated training process.
+In this work, we propose a simple and efficient TTS system, <strong><em>SimpleSpeech</em></strong>, which does not rely on any alignment information and generates high-quality speech in a NAR way.2To build such a TTS system, where we meet with the following research problems: </p>
+<ul>
+<li>(1) how to use the large-scale speech-only dataset to train a TTS model without any alignment information e.g. phoneme-level duration; </li>
+<li>(2) how to design a generative model that can generate high-quality speech in a NAR way. </li>
+<li>(3) how to solve the duration alignment problem without using a specific duration model when we train the NAR model; </li>
+</ul>
+<p>The main contributions of this study are summarized as follows:</p>
+<ul>
+<li>(1) We demonstrate that large-scale unlabeled speech data can be used to build an NAR TTS system.</li>
+<li>(2) We propose a novel generation model, a scalar latent transformer diffusion model, which models the speech data in a finite and compact latent space.
+More specifically, we propose a speech codec model (SQ-Codec) based on scalar quantization, which maps the complex speech signal into a finite and compact latent space, named scalar latent space.
+Then we apply the diffusion model in the scalar latent space of <strong><em>SQ-Codec</em></strong>.</li>
+<li>(3) We propose to use sentence duration instead of phone-level duration for the NAR-based TTS model.
+The sentence duration is used to determine the length of the target sequence, then an in-context conditioning strategy is introduced to learn the fine-grained alignment between the condition and target sequence implicitly.
+Compared to previous works that predict the duration of each phoneme, the sentence duration gives more diversity in the generation process.
+More importantly, the sentence duration is easy to obtain in both the training and inference stages.
+Please refer to Section 3.2 finds more details.</li>
+<li>(4) Extensive experimental results show the effectiveness of <strong><em>SimpleSpeech</em></strong>.
+We also conduct a lot of ablation studies to explore the effectiveness of each part in <strong><em>SimpleSpeech</em></strong>.</li>
+</ul>
+</blockquote>
+<h2 id="2related-works">2.Related Works·相关工作<a class="headerlink" href="#2related-works" title="Permanent link">&para;</a></h2>
+<p><code>None</code></p>
+<h2 id="3methodology">3.Methodology·方法论<a class="headerlink" href="#3methodology" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>The overall architecture of the <strong><em>SimpleSpeech</em></strong> framework is demonstrated in Figure 1 (b), which mainly consists of two parts: <strong><em>SQ-Codec</em></strong> and scalar transformer diffusion.
+The detailed design of each part will be introduced in this section.</p>
+</blockquote>
+<h3 id="31text-encoder-speaker-encoder">3.1.Text Encoder &amp; Speaker Encoder<a class="headerlink" href="#31text-encoder-speaker-encoder" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>This work explores to use the large-scale speech-only datasets to train a TTS system.
+The first step is to obtain the text label for these speech samples.
+We propose to use the open available ASR model to get transcripts, Whisper-base model [12] is used in this study.
+To take advantage of the large language model and simply the traditional TTS frontend, we use a pre-trained language model to extract the textual representations.
+Then we directly take these textual representations as the conditional information for TTS.
+To realize zero-shot voice cloning, we use the 1st layer of XLSR-53 [13] to extract global embedding to represent the speaker timbre.</p>
+</blockquote>
+<h3 id="32sentence-duration">3.2.Sentence Duration<a class="headerlink" href="#32sentence-duration" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Previous works [2, 9] try to model the phone-level duration in TTS.
+In general, a duration predictor is built to predict the duration of each phone.
+Training such modules increases the complexity of data pre-processing and training pipeline.In this study, we propose to model the sentence-level duration prior by using the in-context learning of LLMs (gpt-3.5-turbo is used).
+Our motivation is that LLMs can easily estimate how much time to read a sentence based on the number of words in the sentence and the prior knowledge.
+The prompt for ChatGPT can be found on the demo page.
+After we obtain the sentence-level duration, we let the model learn the alignment between words and latent features implicitly.
+Such a design will bring more diversity to speech synthesis.
+In the training stage, we can directly get the duration based on the length of the waveform.
+We follow Stable
+Audio [14] uses a timing module to encode the duration into a global embedding.
+In the inference stage, the predicted duration by LLMs first determines the length of the noisy sequence, then input into the timing module.</p>
+</blockquote>
+<h3 id="33sq-codec">3.3.SQ-Codec<a class="headerlink" href="#33sq-codec" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Although residual vector quantization (RVQ) based audio codec models have shown effectiveness for audio compression, training a good codec model needs a lot of tricks and complicated loss design [15].
+In this study, we propose to use scalar quantization [16, 17] to replace the residual vector quantization in audio codec models, which can be trained with the reconstruction loss and adversarial loss without any training tricks.
+Furthermore, we also find that the scalar quantization effectively maps the complex speech signal into a finite and compact latent space, which is suitable for diffusion model (refer to Section 2.4 and 3.2.4 for more details).
+Assuming h ∈ RT ∗ddenotes the output features of Encoder in the codec model.
+T and d denote the number of frames and the dimension of each vector.
+For any vector hi, we use a parameter-free scalar quantization module to quantize hiinto a fixed scalar space: hi= torch.tanh(hi),si= torch.round(hi∗ S)/S,(1) where S is a hyper-parameter that determines the scope of scalar space.
+To get gradients through the rounding operation, we use a straight-through estimator like VQ-VAE [18].
+We can see that the scalar quantization first uses a tanh function to map the value of features into [−1, 1], then a round operation further reduces the value of range into 2*S+1 different numbers.
+We named such value domain as scalar latent space.
+We note that previous works [17, 19] also try to use scalar quantization as the image tokenizer for image generation.
+We claim that our implementation is different from theirs, and better adapts audio codec tasks in our experiments.</p>
+<h4 id="encoder-and-decoder">Encoder and Decoder<a class="headerlink" href="#encoder-and-decoder" title="Permanent link">&para;</a></h4>
+<p>Our encoder consists of 5 convolution blocks, each block includes 2 causal 1D-convolutional layers and one down-sample layer.
+The down-sample strides are set as [2, 2, 4, 4, 5], resulting in 320 times down-sample along the time dimension.
+The decoder mirrors the encoder and uses transposed convolutions instead of stride convolutions.</p>
+<h4 id="discriminator-and-training-loss">Discriminator and Training Loss<a class="headerlink" href="#discriminator-and-training-loss" title="Permanent link">&para;</a></h4>
+<p>Following [6], a multi-scale discriminator is used.
+The training loss of <strong><em>SQ-Codec</em></strong> consists of two parts: (1) reconstruction loss Lrec, which includes time domain and frequency domain losses: the L1 loss between the reconstructed waveform and the original waveform and the MSE loss for the STFT spectrogram. (2) adversarial loss, which is calculated based on the results of the discriminator.</p>
+</blockquote>
+<h3 id="34scalar-latent-transformer-diffusion-models">3.4.Scalar Latent Transformer Diffusion Models<a class="headerlink" href="#34scalar-latent-transformer-diffusion-models" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Based on the previous discussion, we can map the speech data into a scalar latent space based on our proposed <strong><em>SQ-Codec</em></strong> model.
+Inspired by the success of latent diffusion models [20] in both image and audio generation [9,21], we propose to model the speech data in the scalar latent space.
+Our motivation is that the sampling space of scalar latent space is simple because SQ effectively limits the value range of each element.
+The details of the scalar latent transformer diffusion model are as follows.</p>
+<h4 id="transformer-based-diffusion-backbone">Transformer-Based Diffusion Backbone<a class="headerlink" href="#transformer-based-diffusion-backbone" title="Permanent link">&para;</a></h4>
+<p>U-Net backbone has been widely used in diffusion models, especially in the speech synthesis field [9,22–24].
+We also noted that many transformer-based diffusion models, such as DiT [25] and Sora [26] have been used in image/video generation.
+Inspired by the success of the transformer-based audio language models [4–6] and DiT, we propose a transformer-based diffusion backbone for speech synthesis.
+Specifically, a GPT2-like transformer backbone is used: 12 attention layers, 8 attention heads, and the model dimension is 768.</p>
+<h4 id="in-context-conditioning">In-Context Conditioning<a class="headerlink" href="#in-context-conditioning" title="Permanent link">&para;</a></h4>
+<p>Inspired by LLMs and previous audio language models [4–6], we simply append the features of time step t and condition c as the prefix sequence in the input sequence.
+Such a condition way allows us to use a standard GPT-like structure without modification.
+After the final block, we remove the conditioning sequence from the output sequence.</p>
+<h4 id="scalar-latent-diffusion">Scalar Latent Diffusion<a class="headerlink" href="#scalar-latent-diffusion" title="Permanent link">&para;</a></h4>
+<p>Latent diffusion models (LDM) have been demonstrated to fit complex data distributions, including VAE latent features [9, 20–22], Mel-spectrogram features [27], and waveform [23, 24].
+We speculate that these data distributions are very complex because their search space is infinite.
+Instead, <strong><em>SQ-Codec</em></strong> provides a finite and compact scalar latent space, thus we can consider modeling speech data in this space.
+Specifically, a network is trained to transfer the Gaussian distribution to the scalar latent space.
+We follow the training strategy of DDPM [28], and the mean squared error (MSE) loss is used.
+To make sure the final output belongs to the scalar latent space, we use the scalar quantization (SQ) operation to limit the final prediction.</p>
+</blockquote>
+<p>$$
+$$</p>
+<blockquote>
+<p>where θ denotes the parameter of the neural network.
+T denotes the timestep, xTdenotes the sampling features from the Gaussian distribution. c denotes the condition information.</p>
+</blockquote>
+<h2 id="4experiments">4.Experiments·实验<a class="headerlink" href="#4experiments" title="Permanent link">&para;</a></h2>
+<h2 id="5conclusion">5.Conclusion·结论<a class="headerlink" href="#5conclusion" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this study, we propose a simple and efficient TTS model named <strong><em>SimpleSpeech</em></strong>.
+<strong><em>SimpleSpeech</em></strong> can be trained on large-scale speech-only datasets without any additional data pre-processing, which significantly simplifies the efforts to train a TTS model.We propose a novel speech codec (SQ-Codec) based on scalar quantization.Then we apply a novel latent transformer diffusion model to the scalar latent space of <strong><em>SQ-Codec</em></strong>.
+Experimental results show the proposed model has better performance than the previous U-Net-based latent diffusion model.
+Due to the NAR generation strategy, <strong><em>SimpleSpeech</em></strong> significantly improves the generation efficiency compared to previous LM-based TTS models.
+In the future, we will explore to scale the model and data size.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>
