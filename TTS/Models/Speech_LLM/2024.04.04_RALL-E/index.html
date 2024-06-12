@@ -504,10 +504,10 @@
   - [Sheng Zhao](../../Authors/Sheng_Zhao_(赵胜).md)
 - 机构:
   - [Microsoft](../../Institutions/Microsoft.md)
-  - [东京大学](../../Institutions/东京大学.md)
-  - [浙江大学](../../Institutions/浙江大学.md)
-  - [中国科学技术大学](../../Institutions/USTC.md)
-  - [香港中文大学](../../Institutions/CUHK.md)
+  - [东京大学](../../Institutions/UTokyo_东京大学.md)
+  - [浙江大学](../../Institutions/ZJU_浙江大学.md)
+  - [中国科学技术大学](../../Institutions/USTC_中国科学技术大学.md)
+  - [香港中文大学](../../Institutions/CUHK_香港中文大学.md)
 - 时间:
   - 预印时间: 2024.04.04 ArXiv v1
   - 预印时间: 2024.04.06 ArXiv v2
@@ -536,16 +536,16 @@ While previous work based on <strong><em>large language models (LLMs)</em></stro
 The core idea behind ==<strong>RALL-E</strong>== is <strong><em>chain-of-thought (CoT)</em></strong> prompting, which decomposes the task into simpler steps to enhance the robustness of LLM-based TTS.
 To accomplish this idea, ==<strong>RALL-E</strong>== first predicts prosody features (pitch and duration) of the input text and uses them as intermediate conditions to predict speech tokens in a CoT style.
 Second, ==<strong>RALL-E</strong>== utilizes the predicted duration prompt to guide the computing of self-attention weights in Transformer to enforce the model to focus on the corresponding phonemes and prosody features when predicting speech tokens.
-Results of comprehensive objective and subjective evaluations demonstrate that, compared to a powerful baseline method <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a>, ==<strong>RALL-E</strong>== significantly improves the WER of zero-shot TTS from 6.3% (without reranking) and 2.1% (with reranking) to 2.8% and 1.0%, respectively.
-Furthermore, we demonstrate that ==<strong>RALL-E</strong>== correctly synthesizes sentences that are hard for <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> and reduces the error rate from 68% to 4%.</p>
+Results of comprehensive objective and subjective evaluations demonstrate that, compared to a powerful baseline method <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>, ==<strong>RALL-E</strong>== significantly improves the WER of zero-shot TTS from 6.3% (without reranking) and 2.1% (with reranking) to 2.8% and 1.0%, respectively.
+Furthermore, we demonstrate that ==<strong>RALL-E</strong>== correctly synthesizes sentences that are hard for <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> and reduces the error rate from 68% to 4%.</p>
 </blockquote>
 <p>我们提出了 ==<strong>RALL-E</strong>==, 一种鲁棒的用于文本转语音合成的语言建模方法.
 之前基于<strong><em>大语言模型 (Large Language Models, LLMs)</em></strong> 的工作在零样本文本转语音任务方面表现出色, 但同时也存在一些不稳定性, 如不稳定韵律 (奇怪的音高和节奏/时长) 和高<strong><em>词错误率 (Word Error Error, WER)</em></strong>, 这些都与语言模型的自回归预测方式有关.
 ==<strong>RALL-E</strong>== 的核心思想是<strong><em>思维链 (Chain-of-Thought, CoT)</em></strong> 提示, 它将任务分解为更简单的步骤, 以提升基于大语言模型的文本转语音合成的鲁棒性.
 为了实现这一思想, ==<strong>RALL-E</strong>== 首先预测输入文本的韵律特征 (音高和时长), 并将它们作为中间条件用于预测思维链形式的语音 Tokens.
 其次, ==<strong>RALL-E</strong>== 利用预测的时长提示来引导 Transformer 中的自注意力权重计算, 以强制模型在预测语音 Token 时专注于相应的音素和韵律特征.
-综合的客观评估和主观评估说明, 相比 <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a>, ==<strong>RALL-E</strong>== 显著提升了零样本文本转语音的词错误率表现, 从 6.3% (不使用 reranking) 和 2.1% (使用 reranking) 分别下降到 2.8% 和 1.0%.
-此外, 我们还展示了 ==<strong>RALL-E</strong>== 能够正确合成 <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> 难以合成的句子, 并将错误率从 68% 下降到 4%.</p>
+综合的客观评估和主观评估说明, 相比 <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>, ==<strong>RALL-E</strong>== 显著提升了零样本文本转语音的词错误率表现, 从 6.3% (不使用 reranking) 和 2.1% (使用 reranking) 分别下降到 2.8% 和 1.0%.
+此外, 我们还展示了 ==<strong>RALL-E</strong>== 能够正确合成 <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> 难以合成的句子, 并将错误率从 68% 下降到 4%.</p>
 <h2 id="1introduction">1.Introduction<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><strong><em>Large language models (LLMs)</em></strong> have demonstrated great progress in natural language generation [1, 20].
@@ -568,26 +568,26 @@ The CoT prompting breaks a complex task into several simpler steps, so that can 
 To adapt CoT prompting to LLM-based TTS, ==<strong>RALL-E</strong>== predicts prosody tokens (pitch and duration) before predicting speech tokens to stabilize the prosody.
 Given an input sentence, ==<strong>RALL-E</strong>== first predicts phoneme-level pitch and duration of the input, then predicts speech tokens conditioning on both the input phonemes and the predicted prosody tokens.
 Furthermore, ==<strong>RALL-E</strong>== utilizes the predicted duration to mask irrelevant phonemes and prosody tokens when computing self-attention weights, so that the codec language model is enforced to concentrate on tokens around the phoneme and prosody token the speech token corresponds to.
-We use <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> [29], a recent powerful LLM-based TTS method, as the baseline, and conduct experiments on a large dataset with 44K hours speech data.
+We use <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> [29], a recent powerful LLM-based TTS method, as the baseline, and conduct experiments on a large dataset with 44K hours speech data.
 Results of comprehensive objective and subjective evaluations demonstrate that RALL significantly improves the robustness of LLM-based TTS by reducing the WER on the LibriSpeech [18] test-clean set from6.3%(w/o reranking) and2.1%(with reranking) to2.8%and 1.0%, respectively.
 Furthermore, we evaluate the performance of ==<strong>RALL-E</strong>== on 50 particularly hard sentences.
-As demonstrated in Tab.01, compared to <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a>, ==<strong>RALL-E</strong>== significantly reduces WER from68%to4%by eliminating almost all types of error, which demonstrates the superior robustness of ==<strong>RALL-E</strong>== (see Section 4.4 for more details).
+As demonstrated in Tab.01, compared to <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>, ==<strong>RALL-E</strong>== significantly reduces WER from68%to4%by eliminating almost all types of error, which demonstrates the superior robustness of ==<strong>RALL-E</strong>== (see Section 4.4 for more details).
 The contributions of this work are summarized as follows: 
 - We present ==<strong>RALL-E</strong>==, a robust codec language modeling method with chain-of-thought prompting for TTS.
 ==<strong>RALL-E</strong>== improves the robustness of LLM-based TTS by (1) incorporating prosody tokens as chain-of-thought prompting to stabilize the generation of speech tokens and (2) using duration-guided masking to enhance the alignment between phoneme and speech tokens.
 - We conduct comprehensive objective and subjective evaluations.
-Experimental results demonstrate that ==<strong>RALL-E</strong>== obtains significantly better robustness than the baseline <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> and two previous works.
+Experimental results demonstrate that ==<strong>RALL-E</strong>== obtains significantly better robustness than the baseline <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> and two previous works.
 - We further evaluate ==<strong>RALL-E</strong>== on sentences that are particularly hard to synthesize for LLM-based TTS.
-The results demonstrate that ==<strong>RALL-E</strong>== correctly synthesizes hard sentences and reduces the error rate from68%to4%compared to <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a>, which closely approaches the performance of non-autoregressive TTS.
+The results demonstrate that ==<strong>RALL-E</strong>== correctly synthesizes hard sentences and reduces the error rate from68%to4%compared to <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>, which closely approaches the performance of non-autoregressive TTS.
 Audio samples can be found at https://ralle-demo.github.io/RALL-E.</p>
 </blockquote>
 <h2 id="2related-work">2.Related Work<a class="headerlink" href="#2related-work" title="Permanent link">&para;</a></h2>
 <h3 id="llm-based-tts">LLM-Based TTS<a class="headerlink" href="#llm-based-tts" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>Inspired by the success of LLMs [1,20], several recent works adopt language models to model TTS (<a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>, <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a>, <a href="../../Models/Speech_LLM/2023.10.01_UniAudio.md">UniAudio (2023)</a>) and begin to use decoder-only architecture based on Transformer.
+<p>Inspired by the success of LLMs [1,20], several recent works adopt language models to model TTS (<a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>, <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>, <a href="../../Models/Speech_LLM/2023.10.01_UniAudio.md">UniAudio (2023)</a>) and begin to use decoder-only architecture based on Transformer.
 In such models, text and speech tokens are concatenated together and fed to a single transformer.
 The whole model is trained on a next-token prediction task like a language model.
-The LLM-based TTS systems are typically trained on tens of thousands of hours of speech data and have hundreds of millions of parameters, hence can leverage the emergent abilities of LLMs like in-context learning [31] to enable zero-shot TTS (<a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a>).
+The LLM-based TTS systems are typically trained on tens of thousands of hours of speech data and have hundreds of millions of parameters, hence can leverage the emergent abilities of LLMs like in-context learning [31] to enable zero-shot TTS (<a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>).
 Besides, recent works (<a href="../../Models/Speech_LLM/2023.06.22_AudioPaLM.md">AudioPalM (2023)</a>; <a href="../../Models/Speech_LLM/2023.05.25_VioLA.md">VioLA (2023)</a>; <a href="../../Models/Speech_LLM/2023.10.01_UniAudio.md">UniAudio (2023)</a>) have shown the decoder-only architecture can be used to learn multiple tasks, as the input and output are processed jointly by a language model, and the model can be signaled to generate results for different tasks by inputting pre-defined special tokens.
 ==<strong>RALL-E</strong>== focuses on the robustness problem of LLM-based TTS.</p>
 </blockquote>
@@ -631,27 +631,27 @@ To accomplish this idea, we first propose to predict two kinds of phoneme-level 
 The distributions of the prosody tokens are modeled together with speech tokens by a single Transformer so that they can influence the duration and pitch of the predicted speech tokens.
 To further utilize the predicted duration to guide the generation and improve the robustness, we propose duration-guided masking to enhance the alignment between speech tokens, phonemes, and prosody tokens learned by the language model.
 At each decoding step of the speech tokens, ==<strong>RALL-E</strong>== masks phonemes and prosody tokens that are irrelevant to the synthesis of the current speech token based on the duration information.
-In the following sections, we first briefly introduce <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> since we apply the proposed method to it in the experiments.
+In the following sections, we first briefly introduce <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> since we apply the proposed method to it in the experiments.
 We then formulate and introduce ==<strong>RALL-E</strong>== in detail.
-It should be stressed that, though we use <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> to implement ==<strong>RALL-E</strong>==, the proposed method can be applied in any decoder-only AR TTS model.</p>
+It should be stressed that, though we use <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> to implement ==<strong>RALL-E</strong>==, the proposed method can be applied in any decoder-only AR TTS model.</p>
 </blockquote>
 <h3 id="31preliminary-vall-e">3.1.Preliminary: VALL-E<a class="headerlink" href="#31preliminary-vall-e" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>We inherit most symbols from the original paper of <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> for ease of reading.
+<p>We inherit most symbols from the original paper of <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> for ease of reading.
 Readers are recommended to refer to the original paper for more details.</p>
-<p>Generally, <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> is a decoder-only LLM-based TTS system that uses two <algo>Transformers</algo> [28] to predict speech tokens from the text.
+<p>Generally, <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> is a decoder-only LLM-based TTS system that uses two <algo>Transformers</algo> [28] to predict speech tokens from the text.
 The speech tokens here are extracted from <a href="../../Speech_Neural_Codec/2022.10.24_EnCodec/">EnCodec (2022)</a>, a neural audio codec based on residual vector quantization (RVQ) [34] that can convert continuous speech signal into discrete tokens.
 After predicting the discrete tokens, the waveforms can be reconstructed by feeding the tokens into the decoder of EnCodec.
-An RVQ typically contains $N$ quantization layers ($N = 8$ in <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a>), hence at each time step the encoded speech has $N$ tokens. 
+An RVQ typically contains $N$ quantization layers ($N = 8$ in <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>), hence at each time step the encoded speech has $N$ tokens. 
 Formally, given speech $\mathbf{y}$ and its transcription $\mathbf{x}$, the discrete speech token matrix $\mathbf{C}$ encoded by the codec has a shape of $T \times N$, where $T$ is the total time step.
-In addition tox, to clone a speaker’s voice and utilize the in-context learning ability of LLMs, <algo><a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a></algo> receives a short prompt $\tilde{\mathbf{C}}^{T'\times N}$ as input before predicting $\mathbf{C}$.
-Hence, <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> models and maximizes the following distribution:</p>
+In addition tox, to clone a speaker’s voice and utilize the in-context learning ability of LLMs, <algo><a href="../2023.01.05_VALL-E/">VALL-E (2023)</a></algo> receives a short prompt $\tilde{\mathbf{C}}^{T'\times N}$ as input before predicting $\mathbf{C}$.
+Hence, <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> models and maximizes the following distribution:</p>
 </blockquote>
 <p>$$
   \mathbb{P}(\mathbf{C}|\mathbf{x},\tilde{\mathbf{C}}).\tag{1}
 $$</p>
 <blockquote>
-<p><a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> predicts speech tokens hierarchically where the speech tokens of the 1st layer of RVQ are first predicted by an AR Transformer, and the tokens of the rest layers are predicted by a NAR Transformer.
+<p><a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> predicts speech tokens hierarchically where the speech tokens of the 1st layer of RVQ are first predicted by an AR Transformer, and the tokens of the rest layers are predicted by a NAR Transformer.
 This is because RVQ uses a residual quantization method, i.e. higher layers encode the information that is not encoded by the lower layers, hence tokens of the1st layer contain most information of the waveforms, and the information encoded by the rest layers gradually decreases.
 The AR Transformer takes the phoneme sequence $\mathbf{x}$, and speech tokens of the1st layer of the prompt $\tilde{c}<em>{:,1}$ as input to predict the target speech tokens of the1st layer $\mathbf{c}</em>{:,1}$ sequentially, i.e. maximizes the following distribution:</p>
 </blockquote>
@@ -667,7 +667,7 @@ The NAR Transformer predicts all target speech tokens $\mathbf{c}<em>{:,j}$ of t
 $$</p>
 <blockquote>
 <p>where $\theta_{\text{NAR}}$ is the trainable parameters of the NAR Transformer.
-By combining Eq.2 and Eq.3, <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> breaks Eq.1 into the following form:</p>
+By combining Eq.2 and Eq.3, <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> breaks Eq.1 into the following form:</p>
 </blockquote>
 <p>$$
   \mathbb{P}(\mathbf{C}|\mathbf{x},\tilde{\mathbf{C}})=\mathbb{P}(\mathbf{c}<em>{:,1}|\mathbf{x},\tilde{\mathbf{c}}</em>{:,1};\theta_{AR})\mathbb{P}(\mathbf{c}<em>{:,2:N}|\mathbf{x},\tilde{\mathbf{C}};\theta</em>{NAR}).\tag{4}
@@ -690,12 +690,12 @@ Wei 等人的研究中也能观察到相似问题, 他们发现基于语言模�
 如 Wei 等人所展示的, 通过思维链提示, 可以显著提高大语言模型在复杂任务上的正确率.
 这激励我们将思维链提示应用于基于大语言模型的语音合成, 通过在生成语音之前生成中间韵律标记来缓解基于语言模型的语音合成系统的健壮性问题.</p>
 <blockquote>
-<p>To incorporate pitch and duration in the AR Transformer of <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a>, we first get the alignment between phonemes and speech tokens and extract the pitch value for each speech token.
+<p>To incorporate pitch and duration in the AR Transformer of <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>, we first get the alignment between phonemes and speech tokens and extract the pitch value for each speech token.
 We then compute phoneme-level pitch value based on the duration and linearly quantize it to $M_p$ buckets.
 We define a maximal duration value $M_d$, and all duration values that exceed $M_d$ will be truncated to the maximum.
 ==<strong>RALL-E</strong>== predicts the two prosody tokens before the speech tokens in a CoT style.</p>
 </blockquote>
-<p>为了在 <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> 的自回归 Transformer 中整合音高和时长, 我们首先获得音素和语音 token 之间的对齐, 并提取每个语音 token 的音高值.
+<p>为了在 <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> 的自回归 Transformer 中整合音高和时长, 我们首先获得音素和语音 token 之间的对齐, 并提取每个语音 token 的音高值.
 然后我们基于时长计算音素级别的音高值, 并将其线性量化到 $M_p$ 个桶中.
 我们定义一个最大时长值 $M_d$, 超出该值的时长值将被截断.
 ==<strong>RALL-E</strong>== 以 CoT 风格在语音 tokens 前预测两个韵律 tokens.</p>
@@ -737,12 +737,12 @@ $$ </p>
 <h3 id="33enhancing-alignment-with-duration-guided-masking">3.3.Enhancing Alignment with Duration-Guided Masking<a class="headerlink" href="#33enhancing-alignment-with-duration-guided-masking" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../_Images/2024.04_RALL-E_FIG02.png" /></p>
 <blockquote>
-<p>As the left side of Fig.02 illustrates, since the speech token attends to all phonemes in the AR Transformer of <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a>, the alignment between the phonemes and the speech tokens is implicitly modeled by the self-attention of <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a>.
+<p>As the left side of Fig.02 illustrates, since the speech token attends to all phonemes in the AR Transformer of <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>, the alignment between the phonemes and the speech tokens is implicitly modeled by the self-attention of <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>.
 This can be imprecise and causes errors like word omissions or hallucinations.
 Though ==<strong>RALL-E</strong>== introduces prosody CoT prompting to guide and stabilize the generation, we still find the model can fail to align in the experiments.
 We thus propose duration guided masking to fully utilize the intermediate duration results and boost the robustness.</p>
 </blockquote>
-<p>如图 2 左侧所示, 由于 <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> 的自回归 Transformer 中的语音 token 能够关注到所有音素, 因此音素和语音 token 的对齐是通过自注意力隐式建模的.
+<p>如图 2 左侧所示, 由于 <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> 的自回归 Transformer 中的语音 token 能够关注到所有音素, 因此音素和语音 token 的对齐是通过自注意力隐式建模的.
 然而, 这种对齐可能不精确, 导致诸如词汇遗漏或幻觉等错误.
 尽管 ==<strong>RALL-E</strong>== 提出了韵律 CoT 提示来引导和稳定生成, 但我们仍然发现模型在实验中可能无法对齐.
 因此, 我们提出了时长导向掩码 (duration-guided masking) 来充分利用中间时长结果并提升鲁棒性.</p>
@@ -772,12 +772,12 @@ Thus we only apply the masking strategy on the AR Transformer.</p>
 <p>对于非自回归 Transformer, 我们在初步实验中并未获得所提出的掩码策略的明显收益.
 因此, 我们只在自回归 Transformer 上应用掩码策略.</p>
 <blockquote>
-<p>The general inference procedure follows <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> with two differences.
+<p>The general inference procedure follows <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> with two differences.
 First, before sampling the speech tokens $\mathbf{c}<em>{:,1}$ the prosody tokens $\mathbf{p}$ and $\mathbf{d}$ are sampled conditioning on the phoneme sequence $\mathbf{x}$ and acoustic prompt $\tilde{\mathbf{p}}$, $\tilde{\mathbf{d}}$.
 Second, although normal language models depend on a special token <code>&lt;eos&gt;</code> as the stop condition, since we know the total duration $D = \sum^L</em>{t=1}d_t$, we propose a duration guided inference method that forces the inference to stop at the $D$-th step.
 This method ensures no phoneme is omitted or repeated as it continues the inference if the <code>&lt;eos&gt;</code> token is predicted before the $D$-th step and stops at the right step as guided by the predicted duration..</p>
 </blockquote>
-<p>整体推理过程遵循 <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> 的一般过程, 但有两个差别.
+<p>整体推理过程遵循 <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> 的一般过程, 但有两个差别.
 首先, 在采样语音 tokens $\mathbf{c}<em>{:,1}$ 之前, 先采样韵律 tokens $\mathbf{p}$ 和 $\mathbf{d}$ 作为条件, 条件是音素序列 $\mathbf{x}$ 和声学提示 $\tilde{\mathbf{p}}$, $\tilde{\mathbf{d}}$.
 其次, 虽然普通语言模型依赖于特殊符号 <code>&lt;eos&gt;</code> 作为停止条件, 但由于我们知道总时长 $D = \sum^L</em>{t=1}d_t$, 我们提出了一个时长导向推理方法, 强制推理停止于 $D$-th 步.
 这种方法可以确保不会遗漏或重复任何音素, 因为如果在 $D$-th 步预测到 <code>&lt;eos&gt;</code> 符号, 推理就会继续, 直到预测的时长达到要求的时长.</p>
@@ -801,8 +801,8 @@ This method ensures no phoneme is omitted or repeated as it continues the infere
 <blockquote>
 <p>This paper presents ==<strong>RALL-E</strong>==, a robust codec language modeling method with CoT prompting for TTS.
 To address the robustness problem of LLM-based TTS, ==<strong>RALL-E</strong>== (1) incorporates prosody features (pitch and duration) in the LLM as a CoT prompting to assist and stabilize the generation of speech tokens, and (2) proposes duration-guided masking that enforces the model to attend on relevant phonemes (prosody features) corresponding to each speech token.
-We conduct comprehensive objective and subjective evaluations and demonstrate that ==<strong>RALL-E</strong>== can significantly improve the robustness of LLM-based TTS compared to the baseline <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> and two previous works.
-Furthermore, we show that ==<strong>RALL-E</strong>== can correctly synthesize sentences that are particularly hard to synthesize for <a href="../../Models/Speech_LLM/2023.01.05_VALL-E.md">VALL-E (2023)</a> with a 4% error rate that even approaches the performance of non-autoregressive TTS.</p>
+We conduct comprehensive objective and subjective evaluations and demonstrate that ==<strong>RALL-E</strong>== can significantly improve the robustness of LLM-based TTS compared to the baseline <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> and two previous works.
+Furthermore, we show that ==<strong>RALL-E</strong>== can correctly synthesize sentences that are particularly hard to synthesize for <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a> with a 4% error rate that even approaches the performance of non-autoregressive TTS.</p>
 </blockquote>
 <h2 id="awindow-size-study">A.Window Size Study<a class="headerlink" href="#awindow-size-study" title="Permanent link">&para;</a></h2>
 <h2 id="btranscript-of-the-50-hard-sentences">B.Transcript of the 50 hard sentences<a class="headerlink" href="#btranscript-of-the-50-hard-sentences" title="Permanent link">&para;</a></h2>

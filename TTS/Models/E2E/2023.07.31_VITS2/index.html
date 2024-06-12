@@ -1,0 +1,661 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>VITS2 - Sapphire Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vits2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Sapphire Lab" class="md-header__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sapphire Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              VITS2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Sapphire Lab" class="md-nav__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sapphire Lab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract·摘要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1introduction" class="md-nav__link">
+    1.Introduction·引言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2related-works" class="md-nav__link">
+    2.Related Works·相关工作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3methodology" class="md-nav__link">
+    3.Methodology·方法
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Methodology·方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31stochastic-duration-predictor-with-time-step-wise-conditional-discriminator" class="md-nav__link">
+    3.1.Stochastic Duration Predictor with Time Step-wise Conditional Discriminator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32monotonic-alignment-search-with-gaussian-noise" class="md-nav__link">
+    3.2.Monotonic Alignment Search with Gaussian Noise
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33normalizing-flows-using-transformer-block" class="md-nav__link">
+    3.3.Normalizing Flows using Transformer Block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34speaker-conditioned-text-encoder" class="md-nav__link">
+    3.4.Speaker-Conditioned Text Encoder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4experiments" class="md-nav__link">
+    4.Experiments·实验
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5results" class="md-nav__link">
+    5.Results·结果
+  </a>
+  
+    <nav class="md-nav" aria-label="5.Results·结果">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51evaluation-of-naturalness" class="md-nav__link">
+    5.1.Evaluation of Naturalness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52ablation-studies" class="md-nav__link">
+    5.2.Ablation Studies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53evaluation-of-speaker-similarity" class="md-nav__link">
+    5.3.Evaluation of Speaker Similarity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54reduced-dependency-on-the-phoneme-conversion" class="md-nav__link">
+    5.4.Reduced Dependency on the Phoneme Conversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55comparison-of-synthesis-and-training-speed" class="md-nav__link">
+    5.5.Comparison of Synthesis and Training Speed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6conclusions" class="md-nav__link">
+    6.Conclusions·结论
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vits2"><strong><em>VITS2</em></strong><a class="headerlink" href="#vits2" title="Permanent link">&para;</a></h1>
+<details>
+<summary>基本信息</summary>
+
+- 标题: ***VITS2***: Improving Quality and Efficiency of Single-Stage Text-to-Speech with Adversarial Learning and Architecture Design
+- 作者:
+  - [Jungil Kong](../../Authors/Jungil_Kong.md)
+  - [Jihoon Park](../../Authors/Jihoon_Park.md)
+  - [Beomjeong Kim](../../Authors/Beomjeong_Kim.md)
+  - [Jeongmin Kim](../../Authors/Jeongmin_Kim.md)
+  - [Dohee Kong](../../Authors/Dohee_Kong.md)
+  - [Sangjin Kim](../../Authors/Sangjin_Kim.md)
+- 机构:
+  - [SK Telecom](../../Institutions/SK_Telecom.md)
+- 时间:
+  - 预印时间: 2023.07.31 ArXiv v1
+  - 更新笔记: 2024.06.06
+- 发表:
+  - 期刊/会议 
+- 链接:
+  - [ArXiv](https://arxiv.org/abs/2307.16430)
+  - [DOI]()
+  - [Github]()
+  - [Demo]()
+- 标签:
+  - [语音合成](../../Tags/SpeechSynthesis.md)
+  - [对抗训练](../../Tags/Training_Adversarial.md)
+- 页数: 5
+- 引用: ?
+- 被引: 5
+
+</details>
+
+<h2 id="abstract">Abstract·摘要<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Single-stage text-to-speech models have been actively studied recently, and their results have outperformed two-stage pipeline systems.
+Although the previous single-stage model has made great progress, there is room for improvement in terms of its intermittent unnaturalness, computational efficiency, and strong dependence on phoneme conversion.
+In this work, we introduce <strong><em>VITS2</em></strong>, a single-stage text-to-speech model that efficiently synthesizes a more natural speech by improving several aspects of the previous work.
+We propose improved structures and training mechanisms and present that the proposed methods are effective in improving naturalness, similarity of speech characteristics in a multi-speaker model, and efficiency of training and inference.
+Furthermore, we demonstrate that the strong dependence on phoneme conversion in previous works can be significantly reduced with our method, which allows a fully end-to-end single-stage approach.</p>
+</blockquote>
+<h2 id="1introduction">1.Introduction·引言<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Recent developments in deep neural network-based text-to-speech have seen significant advancements.
+Deep neural network-based text-to-speech is a method for generating corresponding raw waveforms from input texts; it has several interesting features that often make the text-to-speech task challenging.
+A quick review of the features reveals that the text-to-speech task involves converting text, which is a discontinuous feature, into continuous waveforms.
+The input and output have a time step difference of hundreds of times, and the alignment between them must be very precise to synthesize high-quality speech audio.
+Additionally, prosody and speaker characteristics not present in the input text should be expressed naturally and it is a one-to-many problem in which text input can be spoken in multiple ways.
+Another factor that makes synthesizing high-quality speech challenging is that humans focus on individual components when listening to an audio; therefore, even if a fraction of the hundreds of thousands of signals that constitute the entire audio are unnatural, humans can easily sense them.
+Efficiency is another factor that makes the task difficult.
+The synthesized audio has a substantial time resolution, which generally comprises more than 20,000 data per second, demanding highly efficient sampling methods.</p>
+<p>Owing to the text-to-speech task features, the solution can also be sophisticated.
+Previous works have addressed these problems by dividing the process of generating waveforms from input texts into two cascaded stages.
+A popular method involves producing intermediate speech representations such as mel-spectrograms or linguistic features from the input texts in the first stage (<a href="../../Models/TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2</a>, <a href="../../Models/TTS2_Acoustic/2018.09.19_Transformer_TTS.md">Transformer-TTS</a>, <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>, <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a>, <a href="../../Models/TTS2_Acoustic/2020.05.12_Flowtron.md">Flowtron</a>, <a href="../../Models/TTS2_Acoustic/2021.05.13_Grad-TTS.md">Grad-TTS</a>, <a href="../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a>) and then generating raw waveforms conditioned on those intermediate representations in the second stage (<a href="../../Models/TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet</a>, <a href="../../Models/TTS3_Vocoder/2018.02.23_WaveRNN.md">WaveRNN</a>, <a href="../../Models/TTS3_Vocoder/2018.10.31_WaveGlow.md">WaveGlow</a>, <a href="../../TTS3_Vocoder/2019.10.08_MelGAN/">MelGAN</a>, <a href="../../Models/TTS3_Vocoder/2019.09.25_GAN-TTS.md">GAN-TTS</a>, <a href="../../Models/TTS3_Vocoder/2019.10.25_Parallel_WaveGAN.md">Parallel WaveGAN</a>, <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN</a>, <a href="../../Models/TTS3_Vocoder/2020.09.02_WaveGrad.md">WaveGrad</a>).
+Two-stage pipeline systems have the advantages of simplifying each model and facilitating training; however, they also have the following limitations. 
+(1) Error propagation from the first stage to the second stage. 
+(2) Rather than utilizing the learned representation inside the model, it is mediated through human-defined features such as mel-spectrogram or linguistic features. 
+(3) Computation required to generate intermediate features.
+Recently, to address these limitations, single-stage models that directly generate waveforms from input texts have been actively studied [16, 7, 17, 18].
+The single-stage models not only outperformed the two-stage pipeline systems, but also showed an ability to generate high-quality speech nearly indistinguishable from humans.</p>
+<p>Although the previous work (<a href="../2021.06.11_VITS/">VITS</a>) has achieved great success with the single-stage approach, the <a href="../2021.06.11_VITS/">model</a> has the following problems: intermittent unnaturalness, low efficiency of the duration predictor, complex input format to alleviate the limitations of alignment and duration modeling (use of blank token), insufficient speaker similarity in the multi-speaker model, slow training, and strong dependence on the phoneme conversion.
+In this work, we provide methods to address these problems.
+We propose a stochastic duration predictor trained through adversarial learning, normalizing flows improved by utilizing the transformer block and a speaker-conditioned text encoder to model multiple speakers’ characteristics better.
+We confirm that the proposed methods improve quality and efficiency.
+Furthermore, we show that the methods reduce the dependency on the phoneme conversion through the experiment using normalized texts as the input of the model.
+Thus, the methods move closer to a fully end-to-end single-stage approach.</p>
+</blockquote>
+<h2 id="2related-works">2.Related Works·相关工作<a class="headerlink" href="#2related-works" title="Permanent link">&para;</a></h2>
+<h2 id="3methodology">3.Methodology·方法<a class="headerlink" href="#3methodology" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this section, we describe improvements in four subsections: duration prediction, augmented variational autoencoder with normalizing flows, alignment search, and speaker-conditioned text encoder.
+We propose a method that uses adversarial learning to train the duration predictor to synthesize natural speech with high efficiency in both training and synthesis.
+Our model essentially learns alignments using the Monotonic Alignment Search (MAS) proposed in the previous work (<a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a>, <a href="../2021.06.11_VITS/">VITS</a>), and we further suggest a modification to improve the quality.
+In addition, we propose a method to improve naturalness by introducing the transformer block into the normalizing flows, which enables capturing long-term dependencies when transforming the distribution.
+Furthermore, we modify the speaker conditioning to improve the speaker similarity in a multi-speaker model.</p>
+</blockquote>
+<h3 id="31stochastic-duration-predictor-with-time-step-wise-conditional-discriminator">3.1.Stochastic Duration Predictor with Time Step-wise Conditional Discriminator<a class="headerlink" href="#31stochastic-duration-predictor-with-time-step-wise-conditional-discriminator" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>The previous work (<a href="../2021.06.11_VITS/">VITS</a>) has shown that the flow-based stochastic duration predictor is more effective in improving the naturalness of synthesized speech than the deterministic approach.
+It showed great results; however, the flow-based method requires relatively more computations and some sophisticated techniques.
+We propose a stochastic duration predictor with adversarial learning to synthesize more natural speech with higher efficiency in both training and synthesis than the previous work (<a href="../2021.06.11_VITS/">VITS</a>).
+The overview of the proposed duration predictor and discriminator is shown in Figure 1a.
+We apply adversarial learning to train the duration predictor with a conditional discriminator that is fed the same input as the generator to appropriately discriminate the predicted duration.
+We use the hidden representation of the text $h_{text}$ and Gaussian noise $z_d$ as the input of the generator $G$; and the $h_{text}$ and duration obtained using MAS in the logarithmic scale denoted as $d$ or predicted from the duration predictor denoted as $\hat{d}$, are used as the input of the discriminator $D$.
+Discriminators of general generative adversarial networks are fed inputs of a fixed length, whereas the duration for each input token is predicted, and the length of the input sequence varies for each training instance.
+To properly discriminate the inputs of variable length, we propose a time step-wise discriminator that discriminates each of the predicted durations of all tokens.
+We use two types of losses; the least squares loss function (<a href="../_Basis_CV/2016.11.13_LSGAN.md">LSGAN</a>) for adversarial learning and the mean squared error loss function:</p>
+</blockquote>
+<p>$$
+  Loss_{adv}(D) = E_{(d,z_d,h_{text})} [(D(d, h_{text})-1)^2 + (D(G(z_d, h_{text}), h_{text}))^2]\tag{01}
+$$</p>
+<p>$$
+  Loss_{adv}(G) = E_{(z_d, h_{text})} [(D(G(z_d, h_{text}))-1)^2]\tag{02}
+$$</p>
+<p>$$
+  Loss_{mse} = MSE(G(z_d, h_{text}), d)\tag{03}
+$$</p>
+<blockquote>
+<p>Our proposed duration predictor and training mechanism allow for a learning duration in short steps, and the duration predictor is separately trained as the last training step, which reduces the overall computation time for training.</p>
+</blockquote>
+<h3 id="32monotonic-alignment-search-with-gaussian-noise">3.2.Monotonic Alignment Search with Gaussian Noise<a class="headerlink" href="#32monotonic-alignment-search-with-gaussian-noise" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Following the previous work (<a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a>, <a href="../2021.06.11_VITS/">VITS</a>), we introduce MAS into our model to learn the alignment.
+The algorithm yields the alignment between text and audio that has the highest probability among all possible monotonic alignments, and the model is trained to maximize its probability.
+The method is efficient; however, after searching and optimizing a particular alignment, it is limited in exploration to search for other alignments that are more appropriate.
+To mitigate this, we add a small Gaussian noise to the calculated probabilities.
+This gives the model extra opportunities to search for other alignments.
+We only add this noise at the beginning of training because MAS enables the model to learn the alignments quickly.
+Referring to a previous work <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a>, which described the algorithm in detail, $Q$ values have the maximum log-likelihood calculated for all possible positions in the forward operation.
+We add small Gaussian noise $\varepsilon$ to the calculated $Q$ values in the operation.</p>
+</blockquote>
+<p>$$
+  P_{i,j} = \log\mathcal{N}(z_j;\mu_i, \sigma_i^2)\tag{04}
+$$</p>
+<p>$$
+  Q_{i,j} = \max_{A}\sum_{k=1}^{j}\log \mathcal{N}(z_k;\mu_{A(k)}, \sigma_{A(k)}^2) = \max (Q_{i-1,j-1}, Q_{i,j-1}) + P_{i,j}+\varepsilon\tag{05}
+$$</p>
+<blockquote>
+<p>where $i$ and $j$ denote a specific position on the input sequence and posterior, respectively, $z$ represents transformed latent variables from the normalizing flows.
+$\varepsilon$ is obtained as the product of noise sampled from the standard normal distribution, the standard deviation of $P$, and the noise scale starting at $0.01$ and decreasing by $2\times 10^{−6}$ for every step.</p>
+</blockquote>
+<h3 id="33normalizing-flows-using-transformer-block">3.3.Normalizing Flows using Transformer Block<a class="headerlink" href="#33normalizing-flows-using-transformer-block" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>The previous work (<a href="../2021.06.11_VITS/">VITS</a>) demonstrated the capability of the variational autoencoder augmented with normalizing flows to synthesize high-quality speech audio.
+The normalizing flows comprise convolution blocks, which are effective structures for capturing the patterns of adjacent data and enabling the model to synthesize high-quality speech.
+The ability to capture long-term dependencies can be crucial when transforming distribution because each part of the speech is related to other parts that are not adjacent.
+Although a convolution block captures adjacent patterns effectively, it has a disadvantage in capturing long-term dependencies owing to the limitations of its receptive field.
+Therefore, we add a small transformer block with the residual connection into the normalizing flows to enable the capturing of long-term dependencies, as shown in Figure 1b.
+Figure 2 shows an actual attention score map and the receptive field of the convolution block.
+We can confirm that the transformer block collects information at various positions when transforming the distribution, which is impossible with the receptive field.</p>
+</blockquote>
+<h3 id="34speaker-conditioned-text-encoder">3.4.Speaker-Conditioned Text Encoder<a class="headerlink" href="#34speaker-conditioned-text-encoder" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Because the multi-speaker model is to synthesize speech in multiple characteristics according to the speaker condition with one single model, expressing individual speech characteristics of each speaker is an important quality factor as well as naturalness.
+The previous work showed that the single-stage model can model multiple speakers with high quality.
+Considering some features, such as a speaker’s particular pronunciation and intonation, significantly influences the expression of the speech characteristics of each speaker but are not contained in the input text, we design a text encoder conditioned with the speaker information to better mimic various speech characteristics of each speaker by learning the features while encoding the input text.
+We condition the speaker vector on the third transformer block of the text encoder, as shown in Figure 1c.</p>
+</blockquote>
+<h2 id="4experiments">4.Experiments·实验<a class="headerlink" href="#4experiments" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>We conducted experiments on two different datasets.
+We used the <a href="../../Datasets/LJSpeech.md">LJ Speech dataset</a> to confirm the improvement in naturalness and the <a href="../../Datasets/VCTK.md">VCTK dataset</a> to verify whether our model could reproduce speaker characteristics better.
+The LJ Speech dataset consists of 13,100 short audio clips of a single speaker with a total length of approximately 24 hours.
+The audio format is 16-bit PCM with a sample rate of 22.05 kHz, and we used it without any manipulation.
+We randomly split the dataset into a training set (12,500 samples), validation set (100 samples), and test set (500 samples).
+The VCTK dataset consists of approximately 44,000 short audio clips uttered by 109 native English speakers with various accents.
+The total length of the audio clips is approximately 44 hours.
+The audio format is 16-bit PCM with a sample rate of 44.1 kHz.
+We reduced the sample rate to 22.05 kHz.
+We randomly split the dataset into a training set (43,470 samples), validation set (100 samples), and test set (500 samples).</p>
+<p>We used 80 bands mel-scale spectrograms for calculating the reconstruction loss.
+In contrast with the previous work (<a href="../2021.06.11_VITS/">VITS</a>), we used the same spectrograms as the input of the posterior encoder.
+The fast Fourier transform, window, and hop sizes were set to 1024, 1024, and 256, respectively.</p>
+<p>We conducted experiments using both phoneme sequences and normalized texts as the input of the model.
+We converted text sequences into International Phonetic Alphabet sequences using <a href="https://github.com/bootphon/phonemizer">open-source software (Phonemizer)</a> and fed the text encoder with the sequences.
+Contrasting with the previous work (<a href="../2021.06.11_VITS/">VITS</a>), we did not use the blank token.
+For the experiment with normalized texts, we normalized the input text with simple rules using <a href="https://github.com/keithito/tacotron">open-source software (Tacotron)</a> and fed the text encoder with it.</p>
+<p>The networks were trained using the <a href="../../Models/_Basis/AdamW.md">AdamW</a> optimizer with $\beta_{1} = 0.8$, $\beta_{2} = 0.99$, and weight decay $\lambda = 0.01$.
+The learning rate decay was scheduled by a $0.999^{1/8}$ factor in every epoch, with an initial learning rate of $2\times 10^{−4}$.
+We fed the networks with 256 training instances per step.
+Following the previous work (<a href="../2021.06.11_VITS/">VITS</a>), the windowed generator training was applied.
+We used mixed precision training on four NVIDIA V100 GPUs.
+The networks to generate waveforms and the duration predictor were trained up to 800k and 30k steps, respectively.</p>
+</blockquote>
+<h2 id="5results">5.Results·结果<a class="headerlink" href="#5results" title="Permanent link">&para;</a></h2>
+<h3 id="51evaluation-of-naturalness">5.1.Evaluation of Naturalness<a class="headerlink" href="#51evaluation-of-naturalness" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>To confirm that the proposed model synthesizes natural speech, crowdsourced mean opinion score (MOS) tests were conducted.
+Raters rated their naturalness on a 5-point scale from 1 to 5 after listening to randomly selected audio samples from the test sets.
+Considering that the previous work (<a href="../2021.06.11_VITS/">VITS</a>) has already demonstrated similar quality to human recordings, we also conducted a comparative mean opinion score (CMOS) test, which is appropriate for evaluating high-quality samples by direct comparison.
+Raters rated their relative preference in terms of naturalness on a 7-point scale from 3 to -3 after listening to randomly selected audio samples from the test sets.1 Raters were allowed to evaluate each audio sample once.
+All audio samples were normalized to avoid the effect of amplitude differences on the score.
+We used the official implementation and pre-trained weights of the previous work (<a href="../2021.06.11_VITS/">VITS</a>) as the comparison model.
+The evaluation results are presented in Table 1 and Table 2a.
+The MOS difference between our method and the previous work (<a href="../2021.06.11_VITS/">VITS</a>) was 0.09, and the CMOS and confidence interval were 0.201 and ±0.105, respectively.
+The results demonstrate that the our method significantly improves the quality of synthesized speech.
+Additionally, we evaluated CMOS with the method (<a href="../../Models/E2E/2022.07.01_JETS.md">JETS</a>) that showed good performance using different structures and training mechanisms.
+For evaluation, we generated samples using the official implementation and pre-trained weights.
+The CMOS and confidence intervals of the evaluation are 0.176 and ±0.125, respectively, indicating that our method significantly outperforms the method.</p>
+</blockquote>
+<h3 id="52ablation-studies">5.2.Ablation Studies<a class="headerlink" href="#52ablation-studies" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Ablation studies were also conducted to verify the validity of the proposed methods.
+To verify the validity of the stochastic duration predictor trained with adversarial learning, it was substituted with the deterministic duration predictor that had the same structure and was trained with L2 loss.
+The deterministic duration predictor was trained up to the same steps as the previous work (<a href="../2021.06.11_VITS/">VITS</a>).
+To verify the efficacy of the noise scheduling used in the alignment search, the model was trained without the noise.
+We trained the model without the transformer block in the normalizing flows to verify its effectiveness.
+The evaluation results are presented in Table 1.
+The MOS differences of the ablation studies on the deterministic duration predictor, alignment search without the noise, and normalizing flows without the transformer block are 0.14, 0.15, and 0.06, respectively.
+As we do not use the blank token and linear spectrogram, the computational efficiency would be improved, and removing some of the proposed methods shows lower performance compared with the previous work (<a href="../2021.06.11_VITS/">VITS</a>).
+The results show that the proposed methods are effective in improving the quality.</p>
+</blockquote>
+<h3 id="53evaluation-of-speaker-similarity">5.3.Evaluation of Speaker Similarity<a class="headerlink" href="#53evaluation-of-speaker-similarity" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>To confirm the improvement in speaker similarity in the multispeaker model, similarity MOS tests similar to the previous work (<a href="">Transfer Learning from Speaker Verification to Multispeaker Text-to-Speech Synthesis</a>) were conducted through crowdsourcing.
+In the test, randomly sampled human recorded audio from the test set was presented as a reference, and raters scored the similarity between the reference and the corresponding synthesized audio on a five-point scale from 1 to 5.
+As in section 4.1, raters were allowed to evaluate each audio sample once, and the audio samples were normalized.
+The evaluation results are presented in Table 2b.
+<strong><em>VITS2</em></strong> was rated 0.2 MOS higher than the previous work (<a href="../2021.06.11_VITS/">VITS</a>), which shows the effectiveness of our method in improving speaker similarity when modeling multiple speakers.</p>
+</blockquote>
+<h3 id="54reduced-dependency-on-the-phoneme-conversion">5.4.Reduced Dependency on the Phoneme Conversion<a class="headerlink" href="#54reduced-dependency-on-the-phoneme-conversion" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Previous works [17, 26] have shown good performance with single-stage approaches but continue to have a strong dependence on phoneme conversion.
+Because normalized text does not inform its actual pronunciation, it makes learning accurate pronunciations challenging.
+It is currently a crucial barrier to achieving a fully end-to-end single-stage speech synthesis.
+We present that our method significantly improves this problem through intelligibility tests.
+After transcribing 500 synthesized audio in the test set using Google’s automatic speech recognition API, we calculated the character error rate (CER) with the ground truth text as the reference.
+We compared the results of the following four models with the ground truth: the proposed model using phoneme sequences, the proposed model using normalized texts, the previous work using phoneme sequences, and the previous work using normalized texts.
+Table 3 presents the comparison, which confirms that not only the proposed model outperforms the previous work, but also the performance of our model using normalized texts is comparable to that of the model using phoneme sequences.
+It demonstrates the possibility of a data-driven, fully end-to-end approach.</p>
+</blockquote>
+<h3 id="55comparison-of-synthesis-and-training-speed">5.5.Comparison of Synthesis and Training Speed<a class="headerlink" href="#55comparison-of-synthesis-and-training-speed" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>We compared our model’s synthesis and training speed with those of the previous work (<a href="../2021.06.11_VITS/">VITS</a>).
+We measured the synchronized elapsed time over the entire process to generate raw waveforms from input sequences with 500 sentences randomly selected from the LJ Speech dataset.
+We used a single NVIDIA V100 GPU with a batch size of 1.
+We also measured and averaged the elapsed time for the training computation of each step for five epochs on four NVIDIA V100 GPUs.
+Table 4 shows the results.
+As the duration predictor is more efficient and can be trained separately and the input sequences are shorter than in the previous work, its training and synthesis speed are improved; the improvements are 20.5% and 22.7%, respectively.</p>
+</blockquote>
+<h2 id="6conclusions">6.Conclusions·结论<a class="headerlink" href="#6conclusions" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>We propose <strong><em>VITS2</em></strong>, a single-stage text-to-speech model that can efficiently synthesize more natural speech.
+We improved the training and inference efficiency and naturalness by introducing adversarial learning into the duration predictor.
+The transformer block was added to the normalizing flows to capture the long-term dependency when transforming the distribution.
+The synthesis quality was improved by incorporating Gaussian noise into the alignment search.
+The dependency on phoneme conversion, which was posing a challenge in achieving a fully end-to-end single-stage speech synthesis, was significantly reduced.
+The test results also show that overall intelligibility was improved.
+We demonstrated the validity of our proposed methods through experiments, quality evaluation, and computation speed measurement.
+Various problems still exist in the field of speech synthesis that must be addressed, and we hope that our work can be a basis for future research.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,928 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>LLaMA-VITS: Enhancing TTS Synthesis with Semantic Awareness - Sapphire Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#llama-vits-enhancing-tts-synthesis-with-semantic-awareness" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Sapphire Lab" class="md-header__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sapphire Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LLaMA-VITS: Enhancing TTS Synthesis with Semantic Awareness
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Sapphire Lab" class="md-nav__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sapphire Lab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1introduction" class="md-nav__link">
+    1.Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2related-works" class="md-nav__link">
+    2.Related Works
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Related Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21text-to-speech-models" class="md-nav__link">
+    2.1.Text-to-Speech Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-fine-tuning-bert-like-lms-for-tts" class="md-nav__link">
+    2.2. Fine-tuning BERT-like LMs for TTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23integrating-gpt-like-lms-for-tts" class="md-nav__link">
+    2.3.Integrating GPT-like LMs for TTS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3methodology" class="md-nav__link">
+    3.Methodology
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Methodology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31semantic-embeddings-derived-from-llama2" class="md-nav__link">
+    3.1.Semantic Embeddings Derived from LLaMA2
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.Semantic Embeddings Derived from LLaMA2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formulation-for-global-tokens" class="md-nav__link">
+    Formulation for Global Tokens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formulation-for-sequential-tokens" class="md-nav__link">
+    Formulation for Sequential Tokens
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32fusing-semantic-embeddings-with-acoustic-embeddings" class="md-nav__link">
+    3.2.Fusing Semantic Embeddings with Acoustic Embeddings
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.Fusing Semantic Embeddings with Acoustic Embeddings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fusing-global-embedding-with-acoustic-embedding" class="md-nav__link">
+    Fusing Global Embedding with Acoustic Embedding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fusing-sequential-embeddings-to-enhance-text-embeddings" class="md-nav__link">
+    Fusing Sequential Embeddings to Enhance Text Embeddings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4experiments" class="md-nav__link">
+    4.Experiments
+  </a>
+  
+    <nav class="md-nav" aria-label="4.Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41experimental-settings" class="md-nav__link">
+    4.1.Experimental Settings
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1.Experimental Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-token-extraction" class="md-nav__link">
+    Global Token Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequential-token-extraction" class="md-nav__link">
+    Sequential Token Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    Datasets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-hyper-parameters-training" class="md-nav__link">
+    Implementation, Hyper-parameters, Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-metrics" class="md-nav__link">
+    Evaluation Metrics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5experiment-results" class="md-nav__link">
+    5.Experiment Results
+  </a>
+  
+    <nav class="md-nav" aria-label="5.Experiment Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51results-on-full-ljspeech" class="md-nav__link">
+    5.1.Results on full LJSpeech
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52results-on-1-hour-ljspeech" class="md-nav__link">
+    5.2.Results on 1-hour LJSpeech
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53results-on-emov_db_bea_sem" class="md-nav__link">
+    5.3.Results on EmoV_DB_bea_sem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54analysis" class="md-nav__link">
+    5.4.Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6discussion" class="md-nav__link">
+    6.Discussion
+  </a>
+  
+    <nav class="md-nav" aria-label="6.Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61gpt-like-vs-bert-like" class="md-nav__link">
+    6.1.GPT-like vs BERT-like
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62semantic-token-strategy" class="md-nav__link">
+    6.2.Semantic Token Strategy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7conclusion" class="md-nav__link">
+    7.Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8limitations" class="md-nav__link">
+    8.Limitations
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="llama-vits-enhancing-tts-synthesis-with-semantic-awareness">LLaMA-VITS: Enhancing TTS Synthesis with Semantic Awareness<a class="headerlink" href="#llama-vits-enhancing-tts-synthesis-with-semantic-awareness" title="Permanent link">&para;</a></h1>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Recent advancements in <em>Natural Language Processing (NLP)</em> have seen <em>Large-scale Language Models (LLMs)</em> excel at producing high-quality text for various purposes.
+Notably, in <em>Text-To-Speech (TTS)</em> systems, the integration of <strong>BERT</strong> for semantic token generation has underscored the importance of semantic content in producing coherent speech outputs.
+Despite this, the specific utility of <em>LLMs</em> in enhancing TTS synthesis remains considerably limited.
+This research introduces an innovative approach, <strong><em>LLaMA-VITS</em></strong>, which enhances TTS synthesis by enriching the semantic content of text using LLM.
+<strong><em>LLaMA-VITS</em></strong> integrates semantic embeddings from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> with the <a href="../../E2E/2021.06.11_VITS/">VITS</a>, a leading end-to-end TTS framework.
+By leveraging <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> for the primary speech synthesis process, our experiments demonstrate that <strong><em>LLaMA-VITS</em></strong> matches the naturalness of the <a href="../../E2E/2021.06.11_VITS/">original VITS</a> (<strong>ORI-VITS</strong>) and those incorporate <strong>BERT</strong> (<strong>BERT-VITS</strong>), on the <em>LJSpeech</em> dataset, a substantial collection of neutral, clear speech.
+Moreover, our method significantly enhances emotive expressiveness on the <em>EmoV_DB_bea_sem</em> dataset, a curated selection of emotionally consistent speech from the <em>EmoV_DB</em> dataset, highlighting its potential to generate emotive speech.</p>
+</blockquote>
+<h2 id="1introduction">1.Introduction<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><em>Text-to-Speech (TTS)</em> synthesis is a technology that transforms written text into its spoken equivalent, thereby enhancing content accessibility.
+This technology finds application in the production of audiobooks (Chen et al., 2022) and virtual assistants (Wu et al., 2023).
+However, <strong>traditional TTS models</strong>, which primarily focus on the acoustic features, often fall short in comprehending the semantic and emotional information embedded within the text.
+With the significant advancements in <em>Natural Language Processing (NLP)</em> technologies, particularly through <em>Language Models (LMs)</em> such as <strong>BERT</strong> (Devlin et al., 2019) and <strong>GPT</strong> (Radford et al., 2018; Brown et al., 2020), which have demonstrated formidable capabilities in understanding and generating natural language, researchers have proposed various <strong>BERT-based TTS models</strong> (Mukherjee et al., 2022; Abbas et al., 2022; Li et al., 2023; Guo et al., 2022) to improve the expressiveness of synthesized speech.
+Nonetheless, the effectiveness and flexibility of <strong>BERT-based TTS models</strong> in diverse applications are limited due to the smaller parameter size of <strong>BERT models</strong> and the necessity for designing specific fine-tuning tasks to enhance their capabilities.
+On the other hand, <strong>Large-scale Language Models (LLMs)</strong>, such as <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>, not only require decreasing computational re sources and achieve higher levels of text generation but also possess excellent zero-shot learning capabilities.
+Moreover, they can achieve improvements comparable to fine-tuning by adjusting only a minimal number of parameters through prompt tuning (Liu et al., 2022; Tu et al., 2022).
+However, the potential of these LLMs for TTS tasks has not been fully explored.
+In light of this context, we introduce <strong><em>LLaMA-VITS</em></strong>, a model that leverages semantic representations extracted from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> on top of a state-of-the-art TTS model, <a href="../../E2E/2021.06.11_VITS/">VITS</a>, enabling the generated speech to retain acoustic information while understanding and expressing semantics and emotions.
+Through comprehensive objective and subjective evaluations, <strong><em>LLaMA-VITS</em></strong> has been verified to surpass TTS baselines without semantic input or those integrated with BERT.
+The main contributions encapsulate: 
+- We propose <strong>LLaMA-VITS model</strong> that utilizes the semantic understanding and expression capabilities of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>, offering equal or superior acoustic performance compared to baseline models, along with a significantly enhanced ability to understand and express semantics and emotions.
+- Through empirical analysis, we demonstrate that global tokens in <strong><em>LLaMA-VITS</em></strong> provide more significant improvements than sequential to kens, contrasting with observations in <strong>BERT-based TTS models</strong>.
+- We quantitatively verified our findings using both subjective and objective metrics.
+Our code, models, audio demos, and the filtered single female speaker emotional dataset <em>EmoV_DB_bea_sem</em> are available at https://github.com/xincanfeng/vitsgpt.git.</p>
+</blockquote>
+<h2 id="2related-works">2.Related Works<a class="headerlink" href="#2related-works" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>TTS technology has significantly advanced in learning acoustic features through structural evolution.
+However, comprehending and conveying semantics remain challenging.
+Since <strong>BERT-like LMs</strong> have demonstrated profound capabilities in understanding semantics through extensive pre-training on vast text corpora, some studies have integrated <strong>BERT-like LMs</strong> with TTS technology to enhance synthesized speech.
+Nonetheless, research on incorporating <strong>GPT-like LMs</strong> within TTS technology is notably scarce.</p>
+</blockquote>
+<h3 id="21text-to-speech-models">2.1.Text-to-Speech Models<a class="headerlink" href="#21text-to-speech-models" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>TTS task aims to generate natural, fluent, and easily comprehensible speech.
+Traditional TTS systems, e.g., a <strong>Statistical Parametric Speech Synthesis (SPSS)</strong> system (Taylor, 2009), usually comprise multiple distinct components.
+These include a frontend module that converts text into linguistic features (such as duration and pitch), an <strong>acoustic model</strong> that maps these linguistic features to acoustic features, and a vocoder responsible for generating speech waveforms from the acoustic features.
+Over the past decades, the complexity of traditional models has been notable, attributed to their reliance on manually engineered features and the intricate communication between modules.</p>
+<p>Transitioning from <strong>Hidden Markov Models (HMM) based models</strong> (Black et al., 2007), through <strong>Deep Neural Networks (DNN) models</strong> (Zen et al., 2013), to <strong>Generative Adversarial Networks (GAN) based models</strong> (Saito et al., 2017), there has been a no table enhancement in voice quality, yet the architectural complexity remains significant.</p>
+<p>The advent of <strong>end-to-end TTS models</strong> marks a significant milestone, increasingly reducing the distinction between synthesized speech and human voice.
+<strong>End-to-end models</strong> are capable of trans forming raw text directly into final speech output, which not only streamlines the structural complexity of TTS systems and facilitates easier deployment but also significantly reduces the dependency on manual feature engineering, simplifying the training process.
+Moreover, they notably enhance the naturalness and intelligibility of the speech, thereby be coming the predominant architecture in <strong>TTS models</strong>.
+For instance, <a href="">Char2Wav (2017)</a> introduces an attentive encoder-decoder frame work for direct speech synthesis from text input.
+<a href="../../Models/TTS2_Acoustic/2017.03.29_Tacotron.md">Tacotron (2017)</a> undertakes training from the ground up and directly predicts linear spectrograms.
+Furthermore, the speech produced by <a href="../TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2 (2017)</a> closely mirrors the natural human voice.</p>
+<p>In the realm of <strong>end-to-end TTS models</strong>, many have adopted a non-autoregressive architecture.
+This architecture enables parallel data processing, where the model’s output generation does not depend on the output of the previous time step, thereby enhancing processing speed.
+It also circumvents the error accumulation issue inherent in <strong>traditional autoregressive models</strong>, which significantly boosts TTS performance.
+<a href="../TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech (2019)</a> and its variants exemplify this trend.
+<a href="../TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech (2019)</a> employs a transformer-based architecture to generate mel-spectrograms in parallel.
+Building on <a href="../TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech (2019)</a>, <a href="../../Models/TTS2_Acoustic/2020.06.11_FastPitch.md">FastPitch (2020)</a> predicts pitch contours during inference, enabling the production of more expressive and high quality speech.
+<a href="../TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2 (2020)</a> further incorporates explicit duration prediction and introduces pitch and energy as conditional inputs.</p>
+<p>Previous non-autoregressive approaches typically involve distinct training phases for <strong>acoustic models</strong> and <strong>vocoders</strong>.
+<a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a> introduces a more natural-sounding output compared to these two-stage systems through its one-stage parallel end-to-end architecture.
+Innovatively, <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a> incorporates variational inference combined with normalizing flows and employs an adversarial training methodology.
+Due to <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a>’s exemplary performance across multiple benchmarks, we select it as the <strong>foundational TTS model</strong> for our system.</p>
+</blockquote>
+<h3 id="22-fine-tuning-bert-like-lms-for-tts">2.2. Fine-tuning BERT-like LMs for TTS<a class="headerlink" href="#22-fine-tuning-bert-like-lms-for-tts" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>While <strong>TTS models</strong> have increasingly advanced in replicating acoustic features, insufficient training data can hinder the model’s ability to learn the semantic nuances of the same input across different contexts, thus limiting its expressiveness.
+Consequently, researchers have turned to leveraging the transfer learning capabilities of <strong>BERT-like LMs</strong>.
+Ultimately, TTS systems that incorporate pre-trained and fine-tuned <strong>BERT-like LMs</strong> have achieved better understandings of semantics and enhanced generated speech, marking a significant advancement.</p>
+<p>Hayashi et al. (2019) utilized a <strong>pre-trained BERT model</strong> as an auxiliary input to enhance a Tacotron2 based TTS system, resulting in improved speech naturalness.
+Similarly, Yang et al. (2019) applied a <strong>pre-trained BERT model</strong> to achieve enhanced front end accuracy.
+Kenter et al. (2020) demonstrated that integrating a <strong>BERT</strong> model, pre-trained on extensive unlabeled data and fine-tuned for speech, into an <strong>RNN-based TTS system</strong> enhances prosody.
+Kenter et al. (2020) specifically suggest updating the <strong>BERT</strong>’s parameters during the training of their <strong>RNN-based speech synthesis model</strong>, emphasizing the critical role of fine-tuning the <strong>BERT</strong> component for optimal outcomes.
+As prompt tuning draws wide attention in guiding text or image generation, <a href="../../Models/_tmp/2022.11.22_PromptTTS.md">PromptTTS (2022)</a> takes a prompt representation with both style and content descriptions from a <strong>BERT</strong> model as input to generate speech with precise style control and high speech quality.</p>
+<p>In particular, Mukherjee et al. (2022) utilized a <strong>pre-trained BERT model</strong> to develop a text emotion classification model, employing the final hidden states of the initial <code>[CLS]</code> token as a comprehensive representation of the text.
+Researchers such as Kenter et al. (2020); Li et al. (2021); Abbas et al. (2022) have applied word-level <strong>BERT</strong> to capture the semantic and syntactic structure of sentences, thereby aiding TTS synthesis.
+Li et al. (2023) introduced a phoneme-level <strong>BERT</strong>, designed with a preliminary task of predicting corresponding graphemes in addition to regular masked phoneme predictions, to enhance the naturalness of speech synthesized from <em>out-of-distribution (OOD)</em> texts.</p>
+<p>However, despite <strong>BERT</strong>’s acknowledged capacity to provide detailed word importance, syn tactic and semantic insights, and general knowledge (Hayashi et al., 2019; Kenter et al., 2020), its effectiveness is constrained by the particularities of fine-tuning approaches.
+Furthermore, <strong>BERT</strong>’s inherent non-generative nature might limit its ability to account for information outside the immediate sentence context.</p>
+</blockquote>
+<h3 id="23integrating-gpt-like-lms-for-tts">2.3.Integrating GPT-like LMs for TTS<a class="headerlink" href="#23integrating-gpt-like-lms-for-tts" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Considering semantic understanding and expression capabilities, <strong>BERT</strong> is primarily utilized for com prehension tasks.
+In comparison, <strong>GPT</strong> excels not only in understanding text but also in generating natural and coherent text.
+Moreover, with the larger model parameters, <strong>GPT</strong> is particularly adept at zero-shot or few-shot learning, enabling its direct application to various tasks with little to no need for fine-tuning or structural modifications.</p>
+<p>However, research on leveraging <strong>GPT-like models</strong> to aid TTS systems is very limited.
+Stephenson et al. (2021) explores the potential of improving speech synthesis naturalness by text input lookahead with <strong>GPT</strong> prediction.
+Such an approach potentially restricts TTS applications, as altering the input is often undesirable.
+Furthermore, the findings were not verified by human subjective evaluation.
+Saito et al. (2023) suggest employing <strong>ChatGPT</strong> to aid in empathetic dialogue speech synthesis by extracting the context of conversations.
+They particularly instruct <strong>ChatGPT</strong> to produce three key words that encapsulate the intention, emotion, and speaking Style of speech observed in the dialogue history.
+These keywords are subsequently utilized to train a <strong>speech synthesis model</strong>.
+However, due to the inaccessibility of <strong>ChatGPT</strong> to the public, the re searchers resort to processing <strong>ChatGPT</strong>’s outputs with <strong>BERT</strong> to extract embeddings.
+This approach essentially positions <strong>ChatGPT</strong> as an alternative to manual annotation, yet it does not delve into investigating <strong>ChatGPT</strong>’s internal representations and their potential impact on speech-related tasks.</p>
+<p>In our study, we selected <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>, a <strong>GPT-like LM</strong>, for integration into our TTS system, motivated by its technological advancements and potential for di verse applications.
+<a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> stands out as one of the largest publicly accessible <strong>LMs</strong>, rivaling proprietary models such as <strong>GPT3.5</strong> (OpenAI et al., 2024) and <strong>PaLM</strong> (540B) (Chowdhery et al., 2022), and sur passes other open-source alternatives like <strong>MPT</strong> and <strong>Falcon</strong> (Almazrouei et al., 2023) in benchmark evaluations.
+Additionally, the novel architecture of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> not only ensures enhanced security but also facilitates the extension of various down stream tasks (Touvron et al., 2023).</p>
+<p>Related research that employs <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> in speech and other multimodal tasks (Radhakrishnan et al., 2023; Zhang et al., 2023), coupled with the ongoing efforts to reduce computing costs associated with LLaMA2, underscores the model’s significant research interest and its promising prospects in multimodal applications.</p>
+</blockquote>
+<h2 id="3methodology">3.Methodology<a class="headerlink" href="#3methodology" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../_Images/2024.04_LLaMA-VITS_FIG01.png" /></p>
+<blockquote>
+<p>We propose leveraging semantic embeddings de rived from a <strong>GPT-like LM</strong> to improve TTS synthesis.
+In our work, <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> is employed as the <strong>GPT-like model</strong>, as elaborated in Sec.2.3, and [VIT../E2E/2021.06_VITS.md06_VITS.md) is utilized as the <strong>TTS model</strong> for generating audio from phoneme embeddings, as detailed in Sec.2.1.
+In essence, we extract semantic embeddings $E_{s}$ from the final hidden layer of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> and integrate them with the original acoustic text embeddings $E_{a}$ of [VIT../E2E/2021.06_VITS.md06_VITS.md), forming enhanced text embeddings $E_{as}$ for speech synthesis.
+Specifically, either a global token or a sequence of tokens is used to encapsulate the semantic attributes of an input sentence for varying objectives.
+The distinctions between these two token types are further explicated in Sec.3.1.</p>
+</blockquote>
+<h3 id="31semantic-embeddings-derived-from-llama2">3.1.Semantic Embeddings Derived from LLaMA2<a class="headerlink" href="#31semantic-embeddings-derived-from-llama2" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>For each input sentence $s$, we extract information from the final hidden layer before the output of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>.
+Different strategies are employed to cre ate various tokens that serve as the semantic em bedding for the sentence.</p>
+<p>Let $E_{s}$ denote the semantic embedding of sentence $s$, and $H_{LLaMA}^F(s)$ represent the output of the <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023) model</a> for sentence $s$ at the final hidden layer $F$.
+Therefore, $E_{s}$ can be expressed as: </p>
+</blockquote>
+<p>$$
+    E_{s}=  H_{LLaMA}^F(s)\tag{1}
+$$ </p>
+<blockquote>
+<p>Here, $H_{LLaMA}^F(s)$ is a vector that encapsulates the semantic representation of sentence $s$ after pro cessing through all layers of the <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>, culminating in the final layer.</p>
+</blockquote>
+<h4 id="formulation-for-global-tokens">Formulation for Global Tokens<a class="headerlink" href="#formulation-for-global-tokens" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>We explored five types of global tokens to represent the over arching semantic features of an input sentence, namely <code>[AVE]</code>, <code>[PCA]</code>, <code>[LAST]</code>, <code>[EIS_Word]</code>, and <code>[EIS_Sentence]</code>, with each strategy employing a single token.</p>
+<p>In the <code>[AVE]</code> strategy, the semantic token is de rived by calculating the average of all tokens’ out put vectors for sentence $s$, formulated as: </p>
+</blockquote>
+<p>$$
+    E_{s}^{AVE}= \dfrac{1}{n}\sum_{i=1}^n H_{LLaMA}^F(s,i)\tag{2} 
+$$</p>
+<blockquote>
+<p>Here, $E_{s}^{AVE}$ denotes the semantic token obtained using the <code>[AVE]</code> strategy, and $H_{LLaMA}^F(s,i)$ represents the output of the $i$ th token of sentence $s$ at the final hidden layer $F$ of LLaMA2, with $s$ comprising $n$ tokens.</p>
+<p>For the <code>[PCA]</code> strategy, we apply Principal Component Analysis to the output vectors of sentence sto extract principal components and rescale the mean of the PCA results according to the original data’s value range.
+This rescaling ensures that the PCA-processed data maintains a scale consistent with the original data, preserving the relative importance of semantic information numerically.
+Formulated as: </p>
+</blockquote>
+<p>$$
+    E_{s}^{PCA}= \text{PCArescale}(H_{LLaMA}^F(s)) \tag{3}
+$$</p>
+<blockquote>
+<p>In the <code>[LAST]</code> strategy, the semantic token is obtained by selecting the last token from the output vector of sentence s, as shown in the formula: </p>
+</blockquote>
+<p>$$
+    E_{s}^{LAST}= H_{LLaMA}^F(s, n)\tag{4} 
+$$</p>
+<blockquote>
+<p>where $H_{LLaMA}^F(s, n)$ refers to the representation of the last token of sentence $s$ after processing through all layers of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> at the final layer.</p>
+<p>In the <code>[EIS_Word]</code> and <code>[EIS_Sentence]</code> strategies, unlike the above approaches that utilize the sentence itself for representation, we derive the semantic representation of sentence $s$ based on <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>’s comprehension $u$.
+Adapted from Saito et al. (2023)’s practice, we employ prompts as illustrated in 2a and 2b, respectively, to obtain <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>’s understanding of sentence $s$ in terms of Emotion, Intention, and speaking Style, denoted as $u$, and calculate the average of this understanding’s representation to serve as the semantic embedding.</p>
+<p>In the <code>[EIS_Word]</code> strategy, <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> is prompted to describe Emotion, Intention, and speaking Style with three separate words, resulting in the following formula for the final semantic token: </p>
+</blockquote>
+<p>$$
+    E_{s}^{\text{EISWord}} = \dfrac{1}{m} [\sum_{i} H_{LLaMA}^{F}(u_E, i) + \sum_j H_{LLaMA}^{F}(u_I, j) +\sum_k H_{LLaMA}^{F}(u_S, k)] \tag{5} 
+$$</p>
+<blockquote>
+<p>where $u_E$, $u_I$, $u_S$ are the representations of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>’s output expressing the sentence’s Emotion, Intention, and speaking Style at the final hid den layer, respectively, with $i$, $j$, $k$ indicating the tokens of each output word, and m being the total number of these tokens.</p>
+<p>In the <code>[EIS_Sentence]</code> strategy, <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> is guided to describe its understanding of the input sentence’s Emotion, Intention, and speaking Style with an easy-to-understand sentence, leading to the fol lowing formula for the final semantic token: </p>
+</blockquote>
+<p>$$
+    E_s^{\text{EISSentence}} = \dfrac{1}{m}\sum_{i=1}^m H_{LLaMA}^{F}(u_{EIS}, i)\tag{6} 
+$$</p>
+<blockquote>
+<p>where $u_{EIS}$ is the representation of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>’s output expressing the understanding of the original sentence at the final hidden layer, and $m$ is the total number of tokens in this sentence representation.</p>
+</blockquote>
+<h4 id="formulation-for-sequential-tokens">Formulation for Sequential Tokens<a class="headerlink" href="#formulation-for-sequential-tokens" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>In the implementation of sequential tokens strategies, we focus on utilizing the complete set of tokens from the input sentence to represent its semantic in formation.
+Unlike the global token approaches, sequential tokens strategies encompass representations based on either text or phonemes, aiming to better align with the TTS model’s potential em phasis on acoustic features.
+The mathematical representations for these two strategies are as follows: 
+Under the <code>[TEX]</code> strategy, we directly employ all tokens from the textual form of sentence $s$ to represent its semantic information.
+If the output of sentence $s$ at the final hidden layer $F$ of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> consists of $n$ tokens, then the semantic token $T_{s}^{TEX}$ is represented as a sequence: </p>
+</blockquote>
+<p>$$
+    E_s^{TEX}= {H_{LLaMA}^F(s,1), H_{LLaMA}^F(s, 2),\cdots, H_{LLaMA}^F(s, n)} \tag{7} 
+$$</p>
+<blockquote>
+<p>In the <code>[PHO]</code> strategy, we consider the complete set of tokens from the phonemic form.
+Here, $s_{pho}$ denotes the phonemic representation of sentence $s$.
+If the output of $s_{pho}$ at the final hidden layerF of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> comprises $m$ tokens, then the semantic token $T_{s}^{PHO}$ is represented as a sequence: </p>
+</blockquote>
+<p>$$
+    E_{s}^{PHO}={H_{LLaMA}^F(s_{pho}, 1),H_{LLaMA}^F(s_{pho}, 2),\cdots,H_{LLaMA}^F(s_{pho}, m)}\tag{8} 
+$$</p>
+<blockquote>
+<p>In both strategies, $H_{LLaMA}^F(s, i)$ and $H_{LLaMA}^F(s_{pho}, i)$ respectively represent the outputs of the $i$ th token of sentence $s$ in its textual and phonemic forms at the final hidden layer $F$ of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>.
+This representation allows the TTS model to leverage the complete semantic information of a sentence, whether based on text or phonemes.</p>
+</blockquote>
+<h3 id="32fusing-semantic-embeddings-with-acoustic-embeddings">3.2.Fusing Semantic Embeddings with Acoustic Embeddings<a class="headerlink" href="#32fusing-semantic-embeddings-with-acoustic-embeddings" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>To align the dimensions of semantic embedding extracted from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>, denoted as $E_{s}$, with the acoustic embeddings from [VIT../E2E/2021.06_VITS.md06_VITS.md), denoted as $E_{a}$, we employ a linear projection.
+The original dimension of $E_{s}$, $d_{LLaMA}$, is projected to match the dimension of <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a> acoustic embedding, $d_{VITS}$, using a linear transformation matrix $W$ of dimensions $d_{VITS}\times d_{LLaMA}$.
+The projected semantic embedding, $E_s'$, is calculated as follows: </p>
+</blockquote>
+<p>$$
+    E_s'= W \cdot E_{s} \tag{9} 
+$$ </p>
+<h4 id="fusing-global-embedding-with-acoustic-embedding">Fusing Global Embedding with Acoustic Embedding<a class="headerlink" href="#fusing-global-embedding-with-acoustic-embedding" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>To obtain an embedding $E_{as}$ that integrates both semantic and acoustic information, for global tokens, we simply add the dimensionally unified global embedding to <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a>’s acoustic em bedding, as shown in the equation: </p>
+</blockquote>
+<p>$$
+    E_{as} = E_{a} + E_s′\tag{10}
+$$ </p>
+<h4 id="fusing-sequential-embeddings-to-enhance-text-embeddings">Fusing Sequential Embeddings to Enhance Text Embeddings<a class="headerlink" href="#fusing-sequential-embeddings-to-enhance-text-embeddings" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>We utilize the Scaled Dot Product Attention mechanism to merge sequential embeddings with <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a>’s original acoustic embedding to gain enhanced embedding $E_{as}$ , which can be described by the following mathematical formulas: 
+First, calculate the attention scores $A$:</p>
+</blockquote>
+<p>$$
+    A = \dfrac{q\cdot k^{\mathsf{T}}}{\gamma} \tag{11}
+$$</p>
+<blockquote>
+<p>where $q$ is the acoustic embedding $E_{a}$ in <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a> with dimensions $[b, t, d]$; 
+$k$ and $v$ denotes the semantic embedding $E_s'$ from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>, also with dimensions $[b, t, d]$; 
+$b$ is the batch size,tis the sequence length, and $d$ is the embedding dimension;
+$\gamma$ is temperature for scaling.
+$k^{\mathsf{T}}$ denotes the transpose of $k$, transforming $k$ from $[b, t, d]$ to $[b, d, t]$ for matrix multiplication.
+The resulting $A$ has dimensions $[b, t, t]$.</p>
+<p>If a source mask or target mask is present, a masking operation is applied, setting the attention scores at masked positions to a very low value (e.g.,−6e4) to nearly eliminate their weight contribution in the subsequent softmax step.</p>
+<p>Next, apply the softmax function and dropout to the attention scores, obtaining the final attention weights $W_{attn}$: </p>
+</blockquote>
+<p>$$
+    W_{attn}= \text{Dropout}(\text{Softmax}(A))\tag{12} 
+$$</p>
+<blockquote>
+<p>Finally, the output $E_{as}$ is calculated by weighting $v$ with the attention weights: </p>
+</blockquote>
+<p>$$
+    E_{as} = W_{attn}\cdot v
+$$ </p>
+<blockquote>
+<p>The output $E_{as}$ , viewed as text embedding fused with semantic information, has dimensions $[b, t, d]$ that match those of $q$.</p>
+</blockquote>
+<h2 id="4experiments">4.Experiments<a class="headerlink" href="#4experiments" title="Permanent link">&para;</a></h2>
+<h3 id="41experimental-settings">4.1.Experimental Settings<a class="headerlink" href="#41experimental-settings" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>We propose <strong><em>LLaMA-VITS</em></strong> which uses semantic to kens derived from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> to enhance acoustic embedding in [VIT../E2E/2021.06_VITS.md06_VITS.md) for better TTS performance.
+To show the effectiveness of our method, we experimented with two baseline models.
+In the <strong>ORI-VITS</strong> baseline, we use the original <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a> without external semantic information.
+In the <strong>BERT-VITS</strong> baseline, we extract various semantic tokens according to for mer research introduced in Section § 2.2.
+Specifically, we use the <code>[CLS]</code> token of <strong>BERT</strong> as the global token.
+To form the baseline of the sequential token in <strong>BERT</strong>, we use all the tokens in the sentence trained by text or phoneme, named <code>[BERT_TEX]</code> and <code>[BERT_PHO]</code>, respectively.
+In our proposed <strong><em>LLaMA-VITS</em></strong>, we derive global token <code>[AVE]</code>, <code>[LAST]</code>, <code>[PCA]</code>, <code>[EIS_Word]</code>, and <code>[EIS_Sentence]</code>, and sequential tokens <code>[TEX]</code> and <code>[PHO]</code> from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>, cor responding to those in <strong>BERT-VITS</strong>.
+We use <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> (13b) to generate semantic embeddings of dimension 5120.
+<code>[CLS]</code> and <code>[BERT_TEX]</code> tokens are extracted from <strong>BERT-base-uncased model</strong> which has a parameter size of 110M that generates token embedding of 768 dimensions.
+<code>[BERT_PHO]</code> token is extracted from <strong>BERT-x-phone-base model</strong> whose parameter size is 88M to generate token embedding of 768 dimensions.</p>
+</blockquote>
+<h4 id="global-token-extraction">Global Token Extraction<a class="headerlink" href="#global-token-extraction" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>In our proposed <strong><em>LLaMA-VITS</em></strong>, global strategy <code>[LAST]</code> only uses the last to ken in the final hidden layer of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> for each sentence.
+<code>[AVE]</code> uses the average of all tokens for each sentence.
+<code>[PCA]</code> uses the concatenation of all tokens whose dimension was reduced by Principal Component Analysis (PCA).
+<code>[EIS_Word]</code> and <code>[EIS_Sentence]</code> use the average of tokens for an answer, which is formed in three words or a sentence by prompts shown in Fig.02, to describe the Emotion, Intention, and speaking Style of the transcript.
+In <strong>BERT-VITS</strong> baseline, global strategy <code>[CLS]</code> only uses the first token from the <strong>BERT-base-uncased model</strong> for each input sentence.</p>
+</blockquote>
+<p><img alt="" src="../../_Images/2024.04_LLaMA-VITS_FIG02.png" /></p>
+<h4 id="sequential-token-extraction">Sequential Token Extraction<a class="headerlink" href="#sequential-token-extraction" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>In our proposed <strong><em>LLaMA-VITS</em></strong>, sequential strategy <code>[TEX]</code> concatenates the sequence of tokens in a sentence generated by <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> using text input.
+<code>[PHO]</code> concatenates the sequence of tokens of a sentence generated by <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> using phonemic input.
+In the baseline <strong>BERT-VITS</strong>, sequential strategy <code>[BERT_TEX]</code> concatenates all the tokens in a sentence extracted from <strong>BERT-base-uncased model</strong>.
+<code>[BERT_PHO]</code> concatenates all the tokens in a sentence extracted from <strong>BERT-x-phone-base model</strong>.</p>
+</blockquote>
+<h4 id="datasets">Datasets<a class="headerlink" href="#datasets" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>We utilized full LJSpeech, 1-hour LJSpeech, and EmoV_DB_bea_sem dataset for experimental verification.
+LJSpeech4comprises 24 hours recorded of English speech by sin gle female speaker, where we evaluate how the embeddings extracted from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> can help improve the speech naturalness.Besides full LJSpeech dataset, we also randomly filtered 1 hour LJSpeech which contains only 1-hour records as an ablation study to show how dataset size influences.
+EmoV_DB5(Adigwe et al., 2018) is a database of emotional speech that contains data for male and female actors in English and French.
+EmoV_DB covers 5 emotion classes, amused, an gry, disgusted, neutral, and sleepy.
+To factor out the effect of different speakers, we filtered the original EmoV_DB dataset into the speech of a specific female English speaker, bea.
+Then we use <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> to predict the emotion label of the transcript cho sen from the above 5 emotion classes, and select the audio samples which has the same predicted emotion.
+The filtered dataset contains 22.8-min records for training.
+We named the filtered dataset EmoV_DB_bea_sem and investigated how the semantic embeddings from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> behave in naturalness and expressiveness on it.
+Please refer to Appendix A 12 for more dataset statistics.</p>
+</blockquote>
+<h4 id="implementation-hyper-parameters-training">Implementation, Hyper-parameters, Training<a class="headerlink" href="#implementation-hyper-parameters-training" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Our <strong><em>LLaMA-VITS</em></strong> system was built on the <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a> framework using its original implementation, augmented with semantic embeddings de rived from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> (Touvron et al., 2023) using its original implementation7.
+For training LJSpeech, we use the public configs in the original implementation of <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a>.
+For EmoV_DB_bea_sem, we use the same config as LJSpeech but changed batch size from 64 to 16 since this dataset is much smaller.
+Besides implementing our proposed <strong><em>LLaMA-VITS</em></strong>, we extracted corresponding semantic tokens <code>[CLS]</code>, <code>[BERT_TEX]</code> from <strong>BERT-uncased-base model</strong> and <code>[BERT_PHO]</code> from <strong>BERT</strong> pre-trained on phoneme for comparison.
+In comparing the experimental results, we choose 100k-step results on both full LJSpeech and 1-hour LJSpeech datasets since they are rather large.
+On EmoV_DB_bea_sem, we used the pre-trained checkpoint of LJSpeech on 100k step and compare the fine-tuning results on EmoV_DB_bea_sem at 150k-step since it is rather small.</p>
+</blockquote>
+<h4 id="evaluation-metrics">Evaluation Metrics<a class="headerlink" href="#evaluation-metrics" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Both subjective and objective metrics are implemented for a comprehensive evaluation.
+In subjective evaluation, we con duct Emotion Similarity Mean Opinion Score (ES MOS) (Zhu et al., 2023) experiments to evaluate emotion similarity for EmoV_DB_bea_sem.In the subjective evaluation, we compared <code>[AVE]</code>, <code>[TEX]</code> and <code>[PHO]</code> strategies in our <strong><em>LLaMA-VITS</em></strong> with the corresponding token <code>[CLS]</code>, <code>[BERT_TEX]</code> and <code>[BERT_PHO]</code> extracted from different <strong>BERT</strong> models and the baseline <strong>ORI-VITS</strong> who does not con tain semantic tokens, with the ground truth samples GT.</p>
+<p>In evaluating ESMOS, we randomly chose 5 samples from the total 51 test samples proportionally divided by us and received 100 test results from different speakers on Amazon Mechanical Turk.
+The result significance level is thus 500.
+Each participant is asked to give a score on emotion similarity compared with ground truth in a 5-scale: Excellent Match 5, Good Match 4, Fair Match 3, Poor Match 2, Bad Match 1.</p>
+<p>In objective evaluation,we utilize UTokyo-SaruLab Mean Opinion Score (UTMOS) (Saeki et al., 2022), Mel-Cepstral Distortion (MCD), and speech recognition performance measured by Character Error Rate (CER) and Word Error Rate (WER).
+UTMOS is a MOS prediction network using speech samples from previous Blizzard Challenges and Voice Conversion Challenges, which has reached the best performance in VoiceMOS Challenge 2022.
+We evaluate objective intelligibility by using Whisper-large (Radford et al., 2022).
+For calculating UTMOS, we use the implementation in SpeechMOS.
+For calculating MCD and ASR, we use the evaluation implementation of ESPnet (Hayashi et al., 2020, 2021).</p>
+</blockquote>
+<h2 id="5experiment-results">5.Experiment Results<a class="headerlink" href="#5experiment-results" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>We evaluated our proposed <strong><em>LLaMA-VITS</em></strong> along with baselines <strong>ORI-VITS</strong> and <strong>BERT-VITS</strong> models on three distinct datasets: the full LJSpeech, the 1 hour LJSpeech, and EmoV_DB_bea_sem.
+The experimental outcomes provide a comprehensive understanding of the model performance and the impact of semantic tokens selection.
+A summary of these results is articulated below and can be referenced in Table 1.</p>
+</blockquote>
+<h3 id="51results-on-full-ljspeech">5.1.Results on full LJSpeech<a class="headerlink" href="#51results-on-full-ljspeech" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>The <strong>ORI-VITS</strong> baseline, achieving a UTMOS of 4.19 ± 0.05, an MCD of7.32 ± 0.61, a CER of6.2, and a WER of 16.5.
+Enhancements were observed with the <strong>BERT-VITS</strong> baseline.Specifically, <strong>BERT-VITS</strong> with <code>[BERT_TEX]</code> semantic tokens demonstrated superior performance in UTMOS (4.22±0.05) and MCD (7.27 ± 0.61), indicating improved speech quality and reduced mel-cepstral distortion.
+Additionally, a reduced CER of5.9and WER of15.9were noted, highlighting enhanced automatic speech recognition accuracy.
+Our proposed <strong><em>LLaMA-VITS</em></strong>, integrating various global and sequential semantic tokens, displayed competitive performance.The <code>[PCA]</code> strategy stood out, achieving an MCD of7.23 ± 0.61, indicating optimal mel-cepstral distortion.The <code>[EIS_Sentence]</code>, <code>[AVE]</code>, and <code>[LAST]</code> tokens yielded a top-tier UTMOS of4.21±0.04/0.05, underscoring their effectiveness in enhancing perceived speech quality.</p>
+</blockquote>
+<h3 id="52results-on-1-hour-ljspeech">5.2.Results on 1-hour LJSpeech<a class="headerlink" href="#52results-on-1-hour-ljspeech" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>In the more challenging 1-hour LJSpeech dataset, all models experienced a slight performance de crease, an expected outcome given the reduced training data size.
+<strong>BERT-VITS</strong> baseline with <code>[CLS]</code> tokens exhibited notable MCD performance (7.39 ± 0.62), while the <code>[BERT_PHO]</code> excelled in UTMOS (4.05 ± 0.07), reflecting enhanced speech naturalness and reduced mel-cepstral distortion.
+<strong><em>LLaMA-VITS</em></strong> with <code>[AVE]</code> tokens achieved the high est UTMOS (4.10 ± 0.07), while <code>[EIS_Sentence]</code> tokens resulted in the most favorable MCD (7.36 ± 0.59), illustrating the model’s versatility and efficacy in different token configurations.</p>
+</blockquote>
+<h3 id="53results-on-emov_db_bea_sem">5.3.Results on EmoV_DB_bea_sem<a class="headerlink" href="#53results-on-emov_db_bea_sem" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>On this even more challenging dataset, a small improvement observed in <strong>BERT-VITS</strong> only exists in the <code>[BERT_TEX]</code> with a CER of 4.4.
+While our proposed <strong><em>LLaMA-VITS</em></strong> displayed no table enhancements.
+The <code>[TEX]</code> strategy achieves an ESMOS of3.22 ± 0.07, indicating much more emotiveness.
+The <code>[LAST]</code> yielded the best performance on CER of4.3and WER of17.4, other strategies also perform better than or comparable to <strong>BERT-VITS</strong>, underscoring its effectiveness in enhancing perceived speech expressiveness.</p>
+</blockquote>
+<h3 id="54analysis">5.4.Analysis<a class="headerlink" href="#54analysis" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Speaking of the strengths of different tokens, <strong>BERT</strong> based tokens generally contribute to improving MCD and ASR scores, indicating the enriched semantic understanding translated to speech qual ity.
+Tokens of <strong><em>LLaMA-VITS</em></strong> exhibited a balanced performance across all metrics, with specific to ken configurations excelling in particular aspects.
+For instance, <code>[PCA]</code> token emerged as a strong contender in reducing MCD, <code>[AVE]</code> enhanced the UTMOS scores, <code>[TEX]</code> had superior performance to improve ESMOS score.
+In individual comparisons, <strong><em>LLaMA-VITS</em></strong>’s five global tokens generally outperformed <strong>BERT-VITS</strong> on the UTMOS metric for naturalness.
+In the ESMOS metric for emotional expression, <strong><em>LLaMA-VITS</em></strong>’s two sequential tokens also generally sur passed <strong>BERT-VITS</strong>, particularly the <code>[TEX]</code> token.
+Therefore, we can infer that <strong>GPT-like LMs</strong> may have greater potential for TTS tasks than <strong>BERT</strong> like models.
+Further, our results reflect different patterns of gains from <strong>GPT-like</strong> and <strong>BERT-like models</strong> in TTS tasks.
+For instance, in the UTMOS naturalness metric, <strong><em>LLaMA-VITS</em></strong>’s global tokens often outperformed sequential tokens, which is the opposite for <strong>BERT-VITS</strong>; in the ESMOS emotion metric, <strong><em>LLaMA-VITS</em></strong>’s sequential token <code>[TEX]</code> significantly outperformed other tokens, while for <strong>BERT-VITS</strong>, global tokens performed better.
+Overall, <strong><em>LLaMA-VITS</em></strong> showed a different pattern in UTMOS compared to <strong>BERT-VITS</strong>, and superior performance in ESMOS.
+These results highlight the potential for further exploration of semantic to ken types and fusion methods to achieve more significant enhancements in speech synthesis, particularly in scenarios constrained by limited and complex training data.</p>
+</blockquote>
+<h2 id="6discussion">6.Discussion<a class="headerlink" href="#6discussion" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this section, we discuss factors influencing current outcomes.Based on this discussion, we also point out the directions for future work in Appendix 13.</p>
+</blockquote>
+<h3 id="61gpt-like-vs-bert-like">6.1.GPT-like vs BERT-like<a class="headerlink" href="#61gpt-like-vs-bert-like" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Initial observations from our experiments indicate that, even without any fine-tuning of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>, <strong><em>LLaMA-VITS</em></strong> significantly outperforms both <strong>BERT-VITS</strong> and <strong>ORI-VITS</strong> in terms of emotional expressive ness.
+This finding opens up avenues for future research into emotive TTS tasks.
+Furthermore, a comparison between <strong>BERT-VITS</strong> and <strong><em>LLaMA-VITS</em></strong> highlights their distinct performance traits.
+<strong>BERT-VITS</strong>, leveraging deep con textual embeddings, provides profound semantic insights yet encounters challenges in customization and adaptability across a range of TTS tasks.
+Conversely, <strong><em>LLaMA-VITS</em></strong> can provide a more versa tile and adaptable approach, with its array of token types demonstrating particular advantages across various evaluation metrics.</p>
+</blockquote>
+<h3 id="62semantic-token-strategy">6.2.Semantic Token Strategy<a class="headerlink" href="#62semantic-token-strategy" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>The varying effectiveness of distinct semantic to kens underscores the importance of careful selection and integration tailored to the particular goals of TTS systems.
+Optimizing the type of token and method of fusion can be instrumental in enhancing aspects such as speech naturalness, emotional expressiveness, <em>Mel Cepstral Distortion (MCD)</em>, or <em>Automatic Speech Recognition (ASR)</em> performance.</p>
+</blockquote>
+<h2 id="7conclusion">7.Conclusion<a class="headerlink" href="#7conclusion" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In summary, this study exemplifies a significant stride towards optimized TTS synthesis by integrating semantic tokens, leveraging the strengths of <strong><em>LLaMA-VITS</em></strong>.
+Our findings, validated by comprehensive experiments on the LJSpeech and EmoV_DB_bea_sem datasets, underscore the pivotal role of semantic embeddings in enhancing speech quality, naturalness, and emotiveness.
+The adaptability and efficacy of <strong><em>LLaMA-VITS</em></strong>, especially, open new vistas for customized and context sensitive TTS applications.</p>
+</blockquote>
+<h2 id="8limitations">8.Limitations<a class="headerlink" href="#8limitations" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Compared with our baseline which uses different <strong>BERT models</strong>, we only tested our method using <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>.
+As Kenter et al. (2020) indicate for their <strong>BERT-based TTS model</strong>, small <strong>BERT models</strong> work better than big ones, but the parameter size of our proposed <strong>GPT-based TTS</strong> influence is yet stud ied by our research.
+Although <strong>BERT-based TTS models</strong> are normally finetuned on speech tasks to provide more explicit acoustic information for TTS, we didn’t try designing prompts to generate acoustic features and only studied how general semantic information can help.
+Our experiments were conducted only on clean datasets with limited size, and the effect on more complex datasets is to be further explored.
+The integration of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>’s embeddings introduces additional computational costs, potentially limiting real-time applications.</p>
+</blockquote>
+<p>相比于基线模型使用了不同的 BERT 模型, 我们的方法仅使用了 LLaMA2.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

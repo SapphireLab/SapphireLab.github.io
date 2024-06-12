@@ -1,0 +1,458 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>MobileSpeech - Sapphire Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mobilespeech" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Sapphire Lab" class="md-header__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sapphire Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MobileSpeech
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Sapphire Lab" class="md-nav__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sapphire Lab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    A.摘要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.引言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.相关工作
+  </a>
+  
+    <nav class="md-nav" aria-label="2.相关工作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21zero-shot-tts" class="md-nav__link">
+    2.1.Zero-Shot TTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2.生成模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.实验
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5.结论
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6.局限性与未来工作
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="mobilespeech">MobileSpeech<a class="headerlink" href="#mobilespeech" title="Permanent link">&para;</a></h1>
+<details>
+<summary>基本信息</summary>
+
+- 标题: MobileSpeech: A Fast and High-Fidelity Framework for Mobile Zero-Shot Text-to-Speech
+- 作者:
+  - [Shengpeng Ji](../../Authors/Shengpeng_Ji.md)
+  - [Ziyue Jiang](../../Authors/Ziyue_Jiang.md)
+  - [Hanting Wang](../../Authors/Hanting_Wang.md)
+  - [Jialong Zuo](../../Authors/Jialong_Zuo.md)
+  - [Zhou Zhao](../../Authors/Zhou_Zhao_(赵洲).md)
+- 机构:
+  - 机构 
+- 时间:
+  - 预印时间: 2024.02.14 ArXiv v1
+  - 更新笔记: 2024.06.06
+- 发表:
+  - 期刊/会议 
+- 链接:
+  - [ArXiv](https://arxiv.org/abs/2402.09378)
+  - [DOI]()
+  - [Github]()
+  - [Demo](https://mobilespeech.github.io)
+- 标签:
+  - [语音合成](../../Tags/SpeechSynthesis.md)
+  - [零样本](../../Tags/Zero-Shot.md)
+  - [移动设备](../../Tags/MobileDevice.md)
+- 页数: 13
+- 引用: ?
+- 被引: 1
+
+</details>
+
+<h2 id="a">A.摘要<a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Zero-shot text-to-speech (TTS) has gained sig-nificant attention due to its powerful voice cloning capabilities, requiring only a few seconds of unseen speaker voice prompts.
+However, all previous work has been devel-oped for cloud-based systems.Taking au-toregressive models as an example, although these approaches achieve high-fidelity voice cloning, they fall short in terms of inference speed, model size, and robustness.There-fore, we propose MobileSpeech, which is a fast, lightweight, and robust zero-shot text-to-speech system based on mobile devices for the first time. Specifically: 1) leveraging dis-crete codec, we design a parallel speech mask decoder module called SMD, which incorpo-rates hierarchical information from the speech codec and weight mechanisms across differ-ent codec layers during the generation process.
+Moreover, to bridge the gap between text and speech, we introduce a high-level probabilistic mask that simulates the progression of infor-mation flow from less to more during speech generation. 2) For speaker prompts, we extract fine-grained prompt duration from the prompt speech and incorporate text, prompt speech by cross attention in SMD. We demonstrate the effectiveness of MobileSpeech on multilingual datasets at different levels, achieving state-of-the-art results in terms of generating speed and speech quality. MobileSpeech achieves RTF of 0.09 on a single A100 GPU and we have successfully deployed MobileSpeech on mo-bile devices. Audio samples are available at https://mobilespeech.github.io/ .</p>
+</blockquote>
+<h2 id="1">1.引言<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In recent years, remarkable progress has been made in the development of text-to-speech (TTS) technology (<a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech (2019)</a>; <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a>; Huang et al., 2022a; Li et al., 2023). With advancements in this field, current state-of-the-art TTS systems have demonstrated the ability to generate high-quality voices of unseen speakers while maintaining con-sistency in tone and rhythm (Chen et al., 2021; <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS (2021)</a>). However, these systems are often trained on datasets of only a few hundred hours and often require fine-tuning with dozens of sentences during the inference stage, which signifi-cantly limits the generative capabilities of the mod-els and is time-consuming and not user-friendly.</p>
+<p>With the recent development of large-scale lan-guage models (Brown et al., 2020; Touvron et al.,2023) and the increase in training data for speech synthesis from hundreds of hours (Zen et al., 2019)to tens of thousands of hours (Kahn et al., 2020), current TTS models exhibit powerful zero-shot capabilities, enabling the cloning of unseen speak-ers’ voices in just a few seconds (<a href="2023.01.05_VALL-E.md">VALL-E (2023)</a>; <a href="../../Models/Speech_LLM/2023.03.07_VALL-E_X.md">VALL-E X (2023)</a>; <a href="../Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech2 (2023)</a>; <a href="2023.06.23_VoiceBox.md">VoiceBox (2023)</a>;Jiang et al., 2023b; <a href="2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>; <a href="../../Speech_LLM/2023.05.16_SoundStorm/">SoundStorm (2023)</a>; Huang et al., 2023; Yang et al., 2023b). However, these models primarily focus on in-context abilities and fail to address issues related to inference speed and model deployment parameters.
+Additionally, all existing zero-shot TTS models are cloud-based and lack a mobile-based deployment approach. MobileSpeech is the first zero-shot TTS synthesis system that can be deployed on mobile de-vices. Firstly we think deployable mobile zero-shot TTS models aim to achieve the following goals:
+- Fast: through our experiments, we have ob-served that the real-time factor (RTF) on a single mobile device often exceeds 8-10 times that of an A100 RTF for the same text. There-fore, the inference speed of the zero-shot TTS model must be significantly faster.
+- Lightweight: to enable deployment on mo-bile or edge devices, the model size should be small, and the runtime memory footprint should be minimal.
+- High similarity and diversity: zero-shot TTS system should be able to clone timbre and prosody with just a few seconds of prompts,yielding diverse speech even when provided with identical text.
+- High quality: to enhance the naturalness of synthesized speech, the model should pay attention to details such as frequency bins be-tween adjacent harmonics and possess power-ful duration modeling capabilities.
+- Robustness: a highly robust TTS system is essential. A zero-shot TTS system should minimize occurrences of missing or repeated words.</p>
+<p>To achieve these objectives, we have made our best efforts to reproduce several state-of-the-art generative models, which will be elaborated in the subsequent section on related work. We found cur-rent work is not applicable to mobile devices. Ul-timately, based on the Natspeech framework (<a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech (2019)</a>, <a href="../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2 (2020)</a>) and the Mask generation module(<a href="">MaskGIT (2022)</a>; <a href="../../Speech_LLM/2023.05.16_SoundStorm/">SoundStorm (2023)</a>), we addi-tionally design the SMD module and the speaker prompt component, taking into account the discrete codec architecture of speech. </p>
+<p>In summary, MobileSpeech contributes as follows:
+- MobileSpeech is the first zero-shot TTS syn-thesis system that can be deployed on mobile devices. MobileSpeech achieves a good bal-ance according to the above five evaluation metrics.
+- In MobileSpeech, we additionally design the SMD module based on the hierarchical token structure of discrete speech codecs and design the Speaker Prompt module to maintain high similarity, high quality, low latency.
+- Training MobileSpeech-english for 580 hours achieved SOTA inference speed and comparable audio quality. Training MobileSpeech-chinese for 40,000 hours resulted in SOTA performance in all aspects.
+- MobileSpeech has been successfully deployed on mobile phones and is expected to be used by several hundred thousand users.</p>
+</blockquote>
+<h2 id="2">2.相关工作<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21zero-shot-tts">2.1.Zero-Shot TTS<a class="headerlink" href="#21zero-shot-tts" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Zero-shot speech synthesis refers to the ability to synthesize the voice of an unseen speaker based solely on a few seconds of audio prompt, also known as voice cloning. Due to its impressive performance, it has gained significant attention re-cently. Previous approaches in the field of voice cloning can be classified into speaker adaptation (Wang et al., 2018; Chen et al., 2021; Huang et al.,2022b) and speaker encoding methods (<a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS (2021)</a>; Arik et al., 2018; Kang et al., 2022).These models are often trained on smaller datasets and require a substantial amount of data for fine-tuning or employ highly complex encoders. These limitations greatly restrict the audio quality and further usage.</p>
+<p>In recent months, with the advancement of generative large-scale models, a plethora of outstand-ing works have emerged. <a href="2023.01.05_VALL-E.md">VALL-E (2023)</a> leverages discrete codec representations and combines autoregressive and non-autoregressive models in a cascaded manner, preserving the pow-erful contextual capabilities of language models. It can clone the voice of a target speaker with just a 3-second audio prompt. <a href="../../Models/Speech_LLM/2023.03.07_VALL-E_X.md">VALL-E X (2023)</a> extends zero-shot TTS to multiple languages based on the cascaded structure of VALL-E. <a href="../Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech2 (2023)</a> employs continu-ous vectors instead of discrete neural codec tokens and introduces in-context learning to a latent dif-fusion model. <a href="2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a> and Make-a-Voice (Huang et al., 2023) utilize semantic tokens to reduce the gap between text and acoustic features. <a href="2023.06.23_VoiceBox.md">VoiceBox (2023)</a> is a non-autoregressive flow-matching model trained to infill speech, given audio context and text. Mega-TTS (Jiang et al., 2023b,a) , on the other hand, utilizes traditional mel-spectrograms, decoupling timbre and prosody and further modeling the prosody us-ing an autoregressive approach.</p>
+<p>However, none of the aforementioned works take into account the model’s speed and lightweight na-ture. It is well-known that autoregressive models often require large memory footprints and have slower iteration speeds, and diffusion models often require hundreds of sampling steps. Some work in-troduce a semantic token cascade structure, which will introduce more time overhead. However, com-pared to codecs, certain approaches based on mel-spectrogram exhibit lower generation diversity and audio quality (Siuzdak, 2023). MobileSpeech, on the other hand, is the first zero-shot TTS system that can be deployed on mobile devices, address-ing the fast speed,lightweight, high quality require-ments.</p>
+</blockquote>
+<h3 id="22">2.2.生成模型<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Generative models have been extensively utilized in various domains by employing techniques such as language models (<a href="2022.09.07_AudioLM.md">AudioLM (2023)</a>; Kreuk et al., 2022; Ji et al., 2023; [VALL-E (20232023.01.05_VALL-E.md.md); <a href="../../Models/Speech_LLM/2023.03.07_VALL-E_X.md">VALL-E X (2023)</a>), Variational Autoencoders (VAE) (Ren et al., 2021; Lee et al., 2022), Generative Adver-sarial Networks (GAN) (<a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a>; Kong et al., 2020), Normalizing Flow (<a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS (2020)</a>; Miao et al., 2020), Mask Autoencoders (<a href="">MaskGIT (2022)</a>)and diffusion models (Huang et al.,2022a). Considering the challenge of balancing perceptual quality and inference speed in zero-shot TTS, as well as the recent success of parallel de-coding in text (Ghazvininejad et al., 2019), image (<a href="">MaskGIT (2022)</a>), audio (<a href="../../Speech_LLM/2023.05.16_SoundStorm/">SoundStorm</a>),and video (Villegas et al., 2022) generation tasks,MobileSpeech has adopted masked parallel gen-eration as the audio synthesis approach. Further-more, MobileSpeech has additionally designed the Speech Codec Mask Decoder (SMD) module and Speaker prompt based on the unique characteristics of acoustic tokens and the specific requirements of the zero-shot TTS task, aiming to address the afore-mentioned trade-off. In Appendix A, we present the detail of discrete acoustic codec and in Ap-pendix B we present the distinctions between mask-based generative models and other generative mod-els in modeling discrete codecs.</p>
+</blockquote>
+<h2 id="3">3.方法<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h2 id="4">4.实验<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h2 id="5">5.结论<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this paper, we propose MobileSpeech, a Fast and Lightweight Framework for Mobile zero-shot Text-to-Speech. MobileSpeech achieves a unique com-bination of audio naturalness and similarity perfor-mance, comparable to other zero-shot TTS systems on English corpora, while significantly enhancing inference speed through its distinctive SMD and Speaker modules. MobileSpeech stands as the first real-time zero-shot TTS system deployable at the edge, demonstrating state-of-the-art performance on Chinese corpora through extensive training on large-scale Chinese language data. We not only validate the significance of each module in Mo-bileSpeech through ablation experiments but also analyze the effects of different configurations and iterations to adapt to various deployment scenarios in mobile environments.</p>
+</blockquote>
+<h2 id="6">6.局限性与未来工作<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this section, we will analyze the limitations of MobileSpeech and discuss potential future work.</p>
+<p>Failure cases 
+During our experiments in real-world scenarios (Figure 2), we observed occasional instances of stuttering and unstable pitch in Mo-bileSpeech. This could be attributed to noisy input prompts or the possibility that the mask mechanism excessively focuses on local positions. In future work, we aim to enhance the model’s noise robust-ness and design a more robust mask mechanism that considers a broader context.</p>
+<p>New Tasks
+The current zero-hhot TTS task it-self has significant potential for expansion. Most existing models primarily focus on similarity in timbre. However, future research can extend zero-shot TTS to include similarity in rhythm, emotion,and language. It could even involve using multiple audio segments to control different parts or combin-ing with text style control, representing meaningful new tasks.</p>
+<p>Broader impacts
+Since MobileSpeech could synthesize speech that maintains speaker identity,it may carry potential risks in misuse of the model,such as spoofing voice identification or impersonat-ing a specific speaker. To mitigate such risks, it is possible to build a detection model to discriminate whether an audio clip was synthesized by Mobile-Speech.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

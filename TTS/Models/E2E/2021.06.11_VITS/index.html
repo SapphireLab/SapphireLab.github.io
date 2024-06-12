@@ -594,7 +594,7 @@ Models at each of the two-stage pipelines have been developed independently.</p>
 <p>Neural network-based autoregressive TTS systems have shown the capability of synthesizing realistic speech (<a href="../../Models/TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2 (2017)</a>; <a href="../../Models/TTS2_Acoustic/2018.09.19_Transformer_TTS.md">Transformer-TTS (2018)</a>), but their sequential generative process makes it difficult to fully utilize modern parallel processors.
 To overcome this limitation and improve synthesis speed, several non-autoregressive methods have been proposed.
 In the text-to-spectrogram generation step, extracting attention maps from pre-trained autoregressive teacher networks (<a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech (2019)</a>; <a href="">ParaNet</a>) is attempted to decrease the difficulty of learning alignments between text and spectrograms.
-More recently, likelihood-based methods further eliminate the dependency on external aligners by estimating or learning alignments that maximize the likelihood of target mel-spectrograms (<a href="../../Models/TTS2_Acoustic/2020.03.04_AlignTTS.md">AlignTTS (2020)</a>; <a href="../../Models/TTS2_Acoustic/2020.05.04_Flow-TTS.md">Flow-TTS (2020)</a>; <a href="../../Models/TTS2_Acoustic/2020.05.22_Glow-TTS.md">Glow-TTS (2020)</a>).
+More recently, likelihood-based methods further eliminate the dependency on external aligners by estimating or learning alignments that maximize the likelihood of target mel-spectrograms (<a href="../../Models/TTS2_Acoustic/2020.03.04_AlignTTS.md">AlignTTS (2020)</a>; <a href="../../Models/TTS2_Acoustic/2020.05.04_Flow-TTS.md">Flow-TTS (2020)</a>; <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS (2020)</a>).
 Meanwhile, <a href="">Generative Adversarial Networks (GANs)</a> have been explored in second stage models.
 GAN-based feed-forward networks with multiple discriminators, each distinguishing samples at different scales or periods, achieve high-quality raw waveform synthesis (<a href="../../TTS3_Vocoder/2019.10.08_MelGAN/">MelGAN (2019)</a>; <a href="">GAN-TTS (2019)</a>.</p>
 </blockquote>
@@ -629,7 +629,7 @@ With the uncertainty modeling over latent variables and the stochastic duration 
 为了解决这一问题, 我们还提出了一个随机时长预测器, 用于从输入文本生成多种节奏的语音.
 通过对隐变量的不确定性建模和随机时长预测器, 我们的模型可以捕捉到不能用文本表示的语音变体.</p>
 <blockquote>
-<p>Our method obtains more natural sounding speech and higher sampling efficiency than the best publicly available TTS system, <a href="../../Models/TTS2_Acoustic/2020.05.22_Glow-TTS.md">Glow-TTS (2020)</a> wit../Vocoder/2020.10_HiFi-GAN.md/2020.10_HiFi-GAN.md). 
+<p>Our method obtains more natural sounding speech and higher sampling efficiency than the best publicly available TTS system, <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS (2020)</a> wit../Vocoder/2020.10_HiFi-GAN.md/2020.10_HiFi-GAN.md). 
 We make both our <a href="https://jaywalnut310.github.io/vits-demo/index.html">demo page</a> and <a href="https://github.com/jaywalnut310/vits">source-code</a> publicly available.</p>
 </blockquote>
 <p>我们的方法获得更自然的语音和更高的采样效率.</p>
@@ -704,7 +704,7 @@ Our model removes the burden of transforming the latent sequence into standard n
 <h3 id="23duration-prediction-in-non-autoregressive-text-to-speech">2.3.Duration Prediction in Non-Autoregressive Text-to-Speech·非自回归文本转语音中的时长预测<a class="headerlink" href="#23duration-prediction-in-non-autoregressive-text-to-speech" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>Autoregressive TTS models (<a href="">VoiceLoop (2017.07)</a>; <a href="../../Models/TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron</a>); <a href="">Flowtron (2021)</a> diverse speech with different rhythms through their autoregressive structure and several tricks including maintaining dropout probability during inference and priming (<a href="">Generating sequences with recurrent neural networks</a>).
-Parallel TTS models (<a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech (2019)</a>; <a href="">ParaNet (2020)</a>; <a href="../../Models/TTS2_Acoustic/2020.05.22_Glow-TTS.md">Glow-TTS (2020)</a>; <a href="../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech 2s (2020)</a>, on the other hand, have been relied on deterministic duration prediction.
+Parallel TTS models (<a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech (2019)</a>; <a href="">ParaNet (2020)</a>; <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS (2020)</a>; <a href="../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech 2s (2020)</a>, on the other hand, have been relied on deterministic duration prediction.
 It is because parallel models have to predict target phoneme duration or the total length of target speech in one feed-forward path, which makes it hard to capture the correlated joint distribution of speech rhythms.
 In this work, we suggest a flow-based stochastic duration predictor that learns the joint distribution of the estimated phoneme duration, resulting in the generation of diverse speech rhythms in parallel.</p>
 </blockquote>
@@ -834,11 +834,11 @@ $$</p>
 </blockquote>
 <p>其中候选对齐被限制为单调且不跳过任何单词, 因为人类阅读文本是有序的且不会跳过任何单词.</p>
 <blockquote>
-<p>To find the optimal alignment, <a href="../../Models/TTS2_Acoustic/2020.05.22_Glow-TTS.md">Glow-TTS (2020)</a> use dynamic programming. 
+<p>To find the optimal alignment, <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS (2020)</a> use dynamic programming. 
 Applying MAS directly in our setting is difficult because our objective is the ELBO, not the exact log-likelihood. 
 We, therefore, redefine MAS to find an alignment that maximizes the ELBO, which reduces to finding an alignment that maximizes the log-likelihood of the latent variables $z$:</p>
 </blockquote>
-<p>为了找到最优对齐, <a href="../../Models/TTS2_Acoustic/2020.05.22_Glow-TTS.md">Glow-TTS (2020)</a> 使用动态规划.
+<p>为了找到最优对齐, <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS (2020)</a> 使用动态规划.
 在我们的设置中直接应用 MAS 困难, 因为我们的目标是 ELBO, 而不是精确的对数似然.
 因此, 我们重新定义 MAS, 寻找一个对齐, 使得 ELBO 最大化, 这等价于寻找一个对齐, 使得隐变量 $z$ 的对数似然最大化:</p>
 <p>$$
@@ -1525,7 +1525,7 @@ Replacing the linear-scale spectrogram for posterior input with the mel-spectrog
 用梅尔频谱图替换线性频谱图后验输入会导致质量降低 (-0.19 MOS), 表明高分辨率信息对于 VITS 在提升语音合成质量有作用.</p>
 <h3 id="52generalization-to-multi-speaker-text-to-speech">5.2.Generalization to Multi-Speaker Text-to-Speech·多说话人文本转语音<a class="headerlink" href="#52generalization-to-multi-speaker-text-to-speech" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>To verify that our model can learn and express diverse speech characteristics, we compared our model to Tacotron 2, Glow-TTS and HiFi-GAN, which showed the ability to extend to multi-speaker speech synthesis (<a href="">Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis</a>; <a href="../../Models/TTS2_Acoustic/2020.05.22_Glow-TTS.md">Glow-TTS (2020)</a>; <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN</a>).
+<p>To verify that our model can learn and express diverse speech characteristics, we compared our model to Tacotron 2, Glow-TTS and HiFi-GAN, which showed the ability to extend to multi-speaker speech synthesis (<a href="">Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis</a>; <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS (2020)</a>; <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN</a>).
 We trained the models on the VCTK dataset.
 We added speaker embedding to our model as described in Section 2.5.
 For Tacotron 2, we broadcasted speaker embedding and concatenated it with the encoder output, and for Glow-TTS, we applied the global conditioning following the previous work.
