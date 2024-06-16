@@ -547,7 +547,7 @@ In this work, we introduce a similar dynamic programming method to search for th
 <p>TTS models are a family of generative models that synthesize speech from text.
 TTS models, such as <a href="../../Models/TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron 2</a>, <a href="../../Models/TTS2_Acoustic/2017.10.20_DeepVoice3.md">DeepVoice3</a> and <a href="../../Models/TTS2_Acoustic/2018.09.19_Transformer_TTS.md">Transformer TTS</a>, generate a mel-spectrogram from text, which is comparable to that of the human voice.
 Enhancing the expressiveness of TTS models has also been studied.
-Auxiliary embedding methods have been proposed to generate diverse speech by controlling factors such as intonation and rhythm [<a href="../../Models/TTS2_Acoustic/2017.03.29_Tacotron.md">Tacotron</a>, 32], and some works have aimed at synthesizing speech in the voices of various speakers [9, <a href="../../Models/TTS0_System/2017.05.24_DeepVoice2.md">DeepVoice2</a>].
+Auxiliary embedding methods have been proposed to generate diverse speech by controlling factors such as intonation and rhythm [<a href="../2017.03.29_Tacotron/">Tacotron</a>, 32], and some works have aimed at synthesizing speech in the voices of various speakers [9, <a href="../../Models/TTS0_System/2017.05.24_DeepVoice2.md">DeepVoice2</a>].
 Recently, several works have proposed methods to generate mel-spectrogram frames in parallel.
 <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>, and <a href="../../Models/TTS2_Acoustic/2019.05.21_ParaNet.md">ParaNet</a> significantly speed up mel-spectrogram generation over autoregressive TTS models, while preserving the quality of synthesized speech.
 However, both parallel TTS models need to extract alignments from pre-trained autoregressive TTS models to alleviate the length mismatch problem between text and speech.
@@ -557,7 +557,7 @@ Our <strong><em>Glow-TTS</em></strong> is a standalone parallel TTS model that i
 They can estimate the exact likelihood of the data by applying invertible transformations.
 Generative flows are simply trained to maximize the likelihood.
 In addition to efficient density estimation, the transformations proposed in [2, 3, 12] guarantee fast and efficient sampling.
-<a href="../../Models/TTS3_Vocoder/2018.10.31_WaveGlow.md">WaveGlow</a> and <a href="">Flowavenet</a> introduced these transformations for speech synthesis to overcome the slow sampling speed of an autoregressive vocoder, <a href="../../Models/TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet</a>.
+<a href="../../Models/TTS3_Vocoder/2018.10.31_WaveGlow.md">WaveGlow</a> and <a href="../../Models/TTS3_Vocoder/2018.11.06_FloWaveNet.md">FloWaveNet</a> introduced these transformations for speech synthesis to overcome the slow sampling speed of an autoregressive vocoder, <a href="../../Models/TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet</a>.
 Their proposed models both synthesized raw audio significantly faster than <a href="../../Models/TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet</a>.
 By applying these transformations, <strong><em>Glow-TTS</em></strong> can synthesize a mel-spectrogram given text in parallel.</p>
 <p>In parallel with our work, <a href="../../Models/TTS2_Acoustic/2020.03.04_AlignTTS.md">AlignTTS</a>, <a href="../../Models/TTS2_Acoustic/2020.05.12_Flowtron.md">Flowtron</a>, and <a href="../../Models/TTS2_Acoustic/2020.05.04_Flow-TTS.md">Flow-TTS</a> have been proposed.

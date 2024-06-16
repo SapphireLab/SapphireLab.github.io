@@ -677,7 +677,7 @@
 <p>因此, 尽管这些方法能够生成类似于人类的语音, 但它们需要大量的计算时间和成本.</p>
 <p>已经有一些工作尝试加速生成过程.
 - <a href="../../Models/Speech_LLM/2023.06.23_VoiceBox.md">Voicebox (2023)</a> 采用<a href="../_Basis/2022.10.06_Flow_Matching.md">流匹配 (Flow Matching, FM)</a>, 由于最优传输路径可以实现较少的采样步骤.
-- <a href="../Speech_LLM/2024.04.03_CLaM-TTS.md">CLaM-TTS (2024)</a> 提出了一种更优压缩率的 mel-codec, 以及一个潜在语言模型, 一次生成一系列 token.
+- <a href="../../Speech_LLM/2024.04.03_CLaM-TTS/">CLaM-TTS (2024)</a> 提出了一种更优压缩率的 mel-codec, 以及一个潜在语言模型, 一次生成一系列 token.
 尽管慢速生成速度问题有所缓解, 但对于实际应用来说, 推理速度仍然不足.
 此外, 这些方法的大量计算时间导致了额外的计算开销, 这又是一个挑战.</p>
 <details>
@@ -1000,7 +1000,7 @@ The results are summarized in table 1 and figure 5.</p>
 <blockquote>
 <ul>
 <li><a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E (2023)</a>: <a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E (2023)</a> predicts codec tokens using both AR and NAR models.
-RTF is obtained from <a href="../Speech_LLM/2024.04.03_CLaM-TTS.md">ClaM-TTS (2024)</a>; <a href="../../Models/Speech_LLM/2023.06.23_VoiceBox.md">Voicebox (2023)</a>.
+RTF is obtained from <a href="../../Speech_LLM/2024.04.03_CLaM-TTS/">ClaM-TTS (2024)</a>; <a href="../../Models/Speech_LLM/2023.06.23_VoiceBox.md">Voicebox (2023)</a>.
 We use our reproduced results for MOS, Sim, and WER.
 Additionally, we do a preference test with their official demo.</li>
 <li><a href="../../Models/Speech_LLM/2023.06.23_VoiceBox.md">Voicebox (2023)</a>: Voicebox uses flow-matching to predict maksed mel-spectrogram.
@@ -1013,7 +1013,7 @@ We also do a preference test with their official demo.</li>
 <li><a href="../_tmp/2023.06.06_Mega-TTS.md">Mega-TTS (2023)</a> 8: Mega-TTS uses both language model and GAN to predict mel-spectrogram.
 We obtain RTF from mobilespeech Ji et al.(2024) and WER from the original paper.
 We do a preference test with their official demo.</li>
-<li><a href="../Speech_LLM/2024.04.03_CLaM-TTS.md">ClaM-TTS (2024)</a>: ClaM-TTS uses the AR model to predict mel codec tokens.
+<li><a href="../../Speech_LLM/2024.04.03_CLaM-TTS/">ClaM-TTS (2024)</a>: ClaM-TTS uses the AR model to predict mel codec tokens.
 We obtain the objective evaluation results from the original paper and do a preference test with their official demo.</li>
 </ul>
 </blockquote>

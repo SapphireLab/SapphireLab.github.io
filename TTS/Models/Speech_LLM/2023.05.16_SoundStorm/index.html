@@ -16,7 +16,7 @@
     
     
       
-        <title>SoundStorm: Efficient Parallel Audio Generation - Sapphire Lab</title>
+        <title>SoundStorm - Sapphire Lab</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#soundstorm-efficient-parallel-audio-generation" class="md-skip">
+        <a href="#soundstorm" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SoundStorm: Efficient Parallel Audio Generation
+              SoundStorm
             
           </span>
         </div>
@@ -245,25 +245,25 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a" class="md-nav__link">
-    A.摘要
+  <a href="#abstract" class="md-nav__link">
+    Abstract·摘要
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1.引言
+  <a href="#1introduction" class="md-nav__link">
+    1.Introduction·引言
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2.相关工作
+  <a href="#2related-works" class="md-nav__link">
+    2.Related Works·相关工作
   </a>
   
-    <nav class="md-nav" aria-label="2.相关工作">
+    <nav class="md-nav" aria-label="2.Related Works·相关工作">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -293,11 +293,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3.方法
+  <a href="#3methodology" class="md-nav__link">
+    3.Methodology·方法
   </a>
   
-    <nav class="md-nav" aria-label="3.方法">
+    <nav class="md-nav" aria-label="3.Methodology·方法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -327,11 +327,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4.实验
+  <a href="#4experiments" class="md-nav__link">
+    4.Experiments·实验
   </a>
   
-    <nav class="md-nav" aria-label="4.实验">
+    <nav class="md-nav" aria-label="4.Experiments·实验">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -361,15 +361,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    6.结论
+  <a href="#6conclusions" class="md-nav__link">
+    6.Conclusions·结论
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    7.更广泛的影响
+  <a href="#7broader-impact" class="md-nav__link">
+    7.Broader Impact·更广泛的影响
   </a>
   
 </li>
@@ -389,8 +389,39 @@
                   
 
 
-<h1 id="soundstorm-efficient-parallel-audio-generation">SoundStorm: Efficient Parallel Audio Generation<a class="headerlink" href="#soundstorm-efficient-parallel-audio-generation" title="Permanent link">&para;</a></h1>
-<h2 id="a">A.摘要<a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
+<h1 id="soundstorm">SoundStorm<a class="headerlink" href="#soundstorm" title="Permanent link">&para;</a></h1>
+<details>
+<summary>基本信息</summary>
+
+- 标题: SoundStorm: Efficient Parallel Audio Generation
+- 作者:
+  - [Zalan Borsos](../../Authors/Zalan_Borsos.md)
+  - [Matt Sharifi](../../Authors/Matt_Sharifi.md)
+  - [Damien Vincent](../../Authors/Damien_Vincent.md)
+  - [Eugene Kharitonov](../../Authors/Eugene_Kharitonov.md)
+  - [Neil Zeghidour](../../Authors/Neil_Zeghidour.md)
+  - [Marco Tagliasacchi](../../Authors/Marco_Tagliasacchi.md)
+- 机构:
+  - [Google Research](../../Institutions/Google.md)
+- 时间:
+  - 预印时间: 2023.05.16 ArXiv v1
+  - 更新笔记: 2024.06.13
+- 发表:
+  - 期刊/会议 
+- 链接:
+  - [ArXiv](https://arxiv.org/abs/2305.09636)
+  - [DOI]()
+  - [Github]()
+  - [Demo](https://google-research.github.io/seanet/soundstorm/examples/)
+- 标签:
+  - [语音合成](../../Tags/SpeechSynthesis.md)
+- 页数: 9
+- 引用: ?
+- 被引: 36
+
+</details>
+
+<h2 id="abstract">Abstract·摘要<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>We present SoundStorm, a model for efficient, non-autoregressive audio generation.
 SoundStorm receives as input the semantic tokens of <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>, and relies on bidirectional attention and confidence-based parallel decoding to generate the tokens of a neural audio codec.
@@ -403,7 +434,7 @@ Audio samples are available at https://google-research.github.io/seanet/soundsto
 SoundStorm 以 AudioLM 的语义 token 作为输入, 并依赖于双向注意力和基于置信度的并行解码来生成神经音频编解码器的 token.
 与 AudioLM 的自回归生成方法相比, SoundStorm 能够生成相同质量的音频, 且在声音和声学条件下具有更高的一致性的同时, 速度快两个数量级.
 我们通过合成高质量, 自然对话片段来展示模型扩展音频生成更长序列的能力. 这些对话片段需要给定一个带有说话者转录脚本和一个带有说话人声音的简短提示.</p>
-<h2 id="1">1.引言<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h2 id="1introduction">1.Introduction·引言<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Modeling discrete representations of audio produced by neural codecs (<a href="../../Speech_Neural_Codec/2021.07.07_SoundStream/">SoundStream (2021)</a>; <a href="../../Speech_Neural_Codec/2022.10.24_EnCodec/">EnCodec (2022)</a>) makes the task of audio generation amenable to the powerful Transformer-based sequence-to-sequence modeling approaches (<a href="../../Models/_Basis/2017.06.12_Transformer.md">Transformer (2017)</a>).
 Casting unconditional and conditional audio generation as sequence-to-sequence modeling has unlocked rapid progress in speech continuation (<a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>), text-to-speech (<a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>; <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>), and general audio and music generation (<a href="">AudioGen (2022)</a>; <a href="">MusicLM (2023)</a>).</p>
@@ -474,7 +505,7 @@ When synthesizing dialogues of 30 seconds, we measure a runtime of 2 seconds on 
 SoundStorm 生成的音频速度比 AudioLM 的分层自回归声学生成器快两个数量级, 同时保持相同质量和提高的语音和声学条件一致性.
 此外, 我们展示了 SoundStorm 与 SPEAR-TTS (2023) 的文本到语义建模阶段相结合, 可以合成高质量自然的对话, 允许通过脚本控制说话内容, 通过短语音提示控制说话者声音和通过脚本注释控制说话者轮次.
 在合成 30 秒的对话时, 我们在单个 TPU-v4（2023）上测量的运行时间为 2 秒.</p>
-<h2 id="2">2.相关工作<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h2 id="2related-works">2.Related Works·相关工作<a class="headerlink" href="#2related-works" title="Permanent link">&para;</a></h2>
 <h3 id="modeling-the-tokens-of-neural-audio-codecs">Modeling the Tokens of Neural Audio Codecs<a class="headerlink" href="#modeling-the-tokens-of-neural-audio-codecs" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>Unsupervised speech embeddings (<a href="../../Models/Speech_Representaion/2020.06.20_Wav2Vec2.0.md">Wav2Vec2.0</a>; <a href="../../Models/Speech_Representaion/2021.06.14_HuBERT.md">HuBERT</a>; <a href="../../Models/Speech_Representaion/2021.08.07_W2V-BERT.md">W2V-BERT</a>) have provided a low-framerate representation of the underlying signal which remains rich enough after discretization for language models to generate intelligible speech from a specific speaker as a sequence of tokens (<a href="">Generative Spoken Language Modeling (2021)</a>).
@@ -527,7 +558,7 @@ Our proposed decoding scheme can be seen as the extension of MaskGIT’s decodin
 在推理时, MaskGIT 从掩码标记开始, 在每一轮中, 根据置信度分数预测一部分 token.
 每轮预测的部分 token 通过一个计划表控制, 通常在迭代中逐渐增加 - 一旦预测, token 被视为固定.
 我们提出的解码方案可以视为 MaskGIT 的解码在残差量化生成的 token 序列的扩展.</p>
-<h2 id="3">3.方法<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h2 id="3methodology">3.Methodology·方法<a class="headerlink" href="#3methodology" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>SoundStorm receives as input a sequence of discrete tokens representing the conditioning signal and produces as output a sequence of SoundStream tokens, which can be decoded back to audio waveforms. We assume that the conditioning signal is time-aligned with the SoundStream frames or can be upsampled to the same rate. Such a conditioning signal is, for example, the semantic token sequence used in <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>, <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>, or MusicLM, which makes our method a drop-in replacement for the acoustic generators of these models.</p>
 <p>We leave the extension to other types of conditioning signals via cross-attention or to unconditional sampling for future work, and focus our presentation of SoundStorm as the acoustic generator within <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>, replacing both <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>’s coarse and fine acoustic modeling stages.</p>
@@ -591,11 +622,11 @@ This implies that we can decrease the number of forward passes significantly as 
 </blockquote>
 <p>逐级进行解码使得我们可以利用更细级别中的条件独立性假设, 即多个更细的 token 可以并行采样, 因为它们表示局部且精细的声音细节.
 这意味着随着我们在解码中进行到更细 RVQ 级别时可以显著减少前向传递的次数.</p>
-<h2 id="4">4.实验<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h2 id="4experiments">4.Experiments·实验<a class="headerlink" href="#4experiments" title="Permanent link">&para;</a></h2>
 <h3 id="41">4.1.模型训练和推理设置<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
 <h3 id="42">4.2.语音清晰度, 音频质量, 声音表示和声学一致性<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
 <h2 id="5">5.对话合成<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<h2 id="6">6.结论<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h2 id="6conclusions">6.Conclusions·结论<a class="headerlink" href="#6conclusions" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>In this paper we present SoundStorm, a model that can synthesize high-quality audio from discrete conditioning tokens efficiently.
 When compared to the acoustic generator of <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>, SoundStorm is two orders of magnitude faster and achieves higher temporal consistency when generating long audio samples.
@@ -604,7 +635,7 @@ By combining a text-to-semantic token model similar to <a href="../../Models/Spe
 <p>本项工作提出了 SoundStorm, 一个可以高效地从离散条件 token 生成高质量音频的模型.
 和 AudioLM (2022) 的声学生成器相比, SoundStorm 运行速度快两个数量级, 且在生成长音频样本时获得更高的时序一致性.
 通过结合类似于 SPEAR-TTS (2023) 的文本到语义 token 模型, 能够将文本转语音合成扩展到更长内容和生成具有多个说话人轮次的自然对话, 同时控制说话人的声音和生成的内容.</p>
-<h2 id="7">7.更广泛的影响<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h2 id="7broader-impact">7.Broader Impact·更广泛的影响<a class="headerlink" href="#7broader-impact" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>SoundStorm is a model for high-quality, efficient generation of neural audio codec-derived representations of audio.
 In this work, we use it as a replacement for the acoustic generation pipeline of <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a> and <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>.
