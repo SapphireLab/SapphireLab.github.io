@@ -624,7 +624,7 @@ Du 等人提出 <a href="../2024.01.25_VALL-T/">VALL-T (2024)</a>, 使用无监�
 <blockquote>
 <p>The overview of ==<strong>RALL-E</strong>== is illustrated in Fig.01.</p>
 </blockquote>
-<p><img alt="" src="../../_Images/2024.04_RALL-E_FIG01.png" /></p>
+<p><img alt="" src="../Images/2024.04.04_RALL-E_Fig.01.png" /></p>
 <blockquote>
 <p>The core idea of ==<strong>RALL-E</strong>== is CoT prompting that generates intermediate results to assist and stabilize the generation of speech tokens and improve the robustness of LLM-based TTS.
 To accomplish this idea, we first propose to predict two kinds of phoneme-level prosody tokens: pitch and duration before predicting the speech tokens.
@@ -735,7 +735,7 @@ $$
 \begin{aligned}\mathbb{P}(\mathbf{c}<em>{:,2:N}|\mathbf{x},\tilde{\mathbf{C}},\mathbf{p},\tilde{\mathbf{p}},\mathbf{d},\tilde{\mathbf{d}};\theta</em>{NAR})&amp;=\prod_{j=2}^N\mathbb{P}(\mathbf{c}<em>{:,j}|\mathbf{x},\mathbf{c}</em>{:,&lt;j},\tilde{\mathbf{C}},\mathbf{p},\tilde{\mathbf{p}},\mathbf{d},\tilde{\mathbf{d}};\theta_{NAR}).\end{aligned}\tag{7}
 $$ </p>
 <h3 id="33enhancing-alignment-with-duration-guided-masking">3.3.Enhancing Alignment with Duration-Guided Masking<a class="headerlink" href="#33enhancing-alignment-with-duration-guided-masking" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../../_Images/2024.04_RALL-E_FIG02.png" /></p>
+<p><img alt="" src="../Images/2024.04.04_RALL-E_Fig.02.png" /></p>
 <blockquote>
 <p>As the left side of Fig.02 illustrates, since the speech token attends to all phonemes in the AR Transformer of <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>, the alignment between the phonemes and the speech tokens is implicitly modeled by the self-attention of <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>.
 This can be imprecise and causes errors like word omissions or hallucinations.

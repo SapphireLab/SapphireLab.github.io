@@ -1,0 +1,551 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>VALL-E R - Sapphire Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vall-e-r" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Sapphire Lab" class="md-header__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sapphire Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              VALL-E R
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Sapphire Lab" class="md-nav__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sapphire Lab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract: 摘要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1introduction" class="md-nav__link">
+    1.Introduction: 引言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2related-works" class="md-nav__link">
+    2.Related Works: 相关工作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3methodology" class="md-nav__link">
+    3.Methodology: 方法
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Methodology: 方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31codec-merging-approach" class="md-nav__link">
+    3.1.Codec-Merging Approach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32neural-codec-lm-with-monotonic-alignment" class="md-nav__link">
+    3.2.Neural Codec LM with Monotonic Alignment
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.Neural Codec LM with Monotonic Alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321training-with-phoneme-prediction" class="md-nav__link">
+    3.2.1.Training with Phoneme Prediction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322inference-with-monotonic-alignment" class="md-nav__link">
+    3.2.2.Inference with Monotonic Alignment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323inference-for-controlling-prosody" class="md-nav__link">
+    3.2.3.Inference for Controlling Prosody
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4experiments" class="md-nav__link">
+    4.Experiments: 实验
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5results" class="md-nav__link">
+    5.Results: 结果
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6conclusion" class="md-nav__link">
+    6.Conclusion: 结论
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vall-e-r">VALL-E R<a class="headerlink" href="#vall-e-r" title="Permanent link">&para;</a></h1>
+<details>
+<summary>基本信息</summary>
+
+- 标题: VALL-E R: Robust and Efficient Zero-Shot Text-to-Speech Synthesis via Monotonic Alignment
+- 作者:
+  - 01 [Bing Han](../../Authors/Bing_Han.md)
+  - 02 [Long Zhou](../../Authors/Long_Zhou_(周龙).md)
+  - 03 [Shujie Liu](../../Authors/Shujie_Liu_(刘树杰).md)
+  - 04 [Sanyuan Chen](../../Authors/Sanyuan_Chen_(陈三元).md)
+  - 05 [Lingwei Meng](../../Authors/Lingwei_Meng.md)
+  - 06 [Yanming Qian](../../Authors/Yanming_Qian.md)
+  - 07 [Yanqing Liu](../../Authors/Yanqing_Liu.md)
+  - 08 [Sheng Zhao](../../Authors/Sheng_Zhao_(赵胜).md)
+  - 09 [Jinyu Li](../../Authors/Jinyu_Li_(李劲宇).md)
+  - 10 [Furu Wei](../../Authors/Furu_Wei_(韦福如).md)
+- 机构:
+  - [上海交通大学](../../Institutions/SJTU_上海交通大学.md)
+  - [微软](../../Institutions/Microsoft.md)
+- 时间:
+  - 预印时间: 2024.06.12 ArXiv v1
+  - 更新笔记: 2024.06.19
+- 发表:
+  - 期刊/会议 
+- 链接:
+  - [ArXiv](https://arxiv.org/abs/2406.07855)
+  - [DOI]()
+  - [Github]()
+  - [Demo](https://aka.ms/valler)
+  - [Scholar](https://scholar.google.com/scholar?cluster=)
+- 标签:
+  - [语音合成](../../Tags/SpeechSynthesis.md)
+  - [零样本](../../Tags/Zero-Shot.md)
+- 页数: 15
+- 引用: ?
+- 被引: ?
+- 数据:
+
+</details>
+
+<h2 id="abstract">Abstract: 摘要<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>With the help of discrete neural audio codecs, large language models (LLM) have increasingly been recognized as a promising methodology for zero-shot Text-to-Speech (TTS) synthesis.
+However, sampling based decoding strategies bring astonishing diversity to generation, but also pose robustness issues such as typos, omissions and repetition.
+In addition, the high sampling rate of audio also brings huge computational overhead to the inference process of autoregression.
+To address these issues, we propose <strong><em>VALL-E R</em></strong>, a robust and efficient zero-shot TTS system, building upon the foundation of VALL-E [Wang et al., 2023a].
+Specifically, we introduce a phoneme monotonic alignment strategy to strengthen the connection between phonemes and acoustic sequence, ensuring a more precise alignment by constraining the acoustic tokens to match their associated phonemes.
+Furthermore, we employ a codec-merging approach to downsample the discrete codes in shallow quantization layer, thereby accelerating the decoding speed while preserving the high quality of speech output.
+Benefiting from these strategies, <strong><em>VALL-E R</em></strong> obtains controllability over phonemes and demonstrates its strong robustness by approaching the WER of ground truth.
+In addition, it requires fewer autoregressive steps, with over 60% time reduction during inference.
+This research has the potential to be applied to meaningful projects, including the creation of speech for those affected by aphasia.
+Audio samples will be available at: https://aka.ms/valler.</p>
+</blockquote>
+<h2 id="1introduction">1.Introduction: 引言<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
+<h2 id="2related-works">2.Related Works: 相关工作<a class="headerlink" href="#2related-works" title="Permanent link">&para;</a></h2>
+<h2 id="3methodology">3.Methodology: 方法<a class="headerlink" href="#3methodology" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this study, we propose a robust and efficient zero-shot TTS system named <strong><em>VALL-E R</em></strong>.
+We first introduce the codec-merging approach in Section 3.1 which can improve inference speed without retraining the codec, and then illustrate the monotonic alignment strategy in decoder-only neural codec LM in Section 3.2.</p>
+</blockquote>
+<h3 id="31codec-merging-approach">3.1.Codec-Merging Approach<a class="headerlink" href="#31codec-merging-approach" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Building upon the foundational work of <a href="../../Speech_Neural_Codec/2022.10.24_EnCodec/">EnCodec</a>, we introduce the concept of a merged codec.
+This innovative approach enables the downsampling of discrete codes across various layers through alterations in the inference forward process.
+Remarkably, this is achieved without necessitating any retraining or fine-tuning of the model, presenting a significant advancement in the efficient manipulation of audio data representations.</p>
+<p>The visual description of the proposed codec can be seen in Figure.02.
+The overall architecture of the model remains consistent with Encodec, which comprises of three components: 
+(1) a convolution-based encoder that maps waveform data $x^{1\times L}$ into a sequence of latent representations $z^{F\times T}$, where $F$ is channel and $T$ is length of extracted codes; 
+(2) a decoder that reconstructs the data $\hat{x}^{1\times L}$ from a sequence of the quantized latent representations $\hat{z}^{F\times T}$; 
+(3) an 8-layer residual vector quantizer (RVQ) module, which can convert the continual latent vector $z^{F\times T}$ into the discrete code representation $C^{8\times T}$ iteratively.
+The main difference is that our merged codec inserts a codec-merging module before the vector quantizer module to downsample the representation $z^{F\times T}$.</p>
+<p>Assuming the merged rate of layer $d$ is $m_d$, $r_{d}^{F\times T}$ represents the residual input of layer $d$.
+Then the codec-merging module consists of two steps: the first one is downsampling the residual input $r_{d}^{F\times T}$ to $r_{md}^{F\times (T/m_{d})}$ by average pooling, and then upsampling $r_{md}$ to its original length through repeat operation.
+Next, the residual representation processed by the Merge module will be feed into the following VQ layer to quantized into discrete code $C^{1\times T}<em>{d}$ through nearest-neighbor lookup over the codebook embeddings.
+Through the merge module, we reduced the resolution of $C^{1\times T}</em>{d}$ by ensuring consistent code of consecutive $m_d$ frames.</p>
+</blockquote>
+<h3 id="32neural-codec-lm-with-monotonic-alignment">3.2.Neural Codec LM with Monotonic Alignment<a class="headerlink" href="#32neural-codec-lm-with-monotonic-alignment" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Previously, monotonic strategies were only applicable to encoder-decoder structures.
+To address the robustness issue in the decoder-only transformer based TTS, we integrated phonemes prediction into the training of neural codec LM and design the monotonic alignment strategy during the inference process.
+The overview is illustrated in Figure.03 and details of training and inference are discussed in the subsequent sections.</p>
+</blockquote>
+<h4 id="321training-with-phoneme-prediction">3.2.1.Training with Phoneme Prediction<a class="headerlink" href="#321training-with-phoneme-prediction" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>To achieve a good trade-off between speech quality and inference speed, our <strong><em>VALL-E R</em></strong> includes two models: autoregressive (AR) and non-autoregressive (NAR), which is following <a href="../2023.01.05_VALL-E/">VALL-E</a>.
+Specifically, given a training data pair ${\mathbf{s}, \mathbf{p}}$, where $s$ is speech sample, and $\mathbf{p} = {p_1, p_2, \cdots, p_L}$ is its corresponding phoneme transcription.
+Then, the codec-merging model introduced in Sec.3.1 is utilized to compress speech waveform $s$ into discrete acoustic tokens $\mathbf{A}$ with 8 quantizers, formulated as: $\text{MergeCodec}(x) = \mathbf{A}^{8×T}= {\mathbf{a}^1, \cdots, \mathbf{a}^8}$, where $T$ is length of discrete codes and $\mathbf{a}^i= {a_1, \cdots, a_T}$ represent the tokens in the $i$-th layer.
+Because the training of <strong><em>VALL-E R</em></strong> requires the aligned phonemes and acoustic tokens, aligner tool is adopted here to align $p$ with acoustic tokens $\mathbf{A}$, denoted as $\hat{\mathbf{p}}<em>{1:T}= {\hat{p}_1, \hat{p}_2, \cdots, \hat{p}_L}$ where $\hat{p}_i$ contains $N_i$ repetitions of $p_i$ and $\sum</em>{i=1}^{L}N_i = T$.</p>
+<p>For AR stage, to enhance the connection between phoneme and acoustic sequence, we build a neural codec LM $\theta_{AR}$ to model the discrete acoustic tokens $\mathbf{a}^{1}<em>{1:T}$ from the first quantizer of codec-merging model with phoneme prediction.
+As shown in Figure.03, it’s conditioned on the phoneme sequence $\mathbf{p}$ to generate both the acoustic token $\mathbf{a}^{1}</em>{1:T}$ and aligned phonemes $\hat{p}_{1:T}$ simultaneously, formulated as maximizing the following probability:</p>
+</blockquote>
+<p>$$
+  p(\mathbf{a}^{1}<em>{1:T}, \hat{\mathbf{p}}</em>{1:T}|\mathbf{p};\theta_{AR}) = \prod_{t=1}^{T} p(a_t,p_t|a_{1:t-1},\hat{\mathbf{p}}<em>{1:t-1}, \mathbf{p}</em>{1:L};\theta_{AR})
+$$</p>
+<blockquote>
+<p>In the second stage, we train a NAR LM $\theta_{NAR}$ to generate the acoustic tokens from $2$nd to $8$-th layer quantizers iteratively.
+It’s conditioned on phoneme sequences $\mathbf{p}$, the previous few layers of generated acoustic tokens $\mathbf{a}^{1:n}$ and phonemes alignment $l_{1:T}$ to predict next layer of acoustic token $\mathbf{a}^{n+1}$, formulated as maximizing:</p>
+</blockquote>
+<p>$$
+  p(\mathbf{a}^{2:8}<em>{1:T}|\hat{\mathbf{p}}</em>{1:T}, \mathbf{p}<em>{1:L};\theta</em>{NAR}) = \prod_{n=2}^{8} p(\mathbf{a}<em>{1:T}^n|\hat{\mathbf{p}}</em>{1:T}, \mathbf{a}<em>{1:T}^{1:n-1}, \mathbf{p}</em>{1:L};\theta_{NAR})
+$$</p>
+<blockquote>
+<p>We also share the parameters of the acoustic embedding layer and the output prediction layer, which means the weights of the $j$-th prediction layer are the same as the $(j + 1)$-th acoustic embedding layer.</p>
+</blockquote>
+<h4 id="322inference-with-monotonic-alignment">3.2.2.Inference with Monotonic Alignment<a class="headerlink" href="#322inference-with-monotonic-alignment" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>After training with teacher forcing, the neural codec LM we obtained is surprising in context learning ability.
+With just a 3 seconds acoustic prompt, we can replicate the timbre and prosody of unseen speakers without any fine-tuning or adaptation methods (<a href="../2023.01.05_VALL-E/">VALL-E</a>).
+Take Figure.03 as an example of autoregressive inference, we convert the text input into phonemes sequence $\mathbf{p}^t= {p^{t}<em>1, \cdots, p^{t}_3}$ and concatenate it with transcription phoneme of acoustic prompt $\mathbf{p}^p= {p^{p}_1, p^{p}_2}$ to form phoneme tokens for model.
+In the following, we will use acoustic tokens $\mathbf{a} = {a^p_1, \cdots, a^t_n}$ and corresponding aligned phoneme tokens $\mathbf{p}^a= {p^p_1, \cdots, p^t_n}$ as condition to predict the audio and phoneme of next step autoregressively.
+In order to improve the robustness of the model, we adopted the Monotonic Alignment (MA) strategy during the inference process, which means that the predicted phone needs to be aligned with the text input $\mathbf{p}^t$ and can only maintain the current or jump to the next phoneme.
+Specifically, at each step $i$, the current input phoneme token is $p^t_j$.
+The output representation is $\mathbf{e}_i$, and corresponding probability of phoneme $p^t_j$ and $p^t</em>{j+1}$ is denoted as $e_{i,j}$ and $e_{i,j+1}=1 − e_{i,j}$ respectively.
+Then, the phoneme pointer would decide to keep $p^{t}<em>{j}$ unmoved or jump to $p^{t}</em>{j+1}$ by sampling:</p>
+</blockquote>
+<p>$$
+  z_{i,j} \sim \text{Bernoulli}(\dfrac{1}{1+\exp(e_{i,j})})
+$$</p>
+<blockquote>
+<p>The sampled phoneme will be used as input for the $i + 1$ step and this AR process will repeat until all phonemes have been covered.
+To increase the diversity of synthesis process, sampling based decoding is used for acoustic tokens prediction.
+And for NAR model, we adopt greedy search method to generate the $(j + 1)$-th layer acoustic tokens based on the self-aligned phoneme sequence and previous few layers of generated acoustic tokens.
+Finally, decoder of neural codec is adopted here to convert generated discrete codes into waveform.
+In summary, our inference process has the following three characteristics (<a href="../../Surveys/2021.06.29_A_Survey_on_Neural_Speech_Synthesis_63P/_ToC.md">A Survey on Neural Speech Synthesis</a>) by using MA strategy:</p>
+<ul>
+<li>Locality: Each phoneme token can correspond to one or several consecutive acoustic tokens, ensuring a flexible and accurate mapping.
+Conversely, each acoustic token is uniquely aligned to a single phoneme token.
+This one-to-one alignment strategy effectively prevents issues such as misreading, enhancing the clarity and stability of the model.</li>
+<li>Monotonicity: If phoneme $p_a$ follows $p_b$ in the phonemes sequence, the corresponding acoustic tokens for $p_a$ are also positioned sequentially after those for $p_b$.
+This sequential alignment is critical as it inherently prevents the repetition of words.</li>
+<li>Completeness: It is mandated that each phoneme token is represented by at least one corresponding acoustic token.
+This coverage requirement is essential for preventing the word skipping.</li>
+</ul>
+</blockquote>
+<h4 id="323inference-for-controlling-prosody">3.2.3.Inference for Controlling Prosody<a class="headerlink" href="#323inference-for-controlling-prosody" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>In the inference process, benefiting from the powerful in context learning ability of the LM, our proposed <strong><em>VALL-E R</em></strong> can automatically clone both timbre and prosody of the speaker in the prompt by predicting the acoustic and phoneme autoregressively.
+Because <strong><em>VALL-E R</em></strong> explicitly models phoneme, it has strong control over prosody: when we use preset phoneme sequences to replace the self-predicted phoneme sequences in the inference process, we can use the preset prosody to generate speech, thereby achieving the effect of controlling prosody and timbre separately.
+It can also be regarded as a voice conversion task, whose goal is to make the timbre of target speech sound like that of prompt speech without changing the linguistic information and prosody of source speech.</p>
+</blockquote>
+<h2 id="4experiments">4.Experiments: 实验<a class="headerlink" href="#4experiments" title="Permanent link">&para;</a></h2>
+<h2 id="5results">5.Results: 结果<a class="headerlink" href="#5results" title="Permanent link">&para;</a></h2>
+<h2 id="6conclusion">6.Conclusion: 结论<a class="headerlink" href="#6conclusion" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this paper, we propose <strong><em>VALL-E R</em></strong>, a robust and efficient zero-shot text-to-speech model based on neural codec language models.
+We first employ codec-merging method to downsample the discrete codes to improve inference speed without affecting the sound quality.
+More importantly, we incorporate phoneme prediction into the training process and utilize monotonic alignment strategy during the inference.
+Experimental results demonstrate that <strong><em>VALL-E R</em></strong> can effectively model the correlation between phonemes and audio, significantly improve the robustness of speech synthesis, and endow the ability to flexibly control prosody.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -567,7 +567,7 @@ Our proposed decoding scheme can be seen as the extension of MaskGIT’s decodin
 <blockquote>
 <p>The architecture of the model is illustrated in Figure 1.</p>
 </blockquote>
-<p><img alt="" src="../../_Images/2023.05_SoundStorm_FIG01.png" /></p>
+<p><img alt="" src="../Images/2023.05.16_SoundStorm_Fig.01.png" /></p>
 <blockquote>
 <p>At the input side, we interleave the time-aligned conditioning tokens with the SoundStream tokens at the frame level, embed the resulting sequence, sum the embeddings corresponding to the same frame, including the embedding of the conditioning token, and pass the resulting continuous embeddings to a Conformer.
 Consequently, the sequence length for bidirectional self-attention in the Conformer is determined by the number of SoundStream frames (typically 50 per second), and thus is independent of the number of RVQ levels $Q$, allowing one to handle audio with length on the order of minutes.
