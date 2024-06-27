@@ -412,10 +412,10 @@
 
 </details>
 <p><br></p>
-<p>在过去的十年中, 语音合成领域取得了显著的进步, 例如 <a href="../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a>, <a href="../../E2E/2021.06.11_VITS/">VITS</a>, <a href="../../Models/Diffusion/2022.04.21_FastDiff.md">FastDiff</a>, <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>, 实现了在表达性和自然度上能与真人语音相媲美的合成语音.
-近期, 随着大语言模型 (GPT-3, GPT-4, LLaMA) 和在其他领域的生成模型 (DDPM, <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN</a>, <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a>, <a href="../TTS2_Acoustic/BVAE-TTS.md">BVAE-TTS</a>) 的发展, 零样本文本转语音任务 (<a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a>, <a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech 2</a>, <a href="../../Models/Speech_LLM/2023.06.23_VoiceBox.md">VoiceBox</a>, <a href="../../Models/_tmp/2023.06.06_Mega-TTS.md">Mega-TTS</a>, <a href="../../Speech_LLM/2023.05.16_SoundStorm/">SoundStorm</a>) 和风格可控语音合成 (<a href="../../Models/_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../../Models/E2E/2023.05.31_PromptStyle.md">PromptStyle</a>, <a href="../../Models/_tmp/2023.01.31_InstructTTS.md">InstructTTS</a>, <a href="../../Datasets/2023.08.28_TextrolSpeech.md">SALL-E</a>) 在语音领域受到了极大的关注, 这得益于它们强大的零样本生成和可控性能力.</p>
+<p>在过去的十年中, 语音合成领域取得了显著的进步, 例如 <a href="../../TTS2_Acoustic/2020.06.08_FastSpeech2/">FastSpeech2</a>, <a href="../../E2E/2021.06.11_VITS/">VITS</a>, <a href="../../Models/Diffusion/2022.04.21_FastDiff.md">FastDiff</a>, <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>, 实现了在表达性和自然度上能与真人语音相媲美的合成语音.
+近期, 随着大语言模型 (GPT-3, GPT-4, LLaMA) 和在其他领域的生成模型 (DDPM, <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN</a>, <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a>, <a href="../TTS2_Acoustic/BVAE-TTS.md">BVAE-TTS</a>) 的发展, 零样本文本转语音任务 (<a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a>, <a href="../../Diffusion/2023.04.18_NaturalSpeech2/">NaturalSpeech 2</a>, <a href="../../Models/Speech_LLM/2023.06.23_VoiceBox.md">VoiceBox</a>, <a href="../../Models/_tmp/2023.06.06_Mega-TTS.md">Mega-TTS</a>, <a href="../../Speech_LLM/2023.05.16_SoundStorm/">SoundStorm</a>) 和风格可控语音合成 (<a href="../../Models/_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../../Models/E2E/2023.05.31_PromptStyle.md">PromptStyle</a>, <a href="../../Models/_tmp/2023.01.31_InstructTTS.md">InstructTTS</a>, <a href="../../Datasets/2023.08.28_TextrolSpeech.md">SALL-E</a>) 在语音领域受到了极大的关注, 这得益于它们强大的零样本生成和可控性能力.</p>
 <ul>
-<li>零样本文本转语音 (<a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a>, <a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech 2</a>, <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS</a>) 指的是通过显著扩撒语料库和模型规模, 仅使用几秒钟的语音提示就能完美克隆一个未见过的说话人的声音.</li>
+<li>零样本文本转语音 (<a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a>, <a href="../../Diffusion/2023.04.18_NaturalSpeech2/">NaturalSpeech 2</a>, <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS</a>) 指的是通过显著扩撒语料库和模型规模, 仅使用几秒钟的语音提示就能完美克隆一个未见过的说话人的声音.</li>
 <li>风格可控文本转语音 (<a href="../../Models/_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../../Models/_tmp/2023.01.31_InstructTTS.md">InstructTTS</a>) 允许通过文本描述来控制说话人的风格 (语调, 口音, 情绪等).</li>
 </ul>
 <details>
@@ -454,7 +454,7 @@
 受此观察启发, 我们尝试在 <strong><em>ControlSpeech</em></strong> 中引入信息瓶颈的概念, 以实现音色, 内容和风格的独立解耦.
 此外, 为了获得强大的零样本说话人克隆能力, 一个大规模的多说话人训练数据集 (<a href="../../Datasets/2020.12.07_MLS.md">MLS</a>, <a href="../../Datasets/2019.12.17_Libri-Light.md">Libri-Light</a>) 是必要的.
 结合近期在编解码器领域的突破, 我们使用在 60,000 小时的 <a href="../../Datasets/2019.12.17_Libri-Light.md">Libri-Light</a> 语音上预训练的 <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a> 作为 <strong><em>ControlSpeech</em></strong> 的语音分词器.
-在语音合成过程中, 我们采用 <a href="../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a> 作为基础合成框架, 并采用先进的非自回归置信度编解码器生成器 (MaskGIT, <a href="../../Speech_LLM/2023.05.16_SoundStorm/">SoundStorm</a>, <a href="../../Models/_Basis_CV/2022.10.05_Phenaki.md">Phenaki</a>) 作为解码器.</p>
+在语音合成过程中, 我们采用 <a href="../../TTS2_Acoustic/2020.06.08_FastSpeech2/">FastSpeech2</a> 作为基础合成框架, 并采用先进的非自回归置信度编解码器生成器 (MaskGIT, <a href="../../Speech_LLM/2023.05.16_SoundStorm/">SoundStorm</a>, <a href="../../Models/_Basis_CV/2022.10.05_Phenaki.md">Phenaki</a>) 作为解码器.</p>
 <details>
 <summary>原文</summary>
 
@@ -572,7 +572,7 @@
 <p>零样本语音合成指的是仅基于数秒的音频提示合成未见过的说话人声音, 也称为声音克隆.
 近几个月, 随着生成式大规模模型的进步, 越来越多的优秀工作出现.
 - <a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a> 利用离散编解码器表示, 以级联的方式结合自回归和非自回归模型, 保留语言模型的强大上下文能力.
-- <a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech 2</a> 以连续向量而不是离散神经编解码器标记, 并引入隐变量扩散模型中的内在学习.
+- <a href="../../Diffusion/2023.04.18_NaturalSpeech2/">NaturalSpeech 2</a> 以连续向量而不是离散神经编解码器标记, 并引入隐变量扩散模型中的内在学习.
 - <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS</a> 和 <a href="../../Models/_tmp/2023.05.30_Make-A-Voice.md">Make-A-Voice</a> 利用语义标记以减少文本和音频特征之间的差距.
 - <a href="../../Models/_tmp/2023.06.06_Mega-TTS.md">Mega-TTS</a>, <a href="../../Models/_tmp/2023.07.14_Mega-TTS2.md">Mega-TTS2</a> 采用传统的梅尔频谱, 分离音色和语调, 并使用自回归方法进一步建模语调.
 - <a href="../../Models/Speech_LLM/2023.06.23_VoiceBox.md">VoiceBox</a> 和 <a href="../../Models/_tmp/P-Flow.md">P-Flow</a> 采用流模型作为生成器, 展示出健壮的生成性能.
@@ -637,7 +637,7 @@
 <p>为了实现同步的零样本音色克隆和风格克隆, 一个可行的方法是利用一个大规模预训练解耦编解码空间.
 一方面, 在多样说话人数据集上广泛地预训练能够确保基本的零样本能力.
 另一方面, 解耦编解码表示能有效地减少音色和风格的纠缠.
-如图 02 所示, <strong><em>ControlSpeech</em></strong> 是基于 <a href="../../Models/TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a> 的编码器-解码器模型用于编解码生成.
+如图 02 所示, <strong><em>ControlSpeech</em></strong> 是基于 <a href="../../TTS2_Acoustic/2020.06.08_FastSpeech2/">FastSpeech2</a> 的编码器-解码器模型用于编解码生成.
 虚线框表示帧级特征, 实线框表示全局特征.</p>
 <p><img alt="" src="../_Images/2024.06.03_ControlSpeech_Fig.02.png" /></p>
 <p><strong><em>风格混合语义密度 (Style Mixture Semantic Density, SMSD)</em></strong> 模块采样风格文本以生成对应的全局风格表示, 并通过交叉注意模块与文本编码器的表示相结合.

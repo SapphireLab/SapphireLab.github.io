@@ -451,7 +451,7 @@
 The integration of <a href="../../Models/_Basis/2021.12.20_LDM.md">latent diffusion models (LDMs)</a> further amplifies their popularity [8], [9], [10], as these models significantly enhance computational efficiency.
 This efficiency is achieved through the reduction of input dimensionality using autoencoders, which also enables the diffusion models to focus on the most critical features of data (<a href="../../Models/_Basis/2021.12.20_LDM.md">LDM</a>).
 However, applying LDMs to text-to-speech (TTS) presents unique challenges because TTS requires precise alignment between text and generated speech over time.
-Hence, their application to TTS often requires a complex pipeline, incorporating speech domain-specific modeling such as phoneme and duration (<a href="../../Models/TTS2_Acoustic/2021.05.13_Grad-TTS.md">Grad-TTS</a>, <a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech2</a>).
+Hence, their application to TTS often requires a complex pipeline, incorporating speech domain-specific modeling such as phoneme and duration (<a href="../../Models/TTS2_Acoustic/2021.05.13_Grad-TTS.md">Grad-TTS</a>, <a href="../2023.04.18_NaturalSpeech2/">NaturalSpeech2</a>).
 Without these components, generation performance tends to be suboptimal (<a href="../../Models/_tmp/Simple-TTS.md">Simple-TTS</a>, <a href="../_tmp/2023.11.02_E3-TTS.md">E3-TTS</a>), while their inclusion hinders the model efficiency and scalability.</p>
 <p>In this work, we present a latent diffusion model for TTS that is integrated with off-the-shelf pre-trained text and speech encoders without relying on the speech domain-specific modeling.
 Our method addresses the challenge of aligning text and speech solely through cross-attention mechanisms.
@@ -474,7 +474,7 @@ Efforts to replicate LLM’s capability in different modalities have shown progr
 Although this approach removes the need for cascaded modeling (<a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a>) to manage the number of token streams, their resource-intensive inference processes limit their applications [30].
 On the other hand, Non-AR generative models are employed to enhance the efficiency of TTS systems.
 <a href="../../Models/Speech_LLM/2023.06.23_VoiceBox.md">VoiceBox</a> utilizes a flow matching [32] to generate speech, effectively casting the TTS task into a speech infilling task.
-NaturalSpeech series (<a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech2</a>, <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">NaturalSpeech3</a>), building upon recent advances in the <a href="../../Models/_Basis/2021.12.20_LDM.md">Latent Diffusion Model (LDM)</a>, incorporate auxiliary modules for controllability of various speech attribute such as content, prosody, and timbre.
+NaturalSpeech series (<a href="../2023.04.18_NaturalSpeech2/">NaturalSpeech2</a>, <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">NaturalSpeech3</a>), building upon recent advances in the <a href="../../Models/_Basis/2021.12.20_LDM.md">Latent Diffusion Model (LDM)</a>, incorporate auxiliary modules for controllability of various speech attribute such as content, prosody, and timbre.
 However, requiring supplementary data beyond speech-transcription pairs hinders scalability.
 <a href="../../Models/_tmp/Simple-TTS.md">Simple-TTS</a> simplifies the data preparation and training process by removing auxiliary modules and the need for phoneme-level durations.
 Similarly, <a href="../_tmp/2023.11.02_E3-TTS.md">E3-TTS</a> follows this approach but does not utilize a pre-trained latent autoencoder.
@@ -484,10 +484,10 @@ However, both models have limitations in audio quality and impose a fixed length
 Initially applied in image generation, their success is attributed to the reduced dimensionality of the latent space, facilitating efficient training and sampling (<a href="../../Models/_Basis/2021.12.20_LDM.md">LDM</a>).
 Notably, guided diffusion [35], [36] has been expanded to various applications of LDMs, such as image editing [37] and image retrieval [38].
 In the field of audio signals, techniques such as style transfer, inpainting, and super-resolution have been explored, along with text-guided audio and speech generation [39], [40].
-In the context of TTS, however, applying LDMs to TTS (<a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech2</a>; <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">NaturalSpeech3</a>) necessitates domain-specific elements such as phonemes, phoneme-level durations, and pitch.
+In the context of TTS, however, applying LDMs to TTS (<a href="../2023.04.18_NaturalSpeech2/">NaturalSpeech2</a>; <a href="../../Models/Diffusion/2024.03.05_NaturalSpeech3.md">NaturalSpeech3</a>) necessitates domain-specific elements such as phonemes, phoneme-level durations, and pitch.
 This is primarily due to the need for precise temporal alignment between text and speech, as well as the higher fidelity requirements inherent in audio data.</p>
 <h3 id="neural-audio-codec">Neural Audio Codec<a class="headerlink" href="#neural-audio-codec" title="Permanent link">&para;</a></h3>
-<p>Neural audio codecs, which effectively compress various types of audio using neural networks, are used as part of many TTS systems (<a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech2</a>; <a href="../../Speech_LLM/2024.04.03_CLaM-TTS/">CLaM-TTS</a>; <a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a>).
+<p>Neural audio codecs, which effectively compress various types of audio using neural networks, are used as part of many TTS systems (<a href="../2023.04.18_NaturalSpeech2/">NaturalSpeech2</a>; <a href="../../Speech_LLM/2024.04.03_CLaM-TTS/">CLaM-TTS</a>; <a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a>).
 Recent advancements employ an encoder-decoder architecture coupled with Residual Vector Quantization (RVQ) [41], [42], [43] to transform raw audio waves into discretized tokens.
 For example, <a href="../../Speech_Neural_Codec/2022.10.24_EnCodec/">EnCodec</a> converts 24,000 Hz mono waveforms into 75 Hz latents.
 With a similar architecture, by focusing the compression specifically on speech rather than general audio signals, Mel-VAE (<a href="../../Speech_LLM/2024.04.03_CLaM-TTS/">CLaM-TTS</a>) achieves approximately 10.76 Hz latents by compressing the mel-spectrogram.
@@ -577,7 +577,7 @@ $$</p>
 </details>
 <p><br></p>
 <p>本文方法如图 01 所示.</p>
-<p><img alt="" src="Images/2024.06.17_DiTTo-TTS_Fig.01.png" /></p>
+<p><img alt="" src="../Images/2024.06.17_DiTTo-TTS_Fig.01.png" /></p>
 <details>
 <summary>原文</summary>
 

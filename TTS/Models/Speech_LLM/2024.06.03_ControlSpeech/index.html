@@ -347,17 +347,17 @@
 
 - 标题: ControlSpeech: Towards Simultaneous Zero-shot Speaker Cloning and Zero-shot Language Style Control With Decoupled Codec
 - 作者:
-  - [Shengpeng Ji](../../Authors/Shengpeng_Ji.md)
-  - [Jialong Zuo](../../Authors/Jialong_Zuo.md) 
-  - [Minghui Fang](../../Authors/Minghui_Fang.md) 
-  - [Siqi Zheng](../../Authors/Siqi_Zheng.md)
-  - [Qian Chen](../../Authors/Qian_Chen.md)
-  - [Wen Wang](../../Authors/Wen_Wang.md)
-  - [Ziyue Jiang](../../Authors/Ziyue_Jiang.md)
-  - [Hai Huang](../../Authors/Hai_Huang.md)
-  - [Xize Cheng](../../Authors/Xize_Cheng_(成曦泽).md)
-  - [Rongjie Huang](../../Authors/Rongjie_Huang_(黄融杰).md) 
-  - [Zhou Zhao](../../Authors/Zhou_Zhao_(赵洲).md)
+  - 01 [Shengpeng Ji](../../Authors/Shengpeng_Ji.md)
+  - 02 [Jialong Zuo](../../Authors/Jialong_Zuo.md) 
+  - 03 [Minghui Fang](../../Authors/Minghui_Fang.md) 
+  - 04 [Siqi Zheng](../../Authors/Siqi_Zheng.md)
+  - 05 [Qian Chen](../../Authors/Qian_Chen.md)
+  - 06 [Wen Wang](../../Authors/Wen_Wang.md)
+  - 07 [Ziyue Jiang](../../Authors/Ziyue_Jiang.md)
+  - 08 [Hai Huang](../../Authors/Hai_Huang.md)
+  - 09 [Xize Cheng](../../Authors/Xize_Cheng_(成曦泽).md)
+  - 10 [Rongjie Huang](../../Authors/Rongjie_Huang_(黄融杰).md) 
+  - 11 [Zhou Zhao](../../Authors/Zhou_Zhao_(赵洲).md)
 - 机构:
   - [浙江大学](../../Institutions/ZJU_浙江大学.md)
 - 时间:
@@ -410,17 +410,17 @@
 <summary>原文</summary>
 
 > Over the past decade, the field of speech synthesis has seen remarkable advancements ([FastSpeech2](../TTS2_Acoustic/2020.06.08_FastSpeech2.md), [VITS](../E2E/2021.06.11_VITS.md), [FastDiff](../Diffusion/2022.04.21_FastDiff.md), [FastSpeech](../TTS2_Acoustic/2019.05.22_FastSpeech.md)), achieving synthesized speech that rivals real human speech in terms of expressiveness and naturalness ([NaturalSpeech](../E2E/2022.05.09_NaturalSpeech.md)).
-> Recently, with the development of large language models (GPT-3, GPT-4, [LLaMA](../../Models/LLM/2023.02.27_LLaMA.md)) and generative models (DDPM, [HiFi-GAN](../TTS3_Vocoder/2020.10.12_HiFi-GAN.md), [Glow-TTS](../TTS2_Acoustic/2020.05.22_Glow-TTS.md), [BVAE-TTS](../TTS2_Acoustic/2021.01.13_BVAE-TTS.md)) in other domains, the tasks of zero-shot ([VALL-E](2023.01.05_VALL-E.md), [NaturalSpeech 2](../Diffusion/2023.04.18_NaturalSpeech2.md) [VoiceBox](2023.06.23_VoiceBox.md), [Mega-TTS](2023.06.06_Mega-TTS.md), [SoundStorm](2023.05.16_SoundStorm.md) and style-controllable speech synthesis ([PromptTTS](../_tmp/2022.11.22_PromptTTS.md), [PromptStyle](../E2E/2023.05.31_PromptStyle.md), [InstructTTS](../_tmp/2023.01.31_InstructTTS.md), [SALL-E](../../Datasets/2023.08.28_TextrolSpeech.md)) have garnered significant attention in the speech domain due to their powerful zero-shot generation and controllability capabilities.
+> Recently, with the development of large language models (GPT-3, GPT-4, [LLaMA](../../Models/LLM/2023.02.27_LLaMA.md)) and generative models (DDPM, [HiFi-GAN](../TTS3_Vocoder/2020.10.12_HiFi-GAN.md), [Glow-TTS](../TTS2_Acoustic/2020.05.22_Glow-TTS.md), [BVAE-TTS](../TTS2_Acoustic/2021.01.13_BVAE-TTS.md)) in other domains, the tasks of zero-shot ([VALL-E](2023.01.05_VALL-E.md), [NaturalSpeech 2](../Diffusion/2023.04.18_NaturalSpeech2.md) [VoiceBox](2023.06.23_VoiceBox.md), [Mega-TTS](2023.06.06_Mega-TTS.md), [SoundStorm](2023.05.16_SoundStorm.md) and style-controllable speech synthesis ([PromptTTS](../Prompt/2022.11.22_PromptTTS.md), [PromptStyle](../E2E/2023.05.31_PromptStyle.md), [InstructTTS](../Prompt/2023.01.31_InstructTTS.md), [SALL-E](../../Datasets/2023.08.28_TextrolSpeech.md)) have garnered significant attention in the speech domain due to their powerful zero-shot generation and controllability capabilities.
 > Zero-shot TTS ([VALL-E](2023.01.05_VALL-E.md), [NaturalSpeech 2](../../Models/Diffusion/2023.04.18_NaturalSpeech2.md); [SPEAR-TTS](2023.02.07_SPEAR-TTS.md)) refers to the ability to perfectly clone an unseen speaker’s voice using only a few seconds of a speech prompt by significantly scaling up both the corpus and model sizes.
-> Style-controllable TTS ([PromptTTS](../_tmp/2022.11.22_PromptTTS.md), [InstructTTS](../_tmp/2023.01.31_InstructTTS.md)), on the other hand, allows for the control of a speaker’s style (prosody, accent, emotion, etc.) through textual descriptions.
+> Style-controllable TTS ([PromptTTS](../Prompt/2022.11.22_PromptTTS.md), [InstructTTS](../Prompt/2023.01.31_InstructTTS.md)), on the other hand, allows for the control of a speaker’s style (prosody, accent, emotion, etc.) through textual descriptions.
 
 </details>
 <p><br></p>
-<p>在过去的十年中, 语音合成领域取得了显著的进步, 例如 <a href="../TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a>, <a href="../../E2E/2021.06.11_VITS/">VITS</a>, <a href="../Diffusion/2022.04.21_FastDiff.md">FastDiff</a>, <a href="../TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>, 实现了在表达性和自然度上能与真人语音相媲美的合成语音.
-近期, 随着大语言模型 (GPT-3, GPT-4, LLaMA) 和在其他领域的生成模型 (DDPM, <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN</a>, <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a>, <a href="../TTS2_Acoustic/2021.01.13_BVAE-TTS.md">BVAE-TTS</a>) 的发展, 零样本文本转语音 (<a href="../2023.01.05_VALL-E/">VALL-E</a>, <a href="../Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech 2</a> <a href="2023.06.23_VoiceBox.md">VoiceBox</a>, <a href="../2023.06.06_Mega-TTS/">Mega-TTS</a>, <a href="../2023.05.16_SoundStorm/">SoundStorm</a>) 和风格可控语音合成 (<a href="../_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../E2E/2023.05.31_PromptStyle.md">PromptStyle</a>, <a href="../_tmp/2023.01.31_InstructTTS.md">InstructTTS</a>, <a href="../../Datasets/2023.08.28_TextrolSpeech.md">SALL-E</a>) 在语音领域受到了极大的关注, 这得益于它们强大的零样本生成和可控性能力.</p>
+<p>在过去的十年中, 语音合成领域取得了显著的进步, 例如 <a href="../../TTS2_Acoustic/2020.06.08_FastSpeech2/">FastSpeech2</a>, <a href="../../E2E/2021.06.11_VITS/">VITS</a>, <a href="../Diffusion/2022.04.21_FastDiff.md">FastDiff</a>, <a href="../TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>, 实现了在表达性和自然度上能与真人语音相媲美的合成语音.
+近期, 随着大语言模型 (GPT-3, GPT-4, LLaMA) 和在其他领域的生成模型 (DDPM, <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN</a>, <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a>, <a href="../TTS2_Acoustic/2021.01.13_BVAE-TTS.md">BVAE-TTS</a>) 的发展, 零样本文本转语音 (<a href="../2023.01.05_VALL-E/">VALL-E</a>, <a href="../../Diffusion/2023.04.18_NaturalSpeech2/">NaturalSpeech 2</a> <a href="2023.06.23_VoiceBox.md">VoiceBox</a>, <a href="../2023.06.06_Mega-TTS/">Mega-TTS</a>, <a href="../2023.05.16_SoundStorm/">SoundStorm</a>) 和风格可控语音合成 (<a href="../Prompt/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../E2E/2023.05.31_PromptStyle.md">PromptStyle</a>, <a href="../Prompt/2023.01.31_InstructTTS.md">InstructTTS</a>, <a href="../../Datasets/2023.08.28_TextrolSpeech.md">SALL-E</a>) 在语音领域受到了极大的关注, 这得益于它们强大的零样本生成和可控性能力.</p>
 <ul>
-<li>零样本文本转语音 (<a href="../2023.01.05_VALL-E/">VALL-E</a>, <a href="../../Models/Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech 2</a>; <a href="2023.02.07_SPEAR-TTS.md">SPEAR-TTS</a>) 指的是通过显著扩撒语料库和模型规模, 仅使用几秒钟的语音提示就能完美克隆一个未见过的说话人的声音.</li>
-<li>风格可控文本转语音 (<a href="../_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../_tmp/2023.01.31_InstructTTS.md">InstructTTS</a>) 允许通过文本描述来控制说话人的风格 (语调, 口音, 情绪等).</li>
+<li>零样本文本转语音 (<a href="../2023.01.05_VALL-E/">VALL-E</a>, <a href="../../Diffusion/2023.04.18_NaturalSpeech2/">NaturalSpeech 2</a>; <a href="2023.02.07_SPEAR-TTS.md">SPEAR-TTS</a>) 指的是通过显著扩撒语料库和模型规模, 仅使用几秒钟的语音提示就能完美克隆一个未见过的说话人的声音.</li>
+<li>风格可控文本转语音 (<a href="../Prompt/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../Prompt/2023.01.31_InstructTTS.md">InstructTTS</a>) 允许通过文本描述来控制说话人的风格 (语调, 口音, 情绪等).</li>
 </ul>
 <details>
 <summary>原文</summary>
@@ -428,7 +428,7 @@
 > However, these two types of models have their own limitations.
 > As illustrated in the right panel of Fig.01, zero-shot TTS can clone the voice of any speaker, but the style is fixed and cannot be further controlled or adjusted.
 > Conversely, style-controllable TTS can synthesize speech in any desired style, but it cannot specify the timbre of the synthesized voice.
-> Although some efforts ([InstructTTS](../_tmp/2023.01.31_InstructTTS.md), [PromptStyle](../E2E/2023.05.31_PromptStyle.md)) have been made to use speaker IDs for control, these approaches are limited to testing on constrained in-domain datasets.
+> Although some efforts ([InstructTTS](../Prompt/2023.01.31_InstructTTS.md), [PromptStyle](../E2E/2023.05.31_PromptStyle.md)) have been made to use speaker IDs for control, these approaches are limited to testing on constrained in-domain datasets.
 > Therefore, we propose a novel model ***ControlSpeech***, which simultaneously controls timbre, content, and style, demonstrating powerful zero-shot cloning and control capabilities at the same time.
 
 </details>
@@ -437,7 +437,7 @@
 <p><img alt="" src="../Images/2024.06.03_ControlSpeech_Fig.01.png" /></p>
 <p>如图 01 的右侧, 零样本文本转语音能够克隆任意说话人的声音, 但风格是固定的, 且无法控制或调整.
 而风格可控文本转语音则相反, 能够合成任何想要的风格的语音, 但无法指定合成声音的音素.
-尽管有一些工作 (<a href="../_tmp/2023.01.31_InstructTTS.md">InstructTTS</a>, <a href="../E2E/2023.05.31_PromptStyle.md">PromptStyle</a>) 试图使用说话人 ID 来控制, 但这些方法仅限于在受限的数据集上进行测试.
+尽管有一些工作 (<a href="../Prompt/2023.01.31_InstructTTS.md">InstructTTS</a>, <a href="../E2E/2023.05.31_PromptStyle.md">PromptStyle</a>) 试图使用说话人 ID 来控制, 但这些方法仅限于在受限的数据集上进行测试.
 因此, 我们提出了一种新的模型 <strong><em>ControlSpeech</em></strong>, 它能同时控制音色, 内容, 风格, 展示了强大的零样本克隆和控制能力.</p>
 <details>
 <summary>原文</summary>
@@ -448,7 +448,7 @@
 > Inspired by this observation, we attempted to incorporate the concept of an information bottleneck in ***ControlSpeech*** to achieve independent disentanglement of timbre, content, and style.
 > Additionally, to attain robust zero-shot speaker cloning capabilities, a large-scale, multi-speaker training dataset ([MLS](../../Datasets/2020.12.07_MLS.md), [Libri-Light](../../Datasets/2019.12.17_Libri-Light.md)) is essential.
 > Leveraging recent breakthroughs in the codec domain, we used [FACodec](../Diffusion/2024.03.05_NaturalSpeech3.md) which is pre-trained on 60,000 hours ([Libri-Light](../../Datasets/2019.12.17_Libri-Light.md)) speech as the speech tokenizer for ***ControlSpeech***.
-> During the speech synthesis process, we adopted [FastSpeech2](../TTS2_Acoustic/2020.06.08_FastSpeech2.md) as the base synthesis framework and employed an advanced non-autoregressive confidence-based codec generator [5, 2, [Phenaki](../_Basis_CV/2022.10.05_Phenaki.md)] as our decoder.
+> During the speech synthesis process, we adopted [FastSpeech2](../TTS2_Acoustic/2020.06.08_FastSpeech2.md) as the base synthesis framework and employed an advanced non-autoregressive confidence-based codec generator [5, 2, [Phenaki](../_Basis/2022.10.05_Phenaki.md)] as our decoder.
 
 </details>
 <p><br></p>
@@ -458,7 +458,7 @@
 受此观察启发, 我们尝试在 <strong><em>ControlSpeech</em></strong> 中引入信息瓶颈的概念, 以实现音色, 内容和风格的独立解耦.
 此外, 为了获得强大的零样本说话人克隆能力, 一个大规模的多说话人训练数据集 (<a href="../../Datasets/2020.12.07_MLS.md">MLS</a>, <a href="../../Datasets/2019.12.17_Libri-Light.md">Libri-Light</a>) 是必要的.
 结合近期在编解码器领域的突破, 我们使用在 60,000 小时的 <a href="../../Datasets/2019.12.17_Libri-Light.md">Libri-Light</a> 语音上预训练的 <a href="../Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a> 作为 <strong><em>ControlSpeech</em></strong> 的语音分词器.
-在语音合成过程中, 我们采用 <a href="../TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a> 作为基础合成框架, 并采用先进的非自回归置信度编解码器生成器 (MaskGIT,2023.05.16_SoundStorm.md_SoundStorm.md), <a href="../_Basis_CV/2022.10.05_Phenaki.md">Phenaki</a>) 作为解码器.</p>
+在语音合成过程中, 我们采用 <a href="../../TTS2_Acoustic/2020.06.08_FastSpeech2/">FastSpeech2</a> 作为基础合成框架, 并采用先进的非自回归置信度编解码器生成器 (MaskGIT,2023.05.16_SoundStorm.md_SoundStorm.md), <a href="../_Basis/2022.10.05_Phenaki.md">Phenaki</a>) 作为解码器.</p>
 <details>
 <summary>原文</summary>
 
@@ -576,7 +576,7 @@
 <p>零样本语音合成指的是仅基于数秒的音频提示合成未见过的说话人声音, 也称为声音克隆.
 近几个月, 随着生成式大规模模型的进步, 越来越多的优秀工作出现.
 - <a href="../2023.01.05_VALL-E/">VALL-E</a> 利用离散编解码器表示, 以级联的方式结合自回归和非自回归模型, 保留语言模型的强大上下文能力.
-- <a href="../Diffusion/2023.04.18_NaturalSpeech2.md">NaturalSpeech 2</a> 以连续向量而不是离散神经编解码器标记, 并引入隐变量扩散模型中的内在学习.
+- <a href="../../Diffusion/2023.04.18_NaturalSpeech2/">NaturalSpeech 2</a> 以连续向量而不是离散神经编解码器标记, 并引入隐变量扩散模型中的内在学习.
 - <a href="2023.02.07_SPEAR-TTS.md">SPEAR-TTS</a> 和 [Make-A-Voice](../../Models/<em>../_tmp/2023.05.30_Make-A-Voice.md音频特征之间的差距.
 - <a href="../2023.06.06_Mega-TTS/">Mega-TTS</a>, <a href="../2023.07.14_Mega-TTS2/">Mega-TTS2</a> 采用传统的梅尔频谱, 分离音色和语调, 并使用自回归方法进一步建模语调.
 - <a href="2023.06.23_VoiceBox.md">VoiceBox</a> 和 [P-Flow](../../Models/</em>../<em>tmp/P-Flow.md展示出健壮的生成性能.
@@ -590,22 +590,22 @@
 <summary>原文</summary>
 
 > Some recent studies propose to control speech style through natural language prompts, providing a more interpretable and user-friendly approach of control.
-> [PromptTTS](../_tmp/2022.11.22_PromptTTS.md) employs manually annotated text prompts to describe four to five attributes of speech (gender, pitch, speaking speed, energy, and emotion) and trains model on two synthesized speaker datasets and LibriTTS.
-> [InstructTTS](../_tmp/2023.01.31_InstructTTS.md) is a three-stage training approach to capture semantic information from natural language style prompts as conditioning to the TTS system.
+> [PromptTTS](../Prompt/2022.11.22_PromptTTS.md) employs manually annotated text prompts to describe four to five attributes of speech (gender, pitch, speaking speed, energy, and emotion) and trains model on two synthesized speaker datasets and LibriTTS.
+> [InstructTTS](../Prompt/2023.01.31_InstructTTS.md) is a three-stage training approach to capture semantic information from natural language style prompts as conditioning to the TTS system.
 > [Textrolspeech](../../Datasets/2023.08.28_TextrolSpeech.md) introduces an efficient architecture which treats text controllable TTS as a language model task.
 > [PromptStyle](../E2E/2023.05.31_PromptStyle.md) proposes a two-stage TTS approach for cross-speaker style transfer with natural language descriptions based on [VITS](../E2E/2021.06.11_VITS.md).
-> [PromptTTS 2](../_tmp/2023.09.05_PromptTTS2.md) proposes an automatic description creation pipeline leveraging LLM [4] and adopts a diffusion model to capture the one-to-many relationship.
+> [PromptTTS 2](../Prompt/2023.09.05_PromptTTS2.md) proposes an automatic description creation pipeline leveraging LLM [4] and adopts a diffusion model to capture the one-to-many relationship.
 > It is noteworthy that existing style-controllable TTS models are either speaker-independent or can only control timbre using speaker IDs, without the capability for timbre cloning.
 > The introduction of ***ControlSpeech*** significantly expands the boundaries of the controllable TTS task.
 
 </details>
 <p><br></p>
 <p>一些近期研究提出通过自然语言提示控制语音风格, 提供了一种更具可解释性和用户友好的控制方式.
-- <a href="../_tmp/2022.11.22_PromptTTS.md">PromptTTS</a> 以手工注释的文本提示描述语音的四到五个属性 (性别, 音高, 说话速度, 能量, 以及情绪), 并在两个合成说话人数据集和 LibriTTS 上训练模型.
-- <a href="../_tmp/2023.01.31_InstructTTS.md">InstructTTS</a> 是一种三阶段训练方法, 用于从自然语言风格提示中捕获语义信息, 并将其作为条件输入到 TTS 系统.
+- <a href="../Prompt/2022.11.22_PromptTTS.md">PromptTTS</a> 以手工注释的文本提示描述语音的四到五个属性 (性别, 音高, 说话速度, 能量, 以及情绪), 并在两个合成说话人数据集和 LibriTTS 上训练模型.
+- <a href="../Prompt/2023.01.31_InstructTTS.md">InstructTTS</a> 是一种三阶段训练方法, 用于从自然语言风格提示中捕获语义信息, 并将其作为条件输入到 TTS 系统.
 - <a href="../../Datasets/2023.08.28_TextrolSpeech.md">Textrolspeech</a> 引入了一个高效的架构, 将文本可控 TTS 视为语言模型任务.
 - <a href="../E2E/2023.05.31_PromptStyle.md">PromptStyle</a> 提出了一个基于 <a href="../../E2E/2021.06.11_VITS/">VITS</a> 的跨说话人风格转移的两阶段 TTS 方法, 基于自然语言描述.
-- <a href="../_tmp/2023.09.05_PromptTTS2.md">PromptTTS 2</a> 提出了一个利用 LLM [4] 的自动描述创建管道, 并采用扩散模型来捕获一对多关系.</p>
+- <a href="../Prompt/2023.09.05_PromptTTS2.md">PromptTTS 2</a> 提出了一个利用 LLM [4] 的自动描述创建管道, 并采用扩散模型来捕获一对多关系.</p>
 <p>值得注意的是现有风格可控文本转语音模型要么和说话人无关, 要么只能通过说话人 ID 控制音色, 没有声音克隆能力.
 <strong><em>ControlSpeech</em></strong> 引入了语音风格可控的 TTS 模型, 扩展了控制 TTS 任务的边界.</p>
 <h2 id="3controlspeech">3.ControlSpeech<a class="headerlink" href="#3controlspeech" title="Permanent link">&para;</a></h2>
@@ -641,7 +641,7 @@
 <p>为了实现同步的零样本音色克隆和风格克隆, 一个可行的方法是利用一个大规模预训练解耦编解码空间.
 一方面, 在多样说话人数据集上广泛地预训练能够确保基本的零样本能力.
 另一方面, 解耦编解码表示能有效地减少音色和风格的纠缠.
-如图 02 所示, <strong><em>ControlSpeech</em></strong> 是基于 <a href="../TTS2_Acoustic/2020.06.08_FastSpeech2.md">FastSpeech2</a> 的编码器-解码器模型用于编解码生成.
+如图 02 所示, <strong><em>ControlSpeech</em></strong> 是基于 <a href="../../TTS2_Acoustic/2020.06.08_FastSpeech2/">FastSpeech2</a> 的编码器-解码器模型用于编解码生成.
 虚线框表示帧级特征, 实线框表示全局特征.</p>
 <p><img alt="" src="../Images/2024.06.03_ControlSpeech_Fig.02.png" /></p>
 <p><strong><em>风格混合语义密度 (Style Mixture Semantic Density, SMSD)</em></strong> 模块采样风格文本以生成对应的全局风格表示, 并通过交叉注意模块与文本编码器的表示相结合.
@@ -754,10 +754,10 @@ $$</p>
 
 > During our experiments, we identified a many-to-many problem in the text style control module.
 > Specifically, different style texts can describe the same style of speech.
-> Similar to previous approaches ([PromptTTS](../_tmp/2022.11.22_PromptTTS.md), [PromptStyle](../E2E/2023.05.31_PromptStyle.md)), we utilize a pre-trained BERT model to extract the semantic information of style descriptions, thereby enhancing the generalization of out-of-domain style descriptions.
+> Similar to previous approaches ([PromptTTS](../Prompt/2022.11.22_PromptTTS.md), [PromptStyle](../E2E/2023.05.31_PromptStyle.md)), we utilize a pre-trained BERT model to extract the semantic information of style descriptions, thereby enhancing the generalization of out-of-domain style descriptions.
 > Moreover, it has been largely overlooked that a single style text can correspond to multiple speech instances from the same speaker.
 > For example, when using a text describing a happy tone to control audio, various degrees of happiness can be attributed to that description.
-> [PromptTTS 2](../_tmp/2023.09.05_PromptTTS2.md) recognized this issue and introduced a speech prompt to compensate for the details of the text description style, alleviating the one-to-many problem by incorporating additional information.
+> [PromptTTS 2](../Prompt/2023.09.05_PromptTTS2.md) recognized this issue and introduced a speech prompt to compensate for the details of the text description style, alleviating the one-to-many problem by incorporating additional information.
 > However, in the task of simultaneously zero-shot cloning timbre and zero-shot controlling style in speech synthesis, this approach can cause interference between the speech prompt and the style prompt.
 > Therefore, in ***ControlSpeech***, we designed a novel ***Style Mixture Semantic Density (SMSD)*** module to address the one-to-many problem of style representation.
 > We hypothesize that the semantic representation of style $X'_s$ is a global mixture of Gaussian distributions, where different Gaussian distributions represent varying degrees of a particular style.
@@ -769,10 +769,10 @@ $$</p>
 <p><br></p>
 <p>在我们的实验中, 我们发现文本风格控制模块中存在多对多问题.
 具体地, 不同风格文本可以描述相同风格的语音.
-类似于之前的方法 (<a href="../_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../E2E/2023.05.31_PromptStyle.md">PromptStyle</a>), 我们使用预训练的 BERT 模型用于提取风格描述的语音信息, 从而增强领域外风格描述的泛化.
+类似于之前的方法 (<a href="../Prompt/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../E2E/2023.05.31_PromptStyle.md">PromptStyle</a>), 我们使用预训练的 BERT 模型用于提取风格描述的语音信息, 从而增强领域外风格描述的泛化.
 此外, 单个风格文本可能对应多个来自同一说话人的语音实例的情况被极大忽视.
 例如, 当使用文本描述开心的语气来控制音频时, 不同的开心程度可以归因于该描述.
-<a href="../_tmp/2023.09.05_PromptTTS2.md">PromptTTS 2</a> 发现了这个问题, 并引入了语音提示来补偿文本描述风格的细节, 通过引入额外信息来缓解一对多问题.
+<a href="../Prompt/2023.09.05_PromptTTS2.md">PromptTTS 2</a> 发现了这个问题, 并引入了语音提示来补偿文本描述风格的细节, 通过引入额外信息来缓解一对多问题.
 然而, 在零样本克隆音色和零样本控制风格的语音合成任务中, 这种方法可能导致语音提示和风格提示之间的干扰.
 因此, 在 <strong><em>ControlSpeech</em></strong> 中, 我们设计了一种新的 <strong><em>Style Mixture Semantic Density (SMSD)</em></strong> 模块来解决风格表示中的一对多问题.
 我们假设风格语义表示 $X'_s$ 是高斯分布的全局混合, 其中不同的高斯分布代表不同程度的特定风格.
@@ -930,11 +930,11 @@ $$</p>
 > Additionally, to evaluate ***ControlSpeech***’s performance on out-of-domain voices and styles, we further filtered an appropriate test set and enlisted language experts to compose style descriptions distinct from those in [TextrolSpeech](../../Datasets/2023.08.28_TextrolSpeech.md).
 > Further details on the creation of ***VccmDataset*** can be found in appendix E.
 
-> Baselines We have reproduced several state-of-the-art style-controllable models, including [PromptTTS](../_tmp/2022.11.22_PromptTTS.md), [PromptStyle](../E2E/2023.05.31_PromptStyle.md), [SALL-E](../../Datasets/2023.08.28_TextrolSpeech.md) and [InstructTTS](../_tmp/2023.01.31_InstructTTS.md), to serve as primary comparative models for evaluating the controllability of ***ControlSpeech***.
+> Baselines We have reproduced several state-of-the-art style-controllable models, including [PromptTTS](../Prompt/2022.11.22_PromptTTS.md), [PromptStyle](../E2E/2023.05.31_PromptStyle.md), [SALL-E](../../Datasets/2023.08.28_TextrolSpeech.md) and [InstructTTS](../Prompt/2023.01.31_InstructTTS.md), to serve as primary comparative models for evaluating the controllability of ***ControlSpeech***.
 > For the comparison of voice cloning effectiveness, we have reproduced the [VALL-E](2023.01.05_VALL-E.md) model and the [MobileSpeech](../../Models/_../_tmp/2024.02.14_MobileSpeech.mdsenting the autoregressive paradigm and the parallel generation paradigm.
 > The relevant baseline reproduction code has been integrated into the ***ControlToolkit***.
 
-> Evaluation metrics We have aligned our objective experiments with [[PromptTTS](../_tmp/2022.11.22_PromptTTS.md), [SALL-E](../../Datasets/2023.08.28_TextrolSpeech.md), [PromptTTS 2](../_tmp/2023.09.05_PromptTTS2.md)].
+> Evaluation metrics We have aligned our objective experiments with [[PromptTTS](../_tmp/2022.11.22_PromptTTS.md), [SALL-E](../../Datasets/2023.08.28_TextrolSpeech.md), [PromptTTS 2](../Prompt/2023.09.05_PromptTTS2.md)].
 > To evaluate the model’s style controllability, we use accuracy to represent the evaluation metric, which measures the correspondence between the style factors in the output speech and those in the prompts.
 > The accuracy of pitch, speaking speed, and volume is calculated using signal processing tools, while emotion classification accuracy is computed using a fine-tuned emotion classification model.
 > We employ the official version of the [Emotion2Vec](../Speech_Representaion/2023.12.23_Emotion2Vec.md) model for the speech emotion recognition task, which is fine-tuned on the emotional dataset of ***VccmDataset***.
@@ -961,10 +961,10 @@ $$</p>
 我们随机选择了1,500个音频样本作为 <strong><em>ControlSpeech</em></strong> 测试集, 并根据说话者ID匹配相应的提示声音. 
 此外, 为了评估 <strong><em>ControlSpeech</em></strong> 在域外声音和风格上的表现, 我们进一步筛选了一个适当的测试集, 并请语言专家编写了与<a href="../../Datasets/2023.08.28_TextrolSpeech.md">TextrolSpeech</a> 中不同的风格描述. 
 关于 <strong><em>VccmDataset</em></strong> 创建的更多细节可以在附录 E 中找到. </p>
-<p>基线模型 我们重现了几个最先进的风格可控模型, 包括 <a href="../_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../E2E/2023.05.31_PromptStyle.md">PromptStyle</a>, <a href="../../Datasets/2023.08.28_TextrolSpeech.md">SALL-E</a>和<a href="../_tmp/2023.01.31_InstructTTS.md">InstructTTS</a>, 作为评估<strong><em>ControlSpeech</em></strong>可控性的主要比较模型. 
+<p>基线模型 我们重现了几个最先进的风格可控模型, 包括 <a href="../Prompt/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../E2E/2023.05.31_PromptStyle.md">PromptStyle</a>, <a href="../../Datasets/2023.08.28_TextrolSpeech.md">SALL-E</a>和<a href="../Prompt/2023.01.31_InstructTTS.md">InstructTTS</a>, 作为评估<strong><em>ControlSpeech</em></strong>可控性的主要比较模型. 
 为了比较声音克隆的有效性, 我们重现了<a href="../2023.01.05_VALL-E/">VALL-E</a>模型和[MobileSpeech](../../Models/_../_tmp/2024.02.14_MobileSpeech.md式和平行生成范式. 
 相关的基线重现代码已集成到<strong><em>ControlToolkit</em></strong>中. </p>
-<p>评估指标 我们的客观实验与 (<a href="../_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../../Datasets/2023.08.28_TextrolSpeech.md">SALL-E</a>, <a href="../_tmp/2023.09.05_PromptTTS2.md">PromptTTS 2</a>) 保持一致. 
+<p>评估指标 我们的客观实验与 (<a href="../_tmp/2022.11.22_PromptTTS.md">PromptTTS</a>, <a href="../../Datasets/2023.08.28_TextrolSpeech.md">SALL-E</a>, <a href="../Prompt/2023.09.05_PromptTTS2.md">PromptTTS 2</a>) 保持一致. 
 为了评估模型的风格可控性, 我们使用准确度作为评估指标, 该指标衡量输出语音中的风格因素与提示中的风格因素之间的对应关系. 
 音高, 说话速度和音量的准确度使用信号处理工具计算, 而情感分类准确度则使用在<strong><em>VccmDataset</em></strong>情感数据上微调的情感分类模型计算. 
 我们使用<a href="../Speech_Representaion/2023.12.23_Emotion2Vec.md">Emotion2Vec</a>模型的官方版本来进行语音情感识别任务, 该模型在<strong><em>VccmDataset</em></strong>的情感数据集上进行了微调. 
@@ -990,7 +990,7 @@ Additionally, the emotion classification experiment did not include neutral emot
 accuracy, <strong><em>ControlSpeech</em></strong> achieved state-of-the-art results in energy, speed, and emotion classification accuracy.
 Upon analyzing the synthesized audio of <strong><em>ControlSpeech</em></strong>, we noticed some instances of unnatural pitch.
 We attribute this to possible conflicts arising from simultaneously controlling different timbres and styles. 3) In terms of Spk-sv, Wer, and MOS-Q metrics, the audio generated by <strong><em>ControlSpeech</em></strong> demonstrates good timbre similarity and audio quality.
-However, it falls slightly behind PromptStyle and <a href="../_tmp/2023.01.31_InstructTTS.md">InstructTTS</a> in Wer.
+However, it falls slightly behind PromptStyle and <a href="../Prompt/2023.01.31_InstructTTS.md">InstructTTS</a> in Wer.
 We believe this is due to the limitations imposed by the <a href="../Diffusion/2024.03.05_NaturalSpeech3.md">FACodec</a> approach, which constrains the upper bound of <strong><em>ControlSpeech</em></strong>’s performance. 4) We further attempted to replace the GT timbre in the test set with the timbre from the prompt test set.
 We found that while the audio quality-related metrics remained unchanged, the controllability-related metrics, except for speech speed accuracy, generally decreased by 5%-10%.</p>
 </blockquote>
@@ -1023,7 +1023,7 @@ Specifically, the MOS-TS metric was used to assess whether the timbre remains st
 Additionally, we selected three pairs of six different style descriptions under 50 different timbre prompts, with pitch, speed, and energy labels set to normal, fast, normal; normal, slow, normal; high, normal, normal; low, normal, normal; normal, normal, high; and normal, normal, low, respectively.
 The MOS-SA and MOS-SD metrics represent the accuracy and diversity of style control for each pair respectively.
 The experimental results are shown in Table 4.
-We found that <strong><em>ControlSpeech</em></strong> significantly outperforms PromptStyle and <a href="../_tmp/2023.01.31_InstructTTS.md">InstructTTS</a> in both the MOS-SA and MOS-SD metrics.
+We found that <strong><em>ControlSpeech</em></strong> significantly outperforms PromptStyle and <a href="../Prompt/2023.01.31_InstructTTS.md">InstructTTS</a> in both the MOS-SA and MOS-SD metrics.
 This indicates that the unique <strong><em>SMSD</em></strong> module design in <strong><em>ControlSpeech</em></strong> enables it to synthesize speech that is both accurate and diverse.</p>
 </blockquote>
 <h3 id="46ablation-experiment">4.6.Ablation experiment<a class="headerlink" href="#46ablation-experiment" title="Permanent link">&para;</a></h3>

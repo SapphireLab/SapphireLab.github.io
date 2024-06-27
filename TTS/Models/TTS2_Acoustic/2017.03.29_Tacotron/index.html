@@ -368,42 +368,48 @@
 
 - 标题: Tacotron: Towards End-to-End Speech Synthesis
 - 作者:
- - [Yuxuan Wang](../../Authors/Yuxuan_Wang_(王雨轩).md) 
- - [RJ Skerry-Ryan](../../Authors/RJ_Skerry-Ryan.md) 
- - [Daisy Stanton](../../Authors/Daisy_Stanton.md) 
- - [Yonghui Wu](../../Authors/Yonghui_Wu.md) 
- - [Ron J. Weiss](../../Authors/Ron_J._Weiss.md) 
- - [Navdeep Jaitly](../../Authors/Navdeep_Jaitly.md) 
- - [Zongheng Yang](../../Authors/Zongheng_Yang.md) 
- - [Ying Xiao](../../Authors/Ying_Xiao.md) 
- - [Zhifeng Chen](../../Authors/Zhifeng_Chen.md) 
- - [Samy Bengio](../../Authors/Samy_Bengio.md) 
- - [Quoc Le](../../Authors/Quoc_Le.md) 
- - [Yannis Agiomyrgiannakis](../../Authors/Yannis_Agiomyrgiannakis.md) 
- - [Rob Clark](../../Authors/Rob_Clark.md) 
- - [Rif A. Saurous](../../Authors/Rif_A._Saurous.md) 
+  - 01 [Yuxuan Wang](../../Authors/Yuxuan_Wang_(王雨轩).md) 
+  - 02 [RJ Skerry-Ryan](../../Authors/RJ_Skerry-Ryan.md) 
+  - 03 [Daisy Stanton](../../Authors/Daisy_Stanton.md) 
+  - 04 [Yonghui Wu](../../Authors/Yonghui_Wu.md) 
+  - 05 [Ron J. Weiss](../../Authors/Ron_J._Weiss.md) 
+  - 06 [Navdeep Jaitly](../../Authors/Navdeep_Jaitly.md) 
+  - 07 [Zongheng Yang](../../Authors/Zongheng_Yang.md) 
+  - 08 [Ying Xiao](../../Authors/Ying_Xiao.md) 
+  - 09 [Zhifeng Chen](../../Authors/Zhifeng_Chen.md) 
+  - 10 [Samy Bengio](../../Authors/Samy_Bengio.md) 
+  - 11 [Quoc Le](../../Authors/Quoc_Le.md) 
+  - 12 [Yannis Agiomyrgiannakis](../../Authors/Yannis_Agiomyrgiannakis.md) 
+  - 13 [Rob Clark](../../Authors/Rob_Clark.md) 
+  - 14 [Rif A. Saurous](../../Authors/Rif_A._Saurous.md) 
 - 机构:
- - [Google](../../Institutions/Google.md) 
+  - [Google](../../Institutions/Google.md) 
 - 时间:
- - 预印时间: 2017.03.29 ArXiv v1
- - 预印时间: 2017.04.06 ArXiv v2
- - 发表时间: 2017.08.20
- - 更新笔记: 2024.06.16
+  - 预印时间: 2017.03.29 ArXiv v1
+  - 预印时间: 2017.04.06 ArXiv v2
+  - 发表时间: 2017.08.20
+  - 更新笔记: 2024.06.16
 - 发表:
- - [InterSpeech 2017](../../Publications/InterSpeech.md) 
+  - [InterSpeech 2017](../../Publications/InterSpeech.md) 
 - 链接:
- - [ArXiv](https://arxiv.org/abs/1703.10135) 
- <!-- - [DOI]() 
- - [Github]() -->
- - [Demo](https://google.github.io/tacotron) 
- - [Scholar](https://scholar.google.com/scholar?cluster=11291739830353377265) 
+  - [ArXiv](https://arxiv.org/abs/1703.10135) 
+  <!-- - [DOI]() 
+  - [Github]() -->
+  - [Demo](https://google.github.io/tacotron) 
+  - [Scholar](https://scholar.google.com/scholar?cluster=11291739830353377265) 
 - 标签:
- - [语音合成](../../Tags/SpeechSynthesis.md) 
- - [Seq2Seq模型](../../Tags/Model_Seq2Seq.md) 
- - [Tacotron模型](../../Tags/Model_Tacotron.md) 
+  - [语音合成](../../Tags/SpeechSynthesis.md) 
+  - [Seq2Seq模型](../../Tags/Model_Seq2Seq.md) 
+  - [Tacotron模型](../../Tags/Model_Tacotron.md) 
 - 页数: 5
 - 引用: 26
 - 被引: 2037 
+- 数据:
+  - ? 
+- 对比:
+  - ?
+- 复现:
+  - ?
 
 </details>
 
@@ -472,7 +478,7 @@
 > Since the same text can correspond to different pronunciations or speaking styles, this is a particularly difficult learning task for an end-to-end model: it must cope with large variations at the signal level for a given input.
 > Moreover, unlike end-to-end speech recognition [LAS](../../Models/ASR/LAS.md) or machine translation [GNMT](../../Models/NMT/2016.09.26_GNMT.md), TTS outputs are continuous, and output sequences are usually much longer than those of the input.
 > These attributes cause prediction errors to accumulate quickly.
-> In this paper, we propose ***Tacotron***, an end-to-end generative TTS model based on the [sequence-to-sequence (seq2seq) ](../../Models/_Basis/Seq2Seq.md) with [attention paradigm](../../Models/NMT/2014.09.01_NMT_by_Jointly_Learning_to_Align_&_Translate.md) .
+> In this paper, we propose ***Tacotron***, an end-to-end generative TTS model based on the [sequence-to-sequence (seq2seq) ](../_Basis/2014.09.10_Seq2Seq.md) with [attention paradigm](../../Models/NMT/2014.09.01_NMT_by_Jointly_Learning_to_Align_&_Translate.md) .
 > Our model takes characters as input and outputs raw spectrogram, using several techniques to improve the capability of a vanilla seq2seq model.
 > Given `<text, audio>` pairs, ***Tacotron*** can be trained completely from scratch with random initialization.
 > It does not require phoneme-level alignment, so it can easily scale to using large amounts of acoustic data with transcripts.
@@ -484,7 +490,7 @@
 由于相同的文本可以对应不同的发音或说话风格, 这对端到端模型来说是一个特别困难的学习任务：它必须为给定的输入处理信号级别的大量变化.
 此外, 与端到端语音识别 <a href="../../Models/ASR/LAS.md">LAS</a> 或机器翻译 <a href="../../Models/NMT/2016.09.26_GNMT.md">GNMT</a> 不同, TTS输出是连续的, 输出序列通常比输入序列长得多.
 这些属性导致预测错误迅速累积.
-在本文中, 我们提出了<strong><em>Tacotron</em></strong>, 一个基于 <a href="../../Models/_Basis/Seq2Seq.md">序列到序列 (seq2seq) </a> 和 <a href="../../Models/NMT/2014.09.01_NMT_by_Jointly_Learning_to_Align_&amp;_Translate.md">注意力范式</a> 的端到端生成TTS模型.
+在本文中, 我们提出了<strong><em>Tacotron</em></strong>, 一个基于 <a href="../_Basis/2014.09.10_Seq2Seq.md">序列到序列 (seq2seq) </a> 和 <a href="../../Models/NMT/2014.09.01_NMT_by_Jointly_Learning_to_Align_&amp;_Translate.md">注意力范式</a> 的端到端生成TTS模型.
 我们的模型以字符作为输入, 输出原始频谱图, 使用几种技术来提高原始 seq2seq 模型的能力.
 给定<code>&lt;文本, 音频&gt;</code>对, <strong><em>Tacotron</em></strong>可以完全从头开始随机初始化训练.
 它不需要音素级别的对齐, 因此可以轻松扩展到使用大量带有转录的声学数据.
@@ -562,14 +568,14 @@
 <summary>原文</summary>
 
 > We first describe a building block dubbed ***CBHG***, illustrated in Figure.02.
-> ***CBHG*** consists of a bank of 1-D convolutional filters, followed by [Highway networks](../../Models/_Basis/HighwayNet.md) and a bidirectional [Gated Recurrent Unit (GRU) ](../../Models/_Basis/GRU.md) recurrent neural net (RNN) .
+> ***CBHG*** consists of a bank of 1-D convolutional filters, followed by [Highway networks](../../Models/_Basis/HighwayNet.md) and a bidirectional [Gated Recurrent Unit (GRU) ](../_Basis/2014.09.03_GRU.md) recurrent neural net (RNN) .
 > ***CBHG*** is a powerful module for extracting representations from sequences.
 > The input sequence is first convolved with $K$ sets of 1-D convolutional filters, where the $k$-th set contains $C_k$ filters of width $k$ (i.e. $k = 1, 2, \cdots, K$) .
 > These filters explicitly model local and contextual information (akin to modeling unigrams, bi-grams, up to $K$-grams) .
 > The convolution outputs are stacked together and further max pooled along time to increase local invariances.
 > Note that we use a stride of $1$ to preserve the original time resolution.
-> We further pass the processed sequence to a few fixed-width 1-D convolutions, whose outputs are added with the original input sequence via residual connections [ResNet](../../Models/_Basis/ResNet.md) .
-> [Batch normalization](../../Models/_Basis/BatchNorm.md) is used for all convolutional layers.
+> We further pass the processed sequence to a few fixed-width 1-D convolutions, whose outputs are added with the original input sequence via residual connections [ResNet](../_Basis/2015.12.10_ResNet.md) .
+> [Batch normalization](../_Basis/2015.02.11_BatchNorm.md) is used for all convolutional layers.
 > The convolution outputs are fed into a multi-layer highway network to extract high-level features.
 > Finally, we stack a bidirectional GRU RNN on top to extract sequential features from both forward and backward context.
 > ***CBHG*** is inspired from work in machine translation ["Fully Character-Level Neural Machine Translation without Explicit Segmentation (2016) "](../../Models/NMT/2016.10.10_Fully_Character-Level_NMT_without_Explicit_Segmentation.md), where the main differences from ["Fully Character-Level Neural Machine Translation without Explicit Segmentation (2016) "](../../Models/NMT/2016.10.10_Fully_Character-Level_NMT_without_Explicit_Segmentation.md) include using non-causal convolutions, batch normalization, residual connections, and stride=1 max pooling.
@@ -578,14 +584,14 @@
 </details>
 <p><br></p>
 <p>我们首先描述了一个名为<strong><em>CBHG</em></strong>的构建块, 如图02所示.
-<strong><em>CBHG</em></strong>由一组1D卷积滤波器, 随后是 <a href="../../Models/_Basis/HighwayNet.md">Highway网络</a> 和一个双向 <a href="../../Models/_Basis/GRU.md">门控循环单元 (GRU) </a> 循环神经网络 (RNN) 组成.
+<strong><em>CBHG</em></strong>由一组1D卷积滤波器, 随后是 <a href="../../Models/_Basis/HighwayNet.md">Highway网络</a> 和一个双向 <a href="../_Basis/2014.09.03_GRU.md">门控循环单元 (GRU) </a> 循环神经网络 (RNN) 组成.
 <strong><em>CBHG</em></strong>是一个强大的模块, 用于从序列中提取表示.
 输入序列首先与$K$组1D卷积滤波器进行卷积, 其中第$k$组包含$C_k$个宽度为$k$的滤波器 (即$k = 1, 2, \cdots, K$) .
 这些滤波器明确地模拟了局部和上下文信息 (类似于模拟单字, 双字, 直到$K$字) .
 卷积输出沿时间堆叠在一起, 并进一步进行最大池化以增加局部不变性.
 请注意, 我们使用步长为$1$以保持原始时间分辨率.
-我们进一步将处理后的序列通过几个固定宽度的1D卷积, 其输出通过残差连接 <a href="../../Models/_Basis/ResNet.md">ResNet</a> 与原始输入序列相加.
-所有卷积层都使用了 <a href="../../Models/_Basis/BatchNorm.md">批量归一化</a> .
+我们进一步将处理后的序列通过几个固定宽度的1D卷积, 其输出通过残差连接 <a href="../_Basis/2015.12.10_ResNet.md">ResNet</a> 与原始输入序列相加.
+所有卷积层都使用了 <a href="../_Basis/2015.02.11_BatchNorm.md">批量归一化</a> .
 卷积输出被送入一个多层Highway网络以提取高级特征.
 最后, 我们在顶部堆叠一个双向GRU RNN, 以从正向和反向上下文中提取序列特征.
 <strong><em>CBHG</em></strong>的灵感来自于机器翻译中的工作 <a href="../../Models/NMT/2016.10.10_Fully_Character-Level_NMT_without_Explicit_Segmentation.md">"Fully Character-Level Neural Machine Translation without Explicit Segmentation (2016) "</a>, 与 <a href="../../Models/NMT/2016.10.10_Fully_Character-Level_NMT_without_Explicit_Segmentation.md">"Fully Character-Level Neural Machine Translation without Explicit Segmentation (2016) "</a> 的主要区别包括使用非因果卷积, 批量归一化, 残差连接和步长=1的最大池化.
@@ -679,7 +685,7 @@
 <summary>原文</summary>
 
 > As mentioned above, the post-processing net’s task is to convert the seq2seq target to a target that can be synthesized into waveforms.
-> Since we use [Griffin-Lim](../../Models/_Basis/Griffin-Lim.md) as the synthesizer, the post-processing net learns to predict spectral magnitude sampled on a linear-frequency scale.
+> Since we use [Griffin-Lim](../_Basis/1984.04.00_Griffin-Lim.md) as the synthesizer, the post-processing net learns to predict spectral magnitude sampled on a linear-frequency scale.
 > Another motivation of the post-processing net is that it can see the full decoded sequence.
 > In contrast to seq2seq, which always runs from left to right, it has both forward and backward information to correct the prediction error for each individual frame.
 > In this work, we use a ***CBHG*** module for the post-processing net, though a simpler architecture likely works as well.
@@ -689,7 +695,7 @@
 </details>
 <p><br></p>
 <p>如上所述, 后处理网络的任务是将 seq2seq 目标转换为可以合成波形的目标.
-由于我们使用 <a href="../../Models/_Basis/Griffin-Lim.md">Griffin-Lim</a> 作为合成器, 后处理网络学习预测线性频率尺度上的频谱幅度采样.
+由于我们使用 <a href="../_Basis/1984.04.00_Griffin-Lim.md">Griffin-Lim</a> 作为合成器, 后处理网络学习预测线性频率尺度上的频谱幅度采样.
 后处理网络的另一个动机是它可以查看完整的解码序列.
 与始终从左到右运行的 seq2seq 不同, 它既有正向信息也有反向信息来纠正每个单独帧的预测错误.
 在本工作中, 我们使用一个 <strong><em>CBHG</em></strong> 模块作为后处理网络, 尽管一个更简单的架构可能同样有效.
@@ -698,21 +704,21 @@
 <details>
 <summary>原文</summary>
 
-> We use the [Griffin-Lim](../../Models/_Basis/Griffin-Lim.md) algorithm to synthesize waveform from the predicted spectrogram.
-> We found that raising the predicted magnitudes by a power of $1.2$ before feeding to [Griffin-Lim](../../Models/_Basis/Griffin-Lim.md) reduces artifacts, likely due to its harmonic enhancement effect.
-> We observed that [Griffin-Lim](../../Models/_Basis/Griffin-Lim.md) converges after $50$ iterations (in fact, about $30$ iterations seems to be enough), which is reasonably fast.
-> We implemented [Griffin-Lim](../../Models/_Basis/Griffin-Lim.md) in [TensorFlow](../../Models/_Basis/TensorFlow.md) hence it’s also part of the model.
+> We use the [Griffin-Lim](../_Basis/1984.04.00_Griffin-Lim.md) algorithm to synthesize waveform from the predicted spectrogram.
+> We found that raising the predicted magnitudes by a power of $1.2$ before feeding to [Griffin-Lim](../_Basis/1984.04.00_Griffin-Lim.md) reduces artifacts, likely due to its harmonic enhancement effect.
+> We observed that [Griffin-Lim](../_Basis/1984.04.00_Griffin-Lim.md) converges after $50$ iterations (in fact, about $30$ iterations seems to be enough), which is reasonably fast.
+> We implemented [Griffin-Lim](../_Basis/1984.04.00_Griffin-Lim.md) in [TensorFlow](../_Basis/2016.03.14_TensorFlow.md) hence it’s also part of the model.
 > While GriffinLim is differentiable (it does not have trainable weights), we do not impose any loss on it in this work.
-> We emphasize that our choice of [Griffin-Lim](../../Models/_Basis/Griffin-Lim.md) is for simplicity; while it already yields strong results, developing a fast and high-quality trainable spectrogram to waveform inverter is ongoing work. 
+> We emphasize that our choice of [Griffin-Lim](../_Basis/1984.04.00_Griffin-Lim.md) is for simplicity; while it already yields strong results, developing a fast and high-quality trainable spectrogram to waveform inverter is ongoing work. 
 
 </details>
 <p><br></p>
-<p>我们使用 <a href="../../Models/_Basis/Griffin-Lim.md">Griffin-Lim</a> 算法从预测的频谱图合成波形.
-我们发现, 在将预测的幅度输入到 <a href="../../Models/_Basis/Griffin-Lim.md">Griffin-Lim</a> 之前, 将其提高到$1.2$的幂次可以减少伪影, 这可能是由于其谐波增强效果.
-我们观察到 <a href="../../Models/_Basis/Griffin-Lim.md">Griffin-Lim</a> 在$50$次迭代后收敛 (实际上, 大约$30$次迭代似乎就足够了), 这是相当快的.
-我们在 <a href="../../Models/_Basis/TensorFlow.md">TensorFlow</a> 中实现了 <a href="../../Models/_Basis/Griffin-Lim.md">Griffin-Lim</a>, 因此它也是模型的一部分.
+<p>我们使用 <a href="../_Basis/1984.04.00_Griffin-Lim.md">Griffin-Lim</a> 算法从预测的频谱图合成波形.
+我们发现, 在将预测的幅度输入到 <a href="../_Basis/1984.04.00_Griffin-Lim.md">Griffin-Lim</a> 之前, 将其提高到$1.2$的幂次可以减少伪影, 这可能是由于其谐波增强效果.
+我们观察到 <a href="../_Basis/1984.04.00_Griffin-Lim.md">Griffin-Lim</a> 在$50$次迭代后收敛 (实际上, 大约$30$次迭代似乎就足够了), 这是相当快的.
+我们在 <a href="../_Basis/2016.03.14_TensorFlow.md">TensorFlow</a> 中实现了 <a href="../_Basis/1984.04.00_Griffin-Lim.md">Griffin-Lim</a>, 因此它也是模型的一部分.
 尽管Griffin-Lim是可微分的 (它没有可训练的权重), 但我们在本工作中不对它施加任何损失.
-我们强调, 我们选择 <a href="../../Models/_Basis/Griffin-Lim.md">Griffin-Lim</a> 是为了简单性; 虽然它已经产生了强大的结果, 但开发一种快速且高质量的可训练频谱图到波形反转器是正在进行的工作.</p>
+我们强调, 我们选择 <a href="../_Basis/1984.04.00_Griffin-Lim.md">Griffin-Lim</a> 是为了简单性; 虽然它已经产生了强大的结果, 但开发一种快速且高质量的可训练频谱图到波形反转器是正在进行的工作.</p>
 <h3 id="35model-details">3.5.Model Details: 模型细节<a class="headerlink" href="#35model-details" title="Permanent link">&para;</a></h3>
 <details>
 <summary>原文</summary>
@@ -732,14 +738,14 @@
 <summary>原文</summary>
 
 > We use $r = 2$ (output layer reduction factor) for the MOS results in this paper, though larger r values (e.g. $r = 5$) also work well.
-> We use the [Adam](../../Models/_Basis/Adam.md) optimizer with learning rate decay, which starts from $0.001$ and is reduced to $0.0005$, $0.0003$, and $0.0001$ after $500K$, $1M$ and $2M$ global steps, respectively.
+> We use the [Adam](../_Basis/2014.12.22_Adam.md) optimizer with learning rate decay, which starts from $0.001$ and is reduced to $0.0005$, $0.0003$, and $0.0001$ after $500K$, $1M$ and $2M$ global steps, respectively.
 > We use a simple $l_1$ loss for both seq2seq decoder (mel-scale spectrogram) and post-processing net (linear-scale spectrogram) .
 > The two losses have equal weights.
 
 </details>
 <p><br></p>
 <p>我们在这篇论文中使用$r = 2$ (输出层减少因子) 进行MOS结果, 尽管更大的$r$值 (例如$r = 5$) 也表现良好.
-我们使用 <a href="../../Models/_Basis/Adam.md">Adam</a> 优化器, 带有学习率衰减, 它从$0.001$开始, 并在$500K$, $1M$和$2M$全局步骤后分别降低到$0.0005$, $0.0003$和$0.0001$.
+我们使用 <a href="../_Basis/2014.12.22_Adam.md">Adam</a> 优化器, 带有学习率衰减, 它从$0.001$开始, 并在$500K$, $1M$和$2M$全局步骤后分别降低到$0.0005$, $0.0003$和$0.0001$.
 我们为 seq2seq 解码器 (梅尔尺度频谱图) 和后处理网络 (线性尺度频谱图) 使用简单的$l_1$损失.
 这两个损失具有相等的权重.</p>
 <details>
@@ -825,7 +831,7 @@
 > When computing MOS, we only include ratings where headphones were used.
 > We compare our model with a parametric (based on LSTM ["Fast, Compact, and High Quality LSTM-RNN Based Statistical Parametric Speech Synthesizers for Mobile Devices (2016) "]()) and a concatenative system ["Recent Advances in Google Real-Time HMM-Driven Unit Selection Synthesizer (2016) "](), both of which are in production.
 > As shown in Table.02, ***Tacotron*** achieves an MOS of $3.82$, which outperforms the parametric system.
-> Given the strong baselines and the artifacts introduced by the [Griffin-Lim](../../Models/_Basis/Griffin-Lim.md) synthesis, this represents a very promising result. 
+> Given the strong baselines and the artifacts introduced by the [Griffin-Lim](../_Basis/1984.04.00_Griffin-Lim.md) synthesis, this represents a very promising result. 
 
 </details>
 <p><br></p>
@@ -835,7 +841,7 @@ MOS测试是通过众包从母语者那里进行的.
 在计算 MOS 时, 我们只包括使用耳机的评分.
 我们将我们的模型与基于 LSTM 的参数化系统 (<a href="">"Fast, Compact, and High Quality LSTM-RNN Based Statistical Parametric Speech Synthesizers for Mobile Devices (2016) "</a>) 和一个拼接系统 (<a href="">"Recent Advances in Google Real-Time HMM-Driven Unit Selection Synthesizer (2016) "</a>) 进行了比较, 这两个系统都在生产中.
 如表02所示, <strong><em>Tacotron</em></strong> 实现了3.82的MOS, 这超过了参数化系统.
-考虑到强大的基线和由 <a href="../../Models/_Basis/Griffin-Lim.md">Griffin-Lim</a> 合成引入的伪影, 这是一个非常有希望的结果.</p>
+考虑到强大的基线和由 <a href="../_Basis/1984.04.00_Griffin-Lim.md">Griffin-Lim</a> 合成引入的伪影, 这是一个非常有希望的结果.</p>
 <h2 id="5conclusions">5.Conclusions: 结论<a class="headerlink" href="#5conclusions" title="Permanent link">&para;</a></h2>
 <details>
 <summary>原文</summary>
@@ -859,15 +865,15 @@ MOS测试是通过众包从母语者那里进行的.
 <summary>原文</summary>
 
 > We have yet to investigate many aspects of our model; many early design decisions have gone unchanged.
-> Our output layer, attention module, loss function, and [Griffin-Lim](../../Models/_Basis/Griffin-Lim.md) -based waveform synthesizer are all ripe for improvement.
-> For example, it’s well known that [Griffin-Lim](../../Models/_Basis/Griffin-Lim.md) outputs may have audible artifacts.
+> Our output layer, attention module, loss function, and [Griffin-Lim](../_Basis/1984.04.00_Griffin-Lim.md) -based waveform synthesizer are all ripe for improvement.
+> For example, it’s well known that [Griffin-Lim](../_Basis/1984.04.00_Griffin-Lim.md) outputs may have audible artifacts.
 > We are currently working on fast and high-quality neural-network-based spectrogram inversion. 
 
 </details>
 <p><br></p>
 <p>我们尚未调查我们模型的许多方面; 许多早期设计决策一直未变.
-我们的输出层, 注意力模块, 损失函数和基于 <a href="../../Models/_Basis/Griffin-Lim.md">Griffin-Lim</a> 的波形合成器都有待改进.
-例如, 众所周知, <a href="../../Models/_Basis/Griffin-Lim.md">Griffin-Lim</a> 输出可能会有可听见的伪影.
+我们的输出层, 注意力模块, 损失函数和基于 <a href="../_Basis/1984.04.00_Griffin-Lim.md">Griffin-Lim</a> 的波形合成器都有待改进.
+例如, 众所周知, <a href="../_Basis/1984.04.00_Griffin-Lim.md">Griffin-Lim</a> 输出可能会有可听见的伪影.
 我们目前正在研究快速且高质量的基于神经网络的频谱图反转.</p>
 
 
