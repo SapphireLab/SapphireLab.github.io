@@ -557,8 +557,8 @@ Our <strong><em>Glow-TTS</em></strong> is a standalone parallel TTS model that i
 They can estimate the exact likelihood of the data by applying invertible transformations.
 Generative flows are simply trained to maximize the likelihood.
 In addition to efficient density estimation, the transformations proposed in [2, 3, 12] guarantee fast and efficient sampling.
-<a href="../../Models/TTS3_Vocoder/2018.10.31_WaveGlow.md">WaveGlow</a> and <a href="../../Models/TTS3_Vocoder/2018.11.06_FloWaveNet.md">FloWaveNet</a> introduced these transformations for speech synthesis to overcome the slow sampling speed of an autoregressive vocoder, <a href="../../Models/TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet</a>.
-Their proposed models both synthesized raw audio significantly faster than <a href="../../Models/TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet</a>.
+<a href="../../Models/TTS3_Vocoder/2018.10.31_WaveGlow.md">WaveGlow</a> and <a href="../../Models/TTS3_Vocoder/2018.11.06_FloWaveNet.md">FloWaveNet</a> introduced these transformations for speech synthesis to overcome the slow sampling speed of an autoregressive vocoder, <a href="../../TTS3_Vocoder/2016.09.12_WaveNet/">WaveNet</a>.
+Their proposed models both synthesized raw audio significantly faster than <a href="../../TTS3_Vocoder/2016.09.12_WaveNet/">WaveNet</a>.
 By applying these transformations, <strong><em>Glow-TTS</em></strong> can synthesize a mel-spectrogram given text in parallel.</p>
 <p>In parallel with our work, <a href="../../Models/TTS2_Acoustic/2020.03.04_AlignTTS.md">AlignTTS</a>, <a href="../../Models/TTS2_Acoustic/2020.05.12_Flowtron.md">Flowtron</a>, and <a href="../../Models/TTS2_Acoustic/2020.05.04_Flow-TTS.md">Flow-TTS</a> have been proposed.
 <a href="../../Models/TTS2_Acoustic/2020.03.04_AlignTTS.md">AlignTTS</a> and <a href="../../Models/TTS2_Acoustic/2020.05.04_Flow-TTS.md">Flow-TTS</a> are parallel TTS models without the need of external aligners, and <a href="../../Models/TTS2_Acoustic/2020.05.12_Flowtron.md">Flowtron</a> is a flow-based model which shows the ability of style transfer and controllability of speech variation.
@@ -654,7 +654,7 @@ During training, we need to efficiently transform a mel-spectrogram into the lat
 During inference, it is necessary to transform the prior distribution into the mel-spectrogram distribution efficiently for parallel decoding.
 Therefore, our decoder is composed of a family of flows that can perform forward and inverse transformation in parallel.
 Specifically, our decoder is a stack of multiple blocks, each of which consists of an activation normalization layer, invertible 1x1 convolution layer, and affine coupling layer.
-We follow the affine coupling layer architecture of <a href="../../Models/TTS3_Vocoder/2018.10.31_WaveGlow.md">WaveGlow</a>, except we do not use the local conditioning (<a href="../../Models/TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet</a>).</p>
+We follow the affine coupling layer architecture of <a href="../../Models/TTS3_Vocoder/2018.10.31_WaveGlow.md">WaveGlow</a>, except we do not use the local conditioning (<a href="../../TTS3_Vocoder/2016.09.12_WaveNet/">WaveNet</a>).</p>
 <p>For computational efficiency, we split 80-channel mel-spectrogram frames into two halves along the time dimension and group them into one 160-channel feature map before the flow operations.
 We also modify 1x1 convolution to reduce the time-consuming calculation of the Jacobian determinant.</p>
 <p>Before every 1x1 convolution, we split the feature map into 40 groups along the channel dimension and perform 1x1 convolution on them separately.

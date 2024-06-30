@@ -507,7 +507,7 @@
 
 </details>
 <p><br></p>
-<p><a href="../../Models/TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet</a> 是一个强大的音频生成模型.
+<p><a href="../../TTS3_Vocoder/2016.09.12_WaveNet/">WaveNet</a> 是一个强大的音频生成模型.
 它在TTS方面表现良好, 但由于其样本级别的自回归特性而速度较慢.
 它还需要从现有的TTS前端获取语言特征的条件化, 因此不是端到端的：它只替换了声码器和声学模型.
 另一个最近开发的神经模型是 <a href="../../Models/TTS0_System/2017.02.25_DeepVoice.md">Deep Voice</a>, 它用相应的神经网络替换了典型TTS流程中的每个组件.
@@ -700,7 +700,7 @@
 与始终从左到右运行的 seq2seq 不同, 它既有正向信息也有反向信息来纠正每个单独帧的预测错误.
 在本工作中, 我们使用一个 <strong><em>CBHG</em></strong> 模块作为后处理网络, 尽管一个更简单的架构可能同样有效.
 后处理网络的概念非常通用.
-它可以用来预测诸如声码器参数之类的替代目标, 或者作为类似WaveNet的神经声码器 (<a href="../../Models/TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet</a>, <a href="../../Models/TTS3_Vocoder/2016.12.22_SampleRNN.md">SampleRNN</a>, <a href="../../Models/TTS0_System/2017.02.25_DeepVoice.md">Deep Voice</a>), 直接合成波形样本.</p>
+它可以用来预测诸如声码器参数之类的替代目标, 或者作为类似WaveNet的神经声码器 (<a href="../../TTS3_Vocoder/2016.09.12_WaveNet/">WaveNet</a>, <a href="../../Models/TTS3_Vocoder/2016.12.22_SampleRNN.md">SampleRNN</a>, <a href="../../Models/TTS0_System/2017.02.25_DeepVoice.md">Deep Voice</a>), 直接合成波形样本.</p>
 <details>
 <summary>原文</summary>
 

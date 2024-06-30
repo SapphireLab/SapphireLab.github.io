@@ -963,7 +963,7 @@ During training, only the weight of the prosody refinement part is updated.</p>
 <p>The model structures of the prompt encoder and phoneme encoder are follow <a href="../2023.04.18_NaturalSpeech2/">NaturalSpeech2 (2023)</a>.
 The neural function part in <a href="../_Basis/2023.10.06_LCM.md">LCM</a> is almost the same as the <a href="../2023.04.18_NaturalSpeech2/">NaturalSpeech2 (2023)</a>.
 We rescale the sinusoidal position embedding in the neural function part by a factor of 1000.
-As for the prosody generator, we adopt 30 non-casual <a href="../TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet (2016)</a> layers for the neural function part in the prosody refinement module and the same configurations for prosody regression parts in <a href="../2023.04.18_NaturalSpeech2/">NaturalSpeech2 (2023)</a>.
+As for the prosody generator, we adopt 30 non-casual <a href="../../TTS3_Vocoder/2016.09.12_WaveNet/">WaveNet (2016)</a> layers for the neural function part in the prosody refinement module and the same configurations for prosody regression parts in <a href="../2023.04.18_NaturalSpeech2/">NaturalSpeech2 (2023)</a>.
 And we set $\alpha= 0.2$ for the prosody refinement module empirically.
 For the discriminator’s head, we stack 5 convolutional layers with weight normalization Salimans and Kingma (2016) for binary classification.</p>
 </blockquote>

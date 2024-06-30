@@ -552,7 +552,7 @@ Our pytorch implementation runs at more than 100x faster than realtime on GTX 10
 <p>Modelling raw audio is a particularly challenging problem because of the high temporal resolution of the data (usually at least 16,000 samples per second) and the presence of structure at different timescales with short and long-term dependencies.
 Thus, instead of modelling the raw temporal audio directly, most approaches simplify the problem by modelling a lower-resolution representation that can be efficiently computed from the raw temporal signal.
 Such a representation is typically chosen to be easier to model than raw audio while preserving enough information to allow faithful inversion back to audio.
-In the case of speech, aligned linguistic features (<a href="../TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet (2016)</a>) and mel-spectrograms (<a href="../TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2 (2017)</a>; <a href="">DeepVoice2 (2017)</a>) are two commonly used intermediate representations.
+In the case of speech, aligned linguistic features (<a href="../2016.09.12_WaveNet/">WaveNet (2016)</a>) and mel-spectrograms (<a href="../TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2 (2017)</a>; <a href="">DeepVoice2 (2017)</a>) are two commonly used intermediate representations.
 Audio modelling is thus typically decomposed into two stages.
 The first models the intermediate representation given text as input.
 The second transforms the intermediate representation back to audio.
@@ -568,7 +568,7 @@ The WORLD vocoder is paired with a dedicated signal processing algorithm to map 
 It has been successfully used to carry out text-to-speech synthesis, for example in Char2Wav, where WORLD vocoder features are modelled with an attention-based recurrent neural network (Sotelo et al., 2017; <a href="../TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2 (2017)</a>; <a href="">DeepVoice3 (2017)</a>).
 The main issue with these pure signal processing methods is that the mapping from intermediate features to audio usually introduces noticeable artifacts.</p>
 <h3 id="autoregressive-neural-networks-based-models">Autoregressive neural-networks-based models<a class="headerlink" href="#autoregressive-neural-networks-based-models" title="Permanent link">&para;</a></h3>
-<p><a href="../TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet (2016)</a> is a fully convolutional autoregressive sequence model that produces highly realistic speech samples conditioned on linguistic features that are temporally aligned with the raw audio.
+<p><a href="../2016.09.12_WaveNet/">WaveNet (2016)</a> is a fully convolutional autoregressive sequence model that produces highly realistic speech samples conditioned on linguistic features that are temporally aligned with the raw audio.
 It is also capable of generating high quality unconditional speech and music samples.
 SampleRNN (Mehri et al., 2016) is an alternative architecture to perform unconditional waveform generation which explicitly models raw audio at different temporal resolutions using multi-scale recurrent neural networks.
 WaveRNN (Kalchbrenner et al., 2018) is a faster auto-regressive model based on a simple, single-layer recurrent neural network.
@@ -628,7 +628,7 @@ However, this finding is consistent with Mathieu et al. (2015) and Isola et al. 
 We design our generator architecture to put an inductive bias that there is long range correlation among the audio timesteps.
 We added residual blocks with dilations after each upsampling layer, so that temporally far output activations of each subsequent layer has significant overlapping inputs.
 Receptive field of a stack of dilated convolution layers increases exponentially with the number of layers.
-Similar to <a href="../TTS3_Vocoder/2016.09.12_WaveNet.md">WaveNet (2016)</a>, incorporating these in our generator allows us to efficiently increase the induced receptive fields of each output time-step.
+Similar to <a href="../2016.09.12_WaveNet/">WaveNet (2016)</a>, incorporating these in our generator allows us to efficiently increase the induced receptive fields of each output time-step.
 This effectively implies larger overlap in the induced receptive field of far apart time-steps, leading to better long range correlation.</p>
 <h4 id="checkerboard-artifacts">Checkerboard artifacts<a class="headerlink" href="#checkerboard-artifacts" title="Permanent link">&para;</a></h4>
 <p>As noticed in Odena et al. (2016), deconvolutional generators are susceptible to generating "checkerboard" patterns if the kernel-size and stride of the transposed convolutional layers are not carefully chosen.
