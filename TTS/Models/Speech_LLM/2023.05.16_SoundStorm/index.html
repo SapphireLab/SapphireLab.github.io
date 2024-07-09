@@ -405,19 +405,26 @@
   - [Google Research](../../Institutions/Google.md)
 - 时间:
   - 预印时间: 2023.05.16 ArXiv v1
-  - 更新笔记: 2024.06.13
+  - 更新笔记: 2024.07.04
 - 发表:
   - ~~ICLR 2024 Reject~~
 - 链接:
   - [ArXiv](https://arxiv.org/abs/2305.09636)
-  - [DOI]()
-  - [Github]()
+  <!-- - [DOI]() -->
+  <!-- - [Github]() -->
   - [Demo](https://google-research.github.io/seanet/soundstorm/examples/)
+  - [Scholar](https://scholar.google.com/scholar?cluster=12476111044975033127)
 - 标签:
   - [语音合成](../../Tags/SpeechSynthesis.md)
 - 页数: 9
 - 引用: ?
-- 被引: 36
+- 被引: 55
+- 数据:
+  - ? 
+- 对比:
+  - ?
+- 复现:
+  - ?
 
 </details>
 
@@ -436,8 +443,8 @@ Audio samples are available at https://google-research.github.io/seanet/soundsto
 我们通过合成高质量, 自然对话片段来展示模型扩展音频生成更长序列的能力. 这些对话片段需要给定一个带有说话者转录脚本和一个带有说话人声音的简短提示.</p>
 <h2 id="1introduction">1.Introduction·引言<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>Modeling discrete representations of audio produced by neural codecs (<a href="../../Speech_Neural_Codec/2021.07.07_SoundStream/">SoundStream (2021)</a>; <a href="../../Speech_Neural_Codec/2022.10.24_EnCodec/">EnCodec (2022)</a>) makes the task of audio generation amenable to the powerful Transformer-based sequence-to-sequence modeling approaches (<a href="../../Models/_Basis/2017.06.12_Transformer.md">Transformer (2017)</a>).
-Casting unconditional and conditional audio generation as sequence-to-sequence modeling has unlocked rapid progress in speech continuation (<a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>), text-to-speech (<a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>; <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>), and general audio and music generation (<a href="">AudioGen (2022)</a>; <a href="">MusicLM (2023)</a>).</p>
+<p>Modeling discrete representations of audio produced by neural codecs (<a href="../../Speech_Neural_Codec/2021.07.07_SoundStream/">SoundStream (2021)</a>; <a href="../../Speech_Neural_Codec/2022.10.24_EnCodec/">EnCodec (2022)</a>) makes the task of audio generation amenable to the powerful Transformer-based sequence-to-sequence modeling approaches (<a href="../_Transformer/2017.06.12_Transformer.md">Transformer (2017)</a>).
+Casting unconditional and conditional audio generation as sequence-to-sequence modeling has unlocked rapid progress in speech continuation (<a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>), text-to-speech (<a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>; <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>), and general audio and music generation (<a href="../../Models/Speech_LLM/2022.09.30_AudioGen.md">AudioGen (2022)</a>; <a href="../../Models/Speech_LLM/2023.01.26_MusicLM.md">MusicLM (2023)</a>).</p>
 </blockquote>
 <p>建模由神经编解码器生成的音频离散表示使得音频生成任务可以采用强大的基于 Transformer 序列到序列建模方法.
 将无条件和有条件音频生成视为序列到序列建模已经解锁了在语音延续, 文本转语音, 一般音频和音乐生成方面的快速发展.</p>
@@ -454,8 +461,8 @@ Thus, addressing the trade-off between perceptual quality and runtime is one of 
 <blockquote>
 <p>The problem of generating long audio token sequences can be addressed by at least three orthogonal approaches or a combination thereof:
 1. Efficient attention mechanisms (<a href="">Reformer (2020)</a>; <a href="">Performers (2021)</a>; <a href="">Nyströmformer (2021)</a>; <a href="">Perceiver AR (2022)</a>),
-2. Non-autoregressive, parallel decoding schemes (<a href="">NAT (2017)</a>; <a href="">Mask-Predict (2019)</a>; <a href="">MaskGIT (2022)</a>),
-3. Custom architectures adapted to the special structure of the tokens produced by neural audio codecs (<a href="">AudioGen (2022)</a>; <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>; <a href="">RQ-Transformer (2022)</a>).</p>
+2. Non-autoregressive, parallel decoding schemes (<a href="">NAT (2017)</a>; <a href="">Mask-Predict (2019)</a>; <a href="../../Models/_Transformer/2022.02.08_MaskGIT.md">MaskGIT (2022)</a>),
+3. Custom architectures adapted to the special structure of the tokens produced by neural audio codecs (<a href="../../Models/Speech_LLM/2022.09.30_AudioGen.md">AudioGen (2022)</a>; <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>; <a href="">RQ-Transformer (2022)</a>).</p>
 <p>However, in the context of modeling the token sequence of neural audio codecs, either unconditionally or based on weak conditioning such as text, the efficient generation of long, high-quality audio segments remains an open problem.</p>
 </blockquote>
 <p>生成长音频 token 序列问题可以通过至少三种正交方法或组合来解决:
@@ -477,7 +484,7 @@ Hence, the models and decoding schemes should take this special structure of the
 <p>In this work, we present <strong><em>SoundStorm</em></strong>, a method for efficient and high-quality audio generation.
 <strong><em>SoundStorm</em></strong> addresses the problem of generating long audio token sequences by relying on:
 1. an architecture adapted to the hierarchical structure of the audio tokens,
-2. a parallel, non-autoregressive, confidence-based decoding scheme inspired by <a href="">MaskGIT (2022)</a> for residual vector-quantized token sequences.</p>
+2. a parallel, non-autoregressive, confidence-based decoding scheme inspired by <a href="../../Models/_Transformer/2022.02.08_MaskGIT.md">MaskGIT (2022)</a> for residual vector-quantized token sequences.</p>
 </blockquote>
 <p>我们提出了 <strong><em>SoundStorm</em></strong>, 一种用于高效高质量音频生成的方法.
 <strong><em>SoundStorm</em></strong> 通过以下方式解决生成长音频 token 序列问题:
@@ -508,10 +515,10 @@ When synthesizing dialogues of 30 seconds, we measure a runtime of 2 seconds on 
 <h2 id="2related-works">2.Related Works·相关工作<a class="headerlink" href="#2related-works" title="Permanent link">&para;</a></h2>
 <h3 id="modeling-the-tokens-of-neural-audio-codecs">Modeling the Tokens of Neural Audio Codecs<a class="headerlink" href="#modeling-the-tokens-of-neural-audio-codecs" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>Unsupervised speech embeddings (<a href="../../Models/Speech_Representaion/2020.06.20_Wav2Vec2.0.md">Wav2Vec2.0</a>; <a href="../../Models/Speech_Representaion/2021.06.14_HuBERT.md">HuBERT</a>; <a href="../../Models/Speech_Representaion/2021.08.07_W2V-BERT.md">W2V-BERT</a>) have provided a low-framerate representation of the underlying signal which remains rich enough after discretization for language models to generate intelligible speech from a specific speaker as a sequence of tokens (<a href="">Generative Spoken Language Modeling (2021)</a>).
-Neural audio codecs (<a href="../../Speech_Neural_Codec/2021.07.07_SoundStream/">SoundStream (2021)</a>; <a href="">EnCodec (2022)</a>), with their ability of reconstructing high-quality audio at very low bitrates, subsequently allowed for extending discrete modeling to audio signals as diverse as multi-speaker speech and piano (<a href="">AutoLM (2022)</a>; <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>), music (<a href="">MusicLM (2023)</a>) or sound effects (<a href="">AudioGen (2022)</a>).
+<p>Unsupervised speech embeddings (<a href="../../Models/Speech_Representaion/2020.06.20_Wav2Vec2.0.md">Wav2Vec2.0</a>; <a href="../../Speech_Representaion/2021.06.14_HuBERT/">HuBERT</a>; <a href="../../Models/Speech_Representaion/2021.08.07_W2V-BERT.md">W2V-BERT</a>) have provided a low-framerate representation of the underlying signal which remains rich enough after discretization for language models to generate intelligible speech from a specific speaker as a sequence of tokens (<a href="">Generative Spoken Language Modeling (2021)</a>).
+Neural audio codecs (<a href="../../Speech_Neural_Codec/2021.07.07_SoundStream/">SoundStream (2021)</a>; <a href="../../Speech_Neural_Codec/2022.10.24_EnCodec/">EnCodec (2022)</a>), with their ability of reconstructing high-quality audio at very low bitrates, subsequently allowed for extending discrete modeling to audio signals as diverse as multi-speaker speech and piano (<a href="">AutoLM (2022)</a>; <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>), music (<a href="../../Models/Speech_LLM/2023.01.26_MusicLM.md">MusicLM (2023)</a>) or sound effects (<a href="../../Models/Speech_LLM/2022.09.30_AudioGen.md">AudioGen (2022)</a>).
 In particular, <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a> introduces a hierarchical sequence-to-sequence approach where high-level semantic tokens are generated as an intermediate representation, which is then used as a conditioning signal for predicting tokens of a <a href="../../Speech_Neural_Codec/2021.07.07_SoundStream/">SoundStream (2021)</a> codec.
-While this hierarchical approach has demonstrated remarkable results for speech (<a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>) and music modeling (<a href="">MusicLM (2023)</a>; <a href="">SingSong (2023)</a>), the computational cost of modeling flattened SoundStream tokens with self-attention scales quadratically with the sequence length and thus the bitrate of the neural codec, preventing these models from generating long-form audio with high quality.
+While this hierarchical approach has demonstrated remarkable results for speech (<a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>) and music modeling (<a href="../../Models/Speech_LLM/2023.01.26_MusicLM.md">MusicLM (2023)</a>; <a href="">SingSong (2023)</a>), the computational cost of modeling flattened SoundStream tokens with self-attention scales quadratically with the sequence length and thus the bitrate of the neural codec, preventing these models from generating long-form audio with high quality.
 <strong><em>SoundStorm</em></strong> alleviates this issue by modeling the multi-level tokens of the neural codec in parallel, inducing a two-order of magnitude speed-up over autoregressive modeling and unlocking the ability to scale audio generation abilities both in quality and in sequence length.</p>
 </blockquote>
 <p>无监督语音嵌入提供了基础信号的低帧率表示, 在离散化后仍然保留足够丰富的信息, 使得语言模型从特定说话人处以一系列 token 的形式生成可理解的语音.
@@ -547,8 +554,8 @@ For example, the <a href="">RQ-Transformer (2022)</a> also adds up the embedding
 虽然还没有展示, 但这种方法可能与并行解码方案结合, 是音频生成的有前景的未来方向.</p>
 <h3 id="parallel-decoding">Parallel Decoding<a class="headerlink" href="#parallel-decoding" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>In order to improve the inference time and to allow bidirectional non-causal attention on the input sequence, parallel decoding schemes have been proposed for text (<a href="">NAT (2017)</a>; <a href="">Mask-Predict (2019)</a>), image (<a href="">MaskGIT (2022)</a>) and video generation (<a href="">Phenaki (2022)</a>).
-Of particular relevance to our work is the parallel, iterative sampling scheme of <a href="">MaskGIT (2022)</a>.
+<p>In order to improve the inference time and to allow bidirectional non-causal attention on the input sequence, parallel decoding schemes have been proposed for text (<a href="">NAT (2017)</a>; <a href="">Mask-Predict (2019)</a>), image (<a href="../../Models/_Transformer/2022.02.08_MaskGIT.md">MaskGIT (2022)</a>) and video generation (<a href="">Phenaki (2022)</a>).
+Of particular relevance to our work is the parallel, iterative sampling scheme of <a href="../../Models/_Transformer/2022.02.08_MaskGIT.md">MaskGIT (2022)</a>.
 During inference time, MaskGIT starts from masked tokens, and in each round, predicts a portion of the tokens based on confidence scores.
 The portion of the predicted tokens in each round is controlled by a schedule, and usually progressively increases over the iterations - once predicted, the tokens are treated as fixed.
 Our proposed decoding scheme can be seen as the extension of MaskGIT’s decoding to token sequences produced by residual quantization.</p>
@@ -560,7 +567,7 @@ Our proposed decoding scheme can be seen as the extension of MaskGIT’s decodin
 我们提出的解码方案可以视为 MaskGIT 的解码在残差量化生成的 token 序列的扩展.</p>
 <h2 id="3methodology">3.Methodology·方法<a class="headerlink" href="#3methodology" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><strong><em>SoundStorm</em></strong> receives as input a sequence of discrete tokens representing the conditioning signal and produces as output a sequence of SoundStream tokens, which can be decoded back to audio waveforms. We assume that the conditioning signal is time-aligned with the SoundStream frames or can be upsampled to the same rate. Such a conditioning signal is, for example, the semantic token sequence used in <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>, <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>, or MusicLM, which makes our method a drop-in replacement for the acoustic generators of these models.</p>
+<p><strong><em>SoundStorm</em></strong> receives as input a sequence of discrete tokens representing the conditioning signal and produces as output a sequence of SoundStream tokens, which can be decoded back to audio waveforms. We assume that the conditioning signal is time-aligned with the SoundStream frames or can be upsampled to the same rate. Such a conditioning signal is, for example, the semantic token sequence used in <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>, <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>, or <a href="../../Models/Speech_LLM/2023.01.26_MusicLM.md">MusicLM</a>, which makes our method a drop-in replacement for the acoustic generators of these models.</p>
 <p>We leave the extension to other types of conditioning signals via cross-attention or to unconditional sampling for future work, and focus our presentation of <strong><em>SoundStorm</em></strong> as the acoustic generator within <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>, replacing both <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>’s coarse and fine acoustic modeling stages.</p>
 </blockquote>
 <h3 id="31">3.1.网络架构<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
@@ -578,7 +585,7 @@ At the output side, we use $Q$ dense layers as heads to produce the target Sound
 在输出侧, 我们使用 $Q$ 个稠密层作为头来产生目标 SoundStream token.</p>
 <h3 id="32masking">3.2.Masking<a class="headerlink" href="#32masking" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>For designing our masking and decoding, we extend the masking and confidence-based parallel decoding scheme of <a href="">MaskGIT (2022)</a> to token sequences produced by RVQ. At a high level, our approach can be seen as following the strategy of <a href="">MaskGIT (2022)</a> per RVQ level in a coarse-to-fine order.
+<p>For designing our masking and decoding, we extend the masking and confidence-based parallel decoding scheme of <a href="../../Models/_Transformer/2022.02.08_MaskGIT.md">MaskGIT (2022)</a> to token sequences produced by RVQ. At a high level, our approach can be seen as following the strategy of <a href="../../Models/_Transformer/2022.02.08_MaskGIT.md">MaskGIT (2022)</a> per RVQ level in a coarse-to-fine order.
 The coarse-to-fine ordering is of particular importance, since it not only respects the conditional dependencies between levels of the RVQ hierarchy, but also exploits the conditional independence of tokens from finer levels given all tokens from coarser levels.
 The tokens of finer levels are responsible for local, fine acoustic details and can thus be sampled in parallel without a loss of audio quality.</p>
 </blockquote>
@@ -592,7 +599,7 @@ Let $Y\in{1,\cdots, C}^{T\times Q}$ denote the SoundStream tokens, where $C$ ind
 Our masking scheme proceeds as follows:
 - Sample the prompt delimiter timestep $t\sim\mathcal{U}{0,T-1}$;
 - Sample the current RVQ level $q\sim\mathcal{U}{1,Q}$;
-- Sample the mask $M \in {0, 1}^T$ according to a cosine schedule (<a href="">MaskGIT (2022)</a>) for level $q$, i.e., sample the masking ratio $p = \cos(u)$ where $u \sim \mathcal{U}[0, \pi/2]$, and sample iid $M_i\sim \text{Bernoulli}(p)$.
+- Sample the mask $M \in {0, 1}^T$ according to a cosine schedule (<a href="../../Models/_Transformer/2022.02.08_MaskGIT.md">MaskGIT (2022)</a>) for level $q$, i.e., sample the masking ratio $p = \cos(u)$ where $u \sim \mathcal{U}[0, \pi/2]$, and sample iid $M_i\sim \text{Bernoulli}(p)$.
 - Mask the selected non-prompt tokens at the current RVQ level $q$ (mask $Y_{t',q}$ if $M_{t'}= 1$ and $t'&gt;t$) and all non-prompt tokens at finer RVQ levels ($Y_{&gt;t,&gt;q}$).</p>
 </blockquote>
 <p>我们对应地设计了我们的掩码方案. 为了能够语音提示, 我们随机采样一个时间步并不对该时间步之前的 token 进行掩盖.
@@ -609,8 +616,8 @@ Our masking scheme proceeds as follows:
 <p>给定一个掩码 token 序列, 我们用和目标 token 之间的交叉熵损失函数来训练模型, 其中损失只在第 $q$ 个 RVQ 级别的掩码 token 上计算. 掩码方案的例子如图一所示.</p>
 <h3 id="33iterative-parallel-decoding">3.3.Iterative Parallel Decoding<a class="headerlink" href="#33iterative-parallel-decoding" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>Given a conditioning signal, our decoding scheme starts with all SoundStream tokens masked out except for the ones of the prompt (if provided). Then, it proceeds to sampling the tokens RVQ level-wise in a coarse-to-fine order, only proceeding to level $q + 1$ when all tokens for levels $1,\cdots, q$ have been sampled. Within an RVQ level, we use the confidence-based sampling scheme of <a href="">MaskGIT (2022)</a>.
-Namely, we perform multiple forward passes, and at each iteration $i$, we sample candidates for the masked positions, retaining $p_i$ of them based on confidence scores, where $p_i$ follows a cosine schedule. Compared to <a href="">MaskGIT (2022)</a>, we use greedy decoding instead of confidence-based sampling for the last iteration within each RVQ level, which we found to improve the perceived audio quality.</p>
+<p>Given a conditioning signal, our decoding scheme starts with all SoundStream tokens masked out except for the ones of the prompt (if provided). Then, it proceeds to sampling the tokens RVQ level-wise in a coarse-to-fine order, only proceeding to level $q + 1$ when all tokens for levels $1,\cdots, q$ have been sampled. Within an RVQ level, we use the confidence-based sampling scheme of <a href="../../Models/_Transformer/2022.02.08_MaskGIT.md">MaskGIT (2022)</a>.
+Namely, we perform multiple forward passes, and at each iteration $i$, we sample candidates for the masked positions, retaining $p_i$ of them based on confidence scores, where $p_i$ follows a cosine schedule. Compared to <a href="../../Models/_Transformer/2022.02.08_MaskGIT.md">MaskGIT (2022)</a>, we use greedy decoding instead of confidence-based sampling for the last iteration within each RVQ level, which we found to improve the perceived audio quality.</p>
 </blockquote>
 <p>给定一个条件信号, 我们的解码方案从除了提示之外的所有 SoundStream token 开始.
 然后, 它逐级在粗到细顺序中采样 tokens. 在一个级别内, 我们使用基于置信度的采样方案.

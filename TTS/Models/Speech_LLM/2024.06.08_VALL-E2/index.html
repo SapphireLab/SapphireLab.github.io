@@ -1,0 +1,1056 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>VALL-E 2 - Sapphire Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vall-e-2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Sapphire Lab" class="md-header__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sapphire Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              VALL-E 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Sapphire Lab" class="md-nav__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sapphire Lab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract: 摘要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1introduction" class="md-nav__link">
+    1.Introduction: 引言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2related-works" class="md-nav__link">
+    2.Related Works: 相关工作
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Related Works: 相关工作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zero-shot-tts" class="md-nav__link">
+    Zero-Shot TTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codec-based-speech-models" class="md-nav__link">
+    Codec-based Speech Models
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3methodology" class="md-nav__link">
+    3.Methodology: 方法
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Methodology: 方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-formulation-grouped-codec-language-modeling" class="md-nav__link">
+    Problem Formulation: Grouped Codec Language Modeling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vall-e-2-architecture" class="md-nav__link">
+    VALL-E 2 Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vall-e-2-training" class="md-nav__link">
+    VALL-E 2 Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoregressive-model-training" class="md-nav__link">
+    Autoregressive Model Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-autoregressive-model-training" class="md-nav__link">
+    Non-Autoregressive Model Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vall-e-2-inference" class="md-nav__link">
+    VALL-E 2 Inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoregressive-model-inference" class="md-nav__link">
+    Autoregressive Model Inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-autoregressive-model-inference" class="md-nav__link">
+    Non-Autoregressive Model Inference
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4experiments" class="md-nav__link">
+    4.Experiments: 实验
+  </a>
+  
+    <nav class="md-nav" aria-label="4.Experiments: 实验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setups" class="md-nav__link">
+    Setups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-training" class="md-nav__link">
+    Model Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-metrics" class="md-nav__link">
+    Evaluation Metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-settings" class="md-nav__link">
+    Evaluation Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#librispeech-evaluation" class="md-nav__link">
+    LibriSpeech Evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objective-evaluation" class="md-nav__link">
+    Objective Evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subjective-evaluation" class="md-nav__link">
+    Subjective Evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ablation-study" class="md-nav__link">
+    Ablation Study
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vctk-evaluation" class="md-nav__link">
+    VCTK Evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objective-evaluation_1" class="md-nav__link">
+    Objective Evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subjective-evaluation_1" class="md-nav__link">
+    Subjective Evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ablation-study_1" class="md-nav__link">
+    Ablation Study
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5results" class="md-nav__link">
+    5.Results: 结果
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6conclusions" class="md-nav__link">
+    6.Conclusions: 结论
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vall-e-2">VALL-E 2<a class="headerlink" href="#vall-e-2" title="Permanent link">&para;</a></h1>
+<details>
+<summary>基本信息</summary>
+
+- 标题: VALL-E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers
+- 作者:
+  - 01 [Sanyuan Chen](../../Authors/Sanyuan_Chen_(陈三元).md)
+  - 02 [Shujie Liu](../../Authors/Shujie_Liu_(刘树杰).md)
+  - 03 [Long Zhou](../../Authors/Long_Zhou_(周龙).md)
+  - 04 [Yanqing Liu](../../Authors/Yanqing_Liu.md) 
+  - 05 [Xu Tan](../../Authors/Xu_Tan_(谭旭).md) 
+  - 06 [Jinyu Li](../../Authors/Jinyu_Li_(李劲宇).md)
+  - 07 [Sheng Zhao](../../Authors/Sheng_Zhao_(赵胜).md)
+  - 08 [Yao Qian](../../Authors/Yao_Qian_(钱瑶).md)
+  - 09 [Furu Wei](../../Authors/Furu_Wei_(韦福如).md)
+- 机构:
+  - 机构 
+- 时间:
+  - 预印时间: 2024.06.08 ArXiv v1
+  - 预印时间: 2024.06.17 ArXiv v2
+  - 更新笔记: 2024.06.20
+- 发表:
+  - 期刊/会议 
+- 链接:
+  - [ArXiv](https://arxiv.org/abs/2406.05370)
+  - [DOI]()
+  - [Github]()
+  - [Demo](https://aka.ms/valle2)
+  - [Scholar](https://scholar.google.com/scholar?cluster=)
+- 标签:
+  - ?
+- 页数: ?
+- 引用: ?
+- 被引: ?
+- 数据:
+
+</details>
+
+<h2 id="abstract">Abstract: 摘要<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>This paper introduces VALL-E 2, the latest advancement in neural codec language models that marks a milestone in zero-shot text-to-speech synthesis (TTS), achieving human parity for the first time. 
+Based on its predecessor, VALL-E, the new iteration introduces two significant enhancements:
+<strong>Repetition Aware Sampling</strong> refines the original nucleus sampling process by accounting for token repetition in the decoding history. It not only stabilizes the decoding but also circumvents the infinite loop issue.
+<strong>Grouped Code Modeling</strong> organizes codec codes into groups to effectively shorten the sequence length, which not only boosts inference speed but also addresses the challenges of long sequence modeling.
+Our experiments on the LibriSpeech and VCTK datasets show that VALL-E 2 surpasses previous systems in speech robustness, naturalness, and speaker similarity. It is the first of its kind to reach human parity on these benchmarks. Moreover, VALL-E 2 consistently synthesizes high-quality speech, even for sentences that are traditionally challenging due to their complexity or repetitive phrases. The advantages of this work could contribute to valuable endeavors, such as generating speech for individuals with aphasia or people with amyotrophic lateral sclerosis. 
+See https://aka.ms/valle2 for demos of <strong><em>VALL-E 2</em></strong>.</p>
+</blockquote>
+<h2 id="1introduction">1.Introduction: 引言<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
+<p>Text-to-speech synthesis (TTS) aims to generate high-quality speech from text input with a high degree of clarity and intelligibility. 
+Along with the progress of deep learning, significant improvements have been made in TTS research in recent years \citep{DBLP:conf/icassp/ShenPWSJYCZWRSA18,DBLP:conf/aaai/Li0LZL19,DBLP:conf/nips/RenRTQZZL19}.  Some systems, trained with clean single-speaker speech data recorded in sound-recording studios, have even achieved human-level quality for single-speaker speech generation \citep{10409539}.
+ However, zero-shot TTS, which requires the model to synthesize speech for unseen speakers using a short enrolled speech sample during inference, remains a challenging problem.</p>
+<p>Our previous work, VALL-E \citep{wang2023neural}, marked a significant breakthrough in this area. It is capable of synthesizing personalized speech using only a 3-second recording, while preserving the speaker’s voice, emotion, and acoustic environment. VALL-E is a neural codec language model that represents speech signals as discrete codec codes with a neural audio codec model. Specifically, it trains an autoregressive language model to generate the coarse codec codes and another non-autoregressive model to generate the remaining fine codec codes. 
+Instead of using greedy search, which continually generates silence codec codes, VALL-E uses random sampling for model inference. 
+However, VALL-E has two key limitations: 
+1) Stability: The random sampling used during inference can lead to instability in output, while nucleus sampling with a small top-p value may cause an infinite loop issue. This can be mitigated by multiple-time sampling and subsequent sorting, but this approach increases the computational cost.
+2) Efficiency: The autoregressive architecture of VALL-E is bound to the same high frame rate as the off-the-shelf audio codec model, which cannot be adjusted, resulting in a slower inference speed.</p>
+<p>Several follow-up works have been proposed to address these problems \citep{song2024ella,xin2024rall,borsos2023soundstorm, le2024voicebox,ju2024naturalspeech}. To improve stability, some works leverage text-speech alignment information in model training and inference \citep{song2024ella,xin2024rall}. These methods, relying on a forced-alignment model, inevitably introduces errors in the alignment result, which could affect the final performance. It also complicates the overall architecture and increases the burden for data scaling up. To improve modeling efficiency, some works explore fully non-autoregressive methods for zero-shot TTS \citep{borsos2023soundstorm, le2024voicebox,ju2024naturalspeech}. However, these methods require frame-aligned text-speech data for model training, facing the same problem as discussed before. Additionally, the non-autoregressive model generates the tokens with a pre-determined duration result, which constrains the search space of the generated speech and sacrifices the prosody and naturalness.</p>
+<p>In this work, we propose <strong><em>VALL-E 2</em></strong>, the first human parity zero-shot text-to-speech synthesis system. Building upon its predecessor VALL-E, <strong><em>VALL-E 2</em></strong> employs a neural codec language modeling method for speech synthesis and incorporates two key modifications: repetition aware sampling and grouped code modeling. 
+Repetition aware sampling, an improvement over the random sampling used in VALL-E, adaptively employs either random or nucleus sampling for each time step token prediction. This selection is based on the token repetition in the decoding history, enhancing the stability of the decoding process and circumventing the infinite loop issue encountered in VALL-E.
+Grouped code modeling, on the other hand, partitions the codec codes into groups, each of which is modeled in a single frame in the AR modeling process. This approach not only accelerates inference by reducing the sequence length but also improves performance by mitigating the long context modeling problem.
+Notably, <strong><em>VALL-E 2</em></strong> requires only simple utterance-wise speech-transcription pair data for training, greatly simplifying the process of collecting and processing training data and facilitating potential scalability.</p>
+<p><strong><em>VALL-E 2</em></strong> is trained on the large-scale Libriheavy dataset \citep{kang2024libriheavy}. Subsequent evaluations demonstrate that it achieves performance on par with human capabilities on both the in-domain LibriSpeech dataset \citep{panayotov2015librispeech} and the out-of-domain VCTK datasets \citep{veaux2016superseded}. As illustrated in Figure \ref{fig:valle2_abs}, <strong><em>VALL-E 2</em></strong> significantly outperforms VALL-E and other prior works on the LibriSpeech dataset in terms of robustness, naturalness, and similarity score, even achieving human parity performance. The numbers in Figure \ref{fig:valle2_abs} are relative numbers ($\vartriangle \text{Score} (\text{Model}) = \text{Score} (\text{Model}) - \text{Score} (\text{GroundTruth})$) based on the results reported in the paper. In this context, human parity indicates that the robustness, naturalness, and similarity metrics of <strong><em>VALL-E 2</em></strong> surpass those of the ground truth samples (meaning that $\vartriangle \text{WERR} (\text{VALL-E 2}) &gt; 0$, $\vartriangle \text{CMOS} (\text{VALL-E 2}) &gt; 0$, and $\vartriangle \text{SMOS} (\text{VALL-E 2}) &gt; 0$), meaning that VALL-E 2 can generate accurate, natural speech in the exact voice of the original speaker, comparable to human performance.  It is important to note that this conclusion is drawn solely from experimental results on the LibriSpeech and VCTK datasets. Moreover, <strong><em>VALL-E 2</em></strong> can accelerate the decoding process by multiple times with almost no performance degradation. To specifically evaluate the stability of <strong><em>VALL-E 2</em></strong>, we synthesize speech for complex sentences that are hard to read or contain many repeated phrases, and found that <strong><em>VALL-E 2</em></strong> can always stably generate high-quality speech.  The benefits of this work could support meaningful initiatives, such as generating speech for individuals with aphasia or people with amyotrophic lateral sclerosis.
+We encourage the reader to listen to our samples on the demo page \url{https://aka.ms/valle2}.</p>
+<p>VALL-E 2 is purely a research project. Currently, we have no plans to incorporate VALL-E 2 into a product or expand access to the public. VALL-E 2 could synthesize speech that maintains speaker identity and could be used for educational learning, entertainment, journalistic, self-authored content, accessibility features, interactive voice response systems, translation, chatbot, and so on. While VALL-E 2 can speak in a voice like the voice talent, the similarity, and naturalness depend on the length and quality of the speech prompt, the background noise, as well as other factors. It may carry potential risks in the misuse of the model, such as spoofing voice identification or impersonating a specific speaker. We conducted the experiments under the assumption that the user agrees to be the target speaker in speech synthesis. If the model is generalized to unseen speakers in the real world, it should include a protocol to ensure that the speaker approves the use of their voice and a synthesized speech detection model. If you suspect that VALL-E 2 is being used in a manner that is abusive or illegal or infringes on your rights or the rights of other people, you can report it at the Report Abuse Portal.</p>
+<h2 id="2related-works">2.Related Works: 相关工作<a class="headerlink" href="#2related-works" title="Permanent link">&para;</a></h2>
+<h3 id="zero-shot-tts">Zero-Shot TTS<a class="headerlink" href="#zero-shot-tts" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Early work in zero-shot TTS typically employed speaker adaptation and speaker encoding methods, which often required additional fine-tuning, complex pre-designed features, or heavy structure engineering \citep{DBLP:conf/iclr/ChenASBRZWCTLGO19, DBLP:conf/interspeech/WangTFYWZ20,DBLP:conf/nips/ArikCPPZ18,casanova2022yourtts}. 
+Inspired by the success of Large Language Models (LLMs) in natural language processing, VALL-E \citep{wang2023neural, zhang2023speak} represented speech as discrete codec codes with an off-the-shelf neural codec model, and approached TTS as a conditional codec language modeling task. This approach allowed VALL-E to train a codec language model on large-scale training data and perform zero-shot TTS via prompting, achieving significant zero-shot TTS capability.</p>
+<p>This breakthrough inspired subsequent research works to address zero-shot TTS through a language modeling approach. For instance, VALL-E X \citep{zhang2023speak} extended VALL-E to cross-lingual TTS tasks with an additional language ID token. SPEAR-TTS \citep{kharitonov2023speak} and Make-a-voice \citep{huang2023make} leveraged semantic units from a speech self-supervised model as an intermediate interface between text and acoustic codec codes, enabling better training data efficiency. Mega-TTS \citep{jiang2023mega} and Mega-TTS 2 \citep{jiang2023mega2} proposed to first disentangle the multiple attributes in speech, then only model partial attributes with a language modeling approach. ELLA-V \citep{song2024ella} and RALL-E \citep{xin2024rall} improved VALL-E's robustness and stability by including speech-text alignment prediction into the decoding process. UniAudio \citep{yang2023uniaudio} and BASE TTS \citep{lajszczak2024base} further explored scaling the codec language model to 1b parameters and 100k hours of training data.</p>
+<p>Meanwhile, other works explored fully non-autoregressive modeling methods to accelerate the inference speed. For example, Soundstorm \citep{borsos2023soundstorm} leveraged the confidence-based parallel decoding scheme \citep{chang2022maskgit} to generate the acoustic codec codes with a non-autoregressive model. StyleTTS 2 \citep{li2024styletts}, UniCATS \citep{du2024unicats}, NaturalSpeech 2 \citep{shen2023naturalspeech} and NaturalSpeech 3 \citep{ju2024naturalspeech} used diffusion model \citep{ho2020denoising} for the prompt-conditioned text to speech synthesis. Voicebox \citep{le2024voicebox} and Audiobox \citep{vyas2023audiobox} used flow-matching  method \citep{lipman2022flow} and achieved better speech modeling capability.
+In this work, <strong><em>VALL-E 2</em></strong> follows the codec language modeling method of VALL-E, and enables a stable decoding process without the need for complex speech data processing and preparation, such as duration or pitch information used in previous methods. Notably, <strong><em>VALL-E 2</em></strong> is the first to successfully achieve human parity in zero-shot TTS on both LibriSpeech and VCTK datasets.</p>
+</blockquote>
+<h3 id="codec-based-speech-models">Codec-based Speech Models<a class="headerlink" href="#codec-based-speech-models" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Inspired by the promising performance of neural codec codes in zero-shot TTS, many subsequent research works have started to explore its effectiveness on more speech tasks. For instance, PolyVoice \citep{dong2023polyvoice} adopted VALL-E and built a codec-based language model for speech-to-speech translation. SpeechX \citep{wang2023speechx} extended VALL-E with multi-task learning, demonstrating efficacy in zero-shot TTS, noise suppression, target speaker extraction, speech removal, and speech editing tasks. 
+In addition to speech generation, VioLA \citep{wang2023viola} further explored codec-based speech models for speech understanding tasks, unifying codec language models for speech recognition, synthesis, and translation tasks. AudioPaLM \citep{rubenstein2023audiopalm} fused the codec tokens into the LLM PaLM 2 \citep{anil2023palm}, and demonstrated promising results on speech recognition and translation tasks. </p>
+<p>These works typically employ SoundStream \citep{zeghidour2021soundstream} and Encodec \citep{defossez2022high}, initially designed for speech compression, as the neural codec model. Inspired by these successes, several works have proposed more novel neural codecs specifically for speech processing tasks. These include Vocos \citep{siuzdak2023vocos}, SpeechTokenizer \citep{zhang2023speechtokenizer}, AudioDec \citep{wu2023audiodec}, AcademiCodec \citep{yang2023hifi}, Descript-audio-codec (DAC) \citep{kumar2024high}, FunCodec \citep{du2024funcodec}, and RepCodec \citep{huang2023repcodec}. The Codec-SUPERB challenge \citep{wu2024codecsuperb} was announced to benchmark various codec codes across a wide range of speech tasks. In this work, we utilize the Encodec model to tokenize speech signals and the Vocos decoder to generate target high-quality speech signals.</p>
+</blockquote>
+<h2 id="3methodology">3.Methodology: 方法<a class="headerlink" href="#3methodology" title="Permanent link">&para;</a></h2>
+<h3 id="problem-formulation-grouped-codec-language-modeling">Problem Formulation: Grouped Codec Language Modeling<a class="headerlink" href="#problem-formulation-grouped-codec-language-modeling" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Following VALL-E, we use an off-the-shelf neural audio codec model to represent speech signals as discrete codec code sequence, and regard TTS as a conditional codec language modeling task.
+To improve the efficiency, <strong><em>VALL-E 2</em></strong> introduce a grouped codec language modeling method, where we partition the codec code sequence into groups of a certain size, and model each group of codec codes as one frame.
+In this way, we can get rid of the frame rate constraint of the off-the-shelf neural audio codec model, and reduce the frame rate by integer multiples. It is not only beneficial for the inference efficiency but also the overall speech quality by mitigating the long context modeling problem.</p>
+<p>With TTS training objective, <strong><em>VALL-E 2</em></strong> is optimized to maximize the likelihood of the grouped code sequence given the text condition.
+Specifically, given an audio sample $\mathbf{y}$ and its corresponding tokenized text transcription $\mathbf{x}  = [ x_0, x_1, \ldots, x_{(L-1)} ]$, where $L$ is the text sequence length, we first use a pre-trained neural audio codec model to convert the audio sample $\mathbf{y}$ into a codec code sequence $\mathbf{C}^{T \times J}  =  [ \mathbf{c}<em>{0}, \mathbf{c}</em>{1}, \ldots, \mathbf{c}<em>{(T-1)} ] $, where $T$ is the code sequence length, $J$ (here $J=8$) is the number of the quantizers in the codec model, and each $\mathbf{c}</em>{t}$ represents the 8 codes for each time step.
+Then we partition it into the grouped code sequence $\mathbf{C}^{G}  =  [ \mathbf{C}<em>{0:G}, \mathbf{C}</em>{G:2G}, \ldots, \mathbf{C}<em>{(T-G):T} ] $ with the group size $G$, and $\mathbf{C}</em>{0:G}$ stands for the group $[\mathbf{c}<em>{0}, \mathbf{c}</em>{1}, \ldots, \mathbf{c}_{(G-1)}]$.
+Due to the typical short silence at the start of an utterance, we can clip a few codes from the start of the code sequence to let the code sequence length $T$ be the integer multiple of the group size without removing any speech information.
+Finally, we train the <strong><em>VALL-E 2</em></strong> model $\theta$ to minimize the negative log-likelihood of the grouped code sequence $\mathbf{C}^{G}$ conditioned on the text sequence $\mathbf{x}$:</p>
+</blockquote>
+<p>\begin{align}
+   \mathcal{L} &amp;=  - \log p (\mathbf{C}^{G} |\mathbf{x}; \theta) \
+   &amp;= - \sum_{t=0}^{T/G-1} \log  p (\mathbf{C}<em>{t\cdot G:(t+1)\cdot G} |\mathbf{C}</em>{&lt;t\cdot G}, \mathbf{x}; \theta),
+\end{align} </p>
+<blockquote>
+<p>where $\mathbf{C}<em>{t\cdot G:(t+1)\cdot G}$ is the $t$-th group of codec codes $[\mathbf{c}</em>{t\cdot G}, \ldots, \mathbf{c}<em>{\left( \left(t+1\right)\cdot G -1\right)}]$, and $\mathbf{C}</em>{&lt;t\cdot G}$ is all the codec codes in the previous $(t-1)$ groups.</p>
+<p>During inference, <strong><em>VALL-E 2</em></strong> performs zero-shot TTS task via prompting. Given a text input (containing both the transcription of speech prompt and the text to synthesis) and grouped codec codes from an unseen speaker, serving as the condition and prompt, the model can generate the target grouped codec codes with the corresponding content and speaker's voice.
+Specifically, given the text sequence $\mathbf{x}$ and the enrolled speech sample of the unseen speaker $\mathbf{y}'$, we can obtain the corresponding grouped code sequence $\mathbf{C}^P = \mathbf{C}^{G}<em>{&lt;T'}  = [ \mathbf{C}</em>{0:G}, \mathbf{C}<em>{G:2G}, \ldots, \mathbf{C}</em>{(T'-G):T'} ]$. 
+Then, We generate the target grouped code sequence $\mathbf{C}^T = \mathbf{C}^{G}<em>{\geq T'}  =[  \mathbf{C}</em>{T':(T'+G)}, \ldots, \mathbf{C}_{(T-G):T} ]$ conditioned on the text sequence $\mathbf{x}$ and code prompt $\mathbf{C}^P$:</p>
+</blockquote>
+<p>\begin{align}
+   \mathbf{C}^T &amp;= \argmax_{\mathbf{C}} p (\mathbf{C} |\mathbf{C}^P, \mathbf{x}; \theta) \
+   &amp;= \argmax_{\mathbf{C}} \sum_{t=T'/G}^{T/G-1} \log p (\mathbf{C}<em>{t\cdot G:(t+1)\cdot G} |\mathbf{C}</em>{&lt;t\cdot G}, \mathbf{x}; \theta).
+\end{align} 
+Finally, we can convert the target code sequence $\mathbf{C}^T$ to the target speech waveform using an off-the-shelf neural codec decoder.</p>
+<h3 id="vall-e-2-architecture"><strong><em>VALL-E 2</em></strong> Architecture<a class="headerlink" href="#vall-e-2-architecture" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Building upon VALL-E, <strong><em>VALL-E 2</em></strong> also use a hierarchical structure: an Autoregressive (AR) codec language model and a Non-Autoregressive (NAR) codec language model. 
+The AR model generates sequence of the first codec code for each frame in an autoregressive manner, while the NAR model generates each remaining code sequence based on the preceding code sequences in a non-autoregressive manner. 
+Both models utilize the same Transformer architecture with a text embedding layer, a code embedding layer, and a code prediction layer. We use distinct embeddings for the codes from different codec quantizers and share the parameters of the code prediction layer with the parameters of the code embedding layer. 
+In addition, the AR model has a group embedding layer to project the code embedding to the group embedding, and a group prediction layer for the prediction of codes in one group . 
+The NAR model has a code ID embedding layer to specify the ID of the code sequence to predict.
+The AR model and NAR model have different attention mask strategies: the AR model uses the causal attention strategy and the NAR model uses the full attention strategy, as shown in the right part of Figure~\ref{fig:training}.</p>
+</blockquote>
+<h3 id="vall-e-2-training"><strong><em>VALL-E 2</em></strong> Training<a class="headerlink" href="#vall-e-2-training" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Figure~\ref{fig:training} shows the overview of <strong><em>VALL-E 2</em></strong> model training. It is noteworthy that the training of <strong><em>VALL-E 2</em></strong> requires only simple utterance-wise speech-transcription pair data, without any complex data such as force-alignment result or additional audio clips of the same speaker for reference. This greatly simplifies the process of collecting and processing training data.</p>
+<p>Specifically, for each audio and corresponding transcription in the training dataset, we initially utilize the audio codec encoder and text tokenizer to obtain the codec codes $\mathbf{C}  = [ \mathbf{c}<em>{0}, \mathbf{c}</em>{1}, \ldots, \mathbf{c}<em>{(T-1)} ]$ and the text sequence $\mathbf{x}  = [ x_0, x_1, \ldots, x</em>{(L-1)} ]$, respectively. These are then used for the AR model and the NAR model training.</p>
+</blockquote>
+<h3 id="autoregressive-model-training">Autoregressive Model Training<a class="headerlink" href="#autoregressive-model-training" title="Permanent link">&para;</a></h3>
+<p>The AR model is trained to predict the first codec code sequence $\mathbf{c}<em>{:,0} = [c</em>{0,0}, c_{1,0}, \ldots, c_{(T-1),0}]$ conditioned on the text sequence $\mathbf{x}$ in an autoregressive manner.</p>
+<p>As shown in the lower middle part of Figure~\ref{fig:training}, we first obtain the text embedding sequence $\mathbf{E}^x = [ \mathbf{e}^x_0, \mathbf{e}^x_1, \ldots, \mathbf{e}^x_{(L-1)}]$ and the code embedding sequence $\mathbf{E}^c = [\mathbf{e}^c_0, \mathbf{e}^c_1, \ldots, \mathbf{e}^c_{(T-1)} ]$ using the text embedding matrix $\mathbf{W}^x$ and the code embedding matrix $\mathbf{W}^c$. 
+\begin{align}
+    \mathbf{e}^x_l &amp;= \mathbf{W}^x \odot x_l, \label{eq:text_embed} \
+    \mathbf{e}^c_t &amp;= \mathbf{W}^c \odot c_{t, 0},
+\end{align}
+where $l$ and $t$ denotes the indices of each item in the text sequence and code sequence, respectively, and $\odot$ denotes index selection.
+Then, we partition the code embedding sequence into groups of size $G$, concatenate each group of the the code embeddings in the hidden dimension, and obtain the group embedding sequence $\mathbf{E}^g = [ \mathbf{e}^g_0, \mathbf{e}^g_1, \ldots, \mathbf{e}^g_{(T/G-1)}]$ using the group embedding matrix $\mathbf{W}^g$.
+\begin{align}
+ \mathbf{e}^g_t &amp;=   \mathbf{e}^c_{t\cdot G:(t+1)\cdot G} \cdot \mathbf{W}^g.
+\end{align}</p>
+<p>We concatenate the text embedding sequence $\mathbf{E}^x $ and the group embedding sequence $\mathbf{E}^g$, inserting the embedding of special tokens $&lt; \text{eos}&gt;$ and $&lt; \text{bos}&gt;$ in between:
+\begin{equation}
+    \mathbf{E}^0 = \mathbf{E}^x \mathbin\Vert [ \mathbf{e}<em>{&lt; \text{eos}&gt;}, \mathbf{e}</em>{&lt; \text{bos}&gt;} ] \mathbin\Vert \mathbf{E}^g,
+\end{equation}
+where $||$ indicates concatenation in the temporal dimension. 
+We then separately add the learnable position embedding to the text embedding sequence and the group embedding sequence.
+The AR model is fed with $\mathbf{E}^0$ and trained to predict corresponding code sequence with a special token $&lt;\text{eos}&gt;$ appended at the end using a linear mapping group prediction layer and softmax code prediction layer. Due to the causal attention mask strategy, the prediction of each code group $\mathbf{c}<em>{t\cdot G:(t+1)\cdot G,0}$ can only attend to the text sequence $\mathbf{x}$ and the preceding codes $\mathbf{c}</em>{&lt;t\cdot G,0}$, as demonstrated in the lower right part of Figure~\ref{fig:training}.</p>
+<p>Overall, the parameters  $\theta_\text{AR}$ of the AR model is optimized by minimizing the negative log likelihood of the first code sequence $\mathbf{c}<em>{:,0}$ conditioned on the text sequence $\mathbf{x}$:
+\begin{align}
+\mathcal{L}</em>\text{AR} &amp;=  - \log p (\mathbf{c}<em>{:,0} |\mathbf{x}; \theta</em>\text{AR}) \
+&amp;= -\sum_{t=0}^{T/G-1} \log   p (\mathbf{c}<em>{t\cdot G:(t+1)\cdot G,0} |\mathbf{c}</em>{&lt;t\cdot G,0}, \mathbf{x}; \theta_\text{AR}) \
+&amp;= - \sum_{t=0}^{T/G-1} \sum_{t'=t\cdot G}^{(t+1)\cdot G-1}  \log  p (c_{t',0} |\mathbf{c}<em>{&lt;t\cdot G,0}, \mathbf{x}; \theta</em>\text{AR}).
+\end{align} 
+In the AR model of <strong><em>VALL-E 2</em></strong>,  the group sequence $\mathbf{c}<em>{:,0} = [ \mathbf{c}</em>{0:G}, \mathbf{c}<em>{G:2G, 0}, \ldots, \mathbf{c}</em>{(T-G):T, 0} ]$ is modeled in an autoregressive approach, while the codec codes within each group $\mathbf{c}<em>{t\cdot G:(t+1)\cdot G,0} = [c</em>{t\cdot G,0}, c_{(t\cdot G +1),0} \ldots, c_{((t+1)\cdot G -1),0} ]$ are modeled in a non-autoregressive way. </p>
+<h3 id="non-autoregressive-model-training">Non-Autoregressive Model Training<a class="headerlink" href="#non-autoregressive-model-training" title="Permanent link">&para;</a></h3>
+<p>Given the first code sequence generated by the AR model, the NAR model is trained to generate remaining code sequence $\mathbf{c}<em>{:,j}$ for each codec code ID $j$ conditioned on the text sequence $\mathbf{x}$ and the preceding code sequences $\mathbf{c}</em>{:,&lt;j}$ in a non-autoregressive manner, where $j \in [1, \ldots , 7]$. </p>
+<p>As we have access to all 8 code sequences of the prompt during inference, to better model the speaker information of the prompt, during training, we explicitly split all the code sequences $\mathbf{C}$ into an acoustic condition $\mathbf{C}<em>{&lt;T'}$ and target code sequences $\mathbf{C}</em>{\geq T'}$ with a randomly sampled length $T'$. The model is then optimized to predict each target code sequence $\mathbf{c}<em>{\geq T',j}$ conditioned on the text sequence $\mathbf{x}$, all $J=8$ code sequences in the acoustic condition $\mathbf{C}</em>{&lt;T'}$ and the preceding target code sequences $\mathbf{C}_{\geq T',&lt;j}$ in a non-autoregressive manner.</p>
+<p>As shown in the upper middle part of Figure~\ref{fig:training}, we first obtain the text embedding sequence $\mathbf{E}^x = [ \mathbf{e}^x_0, \mathbf{e}^x_1, \ldots, \mathbf{e}^x_{(L-1)}]$ using the text embedding matrix $\mathbf{W}^x$, as denoted in Equation~\ref{eq:text_embed}. 
+Then, we obtain the code embedding sequence $\mathbf{E}^c = [\mathbf{e}^c_0, \mathbf{e}^c_1, \ldots, \mathbf{e}^c_{(T-1)} ]$ by obtaining all the code embeddings in the acoustic condition $\mathbf{C}<em>{&lt;T'}$ and target code sequences $\mathbf{C}</em>{\geq T',&lt;j}$ with the code embedding matrix $\mathbf{W}^c$, and summing them along with the code ID dimension:
+\begin{equation}
+\mathbf{e}^c_t = 
+\begin{cases}
+\sum_{k=0}^{7} \mathbf{W}^c \odot {c_{t,k}},&amp; t &lt; T' \ 
+{\sum_{k=0}^{j-1} \mathbf{W}^c \odot {c_{t,k}},}&amp;{ t \geq T'} 
+\end{cases},
+\end{equation}
+where $t$ is the time step and $j$ is the codec code ID.
+Next, we obtain the codec code ID embedding $\mathbf{e}^{j}$ with the code ID embedding matrix $\mathbf{W}^{id}$.
+\begin{equation}
+\mathbf{e}^{j} = \mathbf{W}^{id} \odot j.
+\end{equation}
+We concatenate the text embedding sequence $\mathbf{E}^x$, the code embedding sequence $\mathbf{E}^c$, and the codec code ID embedding $\mathbf{e}^{j}$, inserting the embedding of the special token $&lt; \text{eos}&gt;$ in the middle:
+\begin{equation}
+    \mathbf{E}^j = \mathbf{E}^x \mathbin\Vert [ \mathbf{e}<em>{&lt; \text{eos}&gt;}] \mathbin\Vert \mathbf{E}^c \mathbin\Vert [ \mathbf{e}</em>{&lt; \text{eos}&gt;}] \mathbin\Vert [\mathbf{e}^{j} ] .
+\end{equation}
+We then separately add the learnable position embedding to the text embedding sequence and the code embedding sequence, similar to the AR model.
+The NAR model is fed with $\mathbf{E}^j$ and trained to predict the corresponding code sequence $\mathbf{c}<em>{:,j}$ for each codec code id $j$ using a code prediction layer. With the full attention mask strategy, the prediction of each token $c</em>{t,j}$ can attend to the entire input sequence, as depicted in the upper right part of Figure~\ref{fig:training}.</p>
+<p>Overall, the NAR model is optimized by minimizing the negative log likelihood of each $j$-th target code sequence $\mathbf{c}<em>{\geq T',j}$ conditioned on the text sequence $\mathbf{x}$, all the code sequences of the acoustic condition $\mathbf{C}</em>{&lt;T'}$ and the preceding $j$ target code sequences $\mathbf{c}<em>{\geq T',&lt;j}$.
+\begin{align}
+\mathcal{L}</em>\text{NAR} &amp;=  - \log p (\mathbf{C}<em>{\geq T',\geq 1} |\mathbf{x}, \mathbf{C}</em>{&lt;T'}, \mathbf{c}<em>{\geq T',0}; \theta</em>\text{NAR}) \
+&amp;= - \sum_{j=1}^7 \log p (\mathbf{c}<em>{\geq T',j} |\mathbf{x}, \mathbf{C}</em>{&lt;T'}, \mathbf{C}<em>{\geq T',&lt;j}; \theta</em>\text{NAR}).
+\end{align} 
+In practice, to optimize computational efficiency during training, we do not calculate the training loss by iterating over all values of $j$ and aggregating the corresponding losses, but randomly select a $j \in [1, \ldots, 7]$ and optimize the model using the training loss:
+\begin{equation}
+\mathcal{L}<em>{\text{NAR_j}} =  - \log p (\mathbf{c}</em>{\geq T',j} |\mathbf{x}, \mathbf{C}<em>{&lt;T'}, \mathbf{C}</em>{\geq T',&lt;j}; \theta_\text{NAR}).
+\end{equation} </p>
+<h3 id="vall-e-2-inference"><strong><em>VALL-E 2</em></strong> Inference<a class="headerlink" href="#vall-e-2-inference" title="Permanent link">&para;</a></h3>
+<p>Following VALL-E, we perform the zero-shot TTS task via prompting during inference.
+As depicted in Figure~\ref{fig:inference}, given the text sentence and the enrolled speech sample of the unseen speaker along with its corresponding transcription, we first concatenate the speech transcription and the text sentence, encoded into the text sequence $\mathbf{x}$ using the text tokenizer to serve as the text condition. 
+The speech sample is converted into the codes $\mathbf{C}^P = \mathbf{C}<em>{&lt;T'}  = [ \mathbf{c}</em>{0}, \mathbf{c}<em>{1}, \ldots, \mathbf{c}</em>{(T'-1)} ]$ using the audio codec encoder to serve as the prompt.
+By prompting the conditional codec language model, we infer the AR model and NAR model to generate the target codes $\mathbf{C}<em>{\geq T'}  = [ \mathbf{c}</em>{T'}, \ldots, \mathbf{c}_{(T-1)} ]$. Finally, the target codes is used by the audio codec decoder to synthesize the target personalized speech signals.</p>
+<h3 id="autoregressive-model-inference">Autoregressive Model Inference<a class="headerlink" href="#autoregressive-model-inference" title="Permanent link">&para;</a></h3>
+<p>\label{sec:ras}
+We first infer the AR model to generate the first code sequence of the target codes $\mathbf{c}<em>{\geq T',0}$ conditioned on the text sequence $\mathbf{x}$ and the code prompt $\mathbf{c}</em>{&lt;T',0}$.  With the grouped codec language modeling method, we feed the grouped code sequence to the AR model and generate each group of target codes in an autoregressive way:
+\begin{align}
+   \mathbf{c}<em>{\geq T',0} &amp;= \argmax</em>{\mathbf{c}<em>{\geq T',0}} p (\mathbf{c}</em>{\geq T',0} |\mathbf{x}, \mathbf{c}<em>{&lt;T',0}; \theta</em>\text{AR}) \
+   &amp;= \argmax_{\mathbf{c}<em>{\geq T',0}} \sum</em>{t=T'/G}^{T/G-1} \log p (\mathbf{c}<em>{t\cdot G: (t+1)\cdot G,0} |\mathbf{x}, \mathbf{c}</em>{&lt;t\cdot G,0}; \theta_\text{AR}) \
+   &amp;= \argmax_{\mathbf{c}<em>{\geq T',0}} \sum</em>{t=T'/G}^{T/G-1} \sum_{t'=t\cdot G}^{(t+1)\cdot G - 1} \log p (c_{t',0} |\mathbf{x}, \mathbf{c}<em>{&lt;t\cdot G,0}; \theta</em>\text{AR}).
+\end{align} </p>
+<p>\begin{algorithm<em>}[t]
+\caption{Repetition Aware Sampling in </em><strong>VALL-E 2</strong><em> AR Model Decoding}
+\footnotesize
+\label{alg:ras}
+\begin{algorithmic}[1]
+\STATE{\textbf{given} text condition $\mathbf{x}$, pre-trained AR model $\theta_\text{AR}$, group size $G$, decoding step $t$, concatenation of code prompt and preceding group sequence $\mathbf{c}<em>{&lt;t\cdot G,0}$, predicted code index $i$, top-p value $v$ for nucleus sampling, repetition threshold ratio $t_r$, window size $t_n$}
+\STATE{infer the pre-trained AR model $\theta</em>\text{AR}$ and predict the probability distribution $p (c_{t'} |\mathbf{x}, \mathbf{c}<em>{&lt;t\cdot G,0}; \theta</em>\text{AR})$}
+\STATE{generate $c_{t'}$ by nucleus sampling from the probability distribution $p (c_{t'} |\mathbf{x}, \mathbf{c}<em>{<t\cdot G,0}; \theta_\text{AR})$ with top-p value $v$}
+    \STATE{calculate the repetition ratio $r$ of the token $c_{t'}$ in the preceding code sequence with window size $K$: $r \leftarrow \frac{1}{K} \sum_{k=0}^{K} \mathbbm{1}_{c_{t'}=c_{t'-k}}$}
+ \IF{$r > t_r$}
+    \STATE{replace $c</em>{t'}$ by random sampling from the probability distribution $p (c_{t'} |\mathbf{x}, \mathbf{c}<em>{&lt;t\cdot G,0}; \theta</em>\text{AR})$}
+\ENDIF
+\RETURN{target code $c_{t'}$}
+\end{algorithmic}
+\end{algorithm</em>}</p>
+<p>Different from the random sampling method used in VALL-E, in this work, we propose a repetition aware sampling method to enhance nucleus sampling for the better decoding stability. As detailed in Algorithm~\ref{alg:ras}, given the probability distribution $p (c_{t'} |\mathbf{x}, \mathbf{c}<em>{&lt;t\cdot G,0}; \theta</em>\text{AR})$ predicted by the AR model, we first generate the target code $c_{t'}$ by nucleus sampling with a pre-defined top-p value $v$. Then, we calculate the repetition ratio  $r$  of token $c_{t'}$ in the preceding code sequence with a window size $K$. If the ratio $r$ exceeds a pre-defined repetition threshold ratio  $t_n$, we replace the target code $c_{t'}$ by random sampling from $p (c_{t'} |\mathbf{x}, \mathbf{c}<em>{&lt;t\cdot G,0}; \theta</em>\text{AR})$. Although the codec codes in one group are modeled in a non-autoregressive way, they are predicted autoregressively so as to calculate the repetition ratio $r$ and switch between these two sampling methods.  With this repetition aware sampling method, the decoding process can not only benefit from the stability of nucleus sampling, but also avoid the infinite loop issue with the help of random sampling. It should be noted that this repetition aware sampling won't increase the decoding latency since the runtime cost of the additional sampling operation is almost negligible compared to the model inference process.</p>
+<h3 id="non-autoregressive-model-inference">Non-Autoregressive Model Inference<a class="headerlink" href="#non-autoregressive-model-inference" title="Permanent link">&para;</a></h3>
+<p>Given the first code sequence of the target codes $\mathbf{c}<em>{\geq T',0}$, we can infer the NAR model with the text condition $\mathbf{x}$ and the acoustic condition $\mathbf{C}</em>{&lt;T'}$ to generate the remaining code sequences of the target codes $\mathbf{C}<em>{\geq T',\geq 1}$:
+\begin{align}<br />
+\mathbf{C}</em>{\geq T',\geq 1} &amp;= \argmax_{\mathbf{C}<em>{\geq T',\geq 1}} p (\mathbf{C}</em>{\geq T',\geq 1} |\mathbf{x}, \mathbf{C}<em>{&lt;T'}, \mathbf{c}</em>{\geq T',0}; \theta_\text{NAR}) \<br />
+&amp;= \argmax_{\mathbf{C}<em>{\geq T',\geq 1}} \sum</em>{j=1}^7 \log p (\mathbf{c}<em>{\geq T',j} |\mathbf{x}, \mathbf{C}</em>{&lt;T'}, \mathbf{C}<em>{\geq T',&lt;j}; \theta</em>\text{NAR}).<br />
+\end{align}<br />
+To generate  the 2-8 code
+sequence, we perform inference on the NAR model seven times, generating them one by one using a greedy decoding method. Together with the first codec codes generated by the AR model, the whole code matrix  $\mathbf{C}_{\geq T'}$ is used for generating the target personalized speech waveform with the corresponding audio codec decoder.</p>
+<p><strong><em>VALL-E 2</em></strong> can not only use a reference utterance of an unseen speaker as prompt to generate the speech cloning his/her voice, but also be able to perform zero-shot speech continuation, in which, we use the complete transcription of the utterance as the text condition and the first 3-second prefix as the prompt for the target personalized speech generation.</p>
+<h2 id="4experiments">4.Experiments: 实验<a class="headerlink" href="#4experiments" title="Permanent link">&para;</a></h2>
+<h3 id="setups">Setups<a class="headerlink" href="#setups" title="Permanent link">&para;</a></h3>
+<h3 id="model-training">Model Training<a class="headerlink" href="#model-training" title="Permanent link">&para;</a></h3>
+<p>We use Libriheavy corpus \citep{kang2024libriheavy} as the training data. This corpus is a labeled version of the Librilight corpus \citep{kahn2020libri} that contains 50k hours of speech with around 7000 distinct speakers derived from open-source English audiobooks that are part of the LibriVox project\footnote{\url{https://librivox.org}}.
+We use Byte-Pair Encoding (BPE) for text tokenization, and the pre-trained open-sourced EnCodec model \citep{defossez2022high} at 6K bitrates for 24kHz audio reconstruction for speech tokenization. Additionally, we use the open-sourced pre-trained Vocos model \citep{siuzdak2023vocos} as the audio codec decoder for speech generation.</p>
+<p>Following VALL-E, both the AR model and the NAR models employ the same Transformer architecture in <strong><em>VALL-E 2</em></strong>. 
+In our experiments, we mainly evaluate 4 <strong><em>VALL-E 2</em></strong> models, which share the same NAR model but different AR models.
+The 4 AR models corresponds to the group size of 1, 2, 4 and 8.
+Among these models, the AR model with group size of 1 is implemented without the group embedding layer and group prediction layer, and the baseline model VALL-E  employs the same NAR model and AR model with group size of 1\footnote{We re-train the baseline VALL-E model with the Libriheavy dataset for fair comparison.}.</p>
+<p>Both the AR and NAR models are trained using 16 NVIDIA TESLA V100 32GB GPUs. The models are optimized with the AdamW optimizer, with the learning rate warmed up for the first 32k updates to a peak of learning rate, then linearly decayed. 
+For NAR model training, the length of the acoustic condition is randomly sampled to be the maximum of half of the current utterance with a random value from 3s to 30s.</p>
+<h3 id="evaluation-metrics">Evaluation Metrics<a class="headerlink" href="#evaluation-metrics" title="Permanent link">&para;</a></h3>
+<p>We employ subjective evaluation metrics, including SMOS and CMOS, to assess the speaker similarity and comparative naturalness of synthesized speech, respectively. We invite 20 external native speakers of American English to participate as contributors in a crowdsourcing effort to evaluate each speech from various perspectives.</p>
+<p>\textbf{SMOS} (Similarity Mean Opinion Score) is used to evaluate the speaker similarity of the speech to the original prompt. The SMOS scale ranges from 1 to 5, with increments of 0.5 points.</p>
+<p>\textbf{CMOS} (Comparative Mean Opinion Score) is used to evaluate the comparative naturalness of the synthesized speech against a given reference speech. The CMOS scale ranges from -3 (indicating the synthesized speech of the new system is much worse than the reference) to 3 (indicating the new system is much better than the reference), with intervals of 1. In our study, we use the ground truth speech as the comparison reference.</p>
+<p>We also employ objective evaluation metrics including SIM, WER, and DNSMOS to assess the speaker similarity, robustness, and overall perceived quality of each synthesized speech. 
+For a better comparison in speech continuation, we evaluate the entire utterance instead of focusing solely on the continuation segment.</p>
+<p>\textbf{SIM} is used to evaluate the speaker similarity between the original prompt and synthesized speech, leveraging the SOTA speaker verification model, WavLM-TDNN \footnote{We use the best speaker verification model released at 
+\url{https://github.com/microsoft/UniSpeech/tree/main/downstreams/speaker_verification#pre-trained-models}} \citep{chen2022wavlm}. The similarity score predicted by WavLM-TDNN is in the range of $[-1, 1]$,  with a larger value indicating higher speaker similarity.</p>
+<p>\textbf{WER} (Word Error Rate) is used to evaluate the robustness of synthesized speech. Neural TTS systems sometimes experience deletion, insertion, and replacement errors due to incorrect attention alignments, which can affect their robustness. We perform ASR on the generated audio and calculate the WER with respect to the original transcriptions. In this experiment, we employ the open-sourced Conformer-Transducer model\footnote{\url{https://huggingface.co/nvidia/stt_en_conformer_transducer_xlarge}} \citep{gulati2020conformer} as the ASR model.</p>
+<p>\textbf{DNSMOS} (Deep Noise Suppression Mean Opinion Score) is used to assess the overall perceived quality of the generated speech~\citep{reddy2021dnsmos}.  Specifically, we use a model trained with ground truth human ratings obtained using ITU-T P.808~\citep{itu2018p}\footnote{\url{https://github.com/microsoft/DNS-Challenge/tree/master/DNSMOS}} to predict the DNSMOS score, which is in the range of $[1,5]$, with a larger value indicating better quality.</p>
+<h3 id="evaluation-settings">Evaluation Settings<a class="headerlink" href="#evaluation-settings" title="Permanent link">&para;</a></h3>
+<p>We use LibriSpeech test-clean \citep{panayotov2015librispeech} and VCTK \citep{veaux2016superseded} for zero-shot TTS evaluation, ensuring none of the speakers from these corpora are included in the training data.</p>
+<p>\textbf{LibriSpeech} test-clean is an official test split from the LibriSpeech corpus, containing English speech sampled at 16kHz. It originates from the same domain of the LibriVox project as the training data but features different speaker IDs. Following \cite{DBLP:journals/corr/abs-2209-03143} and \cite{wang2023neural}, we use samples from LibriSpeech test-clean with lengths between 4 and 10 seconds, resulting in a 2.2 hours subset and 40 unique speakers. We evaluate each sample synthesis under two settings: 3s Prefix as Prompt and Ref Utterance as Prompt. For the first setting, we perform speech continuation and utilize the 3-second prefix of the speech as the prompt. In the second setting, we use a reference utterance from the same speaker as the prompt. Specifically, we begin by filtering the official speech list of LibriSpeech test-clean based on length. For the ordered speech list of each speaker, in the first setting, we synthesize the $i$-th speech sample using the first 3 seconds of the ground-truth $i$-th speech sample as the prompt. In the second setting, we synthesize the $i$-th speech sample using the $(i-1)$-th sample as the prompt and synthesize the first speech sample using the last sample as the prompt.</p>
+<p>\textbf{VCTK} is a reading corpus with speech sampled at 48kHz by 108 English speakers. 
+Compared to LibriSpeech, VCTK presents a greater challenge as it encompasses speakers with a wide range of accents. 
+We evaluate each sample synthesis under three settings: using prompts of 3s, 5s, and 10s in length. 
+Specifically, for each speaker, we select an utterance whose length is closest to but less than 3s/5s/10s to serve as the prompts. We then randomly sample another utterance and use the corresponding transcription as the text input for speech synthesis.</p>
+<p>For each sample synthesis, we first perform inference with the AR model to generate the first code sequence using the repetition aware sampling method (Section~\ref{sec:ras}), where we set the hyperparameter $K=10$, $t_r=0.1$, and select the top-p value $v$ from $0.0$ to $0.8$ with the intervals of $0.1$.
+Next, we perform inference on the NAR model seven times to generate the remaining seven code sequences using a greedy decoding method.
+The sampling-based decoding method of the AR model allows us to generate diverse samples from the same input. In our experiment, we report the results of sampling once and five times for each speech synthesis. For the five-time sampling, we report the results of sorting on SIM and WER, and metric-wise maximization.</p>
+<p>\textbf{Sorting on SIM and WER}: We sort the samples based on the speaker similarity and robustness scores, represented by the SIM and WER scores. Specifically, given the five samples ${ \hat{\mathbf{y}}<em>i}</em>{i=1}^5$ with the corresponding SIM, WER, and DNSMOS scores denoted as $\hat{\mathbf{y}}<em>i^\text{SIM}$, $\hat{\mathbf{y}}_i^\text{WER}$, and $\hat{\mathbf{y}}_i^\text{DNSMOS}$, we sort them according to the WER score if the SIM score is greater than 0.3 and sort according to the SIM score otherwise. This sorting method can be expressed as:
+\begin{equation}
+\label{equation:sort}
+    \hat{\mathbf{y}}</em>\text{best} = \argmax_{\hat{\mathbf{y}}<em>i} ([\min (\hat{\mathbf{y}}_i^\text{SIM}, 0.3), 1 - \hat{\mathbf{y}}_i^\text{WER}]),
+\end{equation}
+where $\max (\cdot)$ denotes finding the lexicographically largest array \footnote{Lexicographic order: given two partially ordered sets $A$ and $B$, the lexicographical order on the Cartesian product $A \times B$ is defined as $[a,b] \leq [a',b']$ if and only if $a&lt;a'$ or ($a=a'$ and $b \leq b'$).}.
+The resulting SIM, WER, and DNSMOS scores are $\hat{\mathbf{y}}</em>\text{best}^\text{SIM}$, $\hat{\mathbf{y}}<em>\text{best}^\text{WER}$ and $\hat{\mathbf{y}}</em>\text{best}^\text{DNSMOS}$.</p>
+<p>\textbf{Metric-Wise Maximization}: We report the best score each system can achieve if we optimize only the value of the corresponding metric. In this case, the resulting SIM, WER, and DNSMOS scores are $\max(\hat{\mathbf{y}}_i^\text{SIM})$, $\max(\hat{\mathbf{y}}_i^\text{WER})$, and $\max(\hat{\mathbf{y}}_i^\text{DNSMOS})$.</p>
+<h3 id="librispeech-evaluation">LibriSpeech Evaluation<a class="headerlink" href="#librispeech-evaluation" title="Permanent link">&para;</a></h3>
+<h3 id="objective-evaluation">Objective Evaluation<a class="headerlink" href="#objective-evaluation" title="Permanent link">&para;</a></h3>
+<p>\begin{table}[t]
+\centering
+\caption{Objective evaluation results on LibriSpeech test-clean.}
+\label{table:main_librispeech}
+\resizebox{\textwidth}{!}
+{
+\begin{tabular}{lcccccccccccccccc}
+\toprule
+\multirow{2}{<em>}{System} &amp; \multirow{2}{</em>}{GroupSize}   &amp;&amp; \multicolumn{3}{c}{3s Prefix as Prompt} &amp;&amp; \multicolumn{3}{c}{Ref Utterance as Prompt} \  \cmidrule{4-6} \cmidrule{8-10}
+         &amp;&amp;&amp; SIM$\uparrow$ &amp; WER$\downarrow$ &amp; DNSMOS$\uparrow$ &amp;&amp; SIM$\uparrow$ &amp; WER$\downarrow$ &amp; DNSMOS$\uparrow$  \ 
+\midrule
+GroundTruth &amp; -  &amp;&amp;  0.905  &amp; 1.6 &amp; 3.891 &amp;&amp;  0.779  &amp; 1.6 &amp; 3.891  \ 
+% $\;\;\;\hookrightarrow$ EnCodec   &amp;&amp;  0.818  &amp; 1.7 &amp; 3.665 &amp;&amp;  0.713  &amp; 1.7 &amp; 3.665  \<br />
+$\;\;\;\hookrightarrow$ Codec &amp;  - &amp;&amp;  0.823  &amp; 1.7 &amp; 3.886 &amp;&amp;  0.715  &amp; 1.7 &amp; 3.886  \<br />
+\midrule
+ \multicolumn{10}{c}{\textit{Single Sampling}} \ 
+ \hline 
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} VALL-E &amp; 13ms &amp;&amp; 0.773 &amp; 2.3 &amp; 3.942 &amp;&amp; 0.633 &amp; 3.1 &amp; 3.985 \ 
+ &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  \ [-0.9em]
+\multirow{4}{<em>}{</em><strong>VALL-E 2</strong><em>} 
+ &amp; $\times 1$  &amp;&amp; \textbf{0.782} &amp; 1.6 &amp; 3.947 &amp;&amp; \textbf{0.643} &amp; \textbf{1.5} &amp; 3.987 \ 
+ &amp; $\times 2$  &amp;&amp; 0.777 &amp; \textbf{1.5} &amp; \textbf{3.966} &amp;&amp; 0.635 &amp; \textbf{1.5} &amp; \textbf{4.000} \ 
+ &amp; $\times 4$  &amp;&amp; 0.773 &amp; 1.8 &amp; 3.950 &amp;&amp; 0.615 &amp; 2.2 &amp; 3.967 \ 
+ &amp; $\times 8$  &amp;&amp; 0.766 &amp; 2.5 &amp; 3.937 &amp;&amp; 0.566 &amp; 4.2 &amp; 3.875 \ 
+\midrule
+ \multicolumn{10}{c}{\textit{Five-Time Sampling (Sort on SIM and WER)}} \ 
+ \hline 
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} VALL-E &amp; 13ms &amp;&amp; 0.802 &amp; \textbf{1.0} &amp; 3.944 &amp;&amp;0.676 &amp; 0.8 &amp; 3.987 \ 
+ &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  \ [-0.9em]
+\multirow{4}{</em>}{<strong><em>VALL-E 2</em></strong>} 
+ &amp; $\times 1$  &amp;&amp; \textbf{0.807} &amp; \textbf{1.0} &amp; 3.943 &amp;&amp; \textbf{0.687} &amp; 0.7 &amp; 3.994 \ 
+ &amp; $\times 2$  &amp;&amp; 0.803 &amp; \textbf{1.0} &amp; \textbf{3.967} &amp;&amp; 0.679 &amp; \textbf{0.6} &amp; \textbf{3.997} \ 
+ &amp; $\times 4$  &amp;&amp; 0.799 &amp; 1.1 &amp; 3.954 &amp;&amp; 0.662 &amp; 0.7 &amp; 3.973 \ 
+ &amp; $\times 8$  &amp;&amp; 0.790 &amp; \textbf{1.0} &amp; 3.938 &amp;&amp; 0.616 &amp; 1.0 &amp; 3.898 \ 
+\midrule
+ \multicolumn{10}{c}{\textit{Five-Time Sampling (Metric-Wise Maximization)}} \ 
+ \hline 
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} VALL-E &amp; 13ms &amp;&amp; 0.806 &amp; \textbf{1.0} &amp; 4.055 &amp;&amp; 0.686 &amp; 0.7 &amp; 4.124 \ 
+ &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  \ [-0.9em]
+\multirow{4}{<em>}{</em><strong>VALL-E 2</strong>*} 
+ &amp; $\times 1$  &amp;&amp; \textbf{0.809} &amp; \textbf{1.0} &amp; 4.042 &amp;&amp; \textbf{0.691} &amp; \textbf{0.6} &amp; 4.116 \ 
+ &amp; $\times 2$  &amp;&amp; 0.805 &amp; \textbf{1.0} &amp; \textbf{4.059} &amp;&amp; 0.683 &amp; \textbf{0.6} &amp; \textbf{4.130} \ 
+ &amp; $\times 4$  &amp;&amp; 0.802 &amp; 1.1 &amp; 4.046 &amp;&amp; 0.669 &amp; 0.7 &amp; 4.105 \ 
+ &amp; $\times 8$  &amp;&amp; 0.795 &amp; \textbf{1.0} &amp; 4.035 &amp;&amp; 0.630 &amp; 1.0 &amp; 4.041 \ 
+\bottomrule
+\end{tabular}
+}
+\end{table}</p>
+<p>Table \ref{table:main_librispeech} presents the objective evaluation results on the LibriSpeech test-clean dataset, where <strong><em>VALL-E 2</em></strong> significantly outperforms VALL-E in all settings, even achieving better WER and DNSMOS scores than the ground truth speech with single sampling.</p>
+<p>The SIM, WER, and DNSMOS scores of the ground truth speech are calculated as the upper bound. 
+We observe a performance degradation in SIM and similar performance in WER and DNSMOS when using the off-the-shelf neural audio codec model for speech reconstruction.
+The baseline VALL-E can achieve impressive overall results with five-time sampling, but lack of robustness with single sampling, which could be attributed to the instability decoding process of random sampling.</p>
+<p>In comparison, <strong><em>VALL-E 2</em></strong> demonstrates significant improvement in robustness, especially in the single sampling scenario.
+With the repetition aware sampling, <strong><em>VALL-E 2</em></strong> can successfully achieve better decoding stability, leads to the performance improvement in all the three metrics, and even obtain lower WER score than the ground truth speech. It indicates that our synthesized speech is highly faithful to the provided text and enrolled speech.</p>
+<p>With the grouped code modeling,  <strong><em>VALL-E 2</em></strong> can achieve even better WER and DNSMOS scores with group size of 2 in the AR model. It demonstrates that this method can not only improve the inference efficiency by reducing the code sequence length, but also improve the model performance by mitigating the long context modeling problem. Even with group size of 4, we can still obtain similar or better results as the baseline model while greatly improve the inference efficiency by reducing the code sequence length by 4 times.
+Figure~\ref{ablation_topp_librispeech} further demonstrates the superior decoding stability of <strong><em>VALL-E 2</em></strong>. The repetition aware sampling method significantly enhances the decoding stability, regardless of the different group size setting. It enables <strong><em>VALL-E 2</em></strong> to perform inference with a very small top-p (even 0), which tends to introduce much less errors and generate more robust speech codec codes than decoding with a large top-p. This is  the key to obtaining a good WER score, even lower than that of ground truth speech, using a small top-p.</p>
+<p>\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\linewidth]{ablation_topp_librispeech.pdf}
+    \caption{Decoding stability on LibriSpeech test-clean. GS means group size and RAS stands for repetition aware sampling.
+\label{ablation_topp_librispeech}
+    }
+\end{figure}</p>
+<h3 id="subjective-evaluation">Subjective Evaluation<a class="headerlink" href="#subjective-evaluation" title="Permanent link">&para;</a></h3>
+<p>\begin{table}[t]
+\centering
+\caption{Subjective evaluation results for 40 speakers on LibriSpeech test-clean, using a reference utterance as a prompt for each speaker. \label{table:mos_librispeech} }
+\begin{tabular}{lccccccccccc}
+\toprule
+System &amp; GroupSize &amp;&amp; SMOS$\uparrow$ &amp; CMOS$\uparrow$ \ 
+\midrule
+GroundTruth &amp; -  &amp;&amp;  4.13$<em>{\pm 0.32}$   &amp; 0.00  \ 
+\hline
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} VALL-E &amp; 13ms &amp;&amp; 4.45$</em>{\pm 0.28}$   &amp;  -0.268 &amp; \ 
+ &amp;  &amp;&amp;  &amp;  &amp;  \ [-0.9em]
+\multirow{2}{<em>}{</em><strong>VALL-E 2</strong>*} 
+ &amp; $\times 1$  &amp;&amp;  \textbf{4.61}$<em>{\pm 0.19}$  &amp;  \textbf{0.033}    \ 
+ &amp; $\times 2$  &amp;&amp;  4.51$</em>{\pm 0.26}$  &amp;  -0.167    \ 
+\bottomrule
+\end{tabular}
+\end{table}</p>
+<p>Table \ref{table:mos_librispeech} presents the subjective evaluation results on the LibriSpeech test-clean. For the subjective evaluation, the previous utterance from the official speech list is used as the prompt to generate the current utterance for each speaker in the LibriSpeech test-clean dataset, resulting in 40 test cases.</p>
+<p>As indicated in the table, <strong><em>VALL-E 2</em></strong> can successfully surpasses VALL-E in terms of both speaker similarity SMOS and speech quality CMOS, even better performance than the ground truth speech. This suggests that our proposed method can achieve human parity zero-shot TTS performance in LibriSpeech benchmark.
+With group code modeling method, <strong><em>VALL-E 2</em></strong> can also achieve better performance than VALL-E with group size of 2 for the inference of AR model.</p>
+<h3 id="ablation-study">Ablation Study<a class="headerlink" href="#ablation-study" title="Permanent link">&para;</a></h3>
+<p>\begin{table<em>}[t]
+\centering
+\caption{Ablation study of model input on LibriSpeech test-clean. The symbol \omark denotes that the acoustic condition is not explicitly split during the NAR model training, and the prompt is treated as the prefix of the target code matrix during the NAR model inference. }
+\label{table:ablation_input_librispeech}
+\resizebox{\textwidth}{!}
+{
+\begin{tabular}{ccccccccccccccccc}
+\toprule
+ \multicolumn{1}{c}{AR Model} &amp;&amp; \multicolumn{2}{c}{NAR Model}  &amp;&amp; \multicolumn{3}{c}{3s Prefix as Prompt} &amp;&amp; \multicolumn{3}{c}{Ref Utterance as Prompt} \  \cmidrule{1-1} \cmidrule{3-4} \cmidrule{6-8} \cmidrule{10-12}
+Prompt Input &amp;&amp;  Text Input &amp; Prompt Input &amp;&amp; SIM$\uparrow$ &amp; WER$\downarrow$ &amp; DNSMOS$\uparrow$ &amp;&amp; SIM$\uparrow$ &amp; WER$\downarrow$ &amp; DNSMOS$\uparrow$  \ 
+\midrule
+ \multicolumn{12}{c}{\textit{Single Sampling}} \ 
+ \hline 
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} \cmark &amp;&amp; \cmark &amp; \cmark &amp;&amp; 0.779 &amp; 1.6 &amp; 3.956 &amp;&amp; 0.639 &amp; 1.9 &amp; 4.013 \<br />
+ &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  \ [-0.9em]
+\xmark &amp;&amp; \cmark &amp; \cmark &amp;&amp; n/a &amp; n/a &amp; n/a &amp;&amp; 0.169 &amp; 2.8 &amp; 4.001 \ <br />
+\cmark &amp;&amp; \cmark &amp; \omark &amp;&amp; 0.731 &amp; 1.6 &amp; 3.957 &amp;&amp; 0.530 &amp; 1.9 &amp; 4.018 \ 
+\cmark &amp;&amp; \cmark &amp; \xmark &amp;&amp; n/a &amp; n/a &amp; n/a &amp;&amp; 0.385 &amp; 1.8 &amp; 4.015 \ 
+\cmark &amp;&amp; \xmark &amp; \cmark &amp;&amp; 0.774 &amp; 5.6 &amp; 3.958 &amp;&amp; 0.619 &amp; 10.0 &amp; 4.016 \
+\midrule
+ \multicolumn{12}{c}{\textit{Five-Time Sampling}} \ 
+ \hline 
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} \cmark &amp;&amp; \cmark &amp; \cmark &amp;&amp; 0.804 &amp; 1.0 &amp; 3.952 &amp;&amp; 0.684 &amp; 0.7 &amp; 4.016 \<br />
+ &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  \ [-0.9em]
+\xmark &amp;&amp; \cmark &amp; \cmark &amp;&amp; n/a &amp; n/a &amp; n/a &amp;&amp; 0.305 &amp; 2.0 &amp; 4.018 \ <br />
+\cmark &amp;&amp; \cmark &amp; \omark &amp;&amp; 0.765 &amp; 1.0 &amp; 3.956 &amp;&amp; 0.583 &amp; 0.7 &amp; 4.020 \ 
+\cmark &amp;&amp; \cmark &amp; \xmark &amp;&amp; n/a &amp; n/a &amp; n/a &amp;&amp; 0.457 &amp; 1.0 &amp; 4.019 \ 
+\cmark &amp;&amp; \xmark &amp; \cmark &amp;&amp; 0.793 &amp; 1.8 &amp; 3.960 &amp;&amp; 0.647 &amp; 3.0 &amp; 4.018 \
+\bottomrule
+\end{tabular}
+}
+\end{table</em>}</p>
+<p>\begin{figure}[t]
+    \centering
+    \includegraphics[width=1.0\linewidth]{ablation_data_librispeech.pdf}
+    \caption{ Ablation study of the size of training data on LibriSpeech test-clean.
+\label{ablation_data_librispeech}
+    }
+\end{figure}%</p>
+<p>We conduct several ablation studies of <strong><em>VALL-E 2</em></strong> on LibriSpeech test-clean. We use the <strong><em>VALL-E 2</em></strong> model with group size 1, and present the results for both single-sampling and five-time sampling for each speech synthesis. For five-time sampling, we select the best candidate by sorting 5 samples based on SIM and WER scores as in Equation~\ref{equation:sort}.</p>
+<p>\textbf{Ablation on Model Input}: 
+In Table~\ref{table:ablation_input_librispeech}, we study the impact of the text and prompt input in the AR and NAR models. Removing the prompt in either AR or NAR model results in significantly lower speaker similarity scores, emphasizing the crucial role of the prompt in preserving speaker identity. Despite the NAR model having access to the prompt, the AR model's prompt still contributes significantly to speaker similarity. In the case of the NAR model, we also discover that explicitly splitting the acoustic condition during training is essential to enhance the final speaker similarity score, as the NAR model can extract more speaker information from the entire 8 code sequences of the prompt. Interestingly, we find that the prompt in the AR model also improves the robustness of the generated speech, as evidenced by a lower WER score. This can be attributed to the prompt's ability to constrain the search space of the one-to-many speech synthesis task, thereby enabling more stable and robust speech generation. Additionally, the text input is also crucial in the NAR model for achieving a lower WER score, despite its use in the AR model.</p>
+<p>\textbf{Ablation on Training Data}: 
+In Figure~\ref{ablation_data_librispeech}, we explore the impact of the size of training data on the zero-shot TTS performance. We find that our model, with 10k training data, can already achieve performance similar to that with 50k training data on LibriSpeech test-clean. The additional 40k data only results in slight performance improvement in terms of speaker similarity and robustness. However, if we reduce the training data to less than 10k, we observe a performance degradation, especially for the setting of reference utterance as a prompt. It should be noted that this conclusion is based on the current experiment setting in the audiobook domain.</p>
+<h3 id="vctk-evaluation">VCTK Evaluation<a class="headerlink" href="#vctk-evaluation" title="Permanent link">&para;</a></h3>
+<h3 id="objective-evaluation_1">Objective Evaluation<a class="headerlink" href="#objective-evaluation_1" title="Permanent link">&para;</a></h3>
+<p>\begin{table}[t]
+\centering
+\caption{Objective evaluation results on VCTK.}
+\label{table:main_vctk}
+\resizebox{\textwidth}{!}
+{
+\begin{tabular}{lcccccccccccccccccccc}
+\toprule
+\multirow{2}{<em>}{System} &amp; \multirow{2}{</em>}{GroupSize}   &amp;&amp; \multicolumn{3}{c}{3s Prompt} &amp;&amp; \multicolumn{3}{c}{5s Prompt} &amp;&amp; \multicolumn{3}{c}{10s Prompt} \  \cmidrule{4-6} \cmidrule{8-10} \cmidrule{12-14}
+ &amp;&amp;&amp; SIM$\uparrow$ &amp; WER$\downarrow$ &amp; DNSMOS$\uparrow$ &amp;&amp; SIM$\uparrow$ &amp; WER$\downarrow$ &amp; DNSMOS$\uparrow$ &amp;&amp; SIM$\uparrow$ &amp; WER$\downarrow$ &amp; DNSMOS$\uparrow$  \ 
+\midrule
+GroundTruth  &amp; -  &amp;&amp; 0.623 &amp; 0.3 &amp; 3.635 &amp;&amp; 0.679 &amp; 0.3 &amp; 3.635 &amp;&amp; 0.709 &amp;  0.3 &amp; 3.635 \ 
+% $\;\;\;\hookrightarrow$ EnCodec &amp; -   &amp;&amp; 0.545 &amp;  0.3 &amp; 3.417 &amp;&amp; 0.592 &amp;  0.3 &amp; 3.417 &amp;&amp; 0.618 &amp;  0.3 &amp; 3.417 \ 
+$\;\;\;\hookrightarrow$ Codec &amp; -   &amp;&amp; 0.563 &amp;  0.3 &amp; 3.609 &amp;&amp; 0.616 &amp;  0.3 &amp; 3.609 &amp;&amp; 0.644 &amp;  0.3 &amp; 3.609 \ 
+\midrule
+ \multicolumn{14}{c}{\textit{Single Sampling}} \ 
+ \hline 
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} VALL-E &amp; 13ms &amp;&amp; 0.430 &amp; 2.4 &amp; \textbf{3.667} &amp;&amp; 0.455 &amp; 3.1 &amp; 3.664 &amp;&amp; 0.533 &amp; 5.8 &amp; 3.575 \ 
+ &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  \  [-0.9em]
+\multirow{4}{<em>}{</em><strong>VALL-E 2</strong><em>} 
+ &amp; $\times 1$  &amp;&amp; \textbf{0.447} &amp; \textbf{0.9} &amp; 3.666 &amp;&amp; \textbf{0.487} &amp; 1.9 &amp; \textbf{3.674} &amp;&amp; \textbf{0.558} &amp; 3.3 &amp; \textbf{3.667} \
+ &amp; $\times 2$  &amp;&amp; 0.426 &amp; 1.5 &amp; 3.599 &amp;&amp; 0.481 &amp; \textbf{0.9} &amp; 3.598 &amp;&amp; 0.557 &amp; \textbf{2.3} &amp; 3.617 \ 
+ &amp; $\times 4$  &amp;&amp; 0.417 &amp; 1.8 &amp; 3.470 &amp;&amp; 0.457 &amp; 2.1 &amp; 3.537 &amp;&amp; 0.521 &amp; 2.9 &amp; 3.547 \ 
+ &amp; $\times 8$  &amp;&amp; 0.375 &amp; 5.0 &amp; 3.438 &amp;&amp; 0.415 &amp; 4.8 &amp; 3.387 &amp;&amp; 0.499 &amp; 8.0 &amp; 3.420 \ 
+\midrule
+ \multicolumn{14}{c}{\textit{Five-Time Sampling (Sort on SIM and WER)}} \ 
+ \hline 
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} VALL-E &amp; 13ms &amp;&amp; 0.497 &amp; 0.3 &amp; 3.599 &amp;&amp; 0.534 &amp; 0.3 &amp; 3.666 &amp;&amp; 0.607 &amp; 1.5 &amp; 3.591 \ 
+ &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  \  [-0.9em]
+\multirow{4}{</em>}{<strong><em>VALL-E 2</em></strong>} 
+ &amp; $\times 1$  &amp;&amp; \textbf{0.508} &amp; \textbf{0.0} &amp; \textbf{3.684} &amp;&amp; \textbf{0.552} &amp; 0.3 &amp; \textbf{3.699} &amp;&amp; \textbf{0.620} &amp; 1.5 &amp; \textbf{3.694} \
+ &amp; $\times 2$  &amp;&amp; 0.494 &amp; 1.0 &amp; 3.616 &amp;&amp; 0.547 &amp; \textbf{0.1} &amp; 3.617 &amp;&amp; 0.606 &amp; \textbf{0.4} &amp; 3.621 \ 
+ &amp; $\times 4$  &amp;&amp; 0.487 &amp; 0.9 &amp; 3.547 &amp;&amp; 0.531 &amp; 0.4 &amp; 3.588 &amp;&amp; 0.592 &amp; 1.6 &amp; 3.559 \ 
+ &amp; $\times 8$  &amp;&amp; 0.444 &amp; 2.4 &amp; 3.454 &amp;&amp; 0.499 &amp; 0.5 &amp; 3.429 &amp;&amp; 0.563 &amp; 1.3 &amp; 3.430 \ 
+\midrule
+ \multicolumn{14}{c}{\textit{Five-Time Sampling (Metric-Wise Maximization)}} \ 
+ \hline 
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} VALL-E &amp; 13ms &amp;&amp; 0.504 &amp; 0.1 &amp; \textbf{3.867} &amp;&amp; 0.541 &amp; 0.3 &amp; 3.864 &amp;&amp; 0.615 &amp; 1.5 &amp; 3.850 \ 
+ &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  \  [-0.9em]
+\multirow{4}{<em>}{</em><strong>VALL-E 2</strong>*} 
+ &amp; $\times 1$  &amp;&amp; \textbf{0.513} &amp; \textbf{0.0} &amp; 3.860 &amp;&amp; \textbf{0.555} &amp; 0.3 &amp; \textbf{3.868} &amp;&amp; \textbf{0.621} &amp; 1.5 &amp; \textbf{3.855} \
+ &amp; $\times 2$  &amp;&amp; 0.499 &amp; 0.1 &amp; 3.842 &amp;&amp; 0.550 &amp; \textbf{0.1} &amp; 3.833 &amp;&amp; 0.606 &amp; \textbf{0.4} &amp; 3.821 \ 
+ &amp; $\times 4$  &amp;&amp; 0.490 &amp; 0.5 &amp; 3.760 &amp;&amp; 0.537 &amp; 0.3 &amp; 3.783 &amp;&amp; 0.595 &amp; 1.4 &amp; 3.772 \ 
+ &amp; $\times 8$  &amp;&amp; 0.454 &amp; 1.0 &amp; 3.673 &amp;&amp; 0.505 &amp; 0.4 &amp; 3.658 &amp;&amp; 0.571 &amp; 1.3 &amp; 3.683 \ 
+\bottomrule
+\end{tabular}
+}
+\end{table}</p>
+<p>Table \ref{table:main_vctk} presents the objective evaluation results on the VCTK dataset, where <strong><em>VALL-E 2</em></strong> demonstrates superior zero-shot TTS performance than VALL-E, especially in terms of speech robustness score  WER.
+It demonstrates the repetition aware sampling method can also effectively stable the decoding process on challenging VCTK data with speakers in diverse accents. It can roughly half the WER score in the single sampling scenario. 
+With five-time sampling, we can effectively filter out low-quality samples and select the best sample as the output, enabling VALL-E to generate speech of much better robustness, and mitigate the gap of the WER score between VALL-E and <strong><em>VALL-E 2</em></strong>.</p>
+<p>When comparing different prompt lengths, we find that the grouped code modeling method can even further improve the WER score for longer prompts. The reason could be that the excessively long prompts present challenges in the long sequence modeling of the Transformer architecture and tend to yield some generation errors due to incorrect attention alignments, and the grouped code modeling method can alleviate this problem by reducing the sequence length while enhancing the AR modeling.</p>
+<p>\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\linewidth]{ablation_topp_vctk.pdf}
+    \caption{Sampling stability on VCTK dataset. GS means group size and RAS stands for repetition aware sampling.
+\label{ablation_topp_vctk}
+    }
+\end{figure}%</p>
+<p>We further presents the superior decoding stability of <strong><em>VALL-E 2</em></strong> in Figure~\ref{ablation_topp_vctk}.
+As found in LibriSpeech dataset, the repetition aware sampling method significantly enhances the decoding stability, and enables generating more robustness speech signals with a relatively small top-p value.</p>
+<h3 id="subjective-evaluation_1">Subjective Evaluation<a class="headerlink" href="#subjective-evaluation_1" title="Permanent link">&para;</a></h3>
+<p>\begin{table}[t]
+\centering
+\caption{Subjective evaluation results for 60 speakers on VCTK. \label{table:mos_vctk} }
+\resizebox{\textwidth}{!}
+{
+\begin{tabular}{lccccccccccccccccc}
+\toprule
+\multirow{2}{<em>}{System} &amp; \multirow{2}{</em>}{GroupSize}   &amp;&amp; \multicolumn{2}{c}{3s Prompt} &amp;&amp; \multicolumn{2}{c}{5s Prompt} &amp;&amp; \multicolumn{2}{c}{10s Prompt} \  \cmidrule{4-5} \cmidrule{7-8} \cmidrule{10-11}
+ &amp;&amp;&amp; SMOS$\uparrow$&amp; CMOS$\uparrow$ &amp;&amp; SMOS$\uparrow$ &amp; CMOS$\uparrow$  &amp;&amp; SMOS$\uparrow$ &amp; CMOS$\uparrow$ \ 
+\midrule
+GroundTruth &amp; -  &amp;&amp;  4.47$<em>{\pm 0.13}$  &amp;  0.00 &amp;&amp; 4.53$</em>{\pm 0.14}$ &amp;  0.00 &amp;&amp; 4.74$<em>{\pm 0.17}$ &amp;  0.00  \
+ \hline 
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} VALL-E &amp; 13ms &amp;&amp;  4.32$</em>{\pm 0.16}$  &amp; \textbf{0.028} &amp;&amp; 4.05$<em>{\pm 0.20}$ &amp; \textbf{0.144} &amp;&amp; 3.50$</em>{\pm 0.49}$ &amp; \textbf{0.094} \ 
+ &amp;  &amp;&amp;    &amp;  &amp;&amp;  &amp;  &amp;&amp;   &amp;  \  [-0.9em]
+\multirow{2}{<em>}{</em><strong>VALL-E 2</strong>*} 
+ &amp; $\times 1$  &amp;&amp;  4.42$<em>{\pm 0.15}$  &amp;  \textbf{0.207} &amp;&amp; 4.28$</em>{\pm 0.16}$ &amp;  \textbf{0.079} &amp;&amp;  3.95$<em>{\pm 0.10}$ &amp; \textbf{0.117} \ 
+ &amp; $\times 2$  &amp;&amp;  \textbf{4.47}$</em>{\pm 0.13}$  &amp; \textbf{0.163} &amp;&amp; 4.14$<em>{\pm 0.17}$ &amp; \textbf{0.217} &amp;&amp; 4.26$</em>{\pm 0.42}$  &amp; \textbf{0.109} \ 
+\bottomrule
+\end{tabular}
+}
+\end{table}</p>
+<p>Table \ref{table:mos_vctk} presents the subjective evaluation results on the VCTK dataset. We conduct the subjective evaluation with 60 test cases from 60 distinct speakers.</p>
+<p>Given the diverse speaker accents in the VCTK dataset, zero-shot TTS is much more challenging than that on LibriSpeech dataset.
+The comparison result in Table \ref{table:mos_vctk} reveals that  <strong><em>VALL-E 2</em></strong> can successfully surpasses VALL-E in terms of both speaker similarity and speech quality, even same or better performance than the ground truth speech when using only 3s prompt. 
+This underscores the human parity performance of VALL-E in zero-shot TTS  for a very diverse accents scenario.</p>
+<p>Thanks to the long context modeling capability of group code modeling method, we also achieve significant performance improvement with long prompt of 10s, especially for speaker similarity.</p>
+<h3 id="ablation-study_1">Ablation Study<a class="headerlink" href="#ablation-study_1" title="Permanent link">&para;</a></h3>
+<p>\begin{table<em>}[t]
+\centering
+\caption{Ablation study of model input on VCTK. }
+\label{table:ablation_input_vctk}
+\resizebox{\textwidth}{!}
+{
+\begin{tabular}{ccccccccccccccccccccc}
+\toprule
+ \multicolumn{1}{c}{AR Model} &amp;&amp; \multicolumn{2}{c}{NAR Model}  &amp;&amp; \multicolumn{3}{c}{3s Prompt} &amp;&amp; \multicolumn{3}{c}{5s Prompt} &amp;&amp; \multicolumn{3}{c}{10s Prompt} \  \cmidrule{1-1} \cmidrule{3-4} \cmidrule{6-8} \cmidrule{10-12}  \cmidrule{14-16}
+Prompt Input &amp;&amp;  Text Input &amp; Prompt Input &amp;&amp; SIM$\uparrow$ &amp; WER$\downarrow$ &amp; DNSMOS$\uparrow$ &amp;&amp; SIM$\uparrow$ &amp; WER$\downarrow$ &amp; DNSMOS$\uparrow$ &amp;&amp; SIM$\uparrow$ &amp; WER$\downarrow$ &amp; DNSMOS$\uparrow$  \ 
+\midrule
+ \multicolumn{16}{c}{\textit{Single Sampling}} \ 
+ \hline 
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} \cmark &amp;&amp; \cmark &amp; \cmark &amp;&amp; 0.450 &amp; 2.6 &amp; 3.698 &amp;&amp; 0.486 &amp; 2.0 &amp; 3.692 &amp;&amp; 0.567 &amp; 4.1 &amp; 3.684 \
+ &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  \ [-0.9em]
+\xmark &amp;&amp; \cmark &amp; \cmark &amp;&amp; 0.139 &amp; 3.0 &amp; 3.685 &amp;&amp; 0.144 &amp; 2.9 &amp; 3.686 &amp;&amp; 0.159 &amp; 3.5 &amp; 3.672 \
+\cmark &amp;&amp; \cmark &amp; \omark &amp;&amp; 0.347 &amp; 2.3 &amp; 3.684 &amp;&amp; 0.396 &amp; 2.4 &amp; 3.672 &amp;&amp; 0.489 &amp; 4.4 &amp; 3.688 \
+\cmark &amp;&amp; \cmark &amp; \xmark &amp;&amp; 0.224 &amp; 2.3 &amp; 3.686 &amp;&amp; 0.245 &amp; 2.4 &amp; 3.679 &amp;&amp; 0.284 &amp; 3.8 &amp; 3.690 \
+\cmark &amp;&amp; \xmark &amp; \cmark &amp;&amp; 0.426 &amp; 14.1 &amp; 3.698 &amp;&amp; 0.478 &amp; 11.9 &amp; 3.705 &amp;&amp; 0.556 &amp; 11.5 &amp; 3.677 \
+\midrule
+ \multicolumn{16}{c}{\textit{Five-Time Sampling}} \ 
+ \hline 
+ \rowcolor{lightgray} \rule[-0.em]{0pt}{1.2em} \cmark &amp;&amp; \cmark &amp; \cmark &amp;&amp; 0.513 &amp; 0.0 &amp; 3.678 &amp;&amp; 0.550 &amp; 0.0 &amp; 3.694 &amp;&amp; 0.618 &amp; 1.6 &amp; 3.703 \
+ &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  &amp;&amp;  &amp;  &amp;  \ [-0.9em]
+\xmark &amp;&amp; \cmark &amp; \cmark &amp;&amp; 0.271 &amp; 1.6 &amp; 3.787 &amp;&amp; 0.282 &amp; 2.3 &amp; 3.741 &amp;&amp; 0.303 &amp; 3.1 &amp; 3.725 \
+\cmark &amp;&amp; \cmark &amp; \omark &amp;&amp; 0.418 &amp; 0.4 &amp; 3.665 &amp;&amp; 0.472 &amp; 1.0 &amp; 3.700 &amp;&amp; 0.550 &amp; 1.5 &amp; 3.675 \
+\cmark &amp;&amp; \cmark &amp; \xmark &amp;&amp; 0.306 &amp; 1.4 &amp; 3.658 &amp;&amp; 0.327 &amp; 2.1 &amp; 3.678 &amp;&amp; 0.361 &amp; 3.8 &amp; 3.677 \
+\cmark &amp;&amp; \xmark &amp; \cmark &amp;&amp; 0.476 &amp; 3.0 &amp; 3.705 &amp;&amp; 0.527 &amp; 1.5 &amp; 3.719 &amp;&amp; 0.605 &amp; 2.4 &amp; 3.725 \
+\bottomrule
+\end{tabular}
+}
+\end{table</em>}</p>
+<p>\begin{figure}[th]
+    \centering
+    \includegraphics[width=1.0\linewidth]{ablation_data_vctk.pdf}
+    \caption{ Ablation study of the size of training data on VCTK.
+\label{ablation_data_vctk}
+    }
+\end{figure}%</p>
+<p>We further conduct ablation studies of <strong><em>VALL-E 2</em></strong> on VCTK dataset. We use the <strong><em>VALL-E 2</em></strong> model with group size 1, and present the results for both single-sampling and five-time sampling for each speech synthesis. For five-time sampling, we sort multiple samples with Equation~\ref{equation:sort}.</p>
+<p>\textbf{Ablation on Model Input}: 
+As shown in Table~\ref{table:ablation_input_vctk}, consistent with the observations in the LibriSpeech evaluation, the prompt is crucial in both AR and NAR models for speaker information modeling. The speaker similarity score would significantly declines when we remove the prompt input. Although the text input is consumed in the AR model, the NAR model also requires it to synthesize robust speech.</p>
+<p>\textbf{Ablation on Training Data}: 
+As shown in Figure~\ref{ablation_data_vctk}, the optimal size of training data varies for different inference prompts and metrics. The SIM score consistently benefits from larger training data, which offers more diverse speaker voice patterns. The best WER score with a 3s prompt requires more training data than the 5s prompt and 10s prompt, due to the increased challenge of zero-shot TTS with only a 3s enrolled speech. Interestingly, the best DNSMOS score is not achieved with the largest training data. A possible explanation is that, with limited model capacity, our model achieves better speaker similarity and robustness at the expense of slight losses in perceived quality.</p>
+<h2 id="5results">5.Results: 结果<a class="headerlink" href="#5results" title="Permanent link">&para;</a></h2>
+<h2 id="6conclusions">6.Conclusions: 结论<a class="headerlink" href="#6conclusions" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>We introduce <strong><em>VALL-E 2</em></strong>, a language modeling approach that achieves human parity zero-shot text to speech synthesis (TTS) for the first time.
+Based on the success of VALL-E, <strong><em>VALL-E 2</em></strong> introduce two simple but effective methods: repetition aware sampling for better decoding stability and grouped code modeling for better modeling efficiency. Furthermore, our observations reveal that <strong><em>VALL-E 2</em></strong> is capable of reliably synthesizing speech for complex sentences, including those that are challenging to read or contain numerous repeated phrase.</p>
+<p>\textbf{Broader impacts:} Since <strong><em>VALL-E 2</em></strong> could synthesize speech that maintains speaker identity, it may carry potential risks in misuse of the model, such as spoofing voice identification or impersonating a specific speaker. We conduct the experiments under the assumption that the user agree to be the target speaker in speech synthesis. If the model is generalized to unseen speakers in the real world, it should include a protocol to ensure that the speaker approves the use of their voice and a synthesized speech detection model.
+Furthermore, it is possible to build a detection model to discriminate whether an audio clip was synthesized by <strong><em>VALL-E 2</em></strong>. We will also put Microsoft AI Principles\footnote{\url{ https://www.microsoft.com/ai/responsible-ai}} into practice when further developing the models. </p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

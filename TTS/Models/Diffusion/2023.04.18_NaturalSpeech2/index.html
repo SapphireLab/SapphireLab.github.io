@@ -808,7 +808,7 @@ Specifically, for each residual quantizer j ∈ [1, R], we first get the residua
 Then we calculate the L2 distance between the residual vector with each codebook embedding in quantizer j and get a probability distribution with a softmax function, and then calculate the cross-entropy loss between the ID of the ground-truth quantized embedding ej and this probability distribution.
 Lce−rvq is the mean of the cross-entropy loss in all R residual quantizers, and λce−rvq is set to 0.1 during training.</p>
 <h4 id="prior-model-phoneme-encoder-and-durationpitch-predictor">Prior Model: Phoneme Encoder and Duration/Pitch Predictor<a class="headerlink" href="#prior-model-phoneme-encoder-and-durationpitch-predictor" title="Permanent link">&para;</a></h4>
-<p>The phoneme encoder consists of several Transformer blocks (<a href="../../Models/_Basis/2017.06.12_Transformer.md">Transformer</a>; <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>), where the standard feed-forward network is modified as a convolutional network to capture the local dependency in phoneme sequence.
+<p>The phoneme encoder consists of several Transformer blocks (<a href="../_Transformer/2017.06.12_Transformer.md">Transformer</a>; <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>), where the standard feed-forward network is modified as a convolutional network to capture the local dependency in phoneme sequence.
 Both the duration and pitch predictors share the same model structure with several convolutional blocks but with different model parameters.
 The ground-truth duration and pitch information is used as the learning target to train the duration and pitch predictors, with an L1 duration loss Ldur and pitch loss Lpitch.
 During training, the ground-truth duration is used to expand the hidden sequence from the phoneme encoder to obtain the frame-level hidden sequence, and then the ground-truth pitch information is added to the frame-level hidden sequence to get the final condition information c.
@@ -867,10 +867,10 @@ Thus, we aim to conduct zero-shot speech synthesis.</p>
 <h3 id="42model-configuration-and-comparison">4.2.Model Configuration and Comparison<a class="headerlink" href="#42model-configuration-and-comparison" title="Permanent link">&para;</a></h3>
 <blockquote>
 <h4 id="model-configuration">Model Configuration<a class="headerlink" href="#model-configuration" title="Permanent link">&para;</a></h4>
-<p>The phoneme encoder is a 6-layer <a href="../../Models/_Basis/2017.06.12_Transformer.md">Transformer</a> with 8 attention heads, 512 embedding dimensions, 2048 1D convolution filter size, 9 convolution 1D kernel size, and 0.1 dropout rate.
+<p>The phoneme encoder is a 6-layer <a href="../_Transformer/2017.06.12_Transformer.md">Transformer</a> with 8 attention heads, 512 embedding dimensions, 2048 1D convolution filter size, 9 convolution 1D kernel size, and 0.1 dropout rate.
 The pitch and duration predictor share the same architecture of 30-layer 1D convolution with ReLU activation and layer normalization, 10 Q-K-V attention layers for in-context learning, which have 512 hidden dimensions and 8 attention heads and are placed every 3 1D convolution layers.
 We set the dropout to 0.5 in both duration and pitch predictors.
-For the speech prompt encoder, we use a 6-layer <a href="../../Models/_Basis/2017.06.12_Transformer.md">Transformer</a> with 512 hidden size, which has the same architecture as the phoneme encoder.
+For the speech prompt encoder, we use a 6-layer <a href="../_Transformer/2017.06.12_Transformer.md">Transformer</a> with 512 hidden size, which has the same architecture as the phoneme encoder.
 As for the m query tokens in the first Q-K-V attention in the prompting mechanism in the diffusion model (as shown in Figure.03), we set the token number m to 32 and the hidden dimension to 512.</p>
 <p>The diffusion model contains 40 <a href="../../TTS3_Vocoder/2016.09.12_WaveNet/">WaveNet</a> layers, which consist of 1D dilated convolution layers with 3 kernel size, 1024 filter size, and 2 dilation size.
 Specifically, we use a FiLM layer [39] at every 3 <a href="../../TTS3_Vocoder/2016.09.12_WaveNet/">WaveNet</a> layers to fuse the condition information processed by the second Q-K-V attention in the prompting mechanism in the diffusion model.
@@ -908,7 +908,7 @@ We evaluate the prosody similarity (in terms of pitch and duration) between the 
 Since there is correspondence between two speech sequences, we calculate the Pearson correlation and RMSE of the pitch/duration between the generated and ground-truth speech, and average them on the whole test set.
 - Word Error Rate.
 We employ an ASR model to transcribe the generated speech and calculate the word error rate (WER).
-The ASR model is a CTC-based <a href="../../Models/Speech_Representaion/2021.06.14_HuBERT.md">HuBERT</a> pre-trained on <a href="../../Datasets/2019.12.17_Libri-Light.md">Librilight</a> and fine-tuned on the 960 hours training set of <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a>.
+The ASR model is a CTC-based <a href="../../Speech_Representaion/2021.06.14_HuBERT/">HuBERT</a> pre-trained on <a href="../../Datasets/2019.12.17_Libri-Light.md">Librilight</a> and fine-tuned on the 960 hours training set of <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a>.
 We use the official code and checkpoint5.</p>
 <h4 id="subjective-metrics">Subjective Metrics<a class="headerlink" href="#subjective-metrics" title="Permanent link">&para;</a></h4>
 <p>We conduct human evaluation and use the intelligibility score and mean opinion score as the subjective metrics:

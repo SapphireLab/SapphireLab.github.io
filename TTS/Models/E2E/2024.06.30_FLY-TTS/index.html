@@ -1,0 +1,687 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>FLY-TTS - Sapphire Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fly-tts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Sapphire Lab" class="md-header__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sapphire Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FLY-TTS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Sapphire Lab" class="md-nav__button md-logo" aria-label="Sapphire Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sapphire Lab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract: 摘要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1introduction" class="md-nav__link">
+    1.Introduction: 引言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2related-works" class="md-nav__link">
+    2.Related Works: 相关工作
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Related Works: 相关工作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-tts-tts" class="md-nav__link">
+    End-to-End TTS: 端到端 TTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightweight-and-fast-tts" class="md-nav__link">
+    Lightweight and Fast TTS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3methodology" class="md-nav__link">
+    3.Methodology: 方法
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Methodology: 方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grouped-parameter-sharing" class="md-nav__link">
+    Grouped parameter-sharing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convnext-based-decoder" class="md-nav__link">
+    ConvNeXt based decoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-trained-speech-model-for-adversarial-training" class="md-nav__link">
+    Pre-trained speech model for adversarial training
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4experiments" class="md-nav__link">
+    4.Experiments: 实验
+  </a>
+  
+    <nav class="md-nav" aria-label="4.Experiments: 实验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#experimental-setup" class="md-nav__link">
+    Experimental setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-configuration" class="md-nav__link">
+    Model Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-and-evaluation" class="md-nav__link">
+    Training and Evaluation
+  </a>
+  
+    <nav class="md-nav" aria-label="Training and Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ablation-study" class="md-nav__link">
+    Ablation study
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5results" class="md-nav__link">
+    5.Results: 结果
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6conclusions" class="md-nav__link">
+    6.Conclusions: 结论
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="fly-tts">FLY-TTS<a class="headerlink" href="#fly-tts" title="Permanent link">&para;</a></h1>
+<details>
+<summary>基本信息</summary>
+
+- 标题: FLY-TTS: Fast, Lightweight and High-Quality End-to-End Text-to-Speech Synthesis
+- 作者:
+  - 01 [Yinlin Guo](../../Authors/Yinlin_Guo.md)
+  - 02 [Yening Lv](../../Authors/Yening_Lv.md)
+  - 03 [Jinqiao Dou](../../Authors/Jinqiao_Dou.md)
+  - 04 [Yan Zhang](../../Authors/Yan_Zhang.md)
+  - 05 [Yuehai Wang](../../Authors/Yuehai_Wang.md)
+- 机构:
+  - [浙江大学](../../Institutions/ZJU_浙江大学.md)
+- 时间:
+  - 预印时间: 2024.06.30 ArXiv v1
+  - 更新笔记: 2024.07.07
+- 发表:
+  - [InterSpeech 2024](../../Publications/InterSpeech.md)
+- 链接:
+  - [ArXiv](https://arxiv.org/abs/2407.00753)
+  - [DOI]()
+  - [Github]()
+  - [Demo](https://lilyn3125.github.io/flytts)
+  - [Scholar](https://scholar.google.com/scholar?cluster=3043222698045064204)
+- 标签:
+  - [语言合成](../../Tags/SpeechSynthesis.md)
+- 页数: 5
+- 引用: 34
+- 被引: ?
+- 数据:
+  - [LJSpeech](../../Datasets/LJSpeech.md)
+- 对比:
+  - 基于 [VITS](2021.06.11_VITS.md)
+- 复现:
+  - ?
+
+</details>
+
+<h2 id="abstract">Abstract: 摘要<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>While recent advances in Text-To-Speech synthesis have yielded remarkable improvements in generating high-quality speech, research on lightweight and fast models is limited.
+This paper introduces <strong><em>FLY-TTS</em></strong>, a new fast, lightweight and high-quality speech synthesis system based on VITS.
+Specifically, 
+1) We replace the decoder with ConvNeXt blocks that generate Fourier spectral coefficients followed by the inverse short-time Fourier transform to synthesize waveforms;
+2) To compress the model size, we introduce the grouped parameter-sharing mechanism to the text encoder and flow-based model;
+3) We further employ the large pre-trained WavLM model for adversarial training to improve synthesis quality.</p>
+<p>Experimental results show that our model achieves a real-time factor of 0.0139 on an Intel Core i9 CPU, 8.8x faster than the baseline (0.1221), with a 1.6x parameter compression.
+Objective and subjective evaluations indicate that <strong><em>FLY-TTS</em></strong> exhibits comparable speech quality to the strong baseline.
+Audio samples are available at https://lilyn3125.github.io/flytts.</p>
+</blockquote>
+<h2 id="1introduction">1.Introduction: 引言<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Text-to-speech (TTS) synthesis is the process of converting input text into speech.
+Recent advances in TTS synthesis have achieved significant improvements in high-quality speech synthesis \cite{app9194050,tan2021survey}.
+Most of the work has focused on improving the quality and naturalness of synthesized speech (<a href="../../TTS2_Acoustic/2017.03.29_Tacotron/">Tacotron</a>; <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a>; <a href="../2021.06.11_VITS/">VITS</a>; <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a>).
+However, to apply TTS models in real-world applications typically faces three challenges:
+1) Current TTS models are usually too large to deploy on edge or mobile devices;
+2) The slow inference of the model limits its application in low computing resources;
+3) In general, larger model sizes tend to improve performance, and there is often a trade-off between the two factors.</p>
+<p>To address these challenges, in this paper, we propose <strong><em>FLY-TTS</em></strong>, a new Fast, Lightweight and high-qualitY Text-To-Speech synthesis system.
+Based on <a href="../2021.06.11_VITS/">VITS</a>, <strong><em>FLY-TTS</em></strong> demonstrates efficient inference capabilities and model size reduction, while maintaining comparable synthesis quality.
+Recent research has shown that the HiFi-GAN-based decoder is the main bottleneck of VITS with respect to inference speed \cite{mb-istft-vits}.
+Therefore, we suggest to use ConvNeXt blocks to speed up inference by generating Fourier spectral coefficients and reconstructing raw waveforms directly through the inverse short-time Fourier transform.
+To reduce the model size, we introduce the grouped parameter-sharing mechanism into the text encoder and flow-based model in VITS.
+By adjusting the number of groups, we can balance between model size and modeling capacity.
+To mitigate the decline in synthesis quality caused by model compression, we introduce a large pre-trained <a href="../../Models/Speech_Representaion/2021.10.26_WavLM.md">WavLM</a> model as a discriminator for adversarial training.
+By leveraging self-supervised representation to furnish the generator with additional information, we aim to enhance the quality of synthesized speech.
+Experiments on the <a href="../../Datasets/LJSpeech.md">LJSpeech</a> dataset show that <strong><em>FLY-TTS</em></strong> achieves a real-time factor of 0.0139 on Intel Core i9 CPU, 8.8 times faster than the baseline system (0.1221), and the parameters are compressed by 1.6 times.</p>
+</blockquote>
+<h2 id="2related-works">2.Related Works: 相关工作<a class="headerlink" href="#2related-works" title="Permanent link">&para;</a></h2>
+<h4 id="end-to-end-tts-tts">End-to-End TTS: 端到端 TTS<a class="headerlink" href="#end-to-end-tts-tts" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>End-to-end TTS directly synthesizes speech waveforms from text without explicit intermediate representations.
+It has gradually shifted from autoregressive models to non-autoregressive models.</p>
+<p>Autoregressive TTS models (shen2018natural, <a href="../../TTS2_Acoustic/2017.03.29_Tacotron/">Tacotron</a>) generate the next time-step output conditioned on previous frames, leading to large inference latency and robustness issues.
+Recent researches have focused on non-autoregressive TTS models (<a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>; <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a>; <a href="../2021.06.11_VITS/">VITS</a>; <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a>), which generate mel-spectrograms or raw waveforms in parallel.
+<a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a> and <a href="../../TTS2_Acoustic/2020.06.08_FastSpeech2/">FastSpeech2</a> parallelize the generation of mel-spectrograms by predicting the length of the mel-spectrograms with external alignment models or tools.
+Glow-TTS \cite{glow-tts} combines flow models and dynamic programming to search for the most likely monotonic alignment between text and speech latent representations to achieve parallel TTS.
+To further enhance the quality of synthesized speech, <a href="../2021.06.11_VITS/">VITS</a> adopts variational inference with normalizing flows to generate raw waveforms.
+The recently proposed <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a> also uses a variational autoencoder (VAE) for end-to-end text-to-waveform generation, achieving human-level speech quality.
+While these models have made notable advancements in synthesis quality, they typically suffer from inefficient inference, impeding their deployment in real-world scenarios.</p>
+</blockquote>
+<h4 id="lightweight-and-fast-tts">Lightweight and Fast TTS<a class="headerlink" href="#lightweight-and-fast-tts" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Lightweight TTS aims to reduce model size and computational complexity while maintaining the quality of synthesized speech as much as possible.
+While some recent works (NixTTS, Light-tts, SpeedySpeech, Lightspeech, EfficientSpeech, AdaVITS, mb-istft-vits) have shown progress in this direction, they could encounter certain challenges.
+Nix-TTS \cite{NixTTS}, Light-TTS \cite{Light-tts}, and SpeedySpeech \cite{SpeedySpeech} employ knowledge distillation to reduce parameters while hindering end-to-end training.
+LightSpeech resorts to neural architecture search (NAS) to design lightweight models but requires huge computational resources during training.
+EfficientSpeech \cite{EfficientSpeech} adopts a lightweight U-Network to reduce parameters, but the synthesis quality still has room for improvement.
+The most similar work to ours may be AdaVITS \cite{AdaVITS}, which proposes some tricks to achieve lightweight TTS.
+However, it is tailored for speaker adaptation and incorporates PPG as a linguistic feature, introducing an additional PPG predictor module.
+MB-iSTFT-VITS \cite{mb-istft-vits} also uses iSTFT to synthesize raw waveforms, but the decoder still contains computationally intensive upsampling operations.
+Our proposed <strong><em>FLY-TTS</em></strong> exploits the large speech model as a discriminator to enjoy the benefits of self-supervised representation without affecting the generator.</p>
+</blockquote>
+<h2 id="3methodology">3.Methodology: 方法<a class="headerlink" href="#3methodology" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>As illustrated in Figure~\ref{fig:flytts}, our proposed <strong><em>FLY-TTS</em></strong> is based on the end-to-end <a href="../2021.06.11_VITS/">VITS</a>, and the following briefly introduces the VITS.</p>
+<p>VITS is a conditional VAE with the objective of maximizing the variational lower bound of the log-likelihood $\log p_\theta(x|c)$ of the target data $x$ given the input condition $c$:</p>
+</blockquote>
+<p>$$
+\begin{aligned}
+  \log p_\theta(x|c)\geq\mathbb{E}<em>{q</em>\phi(z|x)}\bigg[\log p_\theta(x|z){-}\log\frac{q_\phi(z|x)}{p_\theta(z|c)}\bigg],
+\end{aligned}
+$$</p>
+<blockquote>
+<p>where $z$ is the latent variable, $p_\theta(z|c)$ is the prior distribution of $z$ given condition $c$, $p_\theta(x|z)$ is the likelihood of the data given $z$, and $q_\phi(z|x)$ is the approximate posterior distribution.
+The model comprises a posterior encoder, prior encoder, and decoder, corresponding to $q_\phi(z|x)$, $p_\theta(z|c)$, and $p_\theta(x|z)$, respectively.
+Additionally, sets of discriminators are employed for adversarial training to enhance the quality of the synthesized speech.</p>
+<p>\textbf{Prior encoder}: The prior encoder $E_{{\text{prior}}}$ receives input phonemes $c$ and predicts the prior distribution.
+It consists of a text encoder for input processing and a normalizing flow $f_\theta$ that improves the flexibility of the prior distribution.</p>
+<p>\textbf{Posterior encoder}: The posterior encoder $E_{{\text{posterior}}}$ operates on the linear spectrum to extract the mean and variance of the approximate posterior distribution.
+Since this module is only used for training and will not impact the inference speed, no modifications are made to the posterior encoder in our proposed methods.</p>
+<p>\textbf{Decoder}: The decoder $E_{{\text{decoder}}}$ generates waveforms from the latent $z$. This module is essentially the <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN</a> generator.</p>
+<p>\textbf{Discriminators}: The discriminators $D$ in VITS are similar to those in <a href="../../TTS3_Vocoder/2020.10.12_HiFi-GAN/">HiFi-GAN</a>.
+They includes a set of multi-period discriminators and multi-scale discriminators, to improve the quality of the synthesized audio via adversarial training.</p>
+<p>The proposed <strong><em>FLY-TTS</em></strong> shares similarities with VITS, as depicted in Figure~\ref{fig:flytts}a.
+We outline the improvements of <strong><em>FLY-TTS</em></strong> in the following sections.</p>
+</blockquote>
+<h3 id="grouped-parameter-sharing">Grouped parameter-sharing<a class="headerlink" href="#grouped-parameter-sharing" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Parameter sharing is a widely used technique to improve parameter efficiency.
+To achieve a trade-off between model size and expressiveness power, we introduce the grouped parameter-sharing mechanism to the text encoder and flow-based model in the prior encoder.</p>
+<p>The original text encoder in VITS is a multi-layer transformer encoder \cite{transformer}.
+Previous work has shown that there exists redundancy in the transformer layers, and parameter-sharing could effectively reduce model size without substantially compromising performance \cite{ALBERT,universal}.
+As shown in the upper half of Figure~\ref{fig:flytts}b, we adopt a sequential grouped parameter-sharing strategy, assigning the same parameters to the sequential $m_1$ layers, with a total of $g_1 \times m_1$ layers, where $g_1$ is the number of groups.
+When $g_1=1$, the grouped parameter-sharing mechanism becomes complete parameter sharing.</p>
+<p>Flow-based models also suffer from the problem of large memory footprints.
+Similar to the grouped parameter-sharing in the text encoder, we divide the $K=g_2\times m_2$ steps of flow $\mathbf{f}_1,\mathbf{f}_2, \cdots, \mathbf{f}_K$ into $g_2$ groups, each group containing $m_2$ flow steps.
+Inspired by \cite{Portaspeech, AdaVITS}, we do not share the parameters of all modules in affine coupling layers.
+Instead, following NanoFlow \cite{Nanoflow}, we only share the parameters of the projection layer composed of WaveNet \cite{WaveNet} (as shown in the lower half of Figure~\ref{fig:flytts}b), while maintaining parameter independence across other modules.</p>
+</blockquote>
+<h3 id="convnext-based-decoder">ConvNeXt based decoder<a class="headerlink" href="#convnext-based-decoder" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>The decoder in VITS is based on the HiFi-GAN vocoder, which relies on transposed convolution to synthesize raw waveforms from the representation $z$.
+Due to the time-consuming nature of the upsampling process, it is the main bottleneck in terms of inference speed \cite{mb-istft-vits}.</p>
+<p>To this end, as shown in Figure~\ref{fig:flytts}c,
+we draw inspiration from Vocos \cite{Vocos} and use ConvNeXt blocks \cite{convnext} as the foundational backbone to generate the Fourier time-frequency coefficients with the same temporal resolution.
+Subsequently, we synthesize the raw waveforms through the fast inverse Short Time Fourier transform (iSTFT) to greatly reduce the computational cost.
+The ConvNeXt module comprises a 7x7 depthwise convolution followed by a reverse bottleneck consisting of two 1x1 pointwise convolutions, where the bottleneck employs GELU (Gaussian Error Linear Unit) activation.</p>
+<p>Specifically, given the latent variable $z$, we first sample to obtain the feature sequence $S = [s_1, s_2, \cdots, s_T], s_i \in \mathbb{R}^{D}$, where $D$ is the dimension of the hidden representation, and $T$ is the number of acoustic frames.</p>
+<p>The features are then passed through the embedding layer to match the number of frequency bins ($N$) of the iSTFT.
+A stacked layers of ConvNeXt blocks is then used to generate the Fourier time-frequency coefficients $M = [m_1, m_2, \cdots, m_T], P = [p_1, p_2, \cdots, p_T]$, where $m_i \in \mathbb{R}^{N}$ is the amplitude of the complex Fourier coefficient, and $p_i \in \mathbb{R}^{N}$ is the phase:</p>
+</blockquote>
+<p>$$
+[M,P] = \text{ConvNeXts}(\text{Embed}(S)).
+$$</p>
+<blockquote>
+<p>The iSTFT transform is then used to get the generated waveforms $\hat{y}$:</p>
+</blockquote>
+<p>$$
+\hat{y} = \text{iSTFT}(M, P).
+$$</p>
+<blockquote>
+<p>In practice, the fast Fourier transform (FFT) algorithm is used to implement the iSTFT.
+Since the temporal resolution $T$ of the Fourier transform coefficients is much smaller than the number of samples in raw waveforms, there is a significant potential for accelerating the synthesis speed.</p>
+</blockquote>
+<h3 id="pre-trained-speech-model-for-adversarial-training">Pre-trained speech model for adversarial training<a class="headerlink" href="#pre-trained-speech-model-for-adversarial-training" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Pre-trained large speech models have been proven to contain rich acoustic and semantic information, facilitating high-quality speech synthesis \cite{valle, Audiolm}.
+However, applying large pre-trained speech models in the generator network typically involves substantial computational overhead, which is not suitable for fast synthesis.</p>
+<p>We circumvent this problem by exploiting a pre-trained <a href="../../Models/Speech_Representaion/2021.10.26_WavLM.md">WavLM</a> model as a discriminator for adversarial training.
+This brings two benefits: 1) it can use the rich acoustic and semantic information learned by the self-supervised model to update the generator, and 2) it can avoid impacting the model size and inference speed of the generator.</p>
+<p>As shown in Figure~\ref{fig:flytts}d, the <a href="../../Models/Speech_Representaion/2021.10.26_WavLM.md">WavLM</a> model is a speech self-supervised model that employs Wav2vec2 \cite{wav2vec2} as its backbone and consists of a convolutional feature encoder and Transformer encoders.
+The speech waveforms are first resampled to 16kHz, followed by the extraction of intermediate features by WavLM.
+The prediction head then performs discriminative prediction based on the features.
+We follow VITS to use the least-squares loss function \cite{mao2017least} as the additional adversarial loss:</p>
+</blockquote>
+<p>$$
+\begin{aligned}
+  &amp; L_{adv}(D_{\text{W}}) =\mathbb{E}<em>{(y,z)}\Big[(D</em>{\text{W}}(y)-1)^2+(D_{\text{W}}(\hat{y}))^2\Big], \
+  &amp; L_{adv}(G) =\mathbb{E}<em>z\bigg[(D</em>{\text{W}}(\hat{y})-1)^2\bigg],
+\end{aligned}
+$$</p>
+<blockquote>
+<p>where $D_{\text{W}}$ is the WavLM discriminator, $G$ is the generator of <strong><em>FLY-TTS</em></strong>, $y$ is the real speech, and $\hat{y}=G(z)$ is the synthesized speech.</p>
+<p>The design of the prediction head is inspired by StyleTTS2 \cite{Styletts2}, comprising a series of convolutional networks with Leaky ReLU activation.
+To mitigate the computational overhead brought by WavLM, we fix the parameters of WavLM and only update the prediction head, which also reduces the risk of overfitting.</p>
+</blockquote>
+<h2 id="4experiments">4.Experiments: 实验<a class="headerlink" href="#4experiments" title="Permanent link">&para;</a></h2>
+<h3 id="experimental-setup">Experimental setup<a class="headerlink" href="#experimental-setup" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>We evaluate <strong><em>FLY-TTS</em></strong> on <a href="../../Datasets/LJSpeech.md">LJSpeech</a> dataset, which contains 13100 English audio clips and corresponding text transcripts.
+The dataset has a total length of about 24 hours, and each audio file is a single-channel 16-bit PCM WAV with a sample rate of 22050 Hz.
+Following the setup of \cite{mb-istft-vits}, the dataset is randomly divided into 12500 training samples, 100 validation samples, and 500 test samples.</p>
+</blockquote>
+<h3 id="model-configuration">Model Configuration<a class="headerlink" href="#model-configuration" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>We use the original VITS and MB-iSTFT-VITS \cite{mb-istft-vits} as our strong baseline models, denoted as VITS-base and MB-iSTFT-base, respectively.
+In <strong><em>FLY-TTS</em></strong>, the ConvNext module is implemented based on <a href="../../TTS3_Vocoder/2023.03.01_Vocos/">Vocos</a> (https://github.com/gemelo-ai/vocos).
+For WavLM, we use the WavLM-base model (https://huggingface.co/microsoft/wavlm-base-plus) pre-trained on 94k hours of speech data to initialize the parameters of the discriminator.
+To study the performance of the proposed model with fewer parameters, we also trained a Mini <strong><em>FLY-TTS</em></strong> model by reducing the number of layers.
+The configuration of each model is described as follows.</p>
+<p><strong>VITS-base</strong>: We use the official implementation (https://github.com/jaywalnut310/vits).
+The number of layers of the transformer in the text encoder is 6, and the number of flow steps is 4.</p>
+<p><strong>MB-iSTFT-base</strong>: Follow the official implementation of iSTFT-VITS (https://github.com/MasayaKawamura/MB-iSTFT-VITS) with multi-band configuration, the number of sub-bands is 4, the \textit{nfft} off iSTFT is 16, and the \textit{hop length} is 4.
+We keep other hyperparameters consistent with VITS-base.</p>
+<p><strong><em>FLY-TTS</em></strong>: As mentioned before, we set the hyperparameter of the grouped parameter-sharing in the text encoder to $g_1=2, m_1=3$, and the setting in the flow-based model is $g_2=2, m_2=2$.
+The number of ConvNext modules in the decoder is 6, and the \textit{nfft} and \textit{hop length} of iSTFT transform are consistent with mel-spectrogram extraction settings, which are 1024 and 256, respectively.</p>
+<p><strong><em>MINI FLY-TTS</em></strong>: The small version of <strong><em>FLY-TTS</em></strong>, we set $g_1=g_2=1$ for full parameter sharing.
+To match the capacity of the prior encoder, we reduce the number of ConvNext modules in the decoder to 4.</p>
+</blockquote>
+<h3 id="training-and-evaluation">Training and Evaluation<a class="headerlink" href="#training-and-evaluation" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>We use two NVIDIA RTX GeForce 3090 GPUs for training and the batch size is 64.
+All models are trained for 800K steps.
+Following the setup of \cite{mb-istft-vits}, we use the AdamW optimizer with $\beta_1=0.8, \beta_2=0.99$, weight decay is $0.01$, and the initial learning rate is set to $1 \times 10^{-4}$.
+In each epoch, the learning rate decay is scheduled as a factor of $0.999^{1/8}$.</p>
+<p>To evaluate the quality of the synthesized speech, a mean opinion score (MOS) test is conducted.
+Raters are asked to listen to the audio samples from the test set and evaluate their naturalness using a 5-point scale ranging from 1 to 5.
+Each audio sample is evaluated by at least 15 raters.
+To measure the similarity between the synthesized speech and the ground truth, we use dynamic time warping to calculate the mel-cepstral distortion (MCD) weighted by speech length (https://github.com/chenqi008/pymcd).
+We also compute the word error rate (WER) with the Whisper medium \cite{Whisper} ASR system.
+The model size and inference speed are evaluated using the number of parameters and the real-time factor (RTF).
+We calculate the average RTF on Intel Core i9-10920X CPU 3.50GHz and NVIDIA GeForce RTX 3090 GPU, and no optimization techniques are used during the inference (Test conditions: Ubuntu 20.04, Python 3.9.18, PyTorch  version: 2.1.0+cu121).
+All metrics are calculated on randomly selected samples.</p>
+<p>Table \ref{tab:obj_comparison} shows the comparison of our proposed models with the strong baselines.
+As results show, our proposed <strong><em>FLY-TTS</em></strong> and <strong><em>MINI FLY-TTS</em></strong> demonstrate significant reductions in model size.
+Compared to VITS-base, <strong><em>FLY-TTS</em></strong> reduces parameters by approximately 36.4\%, while <strong><em>MINI FLY-TTS</em></strong> achieves an even smaller model size, with a reduction of 61.2\%.</p>
+<p>The results also highlight the efficiency of our proposed models.
+Specifically, <strong><em>FLY-TTS</em></strong> achieves an impressive RTF of 0.0139 on CPU and 0.0062 on GPU, with a speedup of 8.8x and 4.5x over VITS-base, respectively.
+The <strong><em>MINI FLY-TTS</em></strong> variant achieves a faster inference speed due to the fewer layers in the decoder.</p>
+<p>The evaluation results on the audio quality are shown in Table \ref{table:mos_comparison}.
+Our proposed <strong><em>FLY-TTS</em></strong> demonstrates comparable naturalness compared to the strong baseline MB-iSTFT, achieving a MOS score of 4.12 (versus 4.08) with fewer parameters and more efficient synthesis.
+The minor decrease in MOS for <strong><em>MINI FLY-TTS</em></strong> is acceptable, given the fewer parameters.
+The results of MCD show a similar tendency, with <strong><em>FLY-TTS</em></strong> having an MCD value (5.56) close to the VITS (5.49), while the Mini version is slightly higher.
+Furthermore, our approach exhibits lower WERs than MB-iSTFT, indicating better intelligibility.
+Overall, our proposed methods could maintain the audio quality while enjoying fewer parameters and faster inference.</p>
+</blockquote>
+<h4 id="ablation-study">Ablation study<a class="headerlink" href="#ablation-study" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Table \ref{table:ablation_study} details the ablation study.
+When we replace the ConvNext-based decoder with MB-iSTFT \cite{mb-istft-vits}, the inference speed on both CPU and GPU decreases, mainly due to the upsampling units in the decoder of MB-iSTFT.
+As detailed in Section \ref{sec:wavlm}, removing the WavLM discriminator from the adversarial network significantly reduces audio quality.
+This, in turn, substantiates that <strong><em>FLY-TTS</em></strong> could leverage the acoustic and semantic information learned by self-supervised learning to facilitate generator updates, thereby enhancing the quality of synthesized speech.
+The ablation study underscores the effectiveness of our proposed model.</p>
+</blockquote>
+<h2 id="5results">5.Results: 结果<a class="headerlink" href="#5results" title="Permanent link">&para;</a></h2>
+<h2 id="6conclusions">6.Conclusions: 结论<a class="headerlink" href="#6conclusions" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>In this paper, we present <strong><em>FLY-TTS</em></strong>, a new end-to-end text-to-speech (TTS) model designed to achieve fast and high-quality speech synthesis.
+Built upon the VITS architecture, our model introduces several techniques to reduce model parameters and speed up inference, such as grouped parameter-sharing and ConvNeXt-based decoder.
+Additionally, we incorporate the pre-trained speech model WavLM as a discriminator to improve the quality of synthesized speech via adversarial training.
+Experimental results on the LJSpeech dataset show that <strong><em>FLY-TTS</em></strong> can achieve comparable speech synthesis quality to strong baseline models, while the model size and inference speed are significantly improved.
+As part of future work, we consider expanding the model to multi-speaker scenarios and integrating style features to enable more diverse speech synthesis.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

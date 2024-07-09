@@ -519,6 +519,7 @@
   - [DOI]()
   - [Github]()
   - [Demo](https://clam-tts.github.io)
+  - [Scholar](https://scholar.google.com/scholar?cluster=)
 - 标签:
   - [语音合成](../../Tags/SpeechSynthesis.md)
   - [语言模型](../../Tags/LanguageModel.md)
@@ -526,6 +527,12 @@
 - 页数: 24
 - 引用: ?
 - 被引: ?
+- 数据:
+  - ? 
+- 对比:
+  - ?
+- 复现:
+  - ?
 
 </details>
 
@@ -575,7 +582,7 @@ In other words, we compress mel-spectrograms rather than raw waveforms, delegati
 <p><strong>Large-scale TTS</strong>
 <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a> is a language model directly trained on audio tokens. 
 In <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>, semantic tokens are first generated. 
-These tokens originate from self-supervised discrete speech representation methods (<a href="../../Models/Speech_Representaion/2021.06.14_HuBERT.md">HuBERT (2021)</a>, <a href="../../Models/Speech_Representaion/2021.08.07_W2V-BERT.md">W2V-BERT (2021)</a>) that have previously been utilized for speech resynthesis or generation without text (Lakhotia et al., 2021; Polyak et al., 2021; Nguyen et al., 2023). 
+These tokens originate from self-supervised discrete speech representation methods (<a href="../../Speech_Representaion/2021.06.14_HuBERT/">HuBERT (2021)</a>, <a href="../../Models/Speech_Representaion/2021.08.07_W2V-BERT.md">W2V-BERT (2021)</a>) that have previously been utilized for speech resynthesis or generation without text (Lakhotia et al., 2021; Polyak et al., 2021; Nguyen et al., 2023). 
 Following this, the model produces acoustic tokens of neural audio codes given the semantic tokens. 
 Wang et al. propose the first neural codec language model, <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>, for text-to-speech that utilizes a pre-trained neural audio codec, EnCodec (D´ efossez et al., 2023). 
 In a different approach, following <a href="../../Models/Speech_LLM/2022.09.07_AudioLM.md">AudioLM (2022)</a>, text-to-speech has been realized by applying language modeling to generate the semantic tokens from text, as demonstrated by <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS (2023)</a>. 
@@ -756,7 +763,7 @@ Throughout all our experiments, during the model inference, we sample $k$ using 
 <li>Intelligibility and Robustness: 
 We measure these attributes by <term>character error rate (CER)</term> and <term>word error rate (WER)</term> of the synthesized transcription from generated speech concerning the input text. 
 We follow the procedure in <a href="../2023.01.05_VALL-E/">VALL-E (2023)</a>. 
-In English-only Evaluation, we synthesize the transcription by using the <term>automatic speech recognition (ASR)</term> model, the CTC-based <a href="../../Models/Speech_Representaion/2021.06.14_HuBERT.md">HuBERT (2021)</a>-Large model pre-trained on <a href="">Libri-Light (2020)</a> and then fine-tuned on <a href="">LibriSpeech (2015)</a>. 
+In English-only Evaluation, we synthesize the transcription by using the <term>automatic speech recognition (ASR)</term> model, the CTC-based <a href="../../Speech_Representaion/2021.06.14_HuBERT/">HuBERT (2021)</a>-Large model pre-trained on <a href="">Libri-Light (2020)</a> and then fine-tuned on <a href="">LibriSpeech (2015)</a>. 
 In the Multilingual Evaluation, we use OpenAI’s <a href="">Whisper (2023)</a> model. 
 We adopt NVIDIA’s NeMo-text-processing (Zhang et al., 2021; Bakhturina et al., 2022) for text normalization; </li>
 <li>Speak Similarity: 

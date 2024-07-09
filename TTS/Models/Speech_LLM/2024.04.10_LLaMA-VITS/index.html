@@ -523,8 +523,8 @@
 
 - 标题: LLaMA-VITS: Enhancing TTS Synthesis with Semantic Awareness
 - 作者:
-  - [Xincan Feng](../../Authors/Xincan_Feng.md)
-  - [Akifumi Yoshimoto](../../Authors/Akifumi_Yoshimoto.md)
+  - 01 [Xincan Feng](../../Authors/Xincan_Feng.md) 
+  - 02 [Akifumi Yoshimoto](../../Authors/Akifumi_Yoshimoto.md)
 - 机构:
   - [奈良先端科学技术大学院大学](../../Institutions/NAIST_日本奈良先端科学技术大学院大学.md)
   - [CyberAgent](../../Institutions/CyberAgent.md)
@@ -618,7 +618,7 @@ Ultimately, TTS systems that incorporate pre-trained and fine-tuned <strong>BERT
 Similarly, Yang et al. (2019) applied a <strong>pre-trained BERT model</strong> to achieve enhanced front end accuracy.
 Kenter et al. (2020) demonstrated that integrating a <strong>BERT</strong> model, pre-trained on extensive unlabeled data and fine-tuned for speech, into an <strong>RNN-based TTS system</strong> enhances prosody.
 Kenter et al. (2020) specifically suggest updating the <strong>BERT</strong>’s parameters during the training of their <strong>RNN-based speech synthesis model</strong>, emphasizing the critical role of fine-tuning the <strong>BERT</strong> component for optimal outcomes.
-As prompt tuning draws wide attention in guiding text or image generation, <a href="../../Models/_tmp/2022.11.22_PromptTTS.md">PromptTTS (2022)</a> takes a prompt representation with both style and content descriptions from a <strong>BERT</strong> model as input to generate speech with precise style control and high speech quality.</p>
+As prompt tuning draws wide attention in guiding text or image generation, <a href="../Prompt/2022.11.22_PromptTTS.md">PromptTTS (2022)</a> takes a prompt representation with both style and content descriptions from a <strong>BERT</strong> model as input to generate speech with precise style control and high speech quality.</p>
 <p>In particular, Mukherjee et al. (2022) utilized a <strong>pre-trained BERT model</strong> to develop a text emotion classification model, employing the final hidden states of the initial <code>[CLS]</code> token as a comprehensive representation of the text.
 Researchers such as Kenter et al. (2020); Li et al. (2021); Abbas et al. (2022) have applied word-level <strong>BERT</strong> to capture the semantic and syntactic structure of sentences, thereby aiding TTS synthesis.
 Li et al. (2023) introduced a phoneme-level <strong>BERT</strong>, designed with a preliminary task of predicting corresponding graphemes in addition to regular masked phoneme predictions, to enhance the naturalness of speech synthesized from <em>out-of-distribution (OOD)</em> texts.</p>
@@ -648,8 +648,8 @@ Additionally, the novel architecture of <a href="../../Models/LLM/2023.07.18_LLa
 <p><img alt="" src="../Images/2024.04.10_LLaMA-VITS_Fig.01.png" /></p>
 <blockquote>
 <p>We propose leveraging semantic embeddings de rived from a <strong>GPT-like LM</strong> to improve TTS synthesis.
-In our work, <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> is employed as the <strong>GPT-like model</strong>, as elaborated in Sec.2.3, and [VIT../E2E/2021.06_VITS.md06_VITS.md) is utilized as the <strong>TTS model</strong> for generating audio from phoneme embeddings, as detailed in Sec.2.1.
-In essence, we extract semantic embeddings $E_{s}$ from the final hidden layer of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> and integrate them with the original acoustic text embeddings $E_{a}$ of [VIT../E2E/2021.06_VITS.md06_VITS.md), forming enhanced text embeddings $E_{as}$ for speech synthesis.
+In our work, <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> is employed as the <strong>GPT-like model</strong>, as elaborated in Sec.2.3, and <a href="../../E2E/2021.06.11_VITS/">VITS</a> is utilized as the <strong>TTS model</strong> for generating audio from phoneme embeddings, as detailed in Sec.2.1.
+In essence, we extract semantic embeddings $E_{s}$ from the final hidden layer of <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> and integrate them with the original acoustic text embeddings $E_{a}$ of <a href="../../E2E/2021.06.11_VITS/">VITS</a>, forming enhanced text embeddings $E_{as}$ for speech synthesis.
 Specifically, either a global token or a sequence of tokens is used to encapsulate the semantic attributes of an input sentence for varying objectives.
 The distinctions between these two token types are further explicated in Sec.3.1.</p>
 </blockquote>
@@ -733,7 +733,7 @@ This representation allows the TTS model to leverage the complete semantic infor
 </blockquote>
 <h3 id="32fusing-semantic-embeddings-with-acoustic-embeddings">3.2.Fusing Semantic Embeddings with Acoustic Embeddings<a class="headerlink" href="#32fusing-semantic-embeddings-with-acoustic-embeddings" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>To align the dimensions of semantic embedding extracted from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>, denoted as $E_{s}$, with the acoustic embeddings from [VIT../E2E/2021.06_VITS.md06_VITS.md), denoted as $E_{a}$, we employ a linear projection.
+<p>To align the dimensions of semantic embedding extracted from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a>, denoted as $E_{s}$, with the acoustic embeddings from <a href="../../E2E/2021.06.11_VITS/">VITS</a>, denoted as $E_{a}$, we employ a linear projection.
 The original dimension of $E_{s}$, $d_{LLaMA}$, is projected to match the dimension of <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a> acoustic embedding, $d_{VITS}$, using a linear transformation matrix $W$ of dimensions $d_{VITS}\times d_{LLaMA}$.
 The projected semantic embedding, $E_s'$, is calculated as follows: </p>
 </blockquote>
@@ -780,7 +780,7 @@ $$ </p>
 <h2 id="4experiments">4.Experiments<a class="headerlink" href="#4experiments" title="Permanent link">&para;</a></h2>
 <h3 id="41experimental-settings">4.1.Experimental Settings<a class="headerlink" href="#41experimental-settings" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>We propose <strong><em>LLaMA-VITS</em></strong> which uses semantic to kens derived from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> to enhance acoustic embedding in [VIT../E2E/2021.06_VITS.md06_VITS.md) for better TTS performance.
+<p>We propose <strong><em>LLaMA-VITS</em></strong> which uses semantic to kens derived from <a href="../../Models/LLM/2023.07.18_LLaMA2.md">LLaMA2 (2023)</a> to enhance acoustic embedding in <a href="../../E2E/2021.06.11_VITS/">VITS</a> for better TTS performance.
 To show the effectiveness of our method, we experimented with two baseline models.
 In the <strong>ORI-VITS</strong> baseline, we use the original <a href="../../E2E/2021.06.11_VITS/">VITS (2021)</a> without external semantic information.
 In the <strong>BERT-VITS</strong> baseline, we extract various semantic tokens according to for mer research introduced in Section § 2.2.

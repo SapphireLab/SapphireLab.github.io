@@ -489,7 +489,7 @@
 
 - 标题: Vocos: Closing the Gap between Time-Domain and Fourier-Based Neural Vocoders for High-Quality Audio Synthesis
 - 作者:
-  - [Hubert Siuzdak](../../Authors/Hubert_Siuzdak.md)
+  - 01 [Hubert Siuzdak](../../Authors/Hubert_Siuzdak.md)
 - 机构:
   - [Gemelo AI](../../Institutions/Gemolo.AI.md)
 - 时间:
@@ -702,7 +702,7 @@ Pasini &amp; Schl¨uter (2022) 能够成功地对具有更高频率分辨率的�
 > Vocos is constructed without any transposed convolutions; instead, the upsample operation is realized solely through the fast inverse STFT.
 > This approach permits a unique model design compared to time-domain vocoders, which typically employ a series of upsampling layers to inflate input features to the target waveform’s resolution, often necessitating upscaling by several hundred times.
 > In contrast, Vocos maintains the same temporal resolution throughout the network (Figure 2).
-> This design, known as an isotropic architecture, has been found to work well in various settings, including [Transformer](../../Models/_Basis/2017.06.12_Transformer.md).
+> This design, known as an isotropic architecture, has been found to work well in various settings, including [Transformer](../_Transformer/2017.06.12_Transformer.md).
 > This approach can also be particularly beneficial for audio synthesis.
 > Traditional methods often use transposed convolutions that can introduce aliasing artifacts, necessitating additional measures to mitigate the issue (Karras et al., 2021; Lee et al., 2022).
 > Vocos eliminates learnable upsampling layers, and instead employs the well-establish inverse Fourier transform to reconstruct the original-scale waveform.

@@ -393,8 +393,8 @@
   - [InterSpeech 2017](../../Publications/InterSpeech.md) 
 - 链接:
   - [ArXiv](https://arxiv.org/abs/1703.10135) 
-  <!-- - [DOI]() 
-  - [Github]() -->
+  <!-- - [DOI]()  -->
+  <!-- - [Github]() -->
   - [Demo](https://google.github.io/tacotron) 
   - [Scholar](https://scholar.google.com/scholar?cluster=11291739830353377265) 
 - 标签:
@@ -575,7 +575,7 @@
 > The convolution outputs are stacked together and further max pooled along time to increase local invariances.
 > Note that we use a stride of $1$ to preserve the original time resolution.
 > We further pass the processed sequence to a few fixed-width 1-D convolutions, whose outputs are added with the original input sequence via residual connections [ResNet](../_Basis/2015.12.10_ResNet.md) .
-> [Batch normalization](../_Basis/2015.02.11_BatchNorm.md) is used for all convolutional layers.
+> [Batch normalization](../../Modules/Normalization/2015.02.11_BatchNorm.md) is used for all convolutional layers.
 > The convolution outputs are fed into a multi-layer highway network to extract high-level features.
 > Finally, we stack a bidirectional GRU RNN on top to extract sequential features from both forward and backward context.
 > ***CBHG*** is inspired from work in machine translation ["Fully Character-Level Neural Machine Translation without Explicit Segmentation (2016) "](../../Models/NMT/2016.10.10_Fully_Character-Level_NMT_without_Explicit_Segmentation.md), where the main differences from ["Fully Character-Level Neural Machine Translation without Explicit Segmentation (2016) "](../../Models/NMT/2016.10.10_Fully_Character-Level_NMT_without_Explicit_Segmentation.md) include using non-causal convolutions, batch normalization, residual connections, and stride=1 max pooling.
@@ -591,7 +591,7 @@
 卷积输出沿时间堆叠在一起, 并进一步进行最大池化以增加局部不变性.
 请注意, 我们使用步长为$1$以保持原始时间分辨率.
 我们进一步将处理后的序列通过几个固定宽度的1D卷积, 其输出通过残差连接 <a href="../_Basis/2015.12.10_ResNet.md">ResNet</a> 与原始输入序列相加.
-所有卷积层都使用了 <a href="../_Basis/2015.02.11_BatchNorm.md">批量归一化</a> .
+所有卷积层都使用了 <a href="../../Modules/Normalization/2015.02.11_BatchNorm.md">批量归一化</a> .
 卷积输出被送入一个多层Highway网络以提取高级特征.
 最后, 我们在顶部堆叠一个双向GRU RNN, 以从正向和反向上下文中提取序列特征.
 <strong><em>CBHG</em></strong>的灵感来自于机器翻译中的工作 <a href="../../Models/NMT/2016.10.10_Fully_Character-Level_NMT_without_Explicit_Segmentation.md">"Fully Character-Level Neural Machine Translation without Explicit Segmentation (2016) "</a>, 与 <a href="../../Models/NMT/2016.10.10_Fully_Character-Level_NMT_without_Explicit_Segmentation.md">"Fully Character-Level Neural Machine Translation without Explicit Segmentation (2016) "</a> 的主要区别包括使用非因果卷积, 批量归一化, 残差连接和步长=1的最大池化.
