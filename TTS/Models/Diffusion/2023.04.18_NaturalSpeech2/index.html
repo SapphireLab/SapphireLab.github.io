@@ -612,8 +612,8 @@
 - 被引: 95
 - 数据:
   - [Multilingual LibriSpeech](../../Datasets/2020.12.07_MLS.md)
-  - [LibriSpeech](../../Datasets/LibriSpeech.md)
-  - [VCTK](../../Datasets/VCTK.md)
+  - [LibriSpeech](../../Datasets/2015.04.19_LibriSpeech.md)
+  - [VCTK](../../Datasets/2012.08.00_VCTK.md)
 - 对比:
   - [YourTTS](../../Models/E2E/2021.12.04_YourTTS.md)
   - [Tacotron](../../Models/TTS2_Acoustic/2017.03.29_Tacotron.md) AR
@@ -641,7 +641,7 @@ Audio samples are available at https://speechresearch.github.io/naturalspeech2.<
 <blockquote>
 <p>Human speech is full of diversity, with different speaker identities (e.g., gender, accent, timbre), prosodies, styles (e.g., speaking, singing), etc.
 Text-to-speech (TTS) (<a href="">Text-to-Speech Synthesis</a>; <a href="../../Surveys/2021.06.29_A_Survey_on_Neural_Speech_Synthesis_63P/_ToC.md">A Survey on Neural Speech Synthesis</a>) aims to synthesize natural and human-like speech with both good quality and diversity.
-With the development of neural networks and deep learning, TTS systems (<a href="../../TTS2_Acoustic/2017.03.29_Tacotron/">Tacotron</a>; <a href="../../Models/TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2</a>; <a href="../../Models/TTS2_Acoustic/2018.09.19_Transformer_TTS.md">Transformer TTS</a>; <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>; <a href="../../TTS2_Acoustic/2020.06.08_FastSpeech2/">FastSpeech2</a>; <a href="../../Models/TTS2_Acoustic/2021.10.25_DelightfulTTS.md">DelightfulTTS</a>; <a href="../../Models/TTS2_Acoustic/2022.07.11_DelightfulTTS2.md">DelightfulTTS2</a>; <a href="../../E2E/2021.06.11_VITS/">VITS</a>; <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a> have achieved good voice quality in terms of intelligibility and naturalness, and some systems (e.g., <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a>) even achieves human-level voice quality on single-speaker recording-studio benchmarking datasets (e.g., <a href="../../Datasets/LJSpeech.md">LJSpeech</a>).
+With the development of neural networks and deep learning, TTS systems (<a href="../../TTS2_Acoustic/2017.03.29_Tacotron/">Tacotron</a>; <a href="../../Models/TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2</a>; <a href="../../Models/TTS2_Acoustic/2018.09.19_Transformer_TTS.md">Transformer TTS</a>; <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>; <a href="../../TTS2_Acoustic/2020.06.08_FastSpeech2/">FastSpeech2</a>; <a href="../../Models/TTS2_Acoustic/2021.10.25_DelightfulTTS.md">DelightfulTTS</a>; <a href="../../Models/TTS2_Acoustic/2022.07.11_DelightfulTTS2.md">DelightfulTTS2</a>; <a href="../../E2E/2021.06.11_VITS/">VITS</a>; <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a> have achieved good voice quality in terms of intelligibility and naturalness, and some systems (e.g., <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a>) even achieves human-level voice quality on single-speaker recording-studio benchmarking datasets (e.g., <a href="../../Datasets/2017.07.05_LJSpeech.md">LJSpeech</a>).
 Given the great achievements in speech intelligibility and naturalness made by the whole TTS community, now we enter a new era of TTS where speech diversity becomes more and more important in order to synthesize natural and human-like speech.</p>
 <p>Previous speaker-limited recording-studio datasets are not enough to capture the diverse speaker identities, prosodies, and styles in human speech due to limited data diversity.
 Instead, we can train TTS models on a large-scale corpus to learn these diversities, and as a by-product, these trained models can generalize to the unlimited unseen scenarios with few-shot or zero-shot technologies.
@@ -668,7 +668,7 @@ To encourage the diffusion models to follow the characteristics in the speech pr
 Experiment results show that <strong><em>NaturalSpeech2</em></strong> can generate natural speech in zero-shot scenarios and outperform the previous strong TTS systems.
 Specifically, 
 1. it achieves more similar prosody with both the speech prompt and ground-truth speech; 
-2. it achieves comparable or better naturalness (in terms of CMOS) than the ground-truth speech on <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/VCTK.md">VCTK</a> test sets; 
+2. it achieves comparable or better naturalness (in terms of CMOS) than the ground-truth speech on <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> test sets; 
 3. it can generate singing voices in a novel timbre either with a short singing prompt, or interestingly with only a speech prompt, which unlocks the truly zero-shot singing synthesis (without a singing prompt).</p>
 <p>Audio samples can be found in https://speechresearch.github.io/naturalspeech2.</p>
 </blockquote>
@@ -679,7 +679,7 @@ Specifically,
 <h3 id="21tts-for-natural-voice-quality-and-diversity">2.1.TTS for Natural Voice: Quality and Diversity<a class="headerlink" href="#21tts-for-natural-voice-quality-and-diversity" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>Text-to-speech systems (<a href="../../TTS2_Acoustic/2017.03.29_Tacotron/">Tacotron</a>; <a href="../../Models/TTS2_Acoustic/2017.12.16_Tacotron2.md">Tacotron2</a>; <a href="../../Models/TTS2_Acoustic/2018.09.19_Transformer_TTS.md">Transformer-TTS</a>; <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>; <a href="../../Models/TTS2_Acoustic/2021.10.25_DelightfulTTS.md">DelightfulTTS</a>; <a href="../../Models/TTS2_Acoustic/2022.07.11_DelightfulTTS2.md">DelightfulTTS2</a>; <a href="../../Models/Singing_Voice/2021.05.06_Diffsinger.md">DiffSinger</a>; <a href="../../E2E/2021.06.11_VITS/">VITS</a>; <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a>) aim to generate natural voice with both high quality and diversity.
-While previous neural TTS systems can synthesize high-quality voice on single-speaker recording-studio datasets (e.g., <a href="../../Datasets/LJSpeech.md">LJSpeech</a>) and even achieve human-level quality (e.g., <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a>), they cannot generate diverse speech with different speaker identities, prosodies, and styles, which are critical to ensure the naturalness of the synthesized speech.
+While previous neural TTS systems can synthesize high-quality voice on single-speaker recording-studio datasets (e.g., <a href="../../Datasets/2017.07.05_LJSpeech.md">LJSpeech</a>) and even achieve human-level quality (e.g., <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a>), they cannot generate diverse speech with different speaker identities, prosodies, and styles, which are critical to ensure the naturalness of the synthesized speech.
 Thus, some recent works (<a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a>; <a href="../../Models/Speech_LLM/2023.02.07_SPEAR-TTS.md">SPEAR-TTS</a>; <a href="../../Models/Speech_LLM/2023.03.06_FoundationTTS.md">FoundationTTS</a>) attempt to scale the TTS systems to large-scale, multi-speaker, and in-the-wild datasets to pursue diversity.</p>
 <p>These systems usually leverage a neural codec to convert speech waveform into discrete token sequence and an autoregressive language model to generate discrete tokens from text, which suffers from a dilemma as shown in Table.02: 
 1. If the audio codec quantizes each speech frame into a single token with vector-quantizer (VQ) (<a href="../../Models/_Basis/2017.11.02_VQ-VAE.md">VQ-VAE</a>; <a href="../../Models/_Basis/VQ-VAE-2.md">VQ-VAE-2</a>; <a href="../../Models/_Basis/2020.12.17_VQGAN.md">VQ-GAN</a>), this could ease the token generation in the language model due to short sequence length, but will affect the waveform reconstruction quality due to large compression rate or low bitrate. 
@@ -832,7 +832,7 @@ Please refer to Appendix B for the details of <a href="../../TTS3_Vocoder/2016.0
 Compared to its previous version <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a>, <strong><em>NaturalSpeech2</em></strong> has the following connections and distinctions.
 First, goal.
 While both <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a> and <strong><em>NaturalSpeech2</em></strong> aim at synthesizing natural voices (with good speech quality and diversity), their focuses are different.
-NaturalSpeech focuses on speech quality by synthesizing voices that are on par with human recordings and only tackling single-speaker recording-studio datasets (e.g., <a href="../../Datasets/LJSpeech.md">LJSpeech</a>).
+NaturalSpeech focuses on speech quality by synthesizing voices that are on par with human recordings and only tackling single-speaker recording-studio datasets (e.g., <a href="../../Datasets/2017.07.05_LJSpeech.md">LJSpeech</a>).
 <strong><em>NaturalSpeech2</em></strong> focuses on speech diversity by exploring the zero-shot synthesis ability based on large-scale, multi-speaker, and in-the-wild datasets.
 Second, architecture.
 <strong><em>NaturalSpeech2</em></strong> keeps the basic components in NaturalSpeech, such as the encoder and decoder for waveform reconstruction, and the prior module (phoneme encoder, duration/pitch predictor).
@@ -855,12 +855,12 @@ The input text sequence is first converted into a phoneme sequence using graphem
 The frame-level pitch sequence is extracted from the speech using PyWorld3.</p>
 <h4 id="evaluation-dataset">Evaluation Dataset<a class="headerlink" href="#evaluation-dataset" title="Permanent link">&para;</a></h4>
 <p>We employ two benchmark datasets for evaluation: 
-1) <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> test-clean, which contains 40 distinct speakers and 5.4 hours of annotated speech data. 
-2) <a href="../../Datasets/VCTK.md">VCTK dataset</a>, which contains 108 distinct speakers.</p>
-<p>For <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> test-clean, we randomly sample 15 utterances for each speaker and form a subset of 600 utterances for evaluation.
-For <a href="../../Datasets/VCTK.md">VCTK</a>, we randomly sample 5 utterances for each speaker, resulting in a subset of 540 utterances for evaluation.
+1) <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> test-clean, which contains 40 distinct speakers and 5.4 hours of annotated speech data. 
+2) <a href="../../Datasets/2012.08.00_VCTK.md">VCTK dataset</a>, which contains 108 distinct speakers.</p>
+<p>For <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> test-clean, we randomly sample 15 utterances for each speaker and form a subset of 600 utterances for evaluation.
+For <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a>, we randomly sample 5 utterances for each speaker, resulting in a subset of 540 utterances for evaluation.
 Specifically, to synthesize each sample, we randomly select a different utterance of the same speaker and crop it into a σ-second audio segment to form a σ-second prompt.
-Note that both the speakers in <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> test-clean and <a href="../../Datasets/VCTK.md">VCTK</a> are not seen during training.
+Note that both the speakers in <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> test-clean and <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> are not seen during training.
 Thus, we aim to conduct zero-shot speech synthesis.</p>
 <p>The singing datasets follow a similar process in the speech dataset, and the details are shown in Section 5.6.</p>
 </blockquote>
@@ -877,7 +877,7 @@ Specifically, we use a FiLM layer [39] at every 3 <a href="../../TTS3_Vocoder/20
 The hidden size in <a href="../../TTS3_Vocoder/2016.09.12_WaveNet/">WaveNet</a> is 512, and the dropout rate is 0.2.</p>
 <p>More details of the model configurations are shown in Appendix A.</p>
 <h4 id="model-comparison">Model Comparison<a class="headerlink" href="#model-comparison" title="Permanent link">&para;</a></h4>
-<p>We choose the previous zero-shot TTS model <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> as the baseline, with the official code and pre-trained checkpoint4, which is trained on <a href="../../Datasets/VCTK.md">VCTK</a>, <a href="../../Datasets/2019.04.05_LibriTTS.md">LibriTTS</a> and <a href="../../Datasets/TTS-Portuguese.md">TTS-Portuguese</a>.
+<p>We choose the previous zero-shot TTS model <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> as the baseline, with the official code and pre-trained checkpoint4, which is trained on <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a>, <a href="../../Datasets/2019.04.05_LibriTTS.md">LibriTTS</a> and <a href="../../Datasets/TTS-Portuguese.md">TTS-Portuguese</a>.
 We also choose <a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a> that is based on discrete audio codec and autoregressive language model for comparison, which can help demonstrate the advantages of the designs in <strong><em>NaturalSpeech2</em></strong>.
 We directly collect some audio samples from its demo page for comparison.</p>
 </blockquote>
@@ -908,7 +908,7 @@ We evaluate the prosody similarity (in terms of pitch and duration) between the 
 Since there is correspondence between two speech sequences, we calculate the Pearson correlation and RMSE of the pitch/duration between the generated and ground-truth speech, and average them on the whole test set.
 - Word Error Rate.
 We employ an ASR model to transcribe the generated speech and calculate the word error rate (WER).
-The ASR model is a CTC-based <a href="../../Speech_Representaion/2021.06.14_HuBERT/">HuBERT</a> pre-trained on <a href="../../Datasets/2019.12.17_Libri-Light.md">Librilight</a> and fine-tuned on the 960 hours training set of <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a>.
+The ASR model is a CTC-based <a href="../../Speech_Representaion/2021.06.14_HuBERT/">HuBERT</a> pre-trained on <a href="../../Datasets/2019.12.17_Libri-Light.md">Librilight</a> and fine-tuned on the 960 hours training set of <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a>.
 We use the official code and checkpoint5.</p>
 <h4 id="subjective-metrics">Subjective Metrics<a class="headerlink" href="#subjective-metrics" title="Permanent link">&para;</a></h4>
 <p>We conduct human evaluation and use the intelligibility score and mean opinion score as the subjective metrics:
@@ -930,40 +930,40 @@ We also use the similarity mean option score (SMOS) between the synthesized and 
 <h3 id="51generation-quality">5.1.Generation Quality<a class="headerlink" href="#51generation-quality" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>We conduct CMOS test to evaluate the generation quality (i.e., naturalness).
-We randomly select 20 utterances from the <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/VCTK.md">VCTK</a> tests and crop the prompt speech to 3s.
+We randomly select 20 utterances from the <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> tests and crop the prompt speech to 3s.
 To ensure high-quality generation, we use a speech scoring model <a href="../../Models/Speech_Representaion/2021.10.26_WavLM.md">WavLM</a> to filter the multiple samples generated by the diffusion model with different starting Gaussian noises z1.
 Table.03 shows a comparison of <strong><em>NaturalSpeech2</em></strong> against baseline <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> and the ground truth.
 We have several observations: 
-1. <strong><em>NaturalSpeech2</em></strong> is comparable to the ground-truth recording in <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> (+0.04 is regarded as on par) and achieves much better quality on <a href="../../Datasets/VCTK.md">VCTK</a> datasets (−0.30 is a large gap), which demonstrates the naturalness of the speech generated by <strong><em>NaturalSpeech2</em></strong> is high enough. 
-2. NaturalSpeech shows 0.65 and 0.58 CMOS gain over <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> in <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/VCTK.md">VCTK</a>, respectively, which shows the superiority of <strong><em>NaturalSpeech2</em></strong> over this baseline.</p>
+1. <strong><em>NaturalSpeech2</em></strong> is comparable to the ground-truth recording in <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> (+0.04 is regarded as on par) and achieves much better quality on <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> datasets (−0.30 is a large gap), which demonstrates the naturalness of the speech generated by <strong><em>NaturalSpeech2</em></strong> is high enough. 
+2. NaturalSpeech shows 0.65 and 0.58 CMOS gain over <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> in <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a>, respectively, which shows the superiority of <strong><em>NaturalSpeech2</em></strong> over this baseline.</p>
 </blockquote>
 <h3 id="52generation-similarity">5.2.Generation Similarity<a class="headerlink" href="#52generation-similarity" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>We use two metrics to evaluate the speech similarity: 1) prosody similarity between the synthesized and prompt speech. 2) SMOS test.
-To evaluate the prosody similarity, we randomly sample one sentence for each speaker for both <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> test-clean and <a href="../../Datasets/VCTK.md">VCTK</a> dataset to form the test sets.
+To evaluate the prosody similarity, we randomly sample one sentence for each speaker for both <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> test-clean and <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> dataset to form the test sets.
 Specifically, to synthesize each sample, we randomly and independently sample the prompt speech with σ = 3 seconds.
-Note that <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> has seen 97 speakers in <a href="../../Datasets/VCTK.md">VCTK</a> in training, but we still compare <strong><em>NaturalSpeech2</em></strong> with <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> on all the speakers in <a href="../../Datasets/VCTK.md">VCTK</a> (i.e., the 97 speakers are seen to <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> but unseen to <strong><em>NaturalSpeech2</em></strong>).</p>
+Note that <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> has seen 97 speakers in <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> in training, but we still compare <strong><em>NaturalSpeech2</em></strong> with <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> on all the speakers in <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> (i.e., the 97 speakers are seen to <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> but unseen to <strong><em>NaturalSpeech2</em></strong>).</p>
 <p>We apply the alignment tool to obtain phoneme-level duration and pitch and calculate the prosody similarity metrics between the synthesized speech and the prompt speech as described in Section 4.4.
 The results are shown in Table.04.
 We have the following observations: 
-1. <strong><em>NaturalSpeech2</em></strong> consistently outperforms the baseline <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> in both <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/VCTK.md">VCTK</a> on all metrics, which demonstrates that our proposed <strong><em>NaturalSpeech2</em></strong> can mimic the prosody of prompt speech much better. 
-2. Although <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> has seen 97 from 108 speakers in <a href="../../Datasets/VCTK.md">VCTK</a> dataset, our model can still outperform it by a large margin, which demonstrates the advantages of <strong><em>NaturalSpeech2</em></strong>.</p>
+1. <strong><em>NaturalSpeech2</em></strong> consistently outperforms the baseline <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> in both <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> on all metrics, which demonstrates that our proposed <strong><em>NaturalSpeech2</em></strong> can mimic the prosody of prompt speech much better. 
+2. Although <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> has seen 97 from 108 speakers in <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> dataset, our model can still outperform it by a large margin, which demonstrates the advantages of <strong><em>NaturalSpeech2</em></strong>.</p>
 <p>Furthermore, we also compare prosody similarity between synthesized and ground-truth speech in Appendix D.</p>
 <p>We further evaluate the speaker similarity using SMOS test.
-We randomly select 10 utterances from <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/VCTK.md">VCTK</a> datasets respectively, following the setting in the CMOS test.
+We randomly select 10 utterances from <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> datasets respectively, following the setting in the CMOS test.
 The length of the prompt speech is set to 3s.
 The results are shown in Table.05.
-<strong><em>NaturalSpeech2</em></strong> outperforms <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> by 1.25 and 0.77 SMOS scores for <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/VCTK.md">VCTK</a>, respectively, which shows that <strong><em>NaturalSpeech2</em></strong> is significantly better in speaker similarity.</p>
+<strong><em>NaturalSpeech2</em></strong> outperforms <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> by 1.25 and 0.77 SMOS scores for <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a>, respectively, which shows that <strong><em>NaturalSpeech2</em></strong> is significantly better in speaker similarity.</p>
 </blockquote>
 <h3 id="53robustness">5.3.Robustness<a class="headerlink" href="#53robustness" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>We use the full test set of <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/VCTK.md">VCTK</a> as described in Section 4.1 to synthesize the speech and compute the word error rate (WER) between the transcribed text and ground-truth text.
+<p>We use the full test set of <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> as described in Section 4.1 to synthesize the speech and compute the word error rate (WER) between the transcribed text and ground-truth text.
 To synthesize each sample, we use a 3-second prompt by randomly cropping the whole prompt speech.
 The results are shown in Table.06.
 We observe that: 
-1. <strong><em>NaturalSpeech2</em></strong> significantly outperforms <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> in <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/VCTK.md">VCTK</a>, indicating better synthesis of high-quality and robust speech. 
-2. Our synthesized speech is comparable to the ground-truth speech in <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> and surpasses that in <a href="../../Datasets/VCTK.md">VCTK</a>.</p>
-<p>The higher WER results in <a href="../../Datasets/VCTK.md">VCTK</a> may stem from a noisy environment and the lack of ASR model fine-tuning in that dataset.</p>
+1. <strong><em>NaturalSpeech2</em></strong> significantly outperforms <a href="../../Models/E2E/2021.12.04_YourTTS.md">YourTTS</a> in <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> and <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a>, indicating better synthesis of high-quality and robust speech. 
+2. Our synthesized speech is comparable to the ground-truth speech in <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> and surpasses that in <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a>.</p>
+<p>The higher WER results in <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a> may stem from a noisy environment and the lack of ASR model fine-tuning in that dataset.</p>
 <p>Autoregressive TTS models often suffer from alignment mismatch between phoneme and speech, resulting in severe word repeating and skipping.
 To further evaluate the robustness of the diffusionbased TTS model, we adopt the 50 particularly hard sentences in <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a> to evaluate the robustness of the TTS systems.
 We can find that the non-autoregressive models such as <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>, <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a>, and also <strong><em>NaturalSpeech2</em></strong> are robust for the 50 hard cases, without any intelligibility issues.
@@ -973,7 +973,7 @@ The comparison results are provided in Table.07.</p>
 <h3 id="54comparison-with-other-tts-systems">5.4.Comparison with Other TTS Systems<a class="headerlink" href="#54comparison-with-other-tts-systems" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>In this section, we compare <strong><em>NaturalSpeech2</em></strong> with the zeroshot TTS model <a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a>.
-We directly download the first 16 utterances from VALL-E demo page6, which consists of 8 samples from <a href="../../Datasets/LibriSpeech.md">LibriSpeech</a> and 8 samples from <a href="../../Datasets/VCTK.md">VCTK</a>.
+We directly download the first 16 utterances from VALL-E demo page6, which consists of 8 samples from <a href="../../Datasets/2015.04.19_LibriSpeech.md">LibriSpeech</a> and 8 samples from <a href="../../Datasets/2012.08.00_VCTK.md">VCTK</a>.
 We evaluate the CMOS and SMOS in Table.08.</p>
 <p>From the results, we find that <strong><em>NaturalSpeech2</em></strong> outperforms VALL-E by 0.3 in SMOS and 0.31 in CMOS, respectively.
 The SMOS results show that <strong><em>NaturalSpeech2</em></strong> is significantly better in speaker similarity.

@@ -425,7 +425,7 @@
 - 引用: 34
 - 被引: ?
 - 数据:
-  - [LJSpeech](../../Datasets/LJSpeech.md)
+  - [LJSpeech](../../Datasets/2017.07.05_LJSpeech.md)
 - 对比:
   - 基于 [VITS](2021.06.11_VITS.md)
 - 复现:
@@ -462,7 +462,7 @@ To reduce the model size, we introduce the grouped parameter-sharing mechanism i
 By adjusting the number of groups, we can balance between model size and modeling capacity.
 To mitigate the decline in synthesis quality caused by model compression, we introduce a large pre-trained <a href="../../Models/Speech_Representaion/2021.10.26_WavLM.md">WavLM</a> model as a discriminator for adversarial training.
 By leveraging self-supervised representation to furnish the generator with additional information, we aim to enhance the quality of synthesized speech.
-Experiments on the <a href="../../Datasets/LJSpeech.md">LJSpeech</a> dataset show that <strong><em>FLY-TTS</em></strong> achieves a real-time factor of 0.0139 on Intel Core i9 CPU, 8.8 times faster than the baseline system (0.1221), and the parameters are compressed by 1.6 times.</p>
+Experiments on the <a href="../../Datasets/2017.07.05_LJSpeech.md">LJSpeech</a> dataset show that <strong><em>FLY-TTS</em></strong> achieves a real-time factor of 0.0139 on Intel Core i9 CPU, 8.8 times faster than the baseline system (0.1221), and the parameters are compressed by 1.6 times.</p>
 </blockquote>
 <h2 id="2related-works">2.Related Works: 相关工作<a class="headerlink" href="#2related-works" title="Permanent link">&para;</a></h2>
 <h4 id="end-to-end-tts-tts">End-to-End TTS: 端到端 TTS<a class="headerlink" href="#end-to-end-tts-tts" title="Permanent link">&para;</a></h4>
@@ -472,7 +472,7 @@ It has gradually shifted from autoregressive models to non-autoregressive models
 <p>Autoregressive TTS models (shen2018natural, <a href="../../TTS2_Acoustic/2017.03.29_Tacotron/">Tacotron</a>) generate the next time-step output conditioned on previous frames, leading to large inference latency and robustness issues.
 Recent researches have focused on non-autoregressive TTS models (<a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a>; <a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a>; <a href="../2021.06.11_VITS/">VITS</a>; <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a>), which generate mel-spectrograms or raw waveforms in parallel.
 <a href="../../Models/TTS2_Acoustic/2019.05.22_FastSpeech.md">FastSpeech</a> and <a href="../../TTS2_Acoustic/2020.06.08_FastSpeech2/">FastSpeech2</a> parallelize the generation of mel-spectrograms by predicting the length of the mel-spectrograms with external alignment models or tools.
-Glow-TTS \cite{glow-tts} combines flow models and dynamic programming to search for the most likely monotonic alignment between text and speech latent representations to achieve parallel TTS.
+<a href="../../TTS2_Acoustic/2020.05.22_Glow-TTS/">Glow-TTS</a> combines flow models and dynamic programming to search for the most likely monotonic alignment between text and speech latent representations to achieve parallel TTS.
 To further enhance the quality of synthesized speech, <a href="../2021.06.11_VITS/">VITS</a> adopts variational inference with normalizing flows to generate raw waveforms.
 The recently proposed <a href="../../Models/E2E/2022.05.09_NaturalSpeech.md">NaturalSpeech</a> also uses a variational autoencoder (VAE) for end-to-end text-to-waveform generation, achieving human-level speech quality.
 While these models have made notable advancements in synthesis quality, they typically suffer from inefficient inference, impeding their deployment in real-world scenarios.</p>
@@ -576,7 +576,7 @@ To mitigate the computational overhead brought by WavLM, we fix the parameters o
 <h2 id="4experiments">4.Experiments: 实验<a class="headerlink" href="#4experiments" title="Permanent link">&para;</a></h2>
 <h3 id="experimental-setup">Experimental setup<a class="headerlink" href="#experimental-setup" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>We evaluate <strong><em>FLY-TTS</em></strong> on <a href="../../Datasets/LJSpeech.md">LJSpeech</a> dataset, which contains 13100 English audio clips and corresponding text transcripts.
+<p>We evaluate <strong><em>FLY-TTS</em></strong> on <a href="../../Datasets/2017.07.05_LJSpeech.md">LJSpeech</a> dataset, which contains 13100 English audio clips and corresponding text transcripts.
 The dataset has a total length of about 24 hours, and each audio file is a single-channel 16-bit PCM WAV with a sample rate of 22050 Hz.
 Following the setup of \cite{mb-istft-vits}, the dataset is randomly divided into 12500 training samples, 100 validation samples, and 500 test samples.</p>
 </blockquote>
