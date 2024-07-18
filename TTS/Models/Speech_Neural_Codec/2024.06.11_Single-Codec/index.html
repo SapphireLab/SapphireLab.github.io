@@ -436,7 +436,7 @@
 - 数据:
   - ? 
 - 对比:
-  - [VQ-VAE](../../Models/_Basis/2017.11.02_VQ-VAE.md)
+  - [VQ-VAE](../../Modules/VQ/2017.11.02_VQ-VAE.md)
   - [EnCodec](../../Models/Speech_Neural_Codec/2022.10.24_EnCodec.md)
   - [TiCodec](../../Models/Speech_Neural_Codec/TiCodec.md)
 - 复现:
@@ -447,7 +447,7 @@
 <h2 id="abstract">Abstract: 摘要<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>The multi-codebook speech codec enables the application of large language models (LLM) in TTS but bottlenecks efficiency and robustness due to multi-sequence prediction.
-To avoid this obstacle, we propose <strong><em>Single-Codec</em></strong>, a single-codebook single-sequence codec, which employs a disentangled <a href="../_Basis/2017.11.02_VQ-VAE.md">VQ-VAE</a> to decouple speech into a time-invariant embedding and a phonetically-rich discrete sequence.
+To avoid this obstacle, we propose <strong><em>Single-Codec</em></strong>, a single-codebook single-sequence codec, which employs a disentangled <a href="../../Modules/VQ/2017.11.02_VQ-VAE.md">VQ-VAE</a> to decouple speech into a time-invariant embedding and a phonetically-rich discrete sequence.
 Furthermore, the encoder is enhanced with (1) contextual modeling with a BLSTM module to exploit the temporal information, (2) a hybrid sampling module to alleviate distortion from upsampling and downsampling, and (3) a resampling module to encourage discrete units to carry more phonetic information.
 Compared with multi-codebook codecs, e.g., <a href="../2022.10.24_EnCodec/">EnCodec</a> and <a href="../Speech_Neural_Codec/TiCodec.md">TiCodec</a>, SingleCodec demonstrates higher reconstruction quality with a lower bandwidth of only 304bps.
 The effectiveness of Single-Code is further validated by LLM-TTS experiments, showing improved naturalness and intelligibility.</p>
@@ -485,7 +485,7 @@ Audio samples are available at https://kkksuper.github.io/Single-Codec.</p>
 <p><img alt="" src="../Images/2024.06.11_Single-Codec_Fig.01.png" /></p>
 <blockquote>
 <p>The architecture of <strong><em>Single-Codec</em></strong> is shown in <a href="../Images/2024.06.11_Single-Codec_Fig.01.png">Figure.01</a>.
-It is built on <a href="../_Basis/2017.11.02_VQ-VAE.md">Vector Quantized-Variational AutoEncoder (VQ-VAE)</a> with Mel Spectrogram input and reconstruction, similar to <a href="../../Models/_tmp/2023.05.12_TorToise-TTS.md">Tortoise-TTS</a>.
+It is built on <a href="../../Modules/VQ/2017.11.02_VQ-VAE.md">Vector Quantized-Variational AutoEncoder (VQ-VAE)</a> with Mel Spectrogram input and reconstruction, similar to <a href="../../Models/_tmp/2023.05.12_TorToise-TTS.md">Tortoise-TTS</a>.
 We adopt a <a href="../../Models/_Basis/2020.05.16_Conformer.md">Conformer</a>-based encoder to encode a Mel Spectrogram segment seg2 into a latent content representation c, which is then passed to the Vector Quantizer (VQ) for vector quantization.
 The convolution-based decoder reconstructs the Mel Spectrogram ˜seg2 from the quantized content representation c.
 Additionally, we apply a discriminator to improve generation quality (<a href="../_Basis/2020.12.17_VQGAN.md">VQGAN</a>).
@@ -540,9 +540,9 @@ A total of 1165.3 hours of English and Chinese speech is used.</p>
 For <a href="../../Speech_LLM/2023.01.05_VALL-E/">VALL-E</a>, we use <a href="../2022.10.24_EnCodec/">EnCodec</a> with one, four, and eight codebooks, representing <a href="../2022.10.24_EnCodec/">EnCodec</a>-1VQ, <a href="../2022.10.24_EnCodec/">EnCodec</a>-4VQ, and <a href="../2022.10.24_EnCodec/">EnCodec</a>-8VQ, <a href="../Speech_Neural_Codec/TiCodec.md">TiCodec</a> with one codebook (<a href="../Speech_Neural_Codec/TiCodec.md">TiCodec</a>-1VQ) as the baselines to evaluate the performance of codecs on speech synthesis.</p>
 <p>To verify the effectiveness of our designed modules in <strong><em>Single-Codec</em></strong>, we conduct ablation studies on the following models. </p>
 <ul>
-<li><a href="../_Basis/2017.11.02_VQ-VAE.md">VQ-VAE</a>: A basic <a href="../_Basis/2017.11.02_VQ-VAE.md">VQ-VAE</a> codec with a discriminator for perceptual loss, the structure and configuration of the <a href="../_Basis/2017.11.02_VQ-VAE.md">VQ-VAE</a> codec is similar to that in <a href="../../Models/_tmp/2023.05.12_TorToise-TTS.md">Tortoise-TTS</a>.</li>
-<li>Ref-short: <a href="../_Basis/2017.11.02_VQ-VAE.md">VQ-VAE</a> with a reference encoder that consumes a short segment with 200 frames as input.</li>
-<li>Ref-long: <a href="../_Basis/2017.11.02_VQ-VAE.md">VQ-VAE</a> with a reference encoder that consumes a long segment with 600 frames as input.</li>
+<li><a href="../../Modules/VQ/2017.11.02_VQ-VAE.md">VQ-VAE</a>: A basic <a href="../../Modules/VQ/2017.11.02_VQ-VAE.md">VQ-VAE</a> codec with a discriminator for perceptual loss, the structure and configuration of the <a href="../../Modules/VQ/2017.11.02_VQ-VAE.md">VQ-VAE</a> codec is similar to that in <a href="../../Models/_tmp/2023.05.12_TorToise-TTS.md">Tortoise-TTS</a>.</li>
+<li>Ref-short: <a href="../../Modules/VQ/2017.11.02_VQ-VAE.md">VQ-VAE</a> with a reference encoder that consumes a short segment with 200 frames as input.</li>
+<li>Ref-long: <a href="../../Modules/VQ/2017.11.02_VQ-VAE.md">VQ-VAE</a> with a reference encoder that consumes a long segment with 600 frames as input.</li>
 <li>Ref-BLSTM: Ref-long with the BLSTM module to verify the effectiveness of the BLSTM module.</li>
 <li>Ref-HybSam: Ref-long with the hybrid sampling module to verify the effectiveness of the hybrid sampling module.</li>
 <li>Ref-BLSTM-HybSam: Ref-long with the BLSTM and hybrid sampling modules to verify the effectiveness of the combination of BLSTM and hybrid sampling modules.</li>
@@ -573,7 +573,7 @@ Eight A800 GPUs and 70 epochs are employed for training <a href="../../Speech_LL
 <p>We calculate <a href="../../Evaluations/STOI.md">STOI</a>, <a href="../../Evaluations/PESQ.md">PESQ</a>, <a href="../../Evaluations/MCD.md">Mel cepstral distortion (MCD)</a>, <a href="../../Evaluations/UTMOS.md">UTMOS</a> and <a href="../../Evaluations/SPK.md">speaker cosine similarity (SPK)</a> to objectively evaluate the quality of speech reconstruction.
 The test set is composed of 100 randomly selected sentences from unseen speakers.
 The objective result is shown in Table 1.</p>
-<p>Compared with <a href="../_Basis/2017.11.02_VQ-VAE.md">VQ-VAE</a>, either Ref-short or Ref-long obtains better performance on all metrics.
+<p>Compared with <a href="../../Modules/VQ/2017.11.02_VQ-VAE.md">VQ-VAE</a>, either Ref-short or Ref-long obtains better performance on all metrics.
 It indicates that it is effective to decouple global information from speech for the single-codebook codec.
 Moreover, Ref-long outperforms Ref-short in both reconstruction and speaker similarity, suggesting that longer reference segments help capture more accurate time-invariant information and enhance content modelling.
 Ref-BLSTM, Ref-HybSam, and Ref-BLSTM-HybSam get higher reconstruction quality, showing the effectiveness of the BLSTM and hybrid sampling modules.
@@ -584,7 +584,7 @@ Moreover, Ref-BLSTM-HybSam-Con yields on-pair performance with Ref-BLSTM-HybSam 
 <p>We further analyze the commitment loss in the training to explore the impact of different designed modules on the single-codebook codec.
 Commitment loss is the difference between representations before and after quantization.
 The degree of convergence of the commitment loss can reflect the relationship between the encoder output and the cluster center in the codebook.
-As shown in Figure.02, the commitment loss of <a href="../_Basis/2017.11.02_VQ-VAE.md">VQ-VAE</a> tends to diverge after model training, indicating that the entanglement of time-invariant global information and time-variant content information hinders forming a limited variety of content-related speech units.
+As shown in Figure.02, the commitment loss of <a href="../../Modules/VQ/2017.11.02_VQ-VAE.md">VQ-VAE</a> tends to diverge after model training, indicating that the entanglement of time-invariant global information and time-variant content information hinders forming a limited variety of content-related speech units.
 After considering time-invariant decoupled modelling, the loss of Ref-short increases slowly, indicating the effectiveness of global information disentanglement for speech unit learning.
 Ref-long further verifies this result, illustrating the effectiveness of a longer reference segment.
 The loss curve of Ref-HybSam is flat, indicating that the hybrid sampling module effectively improves codec performance.
@@ -599,7 +599,7 @@ This result further highlights the significance of achieving a stable clustering
 <blockquote>
 <p>We compare the performance in speech reconstruction of the proposed <strong><em>Single-Codec</em></strong> with other codecs.
 The results, as presented in Table 1, demonstrate that despite lower bandwidth, the proposed <strong><em>Single-Codec</em></strong> surpasses other codecs with 1 codebook and is on par with the <a href="../Speech_Neural_Codec/TiCodec.md">TiCodec</a> with 2 codebooks in terms of reconstruction quality and speaker similarity.
-<a href="../_Basis/2017.11.02_VQ-VAE.md">VQ-VAE</a> performs better than <a href="../2022.10.24_EnCodec/">EnCodec</a> with 1 codebook, demonstrating the high quantization efficiency of codecs operated on Mel Spectrogram.
+<a href="../../Modules/VQ/2017.11.02_VQ-VAE.md">VQ-VAE</a> performs better than <a href="../2022.10.24_EnCodec/">EnCodec</a> with 1 codebook, demonstrating the high quantization efficiency of codecs operated on Mel Spectrogram.
 Compared to <a href="../Speech_Neural_Codec/TiCodec.md">TiCodec</a>, which also quantized the decoupled time-invariant information, <strong><em>Single-Codec</em></strong> achieves higher speaker similarity and reconstruction quality, indicating the effectiveness of continuous time-invariant representations and longer reference length.</p>
 </blockquote>
 <h3 id="47zero-shot-tts-evaluation">4.7.Zero-Shot TTS Evaluation: 零样本文本转语音评估<a class="headerlink" href="#47zero-shot-tts-evaluation" title="Permanent link">&para;</a></h3>
@@ -621,7 +621,7 @@ This is mainly because the higher bandwidth brings higher-resolution speech unit
 <h2 id="5conclusions">5.Conclusions: 结论<a class="headerlink" href="#5conclusions" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>In this paper, we propose <strong><em>Single-Codec</em></strong>, the first single-codebook codec dedicatedly designed for LLM-based speech generation.
-<strong><em>Single-Codec</em></strong> employs a disentangled <a href="../_Basis/2017.11.02_VQ-VAE.md">VQ-VAE</a> on Mel Spectrograms to decouple speech into time-invariant global embedding and one phonetically-rich discrete sequence quantized by one codebook.
+<strong><em>Single-Codec</em></strong> employs a disentangled <a href="../../Modules/VQ/2017.11.02_VQ-VAE.md">VQ-VAE</a> on Mel Spectrograms to decouple speech into time-invariant global embedding and one phonetically-rich discrete sequence quantized by one codebook.
 Furthermore, the encoder is enhanced with a BLSTM module for contextual modelling, a hybrid sampling module to alleviate distortion from upsampling and downsampling, and a resampling module to encourage discrete units to carry more phonetic-relevant information with lower short-time variance.
 In experiments, compared with multi-codebook codecs, e.g. <a href="../2022.10.24_EnCodec/">EnCodec</a> and <a href="../Speech_Neural_Codec/TiCodec.md">TiCodec</a>, <strong><em>Single-Codec</em></strong> demonstrates higher speech reconstruction quality with lower bandwidth of only 304bps, and enables a higher-quality LLM-TTS with better naturalness and intelligibility.
 In the future, we will focus on developing a more efficient single-codebook codec for speech reconstruction and speech synthesis.</p>

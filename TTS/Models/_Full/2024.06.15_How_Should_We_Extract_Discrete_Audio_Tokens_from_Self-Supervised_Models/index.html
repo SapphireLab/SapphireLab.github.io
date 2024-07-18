@@ -560,7 +560,7 @@ For reproducibility and to encourage further research, we release the code, buil
 <h3 id="31tokenizer">3.1.Tokenizer<a class="headerlink" href="#31tokenizer" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>For quantization, we cluster five layers taken from two pretrained SSL models using the k-means algorithm independently for each layer.
-We consider two widely-used models: WavLM-large (<a href="huggingface.co/microsoft/wavlm-large">Checkpoints</a>) and HuBERT-large (<a href="huggingface.co/facebook/hubert-large-ll60k">Checkpoints</a>), both having 24 layers.
+We consider two widely-used models: WavLM-large (<a href="https://huggingface.co/microsoft/wavlm-large">Checkpoints</a>) and HuBERT-large (<a href="https://huggingface.co/facebook/hubert-large-ll60k">Checkpoints</a>), both having 24 layers.
 We choose two layers from the lower part (3, 7) to capture fine-grained information, the middle layer (12), and two layers from the higher part (18, 23) for encoding content and meaning.
 This selection is based on observation from prior research (<a href="../Speech_Representaion/2021.10.26_WavLM.md">WavLM</a>; <a href="../../Evaluations/SUPERB.md">SUPERB</a>) which studied the contribution patterns of different layers across various tasks.
 As a result, this set of discrete hierarchical tokens captures rich information from the original audio signal.

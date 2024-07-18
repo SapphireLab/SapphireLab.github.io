@@ -540,7 +540,7 @@ The fast Fourier transform, window, and hop sizes were set to 1024, 1024, and 25
 We converted text sequences into International Phonetic Alphabet sequences using <a href="https://github.com/bootphon/phonemizer">open-source software (Phonemizer)</a> and fed the text encoder with the sequences.
 Contrasting with the previous work (<a href="../2021.06.11_VITS/">VITS</a>), we did not use the blank token.
 For the experiment with normalized texts, we normalized the input text with simple rules using <a href="https://github.com/keithito/tacotron">open-source software (Tacotron)</a> and fed the text encoder with it.</p>
-<p>The networks were trained using the <a href="../_Basis/2017.11.14_AdamW.md">AdamW</a> optimizer with $\beta_{1} = 0.8$, $\beta_{2} = 0.99$, and weight decay $\lambda = 0.01$.
+<p>The networks were trained using the <a href="../../Modules/Optim/2017.11.14_AdamW.md">AdamW</a> optimizer with $\beta_{1} = 0.8$, $\beta_{2} = 0.99$, and weight decay $\lambda = 0.01$.
 The learning rate decay was scheduled by a $0.999^{1/8}$ factor in every epoch, with an initial learning rate of $2\times 10^{−4}$.
 We fed the networks with 256 training instances per step.
 Following the previous work (<a href="../2021.06.11_VITS/">VITS</a>), the windowed generator training was applied.

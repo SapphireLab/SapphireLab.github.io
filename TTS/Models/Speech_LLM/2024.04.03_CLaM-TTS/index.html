@@ -609,7 +609,7 @@ During the inference phase, the language model generates $\pmb{c}_{1:T}$ for a g
 </blockquote>
 <h3 id="31-residual-quantized-variational-autoencoder-rq-vae">3.1. Residual Quantized Variational Autoencoder (RQ-VAE)<a class="headerlink" href="#31-residual-quantized-variational-autoencoder-rq-vae" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>An <a href="../_Basis/2022.03.03_RQ-VAE.md">RQ-VAE (2022)</a> is a neural network architecture representing data as discrete codes using residual vector quantization. 
+<p>An <a href="../../Modules/VQ/2022.03.03_RQ-VAE.md">RQ-VAE (2022)</a> is a neural network architecture representing data as discrete codes using residual vector quantization. 
 It comprises of three components: 
 (1) an encoder parameterized by $\phi$ that maps data $\pmb{y}$ into a sequence of latent representations $\pmb{z}<em>{1:T}$; 
 (2) a residual vector quantizer $RQ</em>\psi(\cdot)$, converting the latent vector $\pmb{z}<em>t$ at each time $t$ into the discrete code representation $\pmb{c}</em>{t,1:D}=RQ_\psi(\pmb{z}<em>t)$, or the corresponding quantized embedding $\hat{\pmb{z}}_t$;
